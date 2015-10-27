@@ -1,0 +1,45 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="gen_pwm" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="mul" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="operation" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="gen_pwm" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="coeff" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="gen_pwm" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="din" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="gen_pwm" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="dout" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="gen_pwm" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_ctrl_hs" value="" positionalBoolean="mode"/>
+                <option name="port" value="return" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="gen_pwm" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_none" value="" positionalBoolean="mode"/>
+                <option name="port" value="dout" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

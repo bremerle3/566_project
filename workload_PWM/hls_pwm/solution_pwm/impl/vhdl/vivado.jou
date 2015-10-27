@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Tue Oct 13 10:18:43 2015
+# Process ID: 23052
+# Log file: /home/warehouse/lbremer/ese566/workload_PWM/hls_pwm/solution_pwm/impl/vhdl/vivado.log
+# Journal file: /home/warehouse/lbremer/ese566/workload_PWM/hls_pwm/solution_pwm/impl/vhdl/vivado.jou
+#-----------------------------------------------------------
+source run_vivado.tcl -notrace

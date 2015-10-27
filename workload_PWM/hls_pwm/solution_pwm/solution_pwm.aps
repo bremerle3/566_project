@@ -1,0 +1,33 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution_pwm"/>
+    </name>
+    <project>
+        <value string="hls_pwm"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7z010:clg400:-1"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
+        <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="20" default="false"/>
+    </clockList>
+    <config>
+        <config_interface clock_enable="1"/>
+        <schedule model="gen_pwm"/>
+    </config>
+    <Simulation argv="">
+        <SimFlow name="cosim" setup="true" dumpTrace="false" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" toolName="xsim">
+            <Rtl name="systemc" active="false"/>
+            <Rtl name="verilog" active="true"/>
+            <Rtl name="vhdl" active="false"/>
+        </SimFlow>
+    </Simulation>
+    <ExportDesign askAgain="true" evaluate="true" rtl="vhdl" formatName="sysgen">
+        <Format formatName="sysgen"/>
+    </ExportDesign>
+</AutoPilot:solution>
+

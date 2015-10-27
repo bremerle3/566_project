@@ -1,0 +1,75 @@
+@I [SIM-47] Using XSIM for RTL simulation.
+@I [SIM-14] Instrumenting C test bench ...
+   Build using "/project/linuxlab/xilinx/xilinx/Vivado_HLS/Vivado_HLS/lnx64/tools/gcc/bin/g++"
+   Compiling apatb_PID_Controller.cpp
+   Compiling xapp_pid.cpp_pre.cpp.tb.cpp
+   Compiling test_xapp_pid.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe
+@I [SIM-302] Starting C TB testing ... 
+@I [SIM-333] Generating C post check test bench ...
+@I [SIM-12] Generating RTL test bench ...
+@I [SIM-323] Starting verilog simulation. 
+@I [SIM-15] Starting XSIM ...
+@I [SIM-316] Starting C post checking ...
+RUNNING IN 24-bit FIXED POINT
+RUNNING IN NORMAL MODE
+
+ TEST RESULT U=0.099613 
+
+ TEST RESULT E=0.005971 
+
+ TEST RESULT TOTAL ERROR =0.105584 
+
+ TEST PASSED! 
+Vivado Simulator 2014.4
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /project/linuxlab/xilinx/xilinx/Vivado/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_PID_Controller_top -prj PID_Controller.prj --lib ieee_proposed=./ieee_proposed -s PID_Controller 
+Multi-threading is on. Using 14 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/hls_fixedp_pid_prj/solution_fixedp/sim/verilog/PID_Controller.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_PID_Controller_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/hls_fixedp_pid_prj/solution_fixedp/sim/verilog/PID_Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PID_Controller
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PID_Controller
+Compiling module xil_defaultlib.apatb_PID_Controller_top
+Built simulation snapshot PID_Controller
+
+****** Webtalk v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/warehouse/lbremer/ese566/workload_PID/hls/fixp/hls_fixedp_pid_prj/solution_fixedp/sim/verilog/xsim.dir/PID_Controller/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/hls_fixedp_pid_prj/solution_fixedp/sim/verilog/xsim.dir/PID_Controller/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Oct 13 10:18:22 2015. For additional details about this file, please refer to the WebTalk help file at /project/linuxlab/xilinx/xilinx/Vivado/Vivado/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct 13 10:18:22 2015...
+
+****** xsim v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/PID_Controller/xsim_script.tcl
+# xsim {PID_Controller} -maxdeltaid 10000 -tclbatch {PID_Controller.tcl}
+Vivado Simulator 2014.4
+Time resolution is 1 ps
+source PID_Controller.tcl
+## run all
+$finish called at time : 25790400 ps : File "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/hls_fixedp_pid_prj/solution_fixedp/sim/verilog/PID_Controller.autotb.v" Line 804
+## quit
+INFO: [Common 17-206] Exiting xsim at Tue Oct 13 10:18:28 2015...
+RUNNING IN 24-bit FIXED POINT
+RUNNING IN NORMAL MODE
+
+ TEST RESULT U=0.099613 
+
+ TEST RESULT E=0.005971 
+
+ TEST RESULT TOTAL ERROR =0.105584 
+
+ TEST PASSED! 
+@I [SIM-1000] *** C/RTL co-simulation finished: PASS ***
