@@ -7,13 +7,13 @@ int main(void)
     int i=10;
     int32_t tmp;
     while(i--)               
-       gen_pwm(10,100,&tmp); 
-    i=10;                    
-    while(i--)
-       gen_pwm(50,100,&tmp); 
-    i = 10;                  
-    while(i--)
-       gen_pwm(70,100,&tmp); 
-    printf("test passed!\n");
+       gen_pwm(2,10,&tmp); 
+    //i=10;                    
+    //while(i--)
+    //   gen_pwm(50,100,&tmp); 
+    //i = 10;                  
+    //while(i--)
+    //   gen_pwm(70,100,&tmp); 
+    printf("\ntest passed!\n");
     return 0;
 }
