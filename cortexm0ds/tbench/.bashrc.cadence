@@ -1,0 +1,94 @@
+# CEC Cadence Script
+#check for an interactive shell
+case $- in
+*i*) if [ -f ~/.bashrc ]; then . ~/.bashrc; fi;;
+esac
+
+export LANG=C
+###########################################################################################
+# Cadence
+###########################################################################################
+
+
+
+export CADENCE=/project/linuxlab/cadence
+export IC=$CADENCE/ic
+export MMSIMHOME=$CADENCE/mmsim
+export INCISIVE=$CADENCE/incisive
+export ASSURA=$CADENCE/assura
+export EDI=$CADENCE/edi
+export RC=$CADENCE/rc
+export SPB=$CADENCE/spb
+export ANLS=$CADENCE/anls
+export CONFRML=$CADENCE/confrml
+export EXT=$CADENCE/ext
+export ETS=$CADENCE/ets
+export SKIP_CDS_DIALOG=1
+export CDS_Netlisting_Mode=Analog
+
+export OSUcells=$CADENCE/vendors/OSU/OSUstdcell/cadence
+export VTVT=$CADENCE/vendors/VTVT
+export CDK_DIR=$CADENCE/CDK/ncsu
+export NCSU_CDK_DIR=$CDK_DIR
+export MODS=$CDK_DIR/models/spectre/nom
+
+export PATH=$PATH:$IC:$IC/tools/bin/:$INCISIVE/tools/bin:$MMSIMHOME/tools/bin:$IC/tools/dfII/bin:$ASSURA/tools/bin:$ASSURA/tools/bin/assura/bin:$RC/tools/bin:$EDI/tools/bin:$OSUcells/flow/bin:$SPB/tools/bin:$ANLS/tools/bin:$CONFRML/tools/bin:$EXT/tools/bin:$ETS/tools/bin
+export LM_LICENSE_FILE=27021@licensing02.seas.wustl.edu
+export OA_UNSUPPORTED_PLAT=linux_rhel50_gcc44x
+
+
+###########################################################################################
+# Synopsys
+###########################################################################################
+export SNPSLMD_LICENSE_FILE=27032@licensing02.seas.wustl.edu
+##########
+# Not sure this is correct - or does it need to be set to the base of the specific tool like /usr/synopsys/icc for icc and then somewhere else for the other tools
+##########
+export SYNOPSYS=/project/linuxlab/synopsys
+########
+export VERA_HOME=$SYNOPSYS/vera
+export VCS_HOME=$SYNOPSYS/vcs_mx
+export VCS_ARCH_OVERRIDE=linux
+export DESIGNWARE_HOME=/home/warehouse/erichter/silvia/SylviaDesignFlow/DESIGNWARE_HOME
+export PATH=$PATH:$SYNOPSYS/installer:$SYNOPSYS/SCL/11.9/linux/bin:$SYNOPSYS/customexp/bin:$SYNOPSYS/icc/bin:$SYNOPSYS/lc/bin:$SYNOPSYS/syncore/bin:$SYNOPSYS/vcs_mx/bin:$SYNOPSYS/pt/bin:$SYNOPSYS/cosmoscope/bin:$SYNOPSYS/vera/bin:$SYNOPSYS/hspice/bin:$SYNOPSYS/hsimplus/bin:$SYNOPSYS/coreTools/bin:$DESIGNWARE_HOME/bin:$SYNOPSYS/tetraMaxStandAlone/bin
+
+
+
+###########################################################################################
+# Xilinx
+###########################################################################################
+export XILINXD_LICENSE_FILE=27017@licensing02.seas.wustl.edu
+export XILINX_VIVADO=/project/linuxlab/xilinx/xilinx/Vivado/Vivado
+export XILINX_VIVADO_HLS=/project/linuxlab/xilinx/xilinx/Vivado_HLS/Vivado_HLS
+export XILINX_VIVADO_DOCNAV=/project/linuxlab/xilinx/xilinx/Vivado_HLS/DocNav
+export XILINX=/project/linuxlab/xilinx/xilinx_ise
+###########################################################################################
+# If you execute this script, it prepends all of the ISE executables to the front of the 
+# path. One problem with this is then the wrong version of tclsh is used for the Gaisler tools.
+source $XILINX/ISE_DS/settings64.sh
+###########################################################################################
+export PATH=$PATH:$XILINX_VIVADO/bin:$XILINX_VIVADO_HLS/bin:XILINX_VIVADO_DOCNAV
+
+
+###########################################################################################
+# Gaisler
+###########################################################################################
+export GRLIB==/home/warehouse/erichter/silvia/leon3/grlib-gpl-1.4.1-b4156
+export PATH=$PATH:/opt/grmon-eval/linux/bin:/opt/sparc-elf/bin
+
+if [ -n "${LD_LIBRARY_PATH}" ]; then
+  export LD_LIBRARY_PATH=$XILINX_VIVADO/lib/lnx64.o:$LD_LIBRARY_PATH
+else
+  export LD_LIBRARY_PATH=$XILINX_VIVADO/lib/lnx64.o
+fi
+
+
+
+case $- in
+*i*)
+  echo Cadence environment loaded!
+  export PS1="(CADENCE)$PS1"
+;;
+esac
+
+

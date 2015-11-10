@@ -1,0 +1,41 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "cortexm0ds_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mode": 4,
+            "out": "amcQw_d.o",
+            "mod": "...MASTER...",
+            "bytes": 4450,
+            "archive": "archive.0/_6696_archive_1.a"
+        },
+        "e4Wkh_d": {
+            "mode": 4,
+            "out": "e4Wkh_d.o",
+            "mod": "cortexm0ds_tb",
+            "bytes": 1841471,
+            "archive": "archive.0/_6696_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_6696_archive_1.a",
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    4450
+                ],
+                [
+                    "e4Wkh_d.o",
+                    1841471
+                ]
+            ],
+            "size": 1845921
+        }
+    ]
+}
