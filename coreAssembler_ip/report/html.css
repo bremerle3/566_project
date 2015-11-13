@@ -1,0 +1,33 @@
+BODY {
+    MARGIN-TOP: 10px; 
+    FONT-SIZE: 10pt; 
+    MARGIN-LEFT: 10px; 
+    MARGIN-RIGHT: 10px; 
+    FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif;
+}
+TD {FONT-SIZE: 10pt; 
+    FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif;
+    VERTICAL-ALIGN:TEXT-TOP
+}
+span.registered {
+   color: red;
+}
+span.subscript {
+ font-size:xx-small;
+ vertical-align:bottom;
+}
+p  {
+   margin-top: 0px; 
+   margin-bottom: 0px; 
+}
+.sect1
+   {
+   text-align:left
+}
+.title
+   {
+   text-align:left
+}
+table {
+   border-collapse:collapse;
+}

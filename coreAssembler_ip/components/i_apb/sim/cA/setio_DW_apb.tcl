@@ -1,0 +1,1 @@
+/home/warehouse/erichter/silvia/SylviaDesignFlow/DESIGNWARE_HOME/iip/latest/DW_apb/sim/cA/setio_DW_apb.tcl

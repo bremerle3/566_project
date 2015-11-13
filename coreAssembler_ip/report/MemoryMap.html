@@ -1,0 +1,115 @@
+<HTML>
+<HEAD><TITLE>Memory Map Specification Report</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+<HR WIDTH="100%">
+<H1><CENTER>Memory Map Specification Report</CENTER></H1>
+<PRE>
+<b>Index By Master</b>
+<a HREF="#MemoryMaps/ex_i_ahb_AHB_Master">/ex_i_ahb_AHB_Master</a>
+
+
+<b>Memory Map Diagrams</b>
+<a HREF="/home/warehouse/lbremer/566_project/coreAssembler_ip/report/ex_i_ahb_AHB_Master_memMap_diagram.html">/ex_i_ahb_AHB_Master</a>
+
+
+
+
+<b>Index By Interface</b>
+<a HREF="#MemoryMaps/i_ahb/AHB_Slave">/i_ahb/AHB_Slave</a>
+<a HREF="#MemoryMaps/i_apb/APB_Slave">/i_apb/APB_Slave</a>
+
+
+<b>Index By Mode</b>
+<a HREF="#CombinedDefault">Default</a>
+<a HREF="#CombinedBoot">Boot</a>
+<p><a NAME="MemoryMaps/ex_i_ahb_AHB_Master"></a></p>
+<b>Memory map for /ex_i_ahb_AHB_Master</b>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface</b></td>
+<td><b>Address Range</b></td>
+<td><b>Base address (Normal) </b></td>
+<td><b>Base address (Boot) </b></td>
+</tr>
+<tr>
+<td><b>i_apb/AHB_Slave </b></td>
+<td><b>0x1000 </b></td>
+<td><b>0x10000000 </b></td>
+<td><b>&nbsp; </b></td>
+</tr>
+</table>
+<p><a NAME="MemoryMaps/i_ahb/AHB_Slave"></a></p>
+<b>Memory map for /i_ahb/AHB_Slave</b>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface</b></td>
+<td><b>Address Range</b></td>
+<td><b>Base address (Normal) </b></td>
+<td><b>Base address (Boot) </b></td>
+</tr>
+<tr>
+<td><b>/i_apb/AHB_Slave</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x10000000</b></td>
+<td><b>&nbsp;</b></td>
+</tr>
+</table>
+<p><a NAME="MemoryMaps/i_apb/APB_Slave"></a></p>
+<b>Memory map for /i_apb/APB_Slave</b>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface</b></td>
+<td><b>Address Range</b></td>
+<td><b>Base address</b></td>
+</tr>
+<tr>
+<td><b>/i_i2c/APB_Slave</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x10000000</b></td>
+</tr>
+</table>
+<p><a NAME="CombinedDefault"></a></p>
+<b>Combined memory map for mode: Default</b>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface</b></td>
+<td><b>Address Range</b></td>
+<td><b>Base address</b></td>
+</tr>
+<tr>
+<td><b>/i_apb/AHB_Slave</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x10000000</b></td>
+</tr>
+<tr>
+<td><b>/i_i2c/APB_Slave</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x10000000</b></td>
+</tr>
+</table>
+<p><a NAME="CombinedBoot"></a></p>
+<b>Combined memory map for mode: Boot</b>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface</b></td>
+<td><b>Address Range</b></td>
+<td><b>Base address (Boot)</b></td>
+</tr>
+</table>
+</PRE>
+
+<HR WIDTH="100%">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+</BODY></HTML>
+

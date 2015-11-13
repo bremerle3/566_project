@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:title>Memory Map Diagram for /ex_i_ahb_AHB_Master.</docbook:title>
+  <docbook:sect1 xml:id="Memory Map Diagram for /ex_i_ahb_AHB_Master">
+    <docbook:table xml:id="/ex_i_ahb_AHB_Master_Normal_memMapTable" frame="none" rowsep="0" colsep="0">
+      <docbook:title>/ex_i_ahb_AHB_Master  Normal mode Memory Map Diagram</docbook:title>
+      <docbook:tgroup cols="2">
+        <?dbhtml cellpadding="4%" cellspacing="0" ?>
+        <docbook:tbody>
+          <docbook:row>
+            <?dbhtml row-height="20" ?>
+            <docbook:entry>
+              <?dbhtml bgcolor="#A0A0A0" ?>
+            </docbook:entry>
+            <docbook:entry align="right" valign="top">
+              0x10001000
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml row-height="20" ?>
+            <docbook:entry>
+              <?dbhtml bgcolor="#A0A0A0" ?>
+            </docbook:entry>
+            <docbook:entry align="right" valign="top">
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml row-height="20" ?>
+            <docbook:entry align="left" valign="bottom">
+              <?dbhtml bgcolor="#A0A0A0" ?>
+          i_apb/AHB_Slave       
+            </docbook:entry>
+            <docbook:entry align="right" valign="bottom">
+              0x10000000
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+  </docbook:sect1>
+</docbook:article>
