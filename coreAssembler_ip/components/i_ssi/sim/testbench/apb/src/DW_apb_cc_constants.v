@@ -1,0 +1,1 @@
+/home/warehouse/erichter/silvia/SylviaDesignFlow/DESIGNWARE_HOME/iip/latest/DW_apb_ssi/sim/testbench/apb/src/DW_apb_cc_constants.v
