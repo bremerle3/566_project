@@ -7,6 +7,12 @@ set_host_options -max_cores 16
 
 set lib_path ". /group/guyeon/cktcad/kits/arm/arm/tsmc/cln40g"
 
+set proj_path "/home/warehouse/lbremer/566_project/workloads/workload_PWM/"
+
+append verilog_path ${proj_path} "hls_pwm/solution_pwm/impl/verilog/"
+
+append design_verilog ${verilog_path} "gen_pwm.v"
+
 # allows files to be read in without specifying the directory path
 set search_path ". /project/linuxlab/synopsys/syncore/libraries /project/linuxlab/synopsys/syncore/minpower/syn /project/linuxlab/synopsys/syncore/dw/syn_ver /project/linuxlab/synopsys/syncore/dw/sin_ver /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs"
 
@@ -33,10 +39,10 @@ define_design_lib WORK -path ./WORK
 #######################################
 
 # Give the list of your verilog files
-set my_verilog_files [list hls_pwm/solution_pwm/impl/verilog/gen_pwm.v]
+set my_verilog_files [list $design_verilog]
 
 # Set the top module of your design
-set my_toplevel gen_pwm.v
+set my_toplevel "gen_pwm"
 
 # This command does the same work of analyze+elaborate
 # read_verilog $my_verilog_files   
