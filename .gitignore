@@ -2,3 +2,5 @@
 *.o
 *.lock
 *.swp
+*.jou
+*.str
