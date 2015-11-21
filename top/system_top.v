@@ -18,7 +18,7 @@
 module system_top (
   // CLOCK AND RESETS ------------------
   input  wire        HCLK_top   (HCLK_top_top),              // Clock
-  input  wire        HRESETn_top,           // Asynchronous reset
+  input  wire        HRESETn_top         // Asynchronous reset
 );
 
 //------------------------------------------------------------------------------
@@ -98,13 +98,19 @@ interconnect_ip (
                         i_i2c_ic_tx_abrt_intr,
                         i_i2c_ic_tx_empty_intr,
                         i_i2c_ic_tx_over_intr
+                        i_ssi_sclk_out,
+                        i_ssi_ss_0_n,
+                        i_ssi_ssi_mst_intr_n,
+                        i_ssi_ssi_oe_n,
+                        i_ssi_ssi_rxf_intr_n,
+                        i_ssi_ssi_rxo_intr_n,
+                        i_ssi_ssi_rxu_intr_n,
+                        i_ssi_ssi_sleep,
+                        i_ssi_ssi_txe_intr_n,
+                        i_ssi_ssi_txo_intr_n,
+                        i_ssi_txd
                         */
                         );
-
-//------------------------------------------------------------------------------
-// Instantiate RAM register file
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
 // Instantiate Cortex-M0 processor 

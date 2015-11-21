@@ -1,5 +1,10 @@
                              Export directory index
 
    +------------------------------------------------------------------------+
-   |              File              |              Description              |
+   |          File           |                 Description                  |
+   |-------------------------+----------------------------------------------|
+   | interconnect_ip.lst     | List of source files in proper analysis      |
+   |                         | order for entire subsystem.                  |
+   |-------------------------+----------------------------------------------|
+   | interconnect_ip_sim.lst | No description available                     |
    +------------------------------------------------------------------------+

@@ -79,7 +79,7 @@
 // Values:       1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 // 
 // The Number of Slave Ports (1 to 16)
-`define NUM_APB_SLAVES 1
+`define NUM_APB_SLAVES 2
 
 
 // Name:         START_PADDR_0
@@ -498,7 +498,7 @@
 `define END_PADDR_15 32'h000043ff
 
 
-`define R0_APB_SA 32'h10000000
+`define R0_APB_SA 32'h800
 
 
 `define R0_APB_EA 32'h10000fff
@@ -796,7 +796,7 @@
 `define APB_HAS_S0
 
 
-// `define APB_HAS_S1
+`define APB_HAS_S1
 
 
 // `define APB_HAS_S2

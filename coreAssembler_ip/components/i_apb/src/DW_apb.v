@@ -110,7 +110,9 @@ module i_apb_DW_apb (         // system clock and reset
                pwrite,
                // APB write data (to all slaves)
                pwdata,
+               psel_s1,
                psel_s0,
+               prdata_s1,
                prdata_s0
                );
 //-----------------
@@ -187,6 +189,7 @@ output                        penable;
 
 // Slave Selects for the APB slaves.
 output                        psel_s0;
+output                        psel_s1;
 
 output [`APB_DATA_WIDTH-1:0]  pwdata;
 // APB write data
@@ -195,6 +198,7 @@ output                        pwrite;
 
 // read data busses from APB slaves
 input [`APB_DATA_WIDTH-1:0]   prdata_s0;
+input [`APB_DATA_WIDTH-1:0]   prdata_s1;
 
 
 
@@ -215,6 +219,8 @@ wire                           hready_resp;
 wire                           psel_s0;
 wire  [`APB_DATA_WIDTH-1:0]    prdata_s0;
 
+wire                           psel_s1;
+wire  [`APB_DATA_WIDTH-1:0]    prdata_s1;
 
 
 
@@ -378,6 +384,7 @@ wire [`HADDR_WIDTH_INT-1:0]        haddr_int;
 
   i_apb_DW_apb_prdmux
    U_DW_apb_prdmux (
+                                 .psel_int(psel_int[  `NUM_APB_SLAVES-1:1]),  // Slave select from dcdr
                                  .prdatabus(prdatabus), // data from slave(s)
                                  .prdata_int(prdata_int)// output data
                                  
@@ -429,6 +436,7 @@ wire [`HADDR_WIDTH_INT-1:0]        haddr_int;
   assign hrdata[  `AHB_DATA_WIDTH-1:0] = hrdata_max[  `AHB_DATA_WIDTH-1:0];
 
   assign max_prdatabus[  `APB_DATA_WIDTH-1:0]                         = prdata_s0;
+  assign max_prdatabus[(    `APB_DATA_WIDTH*2)-1:(    `APB_DATA_WIDTH)]     = prdata_s1;
 
 
 
@@ -453,6 +461,7 @@ wire [`HADDR_WIDTH_INT-1:0]        haddr_int;
 
   assign psel_s0 = psel_apb[0];
 
+  assign psel_s1 = psel_apb[1];
 
 
 
