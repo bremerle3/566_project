@@ -1,0 +1,138 @@
+#pragma vip(8b999b2d, ff694a8d, 00000000, 00000b9b, "Jun 16 2014", "18:51:43")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/AhbApbSsiTestHarness.vrh#4 $
+
+
+#ifndef AHBAPBSSITESTHARNESS_VRH
+#define AHBAPBSSITESTHARNESS_VRH
+
+#include "AhbApbTestHarness.vrh"
+#include "SsiSlvBfm.vrh"
+#include "SsiMstBfm.vrh"
+#include "SsiDmaBfm.vrh"
+
+#ifndef AHBAPBSSITESTHARNESS_VR
+#define AHBAPBSSITESTHARNESS_EXTERN   extern
+#else
+#define AHBAPBSSITESTHARNESS_EXTERN
+#endif
+
+// port for the APB peripheral
+port ApbPeriphPort
+{
+   pclk;
+   ssi_clk;
+   dut_ssi_clk;
+   ssi_clk_en;
+   dut_ssi_clk_en;
+   ssi_rst_n;
+   ssi_sleep;
+   txd;
+   ssi_oe_n;
+   rxd;
+   ss_in_n;
+   dma_tx_req;
+   dma_rx_req;
+   dma_tx_single;
+   dma_rx_single;
+   dma_tx_ack;
+   dma_rx_ack;
+   sclk_out;
+   sclk_in;
+   dut_sclk_in;
+   ssi_intr;
+   ssi_txe_intr;
+   ssi_txo_intr;
+   ssi_rxf_intr;
+   ssi_rxo_intr;
+   ssi_rxu_intr;
+   ssi_mst_intr;
+}
+
+// port for ssi slave
+port SsiDutBusPort
+{
+  rxd;
+  txd;
+  sclk_out;
+  ssi_clk;
+}
+
+port SsiDutSlvPort
+{
+  ss_n;
+}
+
+AHBAPBSSITESTHARNESS_EXTERN class DutSsiConnector extends AhbApbTestHarness
+{
+   public ApbPeriphPort       periph_port;
+   public SsiDutSlvPort       periph_port_ss[16];
+   public SsiDutBusPort       ssi_dut_bus_port;
+   public SsiDutSlvPort       ssi_bfm_slv_dut_port[16];
+   public SsiSlvPort          ssi_slv_port[16];
+   public SsiMstPort          ssi_mst_port;
+   public SsiDmaBfmPort       ssi_dma_port;
+   public ParseDefines        periph_cc;
+
+#ifdef AHBAPBSSITESTHARNESS_VR
+   local string           m_cfg_sc_clock_ssi;
+   local string           m_cfg_sc_attr_noskew;
+   local bit              m_loop_back;
+   local integer          m_ssi_clk_on;
+#endif
+
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      var ParseDefines periph_cc,
+      bit[15:0]    ahb_mst_bfm,
+      bit[15:0]    ahb_slv_bfm,
+      bit[15:0]    apb_slv_bfm,
+      bit          ahb_mon_present,
+      bit          apb_mon_present
+      );
+
+   public task SetLoopBackMode(integer val);
+   public task DisableSsiClk();
+   public task EnableSsiClk();
+   
+#ifdef AHBAPBSSITESTHARNESS_VR
+   local task connect_periph_port();
+   local task connect_ssi_mst_bfm_port();
+   local task connect_ssi_slv_bfm_port();
+   local task connect_ssi_dma_bfm_port();
+#endif /* AHBAPBSSITESTHARNESS_VR */
+}
+
+AHBAPBSSITESTHARNESS_EXTERN class AhbApbSsiTestHarness extends DutSsiConnector
+{
+  public SsiSlvBfm    ssi_slv[16];
+  public SsiMstBfm    ssi_mst;
+  public SsiDmaBfm    ssi_dma;
+  
+  public task new(
+    var ParseDefines ahb_cc,
+    var ParseDefines apb_cc,
+    var ParseDefines periph_cc,
+    (bit[15:0]    ahb_mst_bfm      = 16'hffff),
+    (bit[15:0]    ahb_slv_bfm      = 16'hfffd),
+    (bit[15:0]    apb_slv_bfm      = 16'hfffe),
+    (bit          ahb_mon_present  = 1'h1),
+    (bit          apb_mon_present  = 1'h1)
+    );
+}
+
+#endif /* AHBAPBSSITESTHARNESS_VRH */

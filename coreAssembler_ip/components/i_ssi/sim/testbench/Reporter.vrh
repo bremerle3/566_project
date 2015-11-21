@@ -1,0 +1,51 @@
+#pragma vip(7cdb0bb4, ca3ca1bb, 00000000, 000003ff, "Jun 16 2014", "18:52:16")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/Reporter.vrh#4 $
+
+#ifndef REPORTER_VRH
+#define REPORTER_VRH
+
+#include <vera_defines.vrh>
+
+#ifndef REPORTER_VR
+#define REPORTER_EXTERN extern
+#else
+#define REPORTER_EXTERN
+#endif
+
+enum ReportLevel = REP_INFO, REP_ERROR, REP_DEBUG, REP_UNMASKED;
+
+// ---------------------------------------
+// : Logger Class
+// ---------------------------------------
+REPORTER_EXTERN class Reporter
+{
+#ifdef REPORTER_VR
+  local string          Header;
+  local integer         Id;
+  local string          ObjName;
+  local integer         FileHandle;
+  local ReportLevel     rep_level;
+#endif /* REPORTER_VR */
+  
+  public task new( integer Id, string ObjName, integer FileHandle);
+
+  public task configure( ReportLevel SetLevel );
+
+  public task report( ReportLevel level, string msg, (integer sim_time = -1) );
+}
+
+#endif /* REPORTER_VRH */

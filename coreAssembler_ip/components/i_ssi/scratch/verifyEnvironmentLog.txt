@@ -1,0 +1,61 @@
+Checking Simulator versions...
+==============================
+
+Found VCS in your PATH
+Information: INFO for tool 'vcs': (CMDS-222)
+Information:     The value of VCS_HOME is /project/linuxlab/synopsys/vcs_mx (CMDS-222)
+Information:     The path to the tool is /project/linuxlab/synopsys/vcs_mx/bin/vcs (CMDS-222)
+Information:     The tool version is 2014.12-SP1-1 (CMDS-222)
+Information:     The minimum acceptable version is 2012.09-SP1 (CMDS-222)
+1
+=============================
+Found NC_Verilog in your PATH
+Warning: Cannot find '/project/linuxlab/cadence/incisive/tools/lib' in LD_LIBRARY_PATH environment variable. (CMDS-221)
+Warning: LD_LIBRARY_PATH will be updated for this session only.
+  Please update LD_LIBRARY_PATH to permanently include '/project/linuxlab/cadence/incisive/tools/lib' (CMDS-221)
+Information: INFO for tool 'nc_vlog': (CMDS-222)
+Information:     The path to the tool is /project/linuxlab/cadence/incisive/tools/bin/ncsim (CMDS-222)
+Information:     The tool version is 14.20-s007 (CMDS-222)
+Information:     The minimum acceptable version is 12.10.015 (CMDS-222)
+1
+=============================
+Checking Vera version...
+========================
+Information: INFO for tool 'vera': (CMDS-222)
+Information:     The value of VERA_HOME is /project/linuxlab/synopsys/vera (CMDS-222)
+Information:     The path to the tool is /project/linuxlab/synopsys/vera/bin/vera (CMDS-222)
+Information:     The tool version is 2014.03 (CMDS-222)
+Information:     The minimum acceptable version is 2009.12-17 (CMDS-222)
+1
+
+Checking VIP requirements
+==========================
+
+Checking vip:vmt...
+Information:     The value of DESIGNWARE_HOME is /home/warehouse/erichter/silvia/SylviaDesignFlow/DESIGNWARE_HOME (CMDS-222)
+Information:     The VIP component is vmt (CMDS-222)
+Information:     The version of vmt is J-2014.12 (CMDS-222)
+Information:     The minimum acceptable version is 3.90b (CMDS-222)
+1
+Checking vip:amba...
+Information:     The value of DESIGNWARE_HOME is /home/warehouse/erichter/silvia/SylviaDesignFlow/DESIGNWARE_HOME (CMDS-222)
+Information:     The VIP component is amba (CMDS-222)
+Information:     The version of amba is J-2014.12 (CMDS-222)
+Information:     The minimum acceptable version is 6.51a (CMDS-222)
+1
+
+Checking Synthesis tools...
+============================
+
+Found dc_shell in your PATH
+
+Information: INFO for tool 'dc_shell': (CMDS-222)
+Information:     The value of SYNOPSYS is /project/linuxlab/synopsys/syncore (CMDS-222)
+Information:     The path to the tool is /project/linuxlab/synopsys/syncore/amd64/syn/bin/dc_shell (CMDS-222)
+Information:     The tool version is J-2014.09-SP5 (CMDS-222)
+Information:     The minimum acceptable version is 2011.09-SP5 (CMDS-222)
+1
+
+Checking C Compiler installation...
+====================================
+
