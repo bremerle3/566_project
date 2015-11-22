@@ -1,0 +1,65 @@
+#pragma vip(c054ffd1, 8eba94f9, 00000000, 00000506, "Jun 16 2014", "18:52:32")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/SsiRegAccess.vrh#4 $
+#ifndef SSIREGACCESS_VRH
+#define SSIREGACCESS_VRH
+
+#include "ApbRegAccess.vrh"
+#include "ParseDefines.vrh"
+
+#ifndef SSIREGACCESS_VR
+#define SSIREGACCESS_EXTERN extern
+#else
+#define SSIREGACCESS_EXTERN
+#endif
+
+//-: --------------------------------------------------------
+//-: CLASS       : SsiRegAccess
+//-:
+//-: DESCRIPTION : This class is used to access all of the
+//-:               software registers in this APB macrocell.
+//-:
+//-:               This Class extends the ApbRegAccess Class
+//-:
+//-: --------------------------------------------------------
+SSIREGACCESS_EXTERN class SsiRegAccess extends ApbRegAccess
+{
+
+#ifdef SSIREGACCESS_VR
+  
+  local ParseDefines      m_cc       ;
+  local bit [31:0]        m_base_addr;
+
+#endif /* SSIREGACCESS_VR */
+
+  //-: new constructor
+  public task new (
+    ParseDefines cc,
+    AhbMaster    ahb_mst,
+    bit [31:0]   base_addr,
+    bit [31:0]   apb_slv_bfm_addr,
+    integer      apb_dbw
+    );
+
+#ifdef SSIREGACCESS_VR
+
+  local task register_info();
+
+#endif /* SSIREGACCESS_VR */
+
+}
+
+#endif /* SSIREGACCESS_VRH */

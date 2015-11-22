@@ -1,0 +1,205 @@
+#pragma vip(3ba7baaa, 5194d41a, 00000000, 0000121a, "Jun 16 2014", "18:52:37")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/SsiSlvBfm.vrh#6 $
+#ifndef SSISLVBFM_VRH
+#define SSISLVBFM_VRH
+
+//#include <vera_defines.vrh>
+#include "SsiBaseBfm.vrh"
+
+#ifndef SSISLVBFM_VR
+#define SSISLVBFM_EXTERN extern
+#else
+#define SSISLVBFM_EXTERN
+#endif
+
+port SsiSlvPort
+{
+  ssi_clk;
+  sclk;
+  ss;
+  din;
+  dout;
+}
+
+// Used by Sampler
+SSISLVBFM_EXTERN class SsiSlvInputs
+{
+  public bit   ss;
+  public bit   din;
+  public bit   sclk;
+}
+
+// Used by driver
+SSISLVBFM_EXTERN class SsiSlvOutputs
+{
+  public bit   dout;
+}
+
+// Used by sampler
+SSISLVBFM_EXTERN class SsiSlvFevent
+{
+  public fevent assert_oe      = new;
+  public fevent clear_oe       = new;
+  public fevent pop_tx         = new;
+  public fevent push_rx        = new;
+  public fevent shift_tx       = new;
+  public fevent shift_rx       = new;
+  public fevent pop_push       = new;
+  public fevent xfer_finish    = new;
+  public fevent handshake      = new;
+  public fevent check_tx_empty = new;
+}
+
+// Used by sampler
+SSISLVBFM_EXTERN class SsiSlvStatus
+{
+  public SsiState fsm = Idle;
+}
+
+// Used by driver
+SSISLVBFM_EXTERN class SsiSlvBuf
+{
+  public bit      [MAX_SIZE-1:0] data;
+  public integer         sim_time;
+}
+
+// ---------------------------------------
+// : SSI Slave BFM - Sampler Class
+// ---------------------------------------
+SSISLVBFM_EXTERN class SsiSlvSampler extends SsiBaseBfm
+{
+  
+#ifdef SSISLVBFM_VR
+   local SsiSlvStatus       m_bus_s  = new;
+   local integer            bit_cnt;
+#endif /* SSISLVBFM_VR */
+// jduarte begin
+// CRM_9000387130
+   protected bit            m_tx_empty;
+// jduarte end
+   protected integer        m_fsm_lock;
+   protected integer        num_words;
+   protected integer        m_ctrlwd;
+   protected SsiSlvPort     m_port;
+   protected SsiSlvInputs   m_iv     = new;
+   protected SsiSlvFevent   m_bus_fe = new;
+   public task new(
+      integer        Id,
+      string         ObjName,
+      integer        FileHandle,
+      SsiSlvPort     slv_port
+      );
+   
+#ifdef SSISLVBFM_VR
+   local task Daemon();
+   local task InfiniteLoop(integer protocol_type);
+   local task SampleInputs();
+   local task GenBusEvents();
+   local task ResetFlags();
+#endif /* SSISLVBFM_VR */
+} 
+
+// ---------------------------------------
+// : SSI Slave BFM - Driver Class
+// ---------------------------------------
+SSISLVBFM_EXTERN class SsiSlvDriver extends SsiSlvSampler
+{
+#ifdef SSISLVBFM_VR
+  local bit [MAX_SIZE-1:0] tx_shift_reg;
+  local bit [MAX_SIZE-1:0] rx_shift_reg;
+  local integer    tx_index;
+  local integer    rx_index;
+  local integer    m_bit_cnt;
+  local integer    oe_status;
+  local integer    m_drive_zero;
+  local integer    m_drive_one;
+#endif /* SSISLVBFM_VR */
+  protected SsiSlvOutputs   m_ov      = new;
+  protected SsiSlvBuf       m_tx_buf[];
+  protected SsiSlvBuf       m_rx_buf[];
+  protected SsiSlvBuf       m_exp_buf[];
+
+  public task new(
+    integer    Id,
+    string     ObjName,
+    integer    FileHandle,
+    SsiSlvPort slv_port
+    );
+
+  public task load_tx_buf(
+    bit     [MAX_SIZE-1:0] data,
+    integer        index
+    );
+  public task get_tx_buf(
+    integer        index,
+    bit     [MAX_SIZE-1:0] exp_data,
+    var bit [MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task load_rx_buf(
+    bit     [MAX_SIZE-1:0] data,
+    integer        index
+    );
+  public task get_rx_buf(
+    integer        index,
+    bit     [MAX_SIZE-1:0] exp_data,
+    var bit [MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task dump_tx_buf();
+  public task dump_rx_buf();
+  public task flush_tx_buf();
+  public task flush_rx_buf();
+
+#ifdef SSISLVBFM_VR
+  local task Daemon();
+  local task OperationLoop();
+  local task DriveOutput();
+  local task WaitBusEvents();
+  local task PushRx();
+  local task PopTx();
+  local task PopPush();
+  local task ShiftTx();
+  local task ShiftRx();
+  local task AssertOe();
+  local task ClearOe();
+  local task XferFinish();
+  local task HandShake();
+  local task AutoCheck(integer index);
+// jduarte begin
+// CRM_9000387130
+  local task CheckTxEmpty();
+// jduarte end
+#endif /* SSISLVBFM_VR */
+}
+
+
+// ---------------------------------------
+// : SSI Slave BFM - Driver Class
+// ---------------------------------------
+SSISLVBFM_EXTERN class SsiSlvBfm extends SsiSlvDriver
+{
+  public task new(
+      integer     Id,
+      string      ObjName,
+      integer     FileHandle,
+      SsiSlvPort  bus_port
+      );
+} 
+#endif /* SSISLVBFM_VRH */

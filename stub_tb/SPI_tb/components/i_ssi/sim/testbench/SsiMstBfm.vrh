@@ -1,0 +1,223 @@
+#pragma vip(cff3d55a, 6c21ecb6, 00000000, 000013b1, "Jun 16 2014", "18:52:28")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/SsiMstBfm.vrh#5 $
+// Abstract: Header file for Synchronous Serial Interface Master BFM
+
+#ifndef SSIMSTBFM_VRH
+#define SSIMSTBFM_VRH
+
+//#include <vera_defines.vrh>
+#include "SsiBaseBfm.vrh"
+
+#ifndef SSIMSTBFM_VR
+#define SSIMSTBFM_EXTERN extern
+#else
+#define SSIMSTBFM_EXTERN
+#endif
+
+port SsiMstPort
+{
+  sclk_out;
+  dout;
+  din;
+  ss_n;
+  ssi_clk;
+}
+
+// Used by Sampler
+SSIMSTBFM_EXTERN class SsiMstInputs
+{
+  public bit   ssi_clk;
+  public bit   din;
+}
+
+// Used by driver
+SSIMSTBFM_EXTERN class SsiMstOutputs
+{
+  public bit        dout;
+  public bit        sclk_out;
+  public bit        ss_n;
+}
+
+// Used by sampler
+SSIMSTBFM_EXTERN class SsiMstFevent
+{
+  public fevent ssp_start   = new;
+  public fevent assert_oe   = new;
+  public fevent clear_oe    = new;
+  public fevent ssp_finish  = new;
+  public fevent pop_tx      = new;
+  public fevent push_rx     = new;
+  public fevent shift_tx    = new;
+  public fevent shift_rx    = new;
+  public fevent pop_push    = new;
+  public fevent mask_sclk   = new;
+}
+
+// Used by sampler
+SSIMSTBFM_EXTERN class SsiMstStatus
+{
+  public SsiState fsm = Idle;
+}
+
+// Used by driver
+SSIMSTBFM_EXTERN class SsiMstBuf
+{
+  public bit      [MAX_SIZE-1:0] data;
+  public integer         sim_time;
+}
+
+// ---------------------------------------
+// : SSI Master BFM - Sampler Class
+// ---------------------------------------
+SSIMSTBFM_EXTERN class SsiMstSampler extends SsiBaseBfm
+{
+  
+#ifdef SSIMSTBFM_VR
+   local SsiMstStatus       m_bus_s  = new;
+   
+   local integer            m_start_xfer;
+   
+#endif /* SSIMSTBFM_VR */
+   protected SsiMstPort     m_port;
+   protected SsiMstInputs   m_iv     = new;
+   protected SsiMstFevent   m_bus_fe = new;
+   protected bit            m_sclk;
+   protected integer        m_busy;
+   protected integer        m_num_xfers;
+   protected integer        m_sclk_en;
+   protected integer        m_bit_cnt;
+   protected integer        m_ctrlwd;
+   public task new(
+      integer        Id,
+      string         ObjName,
+      integer        FileHandle,
+      SsiMstPort     mst_port
+      );
+   
+   public task start_xfer(integer num_xfers, (integer block = 1));
+
+   protected task MaskSclk();
+   protected task UnMaskSclk();
+   
+#ifdef SSIMSTBFM_VR
+   local task Daemon();
+   local task ClkGen();
+   local task InfiniteLoop();
+   local task ExecuteXfer();
+   local task SampleInputs();
+   local task GenBusEvents();
+   local task ResetFlags();
+#endif /* SSIMSTBFM_VR */
+} 
+
+// ---------------------------------------
+// : SSI Master BFM - Driver Class
+// ---------------------------------------
+SSIMSTBFM_EXTERN class SsiMstDriver extends SsiMstSampler
+{
+#ifdef SSIMSTBFM_VR
+  local bit [MAX_SIZE-1:0] tx_shift_reg;
+  local bit [MAX_SIZE-1:0] rx_shift_reg;
+  local integer tx_index;
+  local integer rx_index;
+  local integer bit_cnt;
+  local integer oe_status;
+  
+  local integer slv_sel_en;
+#endif /* SSIMSTBFM_VR */
+  protected SsiMstOutputs   m_ov      = new;
+  protected SsiMstBuf       m_tx_buf[];
+  protected SsiMstBuf       m_rx_buf[];
+  protected SsiMstBuf       m_exp_buf[];
+
+  public task new(
+    integer    Id,
+    string     ObjName,
+    integer    FileHandle,
+    SsiMstPort mst_port
+    );
+
+  public task load_tx_buf(
+    bit     [MAX_SIZE-1:0] data,
+    integer        index
+    );
+  public task get_tx_buf(
+    integer        index,
+    bit     [MAX_SIZE-1:0] exp_data,
+    var bit [MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task get_ctrl_buf(
+    integer        index,
+    bit     [MAX_SIZE-1:0] exp_data,
+    var bit [MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task load_rx_buf(
+    bit     [MAX_SIZE-1:0] data,
+    integer        index
+    );
+  public task get_rx_buf(
+    integer        index,
+    bit     [MAX_SIZE-1:0] exp_data,
+    var bit [MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task dump_tx_buf();
+  public task dump_rx_buf();
+  public task flush_tx_buf();
+  public task flush_rx_buf();
+
+  
+
+#ifdef SSIMSTBFM_VR
+  local task Daemon();
+  local task DriveDout();
+  local task DriveSs();
+  local task DriveSclk();
+  local task OperationLoop();
+  local task WaitBusEvents();
+  local task SspStart();
+  local task PushRx();
+  local task PopTx();
+  local task PopPush();
+  local task ShiftTx();
+  local task ShiftRx();
+  local task AssertOe();
+  local task ClearOe();
+  local task SspFinish();
+  local task AutoCheck(integer index);
+#endif /* SSIMSTBFM_VR */
+}
+
+
+// ---------------------------------------
+// : SSI Master BFM - Driver Class
+// ---------------------------------------
+SSIMSTBFM_EXTERN class SsiMstBfm extends SsiMstDriver
+{
+  public task new(
+      integer     Id,
+      string      ObjName,
+      integer     FileHandle,
+      SsiMstPort  bus_port
+      );
+} 
+#endif /* SSIMSTBFM_VRH */

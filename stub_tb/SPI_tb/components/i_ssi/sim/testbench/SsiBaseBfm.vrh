@@ -1,0 +1,127 @@
+#pragma vip(394855c1, 280e6da4, 00000000, 00000b90, "Jun 16 2014", "18:52:20")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/SsiBaseBfm.vrh#6 $
+#ifndef SSIBASEBFM_VRH
+#define SSISBASEBFM_VRH
+
+#include <vera_defines.vrh>
+#include "Reporter.vrh"
+
+#ifndef SSIBASEBFM_VR
+#define SSIBASEBFM_EXTERN extern
+#else
+#define SSIBASEBFM_EXTERN
+#endif
+
+// jduarte begin
+// CRM 9000387130
+// enum SsiConfigs  = FrameSize, FrameFormat, AutoCheck, TxOutEnable,
+//                    InSkew, SCPH, SCPOL, SlvSel, SclkDiv, XferMode,
+//                    MWCtrlSize, MWDataDir, MWSeqMode, NumFrames, MWHandShake;
+
+enum SsiConfigs  = FrameSize, FrameFormat, AutoCheck, TxOutEnable,
+                   InSkew, SCPH, SCPOL, SlvSel, SclkDiv, XferMode,
+                   MWCtrlSize, MWDataDir, MWSeqMode, NumFrames, MWHandShake,
+		   Spi0SsToggle, MaxFrameSize;
+
+// jduarte end
+
+enum SsiState    = Idle, PopTx, Capture, Shift, PopPush, PushRx,
+                   ClearOe, AssertOe, ToggleOe, Receive, Transmit;
+
+
+// ---------------------------------------
+// : SSI BFM - fevent Class
+// ---------------------------------------
+SSIBASEBFM_EXTERN class fevent
+{
+   public event   e;
+   public integer f;
+   public string  name;
+   public task    new((string name = ""));
+   public task    ftrigger(integer ttype = ONE_SHOT);
+}
+
+
+// ---------------------------------------
+// : SSI BFM - SsiSlvConfigs Class
+// ---------------------------------------
+SSIBASEBFM_EXTERN class SsiConfig
+{
+  public integer        frame_size;
+  public integer        cfs;
+  public integer        mw_dd;
+  public integer        mw_seq_mode;
+  public integer        ndf;
+  public integer        mw_hs;
+  public integer        frame_format;
+  public integer        auto_check;
+  public integer        tx_oe;
+  public integer        in_skew;
+  public integer        scph;
+  public integer        scpol;
+  public integer        tmod;
+  public integer        max_frame_size;
+
+// jduarte begin
+// CRM 9000387130
+
+  public integer        spi0sstoggle;
+
+// jduarte end
+
+  public bit     [15:0] slv_select;
+  public bit     [15:0] baud_rate;
+  
+  public task new();
+}
+
+
+// ---------------------------------------
+// : SSI BFM - Base Class
+// ---------------------------------------
+#define MAX_SIZE 32
+
+SSIBASEBFM_EXTERN class SsiBaseBfm
+{
+  
+  protected SsiConfig       m_cv = new;
+  protected Reporter        log;
+  protected integer         kill_app;
+  protected integer         start_app;
+  
+  public task new( integer Id, string ObjName, integer FileHandle );
+
+  public task configure( SsiConfigs ctype, integer value);
+
+  public task slave_select(bit slv_sel);
+
+  public task set_baud_rate(bit [15:0] baud_rate);
+
+  public task dump_configs();
+
+  public task Start();
+
+  public task Stop();
+
+  public task Kill();
+
+  public task set_report_level(ReportLevel SetLevel);
+
+  protected task kill_sim();
+  
+}
+#endif /* SSIBASEBFM_VRH */

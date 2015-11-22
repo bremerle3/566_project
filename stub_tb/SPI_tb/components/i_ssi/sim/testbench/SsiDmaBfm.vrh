@@ -1,0 +1,259 @@
+#pragma vip(513b2097, aa13bfc4, 00000000, 000018eb, "Jun 16 2014", "18:52:24")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/SsiDmaBfm.vrh#5 $
+// Abstract: DMA BFM to mimic the DMA controller on the AMBA AHB Bus
+#ifndef SSIDMABFM_VRH
+#define SSIDMABFM_VRH
+
+#include "Reporter.vrh"
+#include "ParseDefines.vrh"
+#include "AhbMaster.vri"
+#include "amba_defines.vri"
+
+#ifndef SSIDMABFM_VR
+#define SSIDMABFM_EXTERN extern
+#else
+#define SSIDMABFM_EXTERN
+#endif
+
+#define DMA_MAX_SIZE 32
+
+enum SsiDmaConfigs = DmaNumFrames, DmaFrameSize, DmaCh1BurstSize, DmaCh2BurstSize,
+                     DmaCh1Priority, DmaCh2Priority, DmaAutoCheck, DmaCh1DataLevel, DmaCh2DataLevel, DmaMaxFrameSize;
+
+port SsiDmaBfmPort
+{
+  pclk;
+  dma_ch1_req;
+  dma_ch2_req;
+  dma_ch1_single;
+  dma_ch2_single;
+  dma_ch1_ack;
+  dma_ch2_ack;
+}
+
+SSIDMABFM_EXTERN class SsiDmaConfig
+{
+  public integer        frame_size;
+  public integer        max_frame_size;
+  public integer        num_frames;
+  public integer        ch1_burst_size;
+  public integer        ch2_burst_size;
+  public integer        ch1_priority;
+  public integer        ch2_priority;
+  public integer        auto_check;
+  public integer        ch1_data_level;
+  public integer        ch2_data_level;
+  
+  public task new();
+}
+
+SSIDMABFM_EXTERN class dmaevent
+{
+   public event   e;
+   public integer f;
+   public string  name;
+   public task    new((string name = ""));
+   public task    ftrigger(integer ttype = ONE_SHOT);
+}
+
+// Used by Sampler
+SSIDMABFM_EXTERN class SsiDmaInputs
+{
+  public bit   ch1_req;
+  public bit   ch2_req;
+  public bit   ch1_single;
+  public bit   ch2_single;
+}
+
+// Used by driver
+SSIDMABFM_EXTERN class SsiDmaOutputs
+{
+  public bit        ch1_ack;
+  public bit        ch2_ack;
+}
+
+// Used by sampler
+SSIDMABFM_EXTERN class SsiDmaFevent
+{
+  public dmaevent ch1_request     = new;
+  public dmaevent ch2_request     = new;
+  public dmaevent ch2_single      = new;
+}
+
+// Used by driver
+SSIDMABFM_EXTERN class SsiDmaBuf
+{
+  public bit      [DMA_MAX_SIZE-1:0] data;
+  public integer         sim_time;
+}
+
+// ---------------------------------------
+// : SSI DMA BFM - Base Class
+// ---------------------------------------
+SSIDMABFM_EXTERN class SsiDmaBaseBfm
+{
+  protected ParseDefines    m_cc;
+  protected SsiDmaConfig    m_cv = new;
+  protected Reporter        log;
+  protected integer         kill_app;
+  protected integer         start_app;
+  
+  public task new( integer Id, string ObjName, integer FileHandle, ParseDefines cc);
+  public task configure( SsiDmaConfigs ctype, integer value);
+  public task dump_configs();
+  public task Start();
+  public task Stop();
+  public task Kill();
+  public task set_report_level(ReportLevel SetLevel);
+  protected task kill_sim();
+  
+}
+
+// ---------------------------------------
+// : SSI DMA BFM - Sampler Class
+// ---------------------------------------
+SSIDMABFM_EXTERN class SsiDmaSampler extends SsiDmaBaseBfm
+{
+   protected SsiDmaBfmPort  m_port;
+   protected SsiDmaInputs   m_iv     = new;
+   protected SsiDmaFevent   m_bus_fe = new;
+   protected integer        m_service;
+   
+   public task new(
+      integer        Id,
+      string         ObjName,
+      integer        FileHandle,
+      SsiDmaBfmPort  dma_port,
+      ParseDefines   cc
+      );
+   
+#ifdef SSIDMABFM_VR
+   local task Daemon();
+   local task InfiniteLoop();
+   local task SampleInputs();
+   local task GenBusEvents();
+   local task ResetFlags();
+#endif /* SSIDMABFM_VR */
+} 
+
+// ---------------------------------------
+// : SSI DMA BFM - Driver Class
+// ---------------------------------------
+SSIDMABFM_EXTERN class SsiDmaDriver extends SsiDmaSampler
+{
+#ifdef SSIDMABFM_VR
+  local AhbMaster           m_ahb_mst;
+  local integer             m_apb_dbw;
+  local integer             m_xfer_attr;
+  local integer             m_handle;
+  local integer             m_res_handle;
+  local integer             m_status;
+  local integer             m_size;
+  local integer             m_addr_inc;
+  local integer             m_num_left;
+
+  local AhbAddrType         m_addr;
+  local AhbDataType         m_hwdata;
+  local AhbDataType         m_hrdata;
+  local integer             m_hresp;
+
+  local integer             m_ch1_index;
+  local integer             m_ch2_index;
+  local bit [31:0]          DR_LOW_OS;
+  local bit [63:0]          ssi_base;
+  
+#endif /* SSIDMABFM_VR */
+  
+  protected SsiDmaOutputs   m_ov = new;
+  protected SsiDmaBuf       m_ch1_buf[];
+  protected SsiDmaBuf       m_ch2_buf[];
+  protected SsiDmaBuf       m_exp_buf[];
+
+  public task new(
+    integer       Id,
+    string        ObjName,
+    integer       FileHandle,
+    SsiDmaBfmPort dma_port,
+    AhbMaster     ahb_mst,
+    integer       apb_dbw,
+    bit [63:0]    ssi_base_addr,
+    ParseDefines  cc
+    );
+
+  public task load_ch1_buf(
+    bit     [DMA_MAX_SIZE-1:0] data,
+    integer        index
+    );
+  public task get_ch1_buf(
+    integer        index,
+    bit     [DMA_MAX_SIZE-1:0] exp_data,
+    var bit [DMA_MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task load_ch2_buf(
+    bit     [DMA_MAX_SIZE-1:0] data,
+    integer        index
+    );
+  public task get_ch2_buf(
+    integer        index,
+    bit     [DMA_MAX_SIZE-1:0] exp_data,
+    var bit [DMA_MAX_SIZE-1:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task dump_ch1_buf();
+  public task dump_ch2_buf();
+  public task flush_ch1_buf();
+  public task flush_ch2_buf();
+  public task fill_ssi_tx_fifo();
+
+  
+
+#ifdef SSIDMABFM_VR
+  local task Daemon();
+  local task OperationLoop();
+  local task WaitBusEvents();
+  local task Ch1Request();
+  local task Ch2Request();
+  local task Ch2Single();
+  local task Ch1Ack();
+  local task Ch2Ack();
+  local task AutoCheck(integer index);
+  local task push_ch2_buf();
+  local task mstcmd(string cmd);
+#endif /* SSIDMABFM_VR */
+}
+
+
+// ---------------------------------------
+// : SSI DMA BFM - Top Class
+// ---------------------------------------
+SSIDMABFM_EXTERN class SsiDmaBfm extends SsiDmaDriver
+{
+  public task new(
+    integer        Id,
+    string         ObjName,
+    integer        FileHandle,
+    SsiDmaBfmPort  dma_port,
+    AhbMaster      ahb_mst,
+    integer        apb_dbw,
+    bit [63:0]     ssi_base_addr,
+    ParseDefines   cc
+    );
+} 
+#endif /* SSIDMABFM_VRH */

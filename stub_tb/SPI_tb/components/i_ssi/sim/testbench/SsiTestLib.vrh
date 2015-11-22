@@ -1,0 +1,163 @@
+#pragma vip(b7a43847, d73e6c39, 00000000, 000011d0, "Jun 16 2014", "18:52:41")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_ssi/amba_dev/sim/testbench/SsiTestLib.vrh#7 $
+// Abstract: Header file for the ABP SSI peripheral test library
+#ifndef SSITESTLIB_VRH
+#define SSITESTLIB_VRH
+
+#include "AhbApbSsiTestHarness.vrh"
+#include "SsiRegAccess.vrh"
+
+#ifndef SSITESTLIB_VR
+#define SSITESTLIB_EXTERN extern
+#else
+#define SSITESTLIB_EXTERN
+#endif
+
+SSITESTLIB_EXTERN class SsiTestLib
+{
+   
+#ifdef SSITESTLIB_VR
+
+  local AhbApbSsiTestHarness         m_th;
+  local Reporter                     m_log;
+  local SsiRegAccess                 m_mst;
+  local ParseDefines                 m_cc;
+
+  local integer                      m_tx_fifo_depth;
+  local integer                      m_rx_fifo_depth;
+  local integer                      m_min_fifo_depth;
+  local integer                      m_num_slv;
+  local integer                      m_apb_dbw;
+
+  local string                       msg;
+
+  local integer                      m_normal_fifo_fill; // www.joe Apr 2009
+  local integer                      m_cfs;
+  local integer                      m_srl;
+  local integer                      m_slv_oe;
+  local integer                      m_tmod;
+  local integer                      m_scpol;
+  local integer                      m_scph;
+// jduarte begin
+// CRM 9000387130
+  local integer                      m_spi0sstoggle;
+// jduarte end
+  local integer                      m_frf;
+  local integer                      m_dfs;
+  local integer                      m_dd;
+  local integer                      m_mwmode;
+  local integer                      m_mwhs;
+  local integer                      m_over_ride;
+  local integer                      m_slv_num;
+  local integer                      m_ndf;
+  local integer                      m_baud;
+  local integer                      r_ndf;
+  local integer                      m_txe;
+  local integer                      m_txe_status;
+  local integer                      m_mst_status;
+  local integer                      m_fifo_exceed;
+  local integer                      m_return_early;
+  local integer                      m_dma_enable;
+  local integer                      m_ctrl_only;
+  local bit [31:0]                   tx_data[];
+  local integer                      num_tx_frames;
+  local integer                      m_mfs;
+  local integer                      m_sclkval;
+
+#endif /* SSITESTLIB_VR */
+
+  public task new(AhbApbSsiTestHarness th);
+  public task test_apbif();
+  public task test_reg_function();
+  public task test_interrupts();
+  public task test_dma_xfers();
+  public task test_serial_xfers();
+  public task code_cov();
+  
+#ifdef SSITESTLIB_VR
+
+  local task drive_reset();
+  local task reset_fifo();
+  local task check_intr(string intr, integer level);
+  local task illegal_fifo_write(
+    string  reg_name,
+    integer fifo_depth
+  );
+  local task illegal_reg_write(
+    string     reg_name,
+    string     test,
+    bit [31:0] wdata,
+    bit [31:0] expdata
+    );
+  local task report_error(
+    string  reg_name,
+    string  test,
+    (string xtra="")
+   );
+  local task test_write_read_reg();
+  local task set_default_xfer(
+    integer  ndf
+  );
+  local task run_serial_xfer(
+    (integer bfm_check=1),
+    (integer test_check=1),
+    (integer log=1),
+    (bit [31:0] wdata=32'bx)
+  );
+  local task run_mst_xfer(
+    integer bfm_check,
+    integer test_check,
+    integer log,
+    (bit [31:0] data=32'bx)
+  );
+  local task run_slv_xfer(
+    integer bfm_check,
+    integer test_check,
+    integer log,
+    (bit [31:0] data=32'bx)
+  );
+  local task write_ctrlr0();
+  local task log_xfer();
+  local task config_slv_bfm(
+    integer bfm_check
+  );
+  local task config_mst_bfm(
+    integer bfm_check
+  );
+  local task check_mst_xfer((integer index=-1));
+  local task check_slv_xfer((integer index=-1));
+  local task check_ctrl(integer loop, (integer index=-1));
+  local task get_xfer_size();
+  local task set_random_xfer();
+  local task test_spi(integer num_xfers);
+  local task test_mwire(integer num_xfers);
+  local task test_ssp(integer num_xfers);
+  local task run_continuous_xfer();
+  local task kill_sim();
+  local task test_clk_removal();
+  local task spi_tx_write_test();
+  local task ssp_tx_write_test();
+  local task mwire_tx_write_test();
+  local task spi_eeprom_page_read(integer num_ctrl);
+
+  local task test_spi_distributed_tx_fifo_push(); // www.joe: Apr 2009
+  
+#endif /* SSITESTLIB_VR */
+
+}
+
+#endif /* SSITESTLIB_VRH */
