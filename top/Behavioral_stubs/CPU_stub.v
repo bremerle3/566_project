@@ -3,7 +3,8 @@
 // Authors: Luke Kirchner
 // Date: 11/21/1015
 //
-// Description: 
+// Description: Dummy CPU that transfers the temperature to the SPI Master according to the SPI interface
+//		This interface cycles the values on the slave and the master 1 bit at a time until their values have been switched.
 //
 // Status: 
 //
@@ -23,27 +24,37 @@ input                   i_ssi_ssi_rxu_intr_n,
 input                   i_ssi_ssi_sleep,
 input                   i_ssi_ssi_txe_intr_n,
 input                   i_ssi_ssi_txo_intr_n,
-input                   i_ssi_txd
+input                   i_ssi_txd,
+
+output          	i_ssi_rxd,
+output          	i_ssi_ss_in_n,
+output          	i_ssi_ssi_clk,
+output         		i_ssi_ssi_rst_n
 );
 
 //------------------------------------------------------------------------------
 // Internal Signals/Registers
 //------------------------------------------------------------------------------
-register temp [0:15];
+reg temp = 16'b1111111111001110;
+reg count1 = 5'b00000;
+
 
 //------------------------------------------------------------------------------
 // Behavior processes
 //------------------------------------------------------------------------------
 always @(posedge i_ssi_sclk_out) begin
 	//send fake temps
-	if( RECIEVE_SPI_SIG)
-		SPI_OUT <= temp;
+	if( i_ssi_ss_0_n && count1 < 5'b10000)
+		i_ssi_rxd <= temp(0);
+		temp(15) <= i_ssi_txd;
 	end
+	count1 <= count1+5'b00001;
 end 
-
+/*
 always @(posedge i_ssi_sclk_out) begin
 	//generate fake temperatures
-	temp <= temp + rand();
+	temp <= 16'b1111111111001110;
 end 
-
+*/
+endmodule
 
