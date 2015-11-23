@@ -10,4 +10,5 @@ File directory structure
     workloads/  <---  Contains C and HLS code for our accelerators
         workload_PID/
         workload_PWM/
+            /hls_pwm/solution_pwm/sim/report/gen_pwm_cosim.rpt
 
