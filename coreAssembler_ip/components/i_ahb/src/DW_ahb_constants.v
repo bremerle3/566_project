@@ -66,12 +66,12 @@
 
 
 // Name:         NUM_INT_MASTERS
-// Default:      2 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 
+// Default:      4 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 
 //               -1])
 // Values:       2, ..., 16
 // 
 // Internal Master PortCount
-`define NUM_INT_MASTERS 2
+`define NUM_INT_MASTERS 4
 
 
 // Name:         NUM_INT_SLAVES
@@ -93,48 +93,48 @@
 
 
 // Name:         HTRANSBUS_WIDTH
-// Default:      4 ([<functionof> * ([<functionof> + 
+// Default:      8 ([<functionof> * ([<functionof> + 
 //               work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 -1]) 2 -1])
 // Values:       2, ..., 32
 // 
 // Internal HTRANS Bus Width
-`define HTRANSBUS_WIDTH 4
+`define HTRANSBUS_WIDTH 8
 
 
 // Name:         HSIZEBUS_WIDTH
-// Default:      6 ([<functionof> * ([<functionof> + 
+// Default:      12 ([<functionof> * ([<functionof> + 
 //               work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 -1]) 3 -1])
 // Values:       3, ..., 48
 // 
 // HSIZE Address Bus Width
-`define HSIZEBUS_WIDTH 6
+`define HSIZEBUS_WIDTH 12
 
 
 // Name:         HBURSTBUS_WIDTH
-// Default:      6 ([<functionof> * ([<functionof> + 
+// Default:      12 ([<functionof> * ([<functionof> + 
 //               work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 -1]) 3 -1])
 // Values:       3, ..., 48
 // 
 // HBURST Address Bus Width
-`define HBURSTBUS_WIDTH 6
+`define HBURSTBUS_WIDTH 12
 
 
 // Name:         HPROTBUS_WIDTH
-// Default:      8 ([<functionof> * ([<functionof> + 
+// Default:      16 ([<functionof> * ([<functionof> + 
 //               work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 -1]) 4 -1])
 // Values:       4, ..., 96
 // 
 // HPROT Address Bus Width
-`define HPROTBUS_WIDTH 8
+`define HPROTBUS_WIDTH 16
 
 
 // Name:         HWRITEBUS_WIDTH
-// Default:      2 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 
+// Default:      4 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS 1 
 //               -1])
 // Values:       1, ..., 16
 // 
 // HWRITE Address Bus Width
-`define HWRITEBUS_WIDTH 2
+`define HWRITEBUS_WIDTH 4
 
 
 // Name:         HREADY_WIDTH
@@ -165,12 +165,12 @@
 
 
 // Name:         HSPLIT_BUSWIDTH
-// Default:      2 ([<functionof> * work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 
+// Default:      4 ([<functionof> * work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 
 //               NUM_INT_MASTERS -1])
 // Values:       -2147483648, ..., 2147483647
 // 
 // HWRITE Address Bus Width
-`define HSPLIT_BUSWIDTH 2
+`define HSPLIT_BUSWIDTH 4
 
 
 // Name:         BUS_AHB_CCL_WIDTH
@@ -183,12 +183,12 @@
 
 
 // Name:         AHB_CCL_BUS_WIDTH
-// Default:      32 ([<functionof> * work.DW_ahb_cc_constants.v.AHB_CCL_WIDTH 
+// Default:      96 ([<functionof> * work.DW_ahb_cc_constants.v.AHB_CCL_WIDTH 
 //               work.DW_ahb_cc_constants.v.NUM_AHB_MASTERS -1])
 // Values:       -2147483648, ..., 2147483647
 // 
 // Required bus width for icl bus.
-`define AHB_CCL_BUS_WIDTH 32
+`define AHB_CCL_BUS_WIDTH 96
 
 `define NC_NB_NP_O  4'b0000
 `define NC_NB_NP_D  4'b0001

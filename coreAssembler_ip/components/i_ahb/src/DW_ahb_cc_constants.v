@@ -83,10 +83,10 @@
 // master or the only existing master. The dummy master is the master  
 // who owns the bus when no one wants it. 
 // There can be up to 15 masters connected to the DW_ahb.
-`define NUM_AHB_MASTERS 1
+`define NUM_AHB_MASTERS 3
 
 
-`define LOG2_NUM_INT_MASTERS 1
+`define LOG2_NUM_INT_MASTERS 2
 
 
 // Name:         HADDR_WIDTH

@@ -60,12 +60,18 @@ module test_DW_ahb;
 
   assign abus_hbusreq[0] = 1'b0;
   assign abus_hbusreq[1] = U_ahb.hbusreq_m1;
+  assign abus_hbusreq[2] = U_ahb.hbusreq_m2;
+  assign abus_hbusreq[3] = U_ahb.hbusreq_m3;
 
   assign abus_hlock[0] = 1'b0;
   assign abus_hlock[1] = U_ahb.hlock_m1;
+  assign abus_hlock[2] = U_ahb.hlock_m2;
+  assign abus_hlock[3] = U_ahb.hlock_m3;
 
-  assign abus_hgrant[0] = ~(|abus_hgrant[1:1]);
+  assign abus_hgrant[0] = ~(|abus_hgrant[3:1]);
   assign abus_hgrant[1] = U_ahb.hgrant_m1;
+  assign abus_hgrant[2] = U_ahb.hgrant_m2;
+  assign abus_hgrant[3] = U_ahb.hgrant_m3;
 
   assign abus_hsel[0] = 1'b0;
   assign abus_hsel[1] = (U_ahb.hsel_s1 === 1'b1) ? 1'b1 : 1'b0;

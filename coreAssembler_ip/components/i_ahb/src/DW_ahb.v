@@ -65,6 +65,26 @@ module i_ahb_DW_ahb (
                hwdata_m1,
                hwrite_m1,
                hgrant_m1,
+               haddr_m2,
+               hburst_m2,
+               hbusreq_m2,
+               hlock_m2,
+               hprot_m2,
+               hsize_m2,
+               htrans_m2,
+               hwdata_m2,
+               hwrite_m2,
+               hgrant_m2,
+               haddr_m3,
+               hburst_m3,
+               hbusreq_m3,
+               hlock_m3,
+               hprot_m3,
+               hsize_m3,
+               htrans_m3,
+               hwdata_m3,
+               hwrite_m3,
+               hgrant_m3,
                hsel_s1,
                hready_resp_s1,
                hresp_s1,
@@ -98,8 +118,8 @@ module i_ahb_DW_ahb (
   parameter INT_R1_N_EA_2 = 32'ha00ffff;
 
   // derived parameters
-  parameter ADDRBUS_WIDTH = 64;
-  parameter DATABUS_WIDTH = 64;
+  parameter ADDRBUS_WIDTH = 128;
+  parameter DATABUS_WIDTH = 128;
   parameter HRDATABUS_WIDTH = 64;
 
   input                          hclk;
@@ -116,6 +136,30 @@ module i_ahb_DW_ahb (
   input [  `AHB_DATA_WIDTH-1:0]     hwdata_m1;
   input                          hwrite_m1;
   output                         hgrant_m1;
+
+// Master #2 AHB signals
+  input [  `HADDR_WIDTH-1:0]        haddr_m2;
+  input                          hbusreq_m2;
+  input [  `HBURST_WIDTH-1:0]      hburst_m2;
+  input                          hlock_m2;
+  input [  `HPROT_WIDTH-1:0]       hprot_m2;
+  input [  `HSIZE_WIDTH-1:0]       hsize_m2;
+  input [  `HTRANS_WIDTH-1:0]      htrans_m2;
+  input [  `AHB_DATA_WIDTH-1:0]     hwdata_m2;
+  input                          hwrite_m2;
+  output                         hgrant_m2;
+
+// Master #3 AHB signals
+  input [  `HADDR_WIDTH-1:0]        haddr_m3;
+  input                          hbusreq_m3;
+  input [  `HBURST_WIDTH-1:0]      hburst_m3;
+  input                          hlock_m3;
+  input [  `HPROT_WIDTH-1:0]       hprot_m3;
+  input [  `HSIZE_WIDTH-1:0]       hsize_m3;
+  input [  `HTRANS_WIDTH-1:0]      htrans_m3;
+  input [  `AHB_DATA_WIDTH-1:0]     hwdata_m3;
+  input                          hwrite_m3;
+  output                         hgrant_m3;
 
 // Slave #1 AHB signals
   input                          hready_resp_s1;
@@ -219,6 +263,30 @@ module i_ahb_DW_ahb (
   assign bus_hbusreq[1] = hbusreq_m1;
   assign hgrant_m1 = bus_hgrant[1];
   assign bus_hlock[1] = hlock_m1;
+
+  assign bus_haddr[(  `HADDR_WIDTH*3)-1:(  `HADDR_WIDTH*2)] = haddr_m2;
+  assign bus_htrans[5:4] = htrans_m2;
+  assign bus_hburst[8:6] = hburst_m2;
+  assign bus_hsize[8:6] = hsize_m2;
+  assign bus_hprot[11:8] = hprot_m2;
+  assign bus_hwrite[2] = hwrite_m2;
+  assign bus_hwdata[(  `AHB_DATA_WIDTH*3)-1:(  `AHB_DATA_WIDTH*2)] = hwdata_m2;
+
+  assign bus_hbusreq[2] = hbusreq_m2;
+  assign hgrant_m2 = bus_hgrant[2];
+  assign bus_hlock[2] = hlock_m2;
+
+  assign bus_haddr[(  `HADDR_WIDTH*4)-1:(  `HADDR_WIDTH*3)] = haddr_m3;
+  assign bus_htrans[7:6] = htrans_m3;
+  assign bus_hburst[11:9] = hburst_m3;
+  assign bus_hsize[11:9] = hsize_m3;
+  assign bus_hprot[15:12] = hprot_m3;
+  assign bus_hwrite[3] = hwrite_m3;
+  assign bus_hwdata[(  `AHB_DATA_WIDTH*4)-1:(  `AHB_DATA_WIDTH*3)] = hwdata_m3;
+
+  assign bus_hbusreq[3] = hbusreq_m3;
+  assign hgrant_m3 = bus_hgrant[3];
+  assign bus_hlock[3] = hlock_m3;
 
   //leda NTL_CON16 off 
   //LMD: Nets or cell pins should not be tied to logic 0 / logic 1 
