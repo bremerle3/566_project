@@ -300,11 +300,11 @@
 // of the addressing modes there can be 15 assigned 
 // slaves. If there is only one addressing mode, then 
 // this is the number of slaves in the system.
-`define NUM_IAHB_SLAVES 1
+`define NUM_IAHB_SLAVES 2
 
 
 // Name:         NUM_NAHB_SLAVES
-// Default:      1 (NUM_IAHB_SLAVES)
+// Default:      2 (NUM_IAHB_SLAVES)
 // Values:       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 // Enabled:      REMAP == 1 && [<functionof> AHB_HAS_XDCDR]
 // 
@@ -313,7 +313,7 @@
 // visibility. Slaves can be visible in both Normal and 
 // Boot modes. This parameter option is active only if 
 // you enable the Memory Remap Feature.
-`define NUM_NAHB_SLAVES 1
+`define NUM_NAHB_SLAVES 2
 
 
 // Name:         NUM_BAHB_SLAVES

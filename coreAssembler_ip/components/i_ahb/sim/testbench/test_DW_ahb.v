@@ -75,6 +75,7 @@ module test_DW_ahb;
 
   assign abus_hsel[0] = 1'b0;
   assign abus_hsel[1] = (U_ahb.hsel_s1 === 1'b1) ? 1'b1 : 1'b0;
+  assign abus_hsel[2] = (U_ahb.hsel_s2 === 1'b1) ? 1'b1 : 1'b0;
 
 
 

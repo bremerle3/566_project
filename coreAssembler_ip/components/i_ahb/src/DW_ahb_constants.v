@@ -75,21 +75,21 @@
 
 
 // Name:         NUM_INT_SLAVES
-// Default:      2 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 1 
+// Default:      3 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 1 
 //               -1])
 // Values:       2, ..., 31
 // 
 // Internal Master PortCount
-`define NUM_INT_SLAVES 2
+`define NUM_INT_SLAVES 3
 
 
 // Name:         HRESPBUS_WIDTH
-// Default:      4 ([<functionof> * ([<functionof> + 
+// Default:      6 ([<functionof> * ([<functionof> + 
 //               work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 1 -1]) 2 -1])
 // Values:       2, ..., 62
 // 
 // Internal HTRANS Bus Width
-`define HRESPBUS_WIDTH 4
+`define HRESPBUS_WIDTH 6
 
 
 // Name:         HTRANSBUS_WIDTH
@@ -138,39 +138,39 @@
 
 
 // Name:         HREADY_WIDTH
-// Default:      2 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 1 
+// Default:      3 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 1 
 //               -1])
 // Values:       1, ..., 32
 // 
 // HWRITE Address Bus Width
-`define HREADY_WIDTH 2
+`define HREADY_WIDTH 3
 
 
 // Name:         INTERNAL_HSEL
-// Default:      3 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 2 
+// Default:      4 ([<functionof> + work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 2 
 //               -1])
 // Values:       -2147483648, ..., 2147483647
 // 
 // InternalBusWidth
-`define INTERNAL_HSEL 3
+`define INTERNAL_HSEL 4
 
 
 // Name:         SPLITBUS_WIDTH
-// Default:      16 ([<functionof> * work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 16 
+// Default:      32 ([<functionof> * work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 16 
 //               -1])
 // Values:       -2147483648, ..., 2147483647
 // 
 // HWRITE Address Bus Width
-`define SPLITBUS_WIDTH 16
+`define SPLITBUS_WIDTH 32
 
 
 // Name:         HSPLIT_BUSWIDTH
-// Default:      4 ([<functionof> * work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 
+// Default:      8 ([<functionof> * work.DW_ahb_cc_constants.v.NUM_IAHB_SLAVES 
 //               NUM_INT_MASTERS -1])
 // Values:       -2147483648, ..., 2147483647
 // 
 // HWRITE Address Bus Width
-`define HSPLIT_BUSWIDTH 4
+`define HSPLIT_BUSWIDTH 8
 
 
 // Name:         BUS_AHB_CCL_WIDTH

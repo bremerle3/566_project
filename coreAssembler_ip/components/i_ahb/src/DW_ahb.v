@@ -89,6 +89,10 @@ module i_ahb_DW_ahb (
                hready_resp_s1,
                hresp_s1,
                hrdata_s1,
+               hsel_s2,
+               hready_resp_s2,
+               hresp_s2,
+               hrdata_s2,
                haddr,
                hburst,
                hprot,
@@ -120,7 +124,7 @@ module i_ahb_DW_ahb (
   // derived parameters
   parameter ADDRBUS_WIDTH = 128;
   parameter DATABUS_WIDTH = 128;
-  parameter HRDATABUS_WIDTH = 64;
+  parameter HRDATABUS_WIDTH = 96;
 
   input                          hclk;
   input                          hresetn;
@@ -166,6 +170,12 @@ module i_ahb_DW_ahb (
   input [  `HRESP_WIDTH-1:0]       hresp_s1;
   input [  `AHB_DATA_WIDTH-1:0]     hrdata_s1;
   output                         hsel_s1;
+
+// Slave #2 AHB signals
+  input                          hready_resp_s2;
+  input [  `HRESP_WIDTH-1:0]       hresp_s2;
+  input [  `AHB_DATA_WIDTH-1:0]     hrdata_s2;
+  output                         hsel_s2;
 
   //leda NTL_CON13C off
   //LMD: Non driving port.
@@ -313,14 +323,25 @@ module i_ahb_DW_ahb (
   assign bus_hresp[3:2] = hresp_s1;
   assign bus_hrdata[(  `AHB_DATA_WIDTH*2)-1:  `AHB_DATA_WIDTH*1] = hrdata_s1;
 
+  assign bus_hready[2] = hready_resp_s2;
+  assign bus_hresp[5:4] = hresp_s2;
+  assign bus_hrdata[(  `AHB_DATA_WIDTH*3)-1:  `AHB_DATA_WIDTH*2] = hrdata_s2;
+
   assign hsel_none = hsel[  `NUM_IAHB_SLAVES+1];
   assign hsel_s1 = hsel[1];
+  assign hsel_s2 = hsel[2];
 
   //leda NTL_CON16 off 
   //LMD: Nets or cell pins should not be tied to logic 0 / logic 1. 
   //LJ : If the respective slave is not capable of giving split response, 
   //     bus_hsplit[15:0] is tied to logic 0. 
   assign bus_hsplit[15:0] = {  `HSPLIT_WIDTH{1'b0}};
+  //leda NTL_CON16 on 
+  //leda NTL_CON16 off 
+  //LMD: Nets or cell pins should not be tied to logic 0 / logic 1. 
+  //LJ : If the respective slave is not capable of giving split response, 
+  //     bus_hsplit[31:16] is tied to logic 0. 
+  assign bus_hsplit[31:16] = {  `HSPLIT_WIDTH{1'b0}};
   //leda NTL_CON16 on 
 
 
