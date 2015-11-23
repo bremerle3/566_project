@@ -1,0 +1,368 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Sat Nov 21 23:25:14 2015
+# Process ID: 15026
+# Log file: /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/project.runs/synth_1/gen_pwm.vds
+# Journal file: /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source gen_pwm.tcl
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7z010clg400-1
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_property webtalk.parent_dir /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/project.cache/wt [current_project]
+# set_property parent.project_path /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/project.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language Verilog [current_project]
+# read_verilog -library xil_defaultlib /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.v
+# read_xdc /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.xdc
+# set_property used_in_implementation false [get_files /home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.xdc]
+# catch { write_hwdef -file gen_pwm.hwdef }
+INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
+# synth_design -top gen_pwm -part xc7z010clg400-1 -no_iobuf -mode out_of_context
+Command: synth_design -top gen_pwm -part xc7z010clg400-1 -no_iobuf -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 884.219 ; gain = 144.773 ; free physical = 103055 ; free virtual = 123493
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gen_pwm' [/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.v:12]
+	Parameter ap_const_logic_1 bound to: 1'b1 
+	Parameter ap_const_logic_0 bound to: 1'b0 
+	Parameter ap_ST_st1_fsm_0 bound to: 2'b01 
+	Parameter ap_ST_st2_fsm_1 bound to: 2'b10 
+	Parameter ap_const_lv32_0 bound to: 0 - type: integer 
+	Parameter ap_const_lv1_1 bound to: 1'b1 
+	Parameter ap_const_lv32_1 bound to: 1 - type: integer 
+	Parameter ap_const_lv31_0 bound to: 31'b0000000000000000000000000000000 
+	Parameter ap_const_lv1_0 bound to: 1'b0 
+	Parameter ap_const_lv31_1 bound to: 31'b0000000000000000000000000000001 
+	Parameter ap_true bound to: 1'b1 
+INFO: [Synth 8-4472] Detected and applied attribute fsm_encoding = none [/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.v:54]
+INFO: [Synth 8-256] done synthesizing module 'gen_pwm' (1#1) [/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.v:12]
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[31] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[30] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[29] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[28] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[27] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[26] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[25] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[24] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[23] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[22] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[21] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[20] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[19] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[18] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[17] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[16] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[15] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[14] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[13] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[12] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[11] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[10] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[9] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[8] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[7] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[6] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[5] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[4] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[3] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[2] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[1] driven by constant 0
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 919.578 ; gain = 180.133 ; free physical = 103020 ; free virtual = 123457
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 919.578 ; gain = 180.133 ; free physical = 103015 ; free virtual = 123452
+---------------------------------------------------------------------------------
+Loading clock regions from /project/linuxlab/xilinx/xilinx/Vivado/Vivado/data/parts/xilinx/zynq/zynq/xc7z010/ClockRegion.xml
+Loading clock buffers from /project/linuxlab/xilinx/xilinx/Vivado/Vivado/data/parts/xilinx/zynq/zynq/xc7z010/ClockBuffers.xml
+Loading clock placement rules from /project/linuxlab/xilinx/xilinx/Vivado/Vivado/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /project/linuxlab/xilinx/xilinx/Vivado/Vivado/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /project/linuxlab/xilinx/xilinx/Vivado/Vivado/data/parts/xilinx/zynq/zynq/xc7z010/clg400/Package.xml
+Loading io standards from /project/linuxlab/xilinx/xilinx/Vivado/Vivado/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.xdc]
+Finished Parsing XDC File [/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/gen_pwm.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1204.805 ; gain = 0.000 ; free physical = 102836 ; free virtual = 123273
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102827 ; free virtual = 123265
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102827 ; free virtual = 123265
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102840 ; free virtual = 123277
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102834 ; free virtual = 123272
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gen_pwm 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102831 ; free virtual = 123269
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[31] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[30] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[29] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[28] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[27] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[26] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[25] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[24] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[23] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[22] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[21] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[20] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[19] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[18] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[17] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[16] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[15] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[14] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[13] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[12] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[11] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[10] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[9] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[8] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[7] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[6] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[5] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[4] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[3] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[2] driven by constant 0
+WARNING: [Synth 8-3917] design gen_pwm has port out_r[1] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102838 ; free virtual = 123275
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102837 ; free virtual = 123275
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102809 ; free virtual = 123247
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102809 ; free virtual = 123247
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102809 ; free virtual = 123247
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102809 ; free virtual = 123247
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102795 ; free virtual = 123230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1204.867 ; gain = 465.422 ; free physical = 102788 ; free virtual = 123223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1204.930 ; gain = 465.484 ; free physical = 102771 ; free virtual = 123206
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1204.930 ; gain = 465.484 ; free physical = 102771 ; free virtual = 123205
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1204.930 ; gain = 465.484 ; free physical = 102770 ; free virtual = 123205
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1204.930 ; gain = 465.484 ; free physical = 102770 ; free virtual = 123204
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    16|
+|2     |LUT1   |    31|
+|3     |LUT2   |     1|
+|4     |LUT3   |     7|
+|5     |LUT4   |    60|
+|6     |LUT5   |     2|
+|7     |LUT6   |     1|
+|8     |FDRE   |    33|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   151|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1204.930 ; gain = 465.484 ; free physical = 102785 ; free virtual = 123220
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1204.930 ; gain = 86.359 ; free physical = 102776 ; free virtual = 123211
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1204.930 ; gain = 465.484 ; free physical = 102768 ; free virtual = 123203
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 62 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1204.930 ; gain = 372.711 ; free physical = 102778 ; free virtual = 123213
+# write_checkpoint -noxdef gen_pwm.dcp
+# catch { report_utilization -file gen_pwm_utilization_synth.rpt -pb gen_pwm_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1204.930 ; gain = 0.000 ; free physical = 102769 ; free virtual = 123204
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 21 23:25:42 2015...
