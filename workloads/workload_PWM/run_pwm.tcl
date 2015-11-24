@@ -16,4 +16,6 @@ source "./directives2_pwm.tcl"
 csynth_design
 cosim_design
 
-export_design -evaluate verilog -format sysgen 
+#export_design -evaluate verilog -format sysgen 
+export_design -evaluate verilog -format ip_catalog 
+exit
