@@ -21,7 +21,7 @@
 // Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/verilog_header_file/DW_apb_i2c_defs.v#4 $ 
 */
 
-`define i_i2c_DW_APB_I2C_BASE 32'h10000000
+`define i_i2c_DW_APB_I2C_BASE 32'h00010000
 
 
 `define i_i2c_IC_CON_OFFSET            8'h00

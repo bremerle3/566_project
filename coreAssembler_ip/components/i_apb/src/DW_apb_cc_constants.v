@@ -92,7 +92,7 @@
 //  
 // Dependencies: The decoder must be configured as internal 
 // (when APB_HAS_XDCDR = 0).
-`define START_PADDR_0 32'h10000000
+`define START_PADDR_0 32'h00010000
 
 
 // Name:         START_PADDR_1
@@ -105,7 +105,7 @@
 //  
 // Dependencies: The decoder must be configured as internal 
 // (when APB_HAS_XDCDR = 0).
-`define START_PADDR_1 32'h00000800
+`define START_PADDR_1 32'h00011000
 
 
 // Name:         START_PADDR_2
@@ -300,7 +300,7 @@
 //  
 // Dependencies: The decoder must be configured as internal 
 // (when APB_HAS_XDCDR = 0).
-`define END_PADDR_0 32'h10000fff
+`define END_PADDR_0 32'h00010fff
 
 
 // Name:         END_PADDR_1
@@ -313,7 +313,7 @@
 //  
 // Dependencies: The decoder must be configured as internal 
 // (when APB_HAS_XDCDR = 0).
-`define END_PADDR_1 32'h00000bff
+`define END_PADDR_1 32'h00011fff
 
 
 // Name:         END_PADDR_2
@@ -498,10 +498,10 @@
 `define END_PADDR_15 32'h000043ff
 
 
-`define R0_APB_SA 32'h800
+`define R0_APB_SA 32'h10000
 
 
-`define R0_APB_EA 32'h10000fff
+`define R0_APB_EA 32'h11fff
 
 
 // Name:         APB_IS_APB3_0
