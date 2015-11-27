@@ -3,7 +3,7 @@ ROOTDIR = $(realpath .)
 IMPL =  $(ROOTDIR)/hls_pwm/solution_pwm/impl
 SIM_TBS = $(IMPL)/verilog/sim_tbs
 HLS_DIR = pwm_synth
-SIM_SRCS = gen_pwm.autotb.v gen_pwm.v
+SIM_SRCS = gen_pwm_tb.v gen_pwm.v
 SIM_PATHS = $(addprefix $(ROOTDIR)/$(HLS_DIR)/, $(SIM_SRCS))
 
 PHONY: all
@@ -28,8 +28,7 @@ hls:
 #Run vcs
 vcs:
 	#cd $(HLS_DIR) && vcs $(HLS_DIR)/gen_pwm.autotb.v $(IMPL)/verilog/gen_pwm.v
-	cd $(HLS_DIR)
-	vcs $(SIM_PATHS)
+	cd $(HLS_DIR) && vcs $(SIM_PATHS)
 
 dc_shell:
 	dc_shell-t -f compiledc_pwm.tcl
