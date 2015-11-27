@@ -24,12 +24,13 @@
 `define   AESL_DEPTH_duty 1
 `define   AESL_DEPTH_freq 1
 `define   AESL_DEPTH_out_r 1
-`define AUTOTB_TVIN_duty  "./c.gen_pwm.autotvin_duty.dat"
-`define AUTOTB_TVIN_freq  "./c.gen_pwm.autotvin_freq.dat"
-`define AUTOTB_TVIN_duty_out_wrapc  "./rtl.gen_pwm.autotvin_duty.dat"
-`define AUTOTB_TVIN_freq_out_wrapc  "./rtl.gen_pwm.autotvin_freq.dat"
-`define AUTOTB_TVOUT_out_r  "./c.gen_pwm.autotvout_out_r.dat"
-`define AUTOTB_TVOUT_out_r_out_wrapc  "./impl_rtl.gen_pwm.autotvout_out_r.dat"
+//`define AUTOTB_TVIN_duty  "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/c.gen_pwm.autotvin_duty.dat"
+`define AUTOTB_TVIN_duty  "./hls_pwm/solution_pwm/impl/verilog/sim_tbs/c.gen_pwm.autotvin_duty.dat"
+`define AUTOTB_TVIN_freq  "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/c.gen_pwm.autotvin_freq.dat"
+`define AUTOTB_TVIN_duty_out_wrapc  "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/rtl.gen_pwm.autotvin_duty.dat"
+`define AUTOTB_TVIN_freq_out_wrapc  "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/rtl.gen_pwm.autotvin_freq.dat"
+`define AUTOTB_TVOUT_out_r  "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/c.gen_pwm.autotvout_out_r.dat"
+`define AUTOTB_TVOUT_out_r_out_wrapc  "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/impl_rtl.gen_pwm.autotvout_out_r.dat"
 
 module `AUTOTB_TOP;
 task read_token;
@@ -186,12 +187,18 @@ reg interface_done = 0;
 // The signal of port duty
 reg [31: 0] AESL_REG_duty = 0;
 assign duty = AESL_REG_duty;
+initial begin
+    $dumpfile("gen_pwm.vcd");
+    $dumpvars(0,apatb_gen_pwm_top);
+end
+
 initial begin : read_file_process_duty
     integer fp;
     integer err;
     integer ret;
     integer rand;
     reg [127  : 0] token;
+    reg [31  : 0] duty_token;
     integer i;
     reg transaction_finish;
     integer transaction_idx;
@@ -215,14 +222,14 @@ initial begin : read_file_process_duty
 	          $finish;
         end
         read_token(fp, token);  // skip transaction number
-	      read_token(fp, token);
+	      read_token(fp, duty_token);
             # 0.2;
             while(ready_wire !== 1) begin
                 @(posedge AESL_clock);
                 # 0.2;
             end
         if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_duty);
+            ret = $sscanf(duty_token, "%x", AESL_REG_duty);
 	          if (ret != 1) begin
 	              $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -246,6 +253,7 @@ initial begin : read_file_process_freq
     integer ret;
     integer rand;
     reg [127  : 0] token;
+    reg [31  : 0] freq_token;
     integer i;
     reg transaction_finish;
     integer transaction_idx;
@@ -269,14 +277,18 @@ initial begin : read_file_process_freq
 	          $finish;
         end
         read_token(fp, token);  // skip transaction number
-	      read_token(fp, token);
+	      read_token(fp, freq_token);
             # 0.2;
             while(ready_wire !== 1) begin
                 @(posedge AESL_clock);
                 # 0.2;
             end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_freq);
+        if(freq_token != "[[/transaction]]") begin
+	    $display("Token val before:");
+	    $display(token);
+            ret = $sscanf(freq_token, "%x", AESL_REG_freq);
+	    $display("Token val after:");
+	    $display(freq_token);
 	          if (ret != 1) begin
 	              $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -391,6 +403,7 @@ initial begin : generate_done_cnt_proc
     end
     @(posedge AESL_clock);
     # 0.4;
+    /*
     fp1 = $fopen("./rtl.gen_pwm.autotvout_out_r.dat", "r");
     fp2 = $fopen("./impl_rtl.gen_pwm.autotvout_out_r.dat", "r");
     if(fp1 == 0)        // Failed to open file
@@ -401,6 +414,7 @@ initial begin : generate_done_cnt_proc
         $display("Comparing rtl.gen_pwm.autotvout_out_r.dat with impl_rtl.gen_pwm.autotvout_out_r.dat");
         post_check(fp1, fp2);
     end
+    */
     $fclose(fp1);
     $fclose(fp2);
         $display("Simulation Passed.");
