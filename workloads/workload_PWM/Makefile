@@ -15,7 +15,13 @@ csim:
 hls:
 	vivado_hls -f run_pwm.tcl
 	cp $(SIM_TBS)/cdatafile/*.dat $(SIM_TBS)
-	cp $(SIM_TBS)/rtldatafile/*.dat $(SIM_TBS) 
+	cp $(SIM_TBS)/rtldatafile/*.dat $(SIM_TBS)
 #Run vcs
 vcs:
 	cd $(SIM_TBS) && vcs $(SIM_TBS)/gen_pwm.autotb.v $(IMPL)/verilog/gen_pwm.v
+
+dc_shell:
+	dc_shell-t -f compiledc_pwm.tcl
+	rm -rf hls_repC/
+	mkdir hls_repC
+	mv *.repC ./hls_repC	
