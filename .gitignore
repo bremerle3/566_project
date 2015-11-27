@@ -9,7 +9,6 @@
 *.rpt
 *.repC
 *.out
-*.dat
 core.*
 *.vcd
 *.vpd
