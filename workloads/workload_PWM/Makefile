@@ -5,6 +5,7 @@ SIM_TBS = $(IMPL)/verilog/sim_tbs
 HLS_DIR = pwm_synth
 SIM_SRCS = gen_pwm_tb.v gen_pwm.v
 SIM_PATHS = $(addprefix $(ROOTDIR)/$(HLS_DIR)/, $(SIM_SRCS))
+SIM_DATA = synth_sim_datfiles
 
 PHONY: all
 
@@ -19,12 +20,12 @@ csim:
 #Run high level synthesis, copy output and tb material to HLS_DIR
 hls:
 	vivado_hls -f run_pwm.tcl
-	rm -rf $(HLS_DIR)/datfiles
-	mkdir $(HLS_DIR)/datfiles
+	rm -rf $(HLS_DIR)/$(SIM_DATA)
+	mkdir $(HLS_DIR)/$(SIM_DATA)
 	cp $(IMPL)/verilog/$(DESIGN_NAME).v $(ROOTDIR)/$(HLS_DIR)
 	cp $(SIM_TBS)/$(DESIGN_NAME).autotb.v $(ROOTDIR)/$(HLS_DIR)
-	cp $(SIM_TBS)/cdatafile/*.dat $(ROOTDIR)/$(HLS_DIR)/datfiles
-	cp $(SIM_TBS)/rtldatafile/*.dat $(ROOTDIR)/$(HLS_DIR)/datfiles 
+	cp $(SIM_TBS)/cdatafile/*.dat $(ROOTDIR)/$(HLS_DIR)/$(SIM_DATA)
+	cp $(SIM_TBS)/rtldatafile/*.dat $(ROOTDIR)/$(HLS_DIR)/$(SIM_DATA) 
 #Run vcs
 vcs:
 	#cd $(HLS_DIR) && vcs $(HLS_DIR)/gen_pwm.autotb.v $(IMPL)/verilog/gen_pwm.v
