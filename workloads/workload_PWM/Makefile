@@ -1,3 +1,5 @@
+DESIGN_NAME = gen_pwm
+
 ROOTDIR = $(realpath .)
 IMPL =  $(ROOTDIR)/hls_pwm/solution_pwm/impl
 SIM_TBS = $(IMPL)/verilog/sim_tbs
@@ -22,6 +24,12 @@ vcs:
 
 dc_shell:
 	dc_shell-t -f compiledc_pwm.tcl
-	rm -rf hls_repC/
-	mkdir hls_repC
-	mv *.repC ./hls_repC	
+	rm -rf dc_shell_output/
+	mkdir dc_shell_output
+	mv *.repC ./dc_shell_output
+	mv *.svf ./dc_shell_output
+	mv *.sdc ./dc_shell_output
+	mv *.sdf ./dc_shell_output
+	mv *.syn.v ./dc_shell_output
+	mv gen_pwm ./dc_shell_output
+		
