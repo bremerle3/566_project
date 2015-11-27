@@ -2,7 +2,9 @@ DESIGN_NAME = gen_pwm
 ROOTDIR = $(realpath .)
 IMPL =  $(ROOTDIR)/hls_pwm/solution_pwm/impl
 SIM_TBS = $(IMPL)/verilog/sim_tbs
-OUTPUT_DIR = pwm_synth
+HLS_DIR = pwm_synth
+SIM_SRCS = gen_pwm.autotb.v gen_pwm.v
+SIM_PATHS = $(addprefix $(ROOTDIR)/$(HLS_DIR)/, $(SIM_SRCS))
 
 PHONY: all
 
@@ -10,21 +12,24 @@ PHONY: all
 all:
 	$(info $$SIM_TBS is [${SIM_TBS}])
 	$(info $$IMPL is [${IMPL}])
+	$(info $$SIM_PATHS is [${SIM_PATHS}])
 #Run the C simulation
 csim: 
 	gcc -g gen_pwm.c gen_pwm.h pwm_tb.c -o pwm_tb.o
-#Run high level synthesis, copy output and tb material to OUTPUT_DIR
+#Run high level synthesis, copy output and tb material to HLS_DIR
 hls:
 	vivado_hls -f run_pwm.tcl
-	rm -rf $(OUTPUT_DIR)
-	mkdir $(OUTPUT_DIR)
-	cp $(IMPL)/verilog/$(DESIGN_NAME).v $(ROOTDIR)/$(OUTPUT_DIR)/
-	cp $(SIM_TBS)/$(DESIGN_NAME).autotb.v $(ROOTDIR)/$(OUTPUT_DIR)/
-	cp $(SIM_TBS)/cdatafile/*.dat $(ROOTDIR)/$(OUTPUT_DIR)/
-	cp $(SIM_TBS)/rtldatafile/*.dat $(ROOTDIR)/$(OUTPUT_DIR)/ 
+	rm -rf $(HLS_DIR)
+	mkdir $(HLS_DIR)
+	cp $(IMPL)/verilog/$(DESIGN_NAME).v $(ROOTDIR)/$(HLS_DIR)/
+	cp $(SIM_TBS)/$(DESIGN_NAME).autotb.v $(ROOTDIR)/$(HLS_DIR)/
+	cp $(SIM_TBS)/cdatafile/*.dat $(ROOTDIR)/$(HLS_DIR)/
+	cp $(SIM_TBS)/rtldatafile/*.dat $(ROOTDIR)/$(HLS_DIR)/ 
 #Run vcs
 vcs:
-	cd $(SIM_TBS) && vcs $(SIM_TBS)/gen_pwm.autotb.v $(IMPL)/verilog/gen_pwm.v
+	#cd $(HLS_DIR) && vcs $(HLS_DIR)/gen_pwm.autotb.v $(IMPL)/verilog/gen_pwm.v
+	cd $(HLS_DIR)
+	vcs $(SIM_PATHS)
 
 dc_shell:
 	dc_shell-t -f compiledc_pwm.tcl
