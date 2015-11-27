@@ -1,5 +1,7 @@
 *.log
 *.o
+*.so
+*.a
 *.lock
 *.swp
 *.jou

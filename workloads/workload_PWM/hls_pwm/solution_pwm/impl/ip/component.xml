@@ -607,8 +607,8 @@
 				<xilinx:taxonomy>/VIVADO_HLS_IP</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>Gen_pwm</xilinx:displayName>
-			<xilinx:coreRevision>1511271506</xilinx:coreRevision>
-			<xilinx:coreCreationDateTime>2015-11-27T21:07:08Z</xilinx:coreCreationDateTime>
+			<xilinx:coreRevision>1511271528</xilinx:coreRevision>
+			<xilinx:coreCreationDateTime>2015-11-27T21:28:20Z</xilinx:coreCreationDateTime>
 		</xilinx:coreExtensions>
 		<xilinx:packagingInfo>
 			<xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
