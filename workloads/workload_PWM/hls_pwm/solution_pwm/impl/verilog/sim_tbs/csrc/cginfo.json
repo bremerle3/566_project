@@ -1,0 +1,44 @@
+{
+    "NameTable": {
+        "apatb_gen_pwm_top": [
+            "apatb_gen_pwm_top",
+            "QHIUZ",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "PEModules": [],
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "bytes": 37812,
+        "out": "amcQwB.o"
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "apatb_gen_pwm_top"
+    ],
+    "CompileProcesses": [
+        "cgproc.28597.json"
+    ],
+    "LVLData": [
+        "SIM"
+    ],
+    "Misc": {
+        "csrc_abs": "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/csrc",
+        "cwd": "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/impl/verilog/sim_tbs/simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.0"
+    },
+    "stat": {
+        "nMops": 3775
+    },
+    "CompileStatus": "Successful"
+}

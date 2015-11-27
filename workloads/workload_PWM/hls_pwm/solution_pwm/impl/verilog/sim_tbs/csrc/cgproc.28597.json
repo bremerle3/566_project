@@ -1,0 +1,41 @@
+{
+    "CompUnits": {
+        "QHIUZ_d": {
+            "mod": "apatb_gen_pwm_top",
+            "bytes": 49174,
+            "out": "QHIUZ_d.o",
+            "mode": 4,
+            "archive": "archive.0/_28597_archive_1.a"
+        },
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "bytes": 4450,
+            "out": "amcQw_d.o",
+            "mode": 4,
+            "archive": "archive.0/_28597_archive_1.a"
+        }
+    },
+    "Modules": {
+        "...MASTER...": {},
+        "apatb_gen_pwm_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_28597_archive_1.a",
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    4450
+                ],
+                [
+                    "QHIUZ_d.o",
+                    49174
+                ]
+            ],
+            "size": 53624
+        }
+    ]
+}
