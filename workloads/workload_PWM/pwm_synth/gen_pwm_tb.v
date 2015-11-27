@@ -183,6 +183,13 @@ reg interface_done = 0;
   assign ap_ce = AESL_ce;
   assign AESL_ce = ce;
   assign AESL_continue = continue;
+
+// Dump file for DVE
+initial begin
+    $dumpfile("gen_pwm.vcd");
+    $dumpvars(0,apatb_gen_pwm_top);
+end
+
 // The signal of port duty
 reg [31: 0] AESL_REG_duty = 0;
 assign duty = AESL_REG_duty;
@@ -192,6 +199,7 @@ initial begin : read_file_process_duty
     integer ret;
     integer rand;
     reg [127  : 0] token;
+    reg [31  : 0] duty_token;
     integer i;
     reg transaction_finish;
     integer transaction_idx;
@@ -215,14 +223,14 @@ initial begin : read_file_process_duty
 	          $finish;
         end
         read_token(fp, token);  // skip transaction number
-	      read_token(fp, token);
+	      read_token(fp, duty_token);
             # 0.2;
             while(ready_wire !== 1) begin
                 @(posedge AESL_clock);
                 # 0.2;
             end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_duty);
+        if(duty_token != "[[/transaction]]") begin
+            ret = $sscanf(duty_token, "%x", AESL_REG_duty);
 	          if (ret != 1) begin
 	              $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -246,6 +254,7 @@ initial begin : read_file_process_freq
     integer ret;
     integer rand;
     reg [127  : 0] token;
+    reg [31  : 0] freq_token;
     integer i;
     reg transaction_finish;
     integer transaction_idx;
@@ -269,14 +278,14 @@ initial begin : read_file_process_freq
 	          $finish;
         end
         read_token(fp, token);  // skip transaction number
-	      read_token(fp, token);
+	      read_token(fp, freq_token);
             # 0.2;
             while(ready_wire !== 1) begin
                 @(posedge AESL_clock);
                 # 0.2;
             end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_freq);
+        if(freq_token != "[[/transaction]]") begin
+            ret = $sscanf(freq_token, "%x", AESL_REG_freq);
 	          if (ret != 1) begin
 	              $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -333,7 +342,7 @@ initial begin : write_file_process_out_r
         # 0.4;
         $fdisplay(fp,"[[transaction]] %d", transaction_idx);
         if(AESL_REG_out_r_ap_vld)  begin
-	      $fdisplay(fp,"0x%x", AESL_REG_out_r);
+	      $fdisplay(fp,"%x", AESL_REG_out_r);
         AESL_REG_out_r_ap_vld = 0;
         end
     transaction_idx = transaction_idx + 1;
@@ -389,6 +398,7 @@ initial begin : generate_done_cnt_proc
         @(posedge AESL_clock);
         # 0.4;
     end
+    /*
     @(posedge AESL_clock);
     # 0.4;
     fp1 = $fopen("./rtl.gen_pwm.autotvout_out_r.dat", "r");
@@ -403,6 +413,7 @@ initial begin : generate_done_cnt_proc
     end
     $fclose(fp1);
     $fclose(fp2);
+    */
         $display("Simulation Passed.");
     $finish;
 end
