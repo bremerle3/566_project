@@ -2,7 +2,7 @@ DESIGN_NAME = gen_pwm
 ROOTDIR = $(realpath .)
 IMPL =  $(ROOTDIR)/hls_pwm/solution_pwm/impl
 SIM_TBS = $(IMPL)/verilog/sim_tbs
-OUTPUT_DIR = pwm_synth 
+OUTPUT_DIR = pwm_synth
 
 PHONY: all
 
