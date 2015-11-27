@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="gen_pwm,hls_ip_2014_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.518000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=33,HLS_SYN_LUT=145}" *)
+(* CORE_GENERATION_INFO="gen_pwm,hls_ip_2014_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.518000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=33,HLS_SYN_LUT=145}" *)
 
 module gen_pwm (
         ap_clk,
@@ -43,7 +43,7 @@ output   ap_idle;
 output   ap_ready;
 input  [31:0] duty;
 input  [31:0] freq;
-output  [0:0] out_r;
+output  [7:0] out_r;
 output   out_r_ap_vld;
 input   ap_ce;
 
@@ -60,9 +60,10 @@ reg    ap_sig_bdd_47;
 reg   [30:0] i_reg_53;
 wire   [0:0] tmp_fu_69_p2;
 wire   [31:0] i_cast_fu_65_p1;
+wire   [0:0] tmp_1_fu_80_p2;
 reg   [1:0] ap_NS_fsm;
 reg    ap_sig_bdd_36;
-reg    ap_sig_bdd_88;
+reg    ap_sig_bdd_91;
 
 
 
@@ -83,7 +84,7 @@ end
 always @(posedge ap_clk)
 begin
     if ((ap_const_logic_1 == ap_ce)) begin
-        if (ap_sig_bdd_88) begin
+        if (ap_sig_bdd_91) begin
             i_reg_53 <= i_1_fu_74_p2;
         end else if (ap_sig_bdd_36) begin
             i_reg_53 <= ap_const_lv31_0;
@@ -196,14 +197,15 @@ begin
     ap_sig_bdd_47 = (ap_const_lv1_1 == ap_CS_fsm[ap_const_lv32_1]);
 end
 
-/// ap_sig_bdd_88 assign process. ///
+/// ap_sig_bdd_91 assign process. ///
 always @ (ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_69_p2)
 begin
-    ap_sig_bdd_88 = ((ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~(tmp_fu_69_p2 == ap_const_lv1_0));
+    ap_sig_bdd_91 = ((ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~(tmp_fu_69_p2 == ap_const_lv1_0));
 end
 assign i_1_fu_74_p2 = (i_reg_53 + ap_const_lv31_1);
 assign i_cast_fu_65_p1 = i_reg_53;
-assign out_r = ($signed(i_cast_fu_65_p1) < $signed(duty)? 1'b1: 1'b0);
+assign out_r = tmp_1_fu_80_p2;
+assign tmp_1_fu_80_p2 = ($signed(i_cast_fu_65_p1) < $signed(duty)? 1'b1: 1'b0);
 assign tmp_fu_69_p2 = ($signed(i_cast_fu_65_p1) < $signed(freq)? 1'b1: 1'b0);
 
 

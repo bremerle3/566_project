@@ -15,7 +15,7 @@
 `define AUTOTB_PER_RESULT_TRANS_FILE "gen_pwm.performance.result.transaction.xml"
 `define AUTOTB_TOP_INST AESL_inst_apatb_gen_pwm_top
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
-`define AUTOTB_TRANSACTION_NUM  30
+`define AUTOTB_TRANSACTION_NUM  10
 `define AUTOTB_CLOCK_PERIOD 20.000000
 `define LENGTH_duty 1
 `define LENGTH_freq 1
@@ -143,7 +143,7 @@ wire ap_idle;
 wire ap_ready;
 wire [31 : 0] duty;
 wire [31 : 0] freq;
-wire [0 : 0] out_r;
+wire [7 : 0] out_r;
 wire  out_r_ap_vld;
 wire  ap_ce;
 integer done_cnt = 0;
@@ -293,7 +293,7 @@ end
 
 reg AESL_REG_out_r_ap_vld = 0;
 // The signal of port out_r
-reg [0: 0] AESL_REG_out_r = 0;
+reg [7: 0] AESL_REG_out_r = 0;
 always @(posedge AESL_clock)
 begin
     if(AESL_reset)

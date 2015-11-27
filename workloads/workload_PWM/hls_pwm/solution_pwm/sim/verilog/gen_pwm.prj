@@ -1,0 +1,3 @@
+verilog xil_defaultlib "gen_pwm.autotb.v"
+verilog xil_defaultlib "gen_pwm.v"
+

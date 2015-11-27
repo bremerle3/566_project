@@ -151,7 +151,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

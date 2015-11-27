@@ -19,7 +19,7 @@ port (
     ap_ready : OUT STD_LOGIC;
     duty : IN STD_LOGIC_VECTOR (31 downto 0);
     freq : IN STD_LOGIC_VECTOR (31 downto 0);
-    out_r : OUT STD_LOGIC_VECTOR (0 downto 0);
+    out_r : OUT STD_LOGIC_VECTOR (7 downto 0);
     out_r_ap_vld : OUT STD_LOGIC;
     ap_ce : IN STD_LOGIC );
 end;
@@ -28,7 +28,7 @@ end;
 architecture behav of gen_pwm is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "gen_pwm,hls_ip_2014_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.518000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=33,HLS_SYN_LUT=145}";
+    "gen_pwm,hls_ip_2014_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.518000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=33,HLS_SYN_LUT=145}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_st1_fsm_0 : STD_LOGIC_VECTOR (1 downto 0) := "01";
@@ -51,9 +51,10 @@ architecture behav of gen_pwm is
     signal i_reg_53 : STD_LOGIC_VECTOR (30 downto 0);
     signal tmp_fu_69_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal i_cast_fu_65_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_1_fu_80_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (1 downto 0);
     signal ap_sig_bdd_36 : BOOLEAN;
-    signal ap_sig_bdd_88 : BOOLEAN;
+    signal ap_sig_bdd_91 : BOOLEAN;
 
 
 begin
@@ -81,7 +82,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_ce)) then
-                if (ap_sig_bdd_88) then 
+                if (ap_sig_bdd_91) then 
                     i_reg_53 <= i_1_fu_74_p2;
                 elsif (ap_sig_bdd_36) then 
                     i_reg_53 <= ap_const_lv31_0;
@@ -165,10 +166,10 @@ begin
     end process;
 
 
-    -- ap_sig_bdd_88 assign process. --
-    ap_sig_bdd_88_assign_proc : process(ap_sig_cseq_ST_st2_fsm_1, tmp_fu_69_p2)
+    -- ap_sig_bdd_91 assign process. --
+    ap_sig_bdd_91_assign_proc : process(ap_sig_cseq_ST_st2_fsm_1, tmp_fu_69_p2)
     begin
-                ap_sig_bdd_88 <= ((ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1) and not((tmp_fu_69_p2 = ap_const_lv1_0)));
+                ap_sig_bdd_91 <= ((ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1) and not((tmp_fu_69_p2 = ap_const_lv1_0)));
     end process;
 
 
@@ -195,7 +196,7 @@ begin
 
     i_1_fu_74_p2 <= std_logic_vector(unsigned(i_reg_53) + unsigned(ap_const_lv31_1));
     i_cast_fu_65_p1 <= std_logic_vector(resize(unsigned(i_reg_53),32));
-    out_r <= "1" when (signed(i_cast_fu_65_p1) < signed(duty)) else "0";
+    out_r <= std_logic_vector(resize(unsigned(tmp_1_fu_80_p2),8));
 
     -- out_r_ap_vld assign process. --
     out_r_ap_vld_assign_proc : process(ap_ce, ap_sig_cseq_ST_st2_fsm_1, tmp_fu_69_p2)
@@ -207,5 +208,6 @@ begin
         end if; 
     end process;
 
+    tmp_1_fu_80_p2 <= "1" when (signed(i_cast_fu_65_p1) < signed(duty)) else "0";
     tmp_fu_69_p2 <= "1" when (signed(i_cast_fu_65_p1) < signed(freq)) else "0";
 end behav;

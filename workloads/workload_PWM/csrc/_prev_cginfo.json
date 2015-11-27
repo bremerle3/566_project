@@ -1,0 +1,65 @@
+{
+    "MlibObjs": {},
+    "CompileStrategy": "fullobj",
+    "PrevCompiledModules": {
+        "apatb_gen_pwm_top": {
+            "QHIUZ_d": {
+                "bytes": 59484,
+                "mod": "apatb_gen_pwm_top",
+                "out": "QHIUZ_d.o",
+                "archive": "archive.23/_4964_archive_1.a",
+                "mode": 4
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 4450,
+                "mod": "...MASTER...",
+                "out": "amcQw_d.o",
+                "archive": "archive.23/_4964_archive_1.a",
+                "mode": 4
+            }
+        }
+    },
+    "NameTable": {
+        "apatb_gen_pwm_top": [
+            "apatb_gen_pwm_top",
+            "QHIUZ",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "PEModules": [],
+    "CurCompileUdps": {},
+    "CompileStatus": "Successful",
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 41321
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "apatb_gen_pwm_top"
+    ],
+    "CompileProcesses": [
+        "cgproc.4964.json"
+    ],
+    "Misc": {
+        "cwd": "/home/warehouse/lbremer/566_project/workloads/workload_PWM",
+        "daidir": "simv.daidir",
+        "csrc": "csrc",
+        "daidir_abs": "/home/warehouse/lbremer/566_project/workloads/workload_PWM/simv.daidir",
+        "csrc_abs": "/home/warehouse/lbremer/566_project/workloads/workload_PWM/csrc",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.23"
+    },
+    "stat": {
+        "nMops": 5112
+    }
+}

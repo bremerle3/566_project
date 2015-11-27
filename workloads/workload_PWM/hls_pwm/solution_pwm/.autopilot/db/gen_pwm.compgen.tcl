@@ -48,7 +48,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_out_r \
     op interface \
-    ports { out_r { O 1 vector } out_r_ap_vld { O 1 bit } } \
+    ports { out_r { O 8 vector } out_r_ap_vld { O 1 bit } } \
 } "
 }
 

@@ -53,7 +53,7 @@ gen_pwm::gen_pwm(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_ap_sig_bdd_47);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_bdd_88);
+    SC_METHOD(thread_ap_sig_bdd_91);
     sensitive << ( ap_sig_cseq_ST_st2_fsm_1 );
     sensitive << ( tmp_fu_69_p2 );
 
@@ -70,16 +70,22 @@ gen_pwm::gen_pwm(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( i_reg_53 );
 
     SC_METHOD(thread_out_r);
-    sensitive << ( duty );
     sensitive << ( ap_ce );
     sensitive << ( ap_sig_cseq_ST_st2_fsm_1 );
     sensitive << ( tmp_fu_69_p2 );
-    sensitive << ( i_cast_fu_65_p1 );
+    sensitive << ( tmp_1_fu_80_p2 );
 
     SC_METHOD(thread_out_r_ap_vld);
     sensitive << ( ap_ce );
     sensitive << ( ap_sig_cseq_ST_st2_fsm_1 );
     sensitive << ( tmp_fu_69_p2 );
+
+    SC_METHOD(thread_tmp_1_fu_80_p2);
+    sensitive << ( duty );
+    sensitive << ( ap_ce );
+    sensitive << ( ap_sig_cseq_ST_st2_fsm_1 );
+    sensitive << ( tmp_fu_69_p2 );
+    sensitive << ( i_cast_fu_65_p1 );
 
     SC_METHOD(thread_tmp_fu_69_p2);
     sensitive << ( freq );
@@ -127,9 +133,10 @@ gen_pwm::gen_pwm(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, i_reg_53, "i_reg_53");
     sc_trace(mVcdFile, tmp_fu_69_p2, "tmp_fu_69_p2");
     sc_trace(mVcdFile, i_cast_fu_65_p1, "i_cast_fu_65_p1");
+    sc_trace(mVcdFile, tmp_1_fu_80_p2, "tmp_1_fu_80_p2");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
     sc_trace(mVcdFile, ap_sig_bdd_36, "ap_sig_bdd_36");
-    sc_trace(mVcdFile, ap_sig_bdd_88, "ap_sig_bdd_88");
+    sc_trace(mVcdFile, ap_sig_bdd_91, "ap_sig_bdd_91");
 #endif
 
     }
@@ -156,7 +163,7 @@ void gen_pwm::thread_ap_clk_no_reset_() {
         }
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_ce.read())) {
-        if (ap_sig_bdd_88.read()) {
+        if (ap_sig_bdd_91.read()) {
             i_reg_53 = i_1_fu_74_p2.read();
         } else if (ap_sig_bdd_36.read()) {
             i_reg_53 = ap_const_lv31_0;
@@ -205,8 +212,8 @@ void gen_pwm::thread_ap_sig_bdd_47() {
     ap_sig_bdd_47 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(1, 1));
 }
 
-void gen_pwm::thread_ap_sig_bdd_88() {
-    ap_sig_bdd_88 = (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st2_fsm_1.read()) && !esl_seteq<1,1,1>(tmp_fu_69_p2.read(), ap_const_lv1_0));
+void gen_pwm::thread_ap_sig_bdd_91() {
+    ap_sig_bdd_91 = (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st2_fsm_1.read()) && !esl_seteq<1,1,1>(tmp_fu_69_p2.read(), ap_const_lv1_0));
 }
 
 void gen_pwm::thread_ap_sig_cseq_ST_st1_fsm_0() {
@@ -234,7 +241,7 @@ void gen_pwm::thread_i_cast_fu_65_p1() {
 }
 
 void gen_pwm::thread_out_r() {
-    out_r = (!i_cast_fu_65_p1.read().is_01() || !duty.read().is_01())? sc_lv<1>(): (sc_bigint<32>(i_cast_fu_65_p1.read()) < sc_bigint<32>(duty.read()));
+    out_r = esl_zext<8,1>(tmp_1_fu_80_p2.read());
 }
 
 void gen_pwm::thread_out_r_ap_vld() {
@@ -245,6 +252,10 @@ void gen_pwm::thread_out_r_ap_vld() {
     } else {
         out_r_ap_vld = ap_const_logic_0;
     }
+}
+
+void gen_pwm::thread_tmp_1_fu_80_p2() {
+    tmp_1_fu_80_p2 = (!i_cast_fu_65_p1.read().is_01() || !duty.read().is_01())? sc_lv<1>(): (sc_bigint<32>(i_cast_fu_65_p1.read()) < sc_bigint<32>(duty.read()));
 }
 
 void gen_pwm::thread_tmp_fu_69_p2() {

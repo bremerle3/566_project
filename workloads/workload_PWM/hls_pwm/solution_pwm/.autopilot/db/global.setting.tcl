@@ -40,7 +40,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z010:clg400:-1"
 set SourceFiles {sc {} c ../../gen_pwm.c}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/warehouse/lbremer/ese566/workload_PWM/hls_pwm/solution_pwm/solution_pwm.directive}
+set DirectiveFile {/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/solution_pwm.directive}
 set TBFiles {verilog ../../pwm_tb.c bc ../../pwm_tb.c vhdl ../../pwm_tb.c sc ../../pwm_tb.c cas ../../pwm_tb.c c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

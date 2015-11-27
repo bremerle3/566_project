@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1448169960">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1448658484">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="RDI-RDI" Name="gen_pwm.vdi"/>
   <File Type="BG-DRC" Name="gen_pwm.drc"/>

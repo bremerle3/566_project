@@ -24,7 +24,7 @@ struct gen_pwm : public sc_module {
     sc_out< sc_logic > ap_ready;
     sc_in< sc_lv<32> > duty;
     sc_in< sc_lv<32> > freq;
-    sc_out< sc_lv<1> > out_r;
+    sc_out< sc_lv<8> > out_r;
     sc_out< sc_logic > out_r_ap_vld;
     sc_in< sc_logic > ap_ce;
 
@@ -48,9 +48,10 @@ struct gen_pwm : public sc_module {
     sc_signal< sc_lv<31> > i_reg_53;
     sc_signal< sc_lv<1> > tmp_fu_69_p2;
     sc_signal< sc_lv<32> > i_cast_fu_65_p1;
+    sc_signal< sc_lv<1> > tmp_1_fu_80_p2;
     sc_signal< sc_lv<2> > ap_NS_fsm;
     sc_signal< bool > ap_sig_bdd_36;
-    sc_signal< bool > ap_sig_bdd_88;
+    sc_signal< bool > ap_sig_bdd_91;
     static const sc_logic ap_const_logic_1;
     static const sc_logic ap_const_logic_0;
     static const sc_lv<2> ap_ST_st1_fsm_0;
@@ -69,13 +70,14 @@ struct gen_pwm : public sc_module {
     void thread_ap_sig_bdd_18();
     void thread_ap_sig_bdd_36();
     void thread_ap_sig_bdd_47();
-    void thread_ap_sig_bdd_88();
+    void thread_ap_sig_bdd_91();
     void thread_ap_sig_cseq_ST_st1_fsm_0();
     void thread_ap_sig_cseq_ST_st2_fsm_1();
     void thread_i_1_fu_74_p2();
     void thread_i_cast_fu_65_p1();
     void thread_out_r();
     void thread_out_r_ap_vld();
+    void thread_tmp_1_fu_80_p2();
     void thread_tmp_fu_69_p2();
     void thread_ap_NS_fsm();
     void thread_hdltv_gen();

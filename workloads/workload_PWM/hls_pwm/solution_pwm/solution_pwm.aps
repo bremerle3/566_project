@@ -20,14 +20,14 @@
         <schedule model="gen_pwm"/>
     </config>
     <Simulation argv="">
-        <SimFlow name="cosim" setup="true" dumpTrace="false" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" toolName="xsim">
+        <SimFlow name="cosim" setup="false" dumpTrace="false" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" toolName="xsim">
             <Rtl name="systemc" active="false"/>
             <Rtl name="verilog" active="true"/>
             <Rtl name="vhdl" active="false"/>
         </SimFlow>
     </Simulation>
-    <ExportDesign askAgain="true" evaluate="true" rtl="vhdl" formatName="sysgen">
-        <Format formatName="sysgen"/>
+    <ExportDesign askAgain="true" evaluate="true" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="" vendor="" library="" version="1.0" driver_input_dir="" display_name="" taxonomy=""/>
     </ExportDesign>
 </AutoPilot:solution>
 

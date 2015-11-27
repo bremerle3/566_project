@@ -1,4 +1,4 @@
-; ModuleID = '/home/warehouse/lbremer/ese566/workload_PWM/hls_pwm/solution_pwm/.autopilot/db/a.o.2.bc'
+; ModuleID = '/home/warehouse/lbremer/566_project/workloads/workload_PWM/hls_pwm/solution_pwm/.autopilot/db/a.o.2.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
@@ -7,10 +7,10 @@ target triple = "x86_64-unknown-linux-gnu"
 @p_str2 = private unnamed_addr constant [4 x i8] c"mul\00", align 1
 @str = internal constant [8 x i8] c"gen_pwm\00"
 
-define void @gen_pwm(i32 %duty, i32 %freq, i1* %out_r) nounwind uwtable {
+define void @gen_pwm(i32 %duty, i32 %freq, i8* %out_r) nounwind uwtable {
   call void (...)* @_ssdm_op_SpecBitsMap(i32 %duty) nounwind, !map !0
   call void (...)* @_ssdm_op_SpecBitsMap(i32 %freq) nounwind, !map !6
-  call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_r) nounwind, !map !10
+  call void (...)* @_ssdm_op_SpecBitsMap(i8* %out_r) nounwind, !map !10
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @str) nounwind
   %freq_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %freq) nounwind
   %duty_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %duty) nounwind
@@ -27,7 +27,8 @@ define void @gen_pwm(i32 %duty, i32 %freq, i1* %out_r) nounwind uwtable {
 
 ; <label>:2                                       ; preds = %1
   %tmp_1 = icmp slt i32 %i_cast, %duty_read
-  call void @_ssdm_op_Write.ap_auto.i1P(i1* %out_r, i1 %tmp_1) nounwind
+  %storemerge = zext i1 %tmp_1 to i8
+  call void @_ssdm_op_Write.ap_auto.i8P(i8* %out_r, i8 %storemerge) nounwind
   br label %1
 
 ; <label>:3                                       ; preds = %1
@@ -61,9 +62,9 @@ entry:
   ret i32 %0
 }
 
-define weak void @_ssdm_op_Write.ap_auto.i1P(i1*, i1) {
+define weak void @_ssdm_op_Write.ap_auto.i8P(i8*, i8) {
 entry:
-  store i1 %1, i1* %0
+  store i8 %1, i8* %0
   ret void
 }
 
@@ -72,16 +73,16 @@ entry:
 !0 = metadata !{metadata !1}
 !1 = metadata !{i32 0, i32 31, metadata !2}
 !2 = metadata !{metadata !3}
-!3 = metadata !{metadata !"duty", metadata !4, metadata !"int32", i32 0, i32 31}
+!3 = metadata !{metadata !"duty", metadata !4, metadata !"int", i32 0, i32 31}
 !4 = metadata !{metadata !5}
 !5 = metadata !{i32 0, i32 0, i32 0}
 !6 = metadata !{metadata !7}
 !7 = metadata !{i32 0, i32 31, metadata !8}
 !8 = metadata !{metadata !9}
-!9 = metadata !{metadata !"freq", metadata !4, metadata !"int32", i32 0, i32 31}
+!9 = metadata !{metadata !"freq", metadata !4, metadata !"int", i32 0, i32 31}
 !10 = metadata !{metadata !11}
-!11 = metadata !{i32 0, i32 0, metadata !12}
+!11 = metadata !{i32 0, i32 7, metadata !12}
 !12 = metadata !{metadata !13}
-!13 = metadata !{metadata !"out", metadata !14, metadata !"int1", i32 0, i32 0}
+!13 = metadata !{metadata !"out", metadata !14, metadata !"signed char", i32 0, i32 7}
 !14 = metadata !{metadata !15}
 !15 = metadata !{i32 0, i32 0, i32 1}
