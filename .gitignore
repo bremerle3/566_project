@@ -14,3 +14,4 @@ core.*
 *.vpd
 simv*
 WORK/
+dc_shell_output/
