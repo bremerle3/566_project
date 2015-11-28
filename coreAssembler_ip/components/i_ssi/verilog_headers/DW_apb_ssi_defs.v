@@ -25,7 +25,7 @@
 
 
 
-`define i_ssi_DW_APB_SSI_BASE 32'h00011000
+`define i_ssi_DW_APB_SSI_BASE 32'h10002000
 
 `define i_ssi_Ssi_Ctrlr0_Offset      8'h00
 `define i_ssi_Ssi_Ctrlr1_Offset      8'h04
