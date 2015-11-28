@@ -22,42 +22,57 @@ module system_top (
 //------------------------------------------------------------------------------
 // Internal Signals
 //------------------------------------------------------------------------------
-  // AHB-LITE CORTEX M0 INTERFACE  --------------
-  wire [31:0] HADDR_top;             // AHB transaction address
-  wire [ 2:0] HBURST_top;            // AHB burst: tied to single
-  wire        HMASTLOCK_top;         // AHB locked transfer (always zero)
-  wire [ 3:0] HPROT_top;             // AHB protection: priv; data or inst
-  wire [ 2:0] HSIZE_top;             // AHB size: byte, half-word or word
-  wire [ 1:0] HTRANS_top;            // AHB transfer: non-sequential only
-  wire [31:0] HWDATA_top;            // AHB write-data
-  wire        HWRITE_top;            // AHB write control
-  wire [31:0] HRDATA_top;            // AHB read-data
-  wire        HREADY_top;            // AHB stall signal
-  wire        HRESP_top;             // AHB error response
+    // AHB-LITE CORTEX M0 INTERFACE  --------------
+    wire [31:0] HADDR_top;             // AHB transaction address
+    wire [ 2:0] HBURST_top;            // AHB burst: tied to single
+    wire        HMASTLOCK_top;         // AHB locked transfer (always zero)
+    wire [ 3:0] HPROT_top;             // AHB protection: priv; data or inst
+    wire [ 2:0] HSIZE_top;             // AHB size: byte, half-word or word
+    wire [ 1:0] HTRANS_top;            // AHB transfer: non-sequential only
+    wire [31:0] HWDATA_top;            // AHB write-data
+    wire        HWRITE_top;            // AHB write control
+    wire [31:0] HRDATA_top;            // AHB read-data
+    wire        HREADY_top;            // AHB stall signal
+    wire        HRESP_top;             // AHB error response
+    // PWM ACCELERATOR INTERFACE
+    wire PWM_hrdata_top;
+    wire PWM_hready_resp_top;
+    wire PWM_hresp_top;
+    wire PWM_haddr_top;
+    wire PWM_hburst_top;
+    wire PWM_hmastlock_top;
+    wire PWM_hprot_top;
+    wire PWM_hready_top;
+    wire PWM_hsel_top;
+    wire PWM_hsize_top;
+    wire PWM_htrans_top;
+    wire PWM_hwdata_top;
+    wire PWM_hwrite_top;
+    wire out_pwm_top;
 
 //------------------------------------------------------------------------------
 // Instantiate coreAssembler-generated AMBA IP
 //------------------------------------------------------------------------------
-interconnect_ip (       // Ports for Interface HCLK
+interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         .HCLK_hclk(HCLK_top),
                         // Ports for Interface HRESETn
                         .HRESETn_hresetn(HRESETn_top),
                         // Ports for Interface PCLK
-                        PCLK_pclk,
+                        .PCLK_pclk(HCLK_top),
                         // Ports for Interface PRESETn
-                        PRESETn_presetn,
+                        .PRESETn_presetn(HRESETn_top),
                         // Ports for Interface ex_i_ahb_AHB_MASTER_CORTEXM0
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_haddr,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hburst,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hlock,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hprot,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hsize,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_htrans,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hwdata,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hwrite,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hrdata,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hready,
-                        ex_i_ahb_AHB_MASTER_CORTEXM0_hresp,
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_haddr(HADDR_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hburst(HBURST_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hlock(HMASTLOCK_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hprot(HPROT_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hsize(HSIZE_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_htrans(HTRANS_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hwdata(HWDATA_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hwrite(HWRITE_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hrdata(HRDATA_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hready(HREADY_top),
+                        .ex_i_ahb_AHB_MASTER_CORTEXM0_hresp(HRESP_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_PID
                         ex_i_ahb_AHB_Slave_PID_hrdata,
                         ex_i_ahb_AHB_Slave_PID_hready_resp,
@@ -73,19 +88,20 @@ interconnect_ip (       // Ports for Interface HCLK
                         ex_i_ahb_AHB_Slave_PID_hwdata,
                         ex_i_ahb_AHB_Slave_PID_hwrite,
                         // Ports for Interface ex_i_ahb_AHB_Slave_PWM
-                        ex_i_ahb_AHB_Slave_PWM_hrdata,
-                        ex_i_ahb_AHB_Slave_PWM_hready_resp,
-                        ex_i_ahb_AHB_Slave_PWM_hresp,
-                        ex_i_ahb_AHB_Slave_PWM_haddr,
-                        ex_i_ahb_AHB_Slave_PWM_hburst,
-                        ex_i_ahb_AHB_Slave_PWM_hmastlock,
-                        ex_i_ahb_AHB_Slave_PWM_hprot,
-                        ex_i_ahb_AHB_Slave_PWM_hready,
-                        ex_i_ahb_AHB_Slave_PWM_hsel,
-                        ex_i_ahb_AHB_Slave_PWM_hsize,
-                        ex_i_ahb_AHB_Slave_PWM_htrans,
-                        ex_i_ahb_AHB_Slave_PWM_hwdata,
-                        ex_i_ahb_AHB_Slave_PWM_hwrite,
+                        ex_i_ahb_AHB_Slave_PWM_hrdata(PWM_hrdata_top),
+                        ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top)
+                        ex_i_ahb_AHB_Slave_PWM_hresp(PWM_hresp_top),
+                        ex_i_ahb_AHB_Slave_PWM_haddr(PWM_haddr_top),
+                        ex_i_ahb_AHB_Slave_PWM_hburst(PWM_hburst_top),
+                        ex_i_ahb_AHB_Slave_PWM_hmastlock(PWM_hmastlock_top),
+                        ex_i_ahb_AHB_Slave_PWM_hprot(PWM_hprot_top),
+                        ex_i_ahb_AHB_Slave_PWM_hready(PWM_hready_top),
+                        ex_i_ahb_AHB_Slave_PWM_hsel(PWM_hsel_top),
+                        ex_i_ahb_AHB_Slave_PWM_hsize(PWM_hsize_top),
+                        ex_i_ahb_AHB_Slave_PWM_htrans(PWM_htrans_top),
+                        ex_i_ahb_AHB_Slave_PWM_hwdata(PWM_hwdata_top),
+                        ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
+                        out_pwm(out_pwm_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_RAM
                         ex_i_ahb_AHB_Slave_RAM_hrdata,
                         ex_i_ahb_AHB_Slave_RAM_hready_resp,
@@ -122,7 +138,7 @@ interconnect_ip (       // Ports for Interface HCLK
                         i_i2c_debug_s_gen,
                         i_i2c_debug_slave_act,
                         i_i2c_debug_slv_cstate,
-                        i_i2c_debug_wr,module
+                        i_i2c_debug_wr,
                         i_i2c_ic_activity_intr,
                         i_i2c_ic_clk_oe,
                         i_i2c_ic_current_src_en,
@@ -155,12 +171,12 @@ interconnect_ip (       // Ports for Interface HCLK
 //------------------------------------------------------------------------------
 // Instantiate Cortex-M0 processor 
 //------------------------------------------------------------------------------
-CORTEXM0DS (
+CORTEXM0DS CORTEXM0DS_INST(
   // CLOCK AND RESETS ------------------
   .HCLK     (HLCK_top),             // Clock input
   .HRESETn      (HRESETn_top),           // Asynchronous reset input
-  // AHB-LITE MASTER PORT --------------
-  .HADDR    (HADDR_top),             // AHB transaction address output
+  // AHB-LITE MASTER PORT .--------------
+  .HADDR    (HADDR_top),             // AHB transaction address outpu(out_top)t
   .HBURST   (HBURST_top),            // AHB burst: tied to single output
   .HMASTLOCK    (HMASTLOCK_top),         // AHB locked transfer (always zero) output
   .HPROT    (HPROT_top),             // AHB protection: priv; data or inst output
@@ -180,4 +196,26 @@ CORTEXM0DS (
   .SYSRESETREQ  (SYSRESETREQ_top),   // System reset request output
   // POWER MANAGEMENT ------------------
   .SLEEPING     (SLEEPING_top)       // Core and NVIC sleeping output
+);
+
+pwm2ahb_wrapper pwm2ahb_wrapper_inst (
+    // Clock and reset
+    .HCLK(HCLK_top),
+    .HRESETn(HRESETn_top),
+    // AHB Interface
+    .ex_i_ahb_AHB_Slave_PWM_hrdata(PWM_hrdata_top),
+    .ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top),
+    .ex_i_ahb_AHB_Slave_PWM_hresp(PWM_hresp_top),
+    .ex_i_ahb_AHB_Slave_PWM_haddr(PWM_haddr_top),
+    .ex_i_ahb_AHB_Slave_PWM_hburst(PWM_hburst_top),
+    .ex_i_ahb_AHB_Slave_PWM_hmastlock(PWM_hmastlock_top),
+    .ex_i_ahb_AHB_Slave_PWM_hprot(PWM_hprot_top),
+    .ex_i_ahb_AHB_Slave_PWM_hready(PWM_hready_top),
+    .ex_i_ahb_AHB_Slave_PWM_hsel(PWM_hsel_top),
+    .ex_i_ahb_AHB_Slave_PWM_hsize(PWM_hsize_top),
+    .ex_i_ahb_AHB_Slave_PWM_htrans(PWM_htrans_top),
+    .ex_i_ahb_AHB_Slave_PWM_hwdata(PWM_hwdata_top),
+    .ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
+    // PWM out
+    .out_pwm(out_pwm_top)
 );

@@ -54,13 +54,13 @@ reg out_r_ap_vld;
 (* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm = 2'b1;
 reg    ap_sig_cseq_ST_st1_fsm_0;
 reg    ap_sig_bdd_18;
-wire   [30:0] i_1_fu_74_p2;
+wire   [30:0] i_1_fu_60_p2;
 reg    ap_sig_cseq_ST_st2_fsm_1;
 reg    ap_sig_bdd_47;
-reg   [30:0] i_reg_53;
-wire   [0:0] tmp_fu_69_p2;
-wire   [31:0] i_cast_fu_65_p1;
-wire   [0:0] tmp_1_fu_80_p2;
+reg   [30:0] i_reg_39;
+wire   [0:0] tmp_fu_55_p2;
+wire   [31:0] i_cast_fu_51_p1;
+wire   [0:0] tmp_1_fu_66_p2;
 reg   [1:0] ap_NS_fsm;
 reg    ap_sig_bdd_36;
 reg    ap_sig_bdd_91;
@@ -85,17 +85,17 @@ always @(posedge ap_clk)
 begin
     if ((ap_const_logic_1 == ap_ce)) begin
         if (ap_sig_bdd_91) begin
-            i_reg_53 <= i_1_fu_74_p2;
+            i_reg_39 <= i_1_fu_60_p2;
         end else if (ap_sig_bdd_36) begin
-            i_reg_53 <= ap_const_lv31_0;
+            i_reg_39 <= ap_const_lv31_0;
         end
     end
 end
 
 /// ap_done assign process. ///
-always @ (ap_ce or ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_69_p2)
+always @ (ap_ce or ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_55_p2)
 begin
-    if (((ap_const_logic_1 == ap_ce) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & (tmp_fu_69_p2 == ap_const_lv1_0))) begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & (tmp_fu_55_p2 == ap_const_lv1_0))) begin
         ap_done = ap_const_logic_1;
     end else begin
         ap_done = ap_const_logic_0;
@@ -113,9 +113,9 @@ begin
 end
 
 /// ap_ready assign process. ///
-always @ (ap_ce or ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_69_p2)
+always @ (ap_ce or ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_55_p2)
 begin
-    if (((ap_const_logic_1 == ap_ce) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & (tmp_fu_69_p2 == ap_const_lv1_0))) begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & (tmp_fu_55_p2 == ap_const_lv1_0))) begin
         ap_ready = ap_const_logic_1;
     end else begin
         ap_ready = ap_const_logic_0;
@@ -143,16 +143,16 @@ begin
 end
 
 /// out_r_ap_vld assign process. ///
-always @ (ap_ce or ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_69_p2)
+always @ (ap_ce or ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_55_p2)
 begin
-    if (((ap_const_logic_1 == ap_ce) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~(tmp_fu_69_p2 == ap_const_lv1_0))) begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~(tmp_fu_55_p2 == ap_const_lv1_0))) begin
         out_r_ap_vld = ap_const_logic_1;
     end else begin
         out_r_ap_vld = ap_const_logic_0;
     end
 end
 /// the next state (ap_NS_fsm) of the state machine. ///
-always @ (ap_start or ap_CS_fsm or ap_ce or tmp_fu_69_p2)
+always @ (ap_start or ap_CS_fsm or ap_ce or tmp_fu_55_p2)
 begin
     case (ap_CS_fsm)
         ap_ST_st1_fsm_0 : 
@@ -165,7 +165,7 @@ begin
         end
         ap_ST_st2_fsm_1 : 
         begin
-            if (((ap_const_logic_1 == ap_ce) & (tmp_fu_69_p2 == ap_const_lv1_0))) begin
+            if (((ap_const_logic_1 == ap_ce) & (tmp_fu_55_p2 == ap_const_lv1_0))) begin
                 ap_NS_fsm = ap_ST_st1_fsm_0;
             end else begin
                 ap_NS_fsm = ap_ST_st2_fsm_1;
@@ -198,15 +198,15 @@ begin
 end
 
 /// ap_sig_bdd_91 assign process. ///
-always @ (ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_69_p2)
+always @ (ap_sig_cseq_ST_st2_fsm_1 or tmp_fu_55_p2)
 begin
-    ap_sig_bdd_91 = ((ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~(tmp_fu_69_p2 == ap_const_lv1_0));
+    ap_sig_bdd_91 = ((ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~(tmp_fu_55_p2 == ap_const_lv1_0));
 end
-assign i_1_fu_74_p2 = (i_reg_53 + ap_const_lv31_1);
-assign i_cast_fu_65_p1 = i_reg_53;
-assign out_r = tmp_1_fu_80_p2;
-assign tmp_1_fu_80_p2 = ($signed(i_cast_fu_65_p1) < $signed(duty)? 1'b1: 1'b0);
-assign tmp_fu_69_p2 = ($signed(i_cast_fu_65_p1) < $signed(freq)? 1'b1: 1'b0);
+assign i_1_fu_60_p2 = (i_reg_39 + ap_const_lv31_1);
+assign i_cast_fu_51_p1 = i_reg_39;
+assign out_r = tmp_1_fu_66_p2;
+assign tmp_1_fu_66_p2 = ($signed(i_cast_fu_51_p1) < $signed(duty)? 1'b1: 1'b0);
+assign tmp_fu_55_p2 = ($signed(i_cast_fu_51_p1) < $signed(freq)? 1'b1: 1'b0);
 
 
 endmodule //gen_pwm
