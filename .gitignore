@@ -9,7 +9,6 @@
 *.rpt
 *.repC
 *.out
-core.*
 *.vcd
 *.vpd
 simv*
@@ -18,4 +17,8 @@ dc_shell_output/
 hls_pwm/
 csrc/
 synth_sim_datfiles/
+
+#DVE junk
 DVEfiles/
+.synopsys_dve_serverport.txt
+
