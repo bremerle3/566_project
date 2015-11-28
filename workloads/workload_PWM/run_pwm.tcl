@@ -12,7 +12,7 @@ open_solution "solution_pwm"
 set_part  {xc7z010clg400-1}
 create_clock -period 20
 config_interface -clock_enable
-source "./directives2_pwm.tcl"
+#source "./directives2_pwm.tcl"
 csynth_design
 cosim_design
 
