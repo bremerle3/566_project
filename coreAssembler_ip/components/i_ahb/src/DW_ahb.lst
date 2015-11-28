@@ -19,6 +19,7 @@
 /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_gating.v
 /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_wtps.v
 /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arb.v
+/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arblite.v
 /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb.v
 /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb-undef.v
 

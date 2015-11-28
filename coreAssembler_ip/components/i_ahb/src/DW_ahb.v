@@ -57,34 +57,12 @@ module i_ahb_DW_ahb (
                hresetn,
                haddr_m1,
                hburst_m1,
-               hbusreq_m1,
                hlock_m1,
                hprot_m1,
                hsize_m1,
                htrans_m1,
                hwdata_m1,
                hwrite_m1,
-               hgrant_m1,
-               haddr_m2,
-               hburst_m2,
-               hbusreq_m2,
-               hlock_m2,
-               hprot_m2,
-               hsize_m2,
-               htrans_m2,
-               hwdata_m2,
-               hwrite_m2,
-               hgrant_m2,
-               haddr_m3,
-               hburst_m3,
-               hbusreq_m3,
-               hlock_m3,
-               hprot_m3,
-               hsize_m3,
-               htrans_m3,
-               hwdata_m3,
-               hwrite_m3,
-               hgrant_m3,
                hsel_s1,
                hready_resp_s1,
                hresp_s1,
@@ -93,6 +71,14 @@ module i_ahb_DW_ahb (
                hready_resp_s2,
                hresp_s2,
                hrdata_s2,
+               hsel_s3,
+               hready_resp_s3,
+               hresp_s3,
+               hrdata_s3,
+               hsel_s4,
+               hready_resp_s4,
+               hresp_s4,
+               hrdata_s4,
                haddr,
                hburst,
                hprot,
@@ -122,16 +108,15 @@ module i_ahb_DW_ahb (
   parameter INT_R1_N_EA_2 = 32'h11fff;
 
   // derived parameters
-  parameter ADDRBUS_WIDTH = 128;
-  parameter DATABUS_WIDTH = 128;
-  parameter HRDATABUS_WIDTH = 96;
+  parameter ADDRBUS_WIDTH = 64;
+  parameter DATABUS_WIDTH = 64;
+  parameter HRDATABUS_WIDTH = 160;
 
   input                          hclk;
   input                          hresetn;
 
 // Master #1 AHB signals
   input [  `HADDR_WIDTH-1:0]        haddr_m1;
-  input                          hbusreq_m1;
   input [  `HBURST_WIDTH-1:0]      hburst_m1;
   input                          hlock_m1;
   input [  `HPROT_WIDTH-1:0]       hprot_m1;
@@ -139,31 +124,6 @@ module i_ahb_DW_ahb (
   input [  `HTRANS_WIDTH-1:0]      htrans_m1;
   input [  `AHB_DATA_WIDTH-1:0]     hwdata_m1;
   input                          hwrite_m1;
-  output                         hgrant_m1;
-
-// Master #2 AHB signals
-  input [  `HADDR_WIDTH-1:0]        haddr_m2;
-  input                          hbusreq_m2;
-  input [  `HBURST_WIDTH-1:0]      hburst_m2;
-  input                          hlock_m2;
-  input [  `HPROT_WIDTH-1:0]       hprot_m2;
-  input [  `HSIZE_WIDTH-1:0]       hsize_m2;
-  input [  `HTRANS_WIDTH-1:0]      htrans_m2;
-  input [  `AHB_DATA_WIDTH-1:0]     hwdata_m2;
-  input                          hwrite_m2;
-  output                         hgrant_m2;
-
-// Master #3 AHB signals
-  input [  `HADDR_WIDTH-1:0]        haddr_m3;
-  input                          hbusreq_m3;
-  input [  `HBURST_WIDTH-1:0]      hburst_m3;
-  input                          hlock_m3;
-  input [  `HPROT_WIDTH-1:0]       hprot_m3;
-  input [  `HSIZE_WIDTH-1:0]       hsize_m3;
-  input [  `HTRANS_WIDTH-1:0]      htrans_m3;
-  input [  `AHB_DATA_WIDTH-1:0]     hwdata_m3;
-  input                          hwrite_m3;
-  output                         hgrant_m3;
 
 // Slave #1 AHB signals
   input                          hready_resp_s1;
@@ -176,6 +136,18 @@ module i_ahb_DW_ahb (
   input [  `HRESP_WIDTH-1:0]       hresp_s2;
   input [  `AHB_DATA_WIDTH-1:0]     hrdata_s2;
   output                         hsel_s2;
+
+// Slave #3 AHB signals
+  input                          hready_resp_s3;
+  input [  `HRESP_WIDTH-1:0]       hresp_s3;
+  input [  `AHB_DATA_WIDTH-1:0]     hrdata_s3;
+  output                         hsel_s3;
+
+// Slave #4 AHB signals
+  input                          hready_resp_s4;
+  input [  `HRESP_WIDTH-1:0]       hresp_s4;
+  input [  `AHB_DATA_WIDTH-1:0]     hrdata_s4;
+  output                         hsel_s4;
 
   //leda NTL_CON13C off
   //LMD: Non driving port.
@@ -222,10 +194,6 @@ module i_ahb_DW_ahb (
   wire   [DATABUS_WIDTH-1:0]     bus_hwdata;
 
   wire   [  `HMASTER_WIDTH-1:0]    hmaster_data;
-  wire   [  `SPLITBUS_WIDTH-1:0]   bus_hsplit;
-  wire   [  `NUM_AHB_MASTERS:0]    bus_hbusreq;
-  wire   [  `NUM_AHB_MASTERS:0]    bus_hlock;
-  wire   [  `NUM_AHB_MASTERS:1]    bus_hgrant;
   wire                           hsel_none;
   wire   [  `HRESP_WIDTH-1:0]      hresp_none;
   wire                           hready_resp_none;
@@ -270,42 +238,7 @@ module i_ahb_DW_ahb (
   assign bus_hwrite[1] = hwrite_m1;
   assign bus_hwdata[(  `AHB_DATA_WIDTH*2)-1:(  `AHB_DATA_WIDTH*1)] = hwdata_m1;
 
-  assign bus_hbusreq[1] = hbusreq_m1;
-  assign hgrant_m1 = bus_hgrant[1];
-  assign bus_hlock[1] = hlock_m1;
 
-  assign bus_haddr[(  `HADDR_WIDTH*3)-1:(  `HADDR_WIDTH*2)] = haddr_m2;
-  assign bus_htrans[5:4] = htrans_m2;
-  assign bus_hburst[8:6] = hburst_m2;
-  assign bus_hsize[8:6] = hsize_m2;
-  assign bus_hprot[11:8] = hprot_m2;
-  assign bus_hwrite[2] = hwrite_m2;
-  assign bus_hwdata[(  `AHB_DATA_WIDTH*3)-1:(  `AHB_DATA_WIDTH*2)] = hwdata_m2;
-
-  assign bus_hbusreq[2] = hbusreq_m2;
-  assign hgrant_m2 = bus_hgrant[2];
-  assign bus_hlock[2] = hlock_m2;
-
-  assign bus_haddr[(  `HADDR_WIDTH*4)-1:(  `HADDR_WIDTH*3)] = haddr_m3;
-  assign bus_htrans[7:6] = htrans_m3;
-  assign bus_hburst[11:9] = hburst_m3;
-  assign bus_hsize[11:9] = hsize_m3;
-  assign bus_hprot[15:12] = hprot_m3;
-  assign bus_hwrite[3] = hwrite_m3;
-  assign bus_hwdata[(  `AHB_DATA_WIDTH*4)-1:(  `AHB_DATA_WIDTH*3)] = hwdata_m3;
-
-  assign bus_hbusreq[3] = hbusreq_m3;
-  assign hgrant_m3 = bus_hgrant[3];
-  assign bus_hlock[3] = hlock_m3;
-
-  //leda NTL_CON16 off 
-  //LMD: Nets or cell pins should not be tied to logic 0 / logic 1 
-  //LJ : These are signals driven by Master 0, the internal dummy Master. 
-  //     It will never request the bus, nor it will require locked access. 
-  //     Hence bus_hbusreq[0] and bus_hlock[0] will tied to logic 0. 
-  assign bus_hbusreq[0] = 1'b0;
-  assign bus_hlock[0] = 1'b0;
-  //leda NTL_CON16 on 
   //leda NTL_CON16 off 
   //LMD: Nets or cell pins should not be tied to logic 0 / logic 1. 
   //LJ : When AHB LITE is selected, slave will be always ready and will always give OK response.
@@ -327,22 +260,20 @@ module i_ahb_DW_ahb (
   assign bus_hresp[5:4] = hresp_s2;
   assign bus_hrdata[(  `AHB_DATA_WIDTH*3)-1:  `AHB_DATA_WIDTH*2] = hrdata_s2;
 
+  assign bus_hready[3] = hready_resp_s3;
+  assign bus_hresp[7:6] = hresp_s3;
+  assign bus_hrdata[(  `AHB_DATA_WIDTH*4)-1:  `AHB_DATA_WIDTH*3] = hrdata_s3;
+
+  assign bus_hready[4] = hready_resp_s4;
+  assign bus_hresp[9:8] = hresp_s4;
+  assign bus_hrdata[(  `AHB_DATA_WIDTH*5)-1:  `AHB_DATA_WIDTH*4] = hrdata_s4;
+
   assign hsel_none = hsel[  `NUM_IAHB_SLAVES+1];
   assign hsel_s1 = hsel[1];
   assign hsel_s2 = hsel[2];
+  assign hsel_s3 = hsel[3];
+  assign hsel_s4 = hsel[4];
 
-  //leda NTL_CON16 off 
-  //LMD: Nets or cell pins should not be tied to logic 0 / logic 1. 
-  //LJ : If the respective slave is not capable of giving split response, 
-  //     bus_hsplit[15:0] is tied to logic 0. 
-  assign bus_hsplit[15:0] = {  `HSPLIT_WIDTH{1'b0}};
-  //leda NTL_CON16 on 
-  //leda NTL_CON16 off 
-  //LMD: Nets or cell pins should not be tied to logic 0 / logic 1. 
-  //LJ : If the respective slave is not capable of giving split response, 
-  //     bus_hsplit[31:16] is tied to logic 0. 
-  assign bus_hsplit[31:16] = {  `HSPLIT_WIDTH{1'b0}};
-  //leda NTL_CON16 on 
 
 
 // end of generated "assign" statements
@@ -368,7 +299,6 @@ module i_ahb_DW_ahb (
           .hresetn(hresetn),
           .bus_haddr(bus_haddr),
           .bus_hburst(bus_hburst),
-          .hmaster(hmaster),
           .bus_hprot(bus_hprot),
           .bus_hsize(bus_hsize),
           .bus_htrans(bus_htrans),
@@ -414,26 +344,27 @@ module i_ahb_DW_ahb (
   //     masters.When number of masters is less than 8,upper bit is tied to logic0. When
   //     number of masters is less than 4, upper two bits are tied to logic 0.When number
   //     of masters is less than 2, upper three bits are tied to logic 0.
-  i_ahb_DW_ahb_arb
-   U_arb (
+
+  //leda NTL_CON10 off
+  //LMD: output tied to supply.
+  //LJ : When AHB_LITE mode is selected, there will be only one master in the 
+  //     system and hence master number (hmaster) is tied to logic1.
+  //leda NTL_CON10B off
+  //LMD: Output tied to supply in design.
+  //LJ : When AHB_LITE mode is selected, there will be only one master in the 
+  //     system and hence master number (hmaster) is tied to logic1.
+
+  i_ahb_DW_ahb_arblite
+   U_arblite (
   //leda NTL_CON10B on
   //leda NTL_CON10 on
-    .hclk(hclk),
-                    .hresetn(hresetn),
-                    .hready(hready),
-                    .hresp(hresp),
-                    .hburst(hburst),
-                    .htrans(htrans),
-                    .bus_hlock(bus_hlock),
-                    .bus_hbusreq(bus_hbusreq),
-                    .bus_hsplit(bus_hsplit),
-                    .hmaster_data(hmaster_data),
-                    .bus_hgrant(bus_hgrant),
-                    .hmaster(hmaster),
-                    .hmastlock(hmastlock)
-                    );
-
-
+    .hclk             (hclk),
+    .hresetn          (hresetn),
+    .hlock_m1         (hlock_m1),
+    .hready           (hready),
+    .hmaster          (hmaster),
+    .hmastlock        (hmastlock)
+  );
 
 
   //leda NTL_CON10 off

@@ -63,16 +63,16 @@
 //   - The number of masters is changed to 1 
 //   - The arbiter interface is removed 
 //   - All slaves are made non split capable
-`define AHB_LITE 0
+`define AHB_LITE 1
 
 //Creates a define for whether bus is lite or not.
 
-// `define AHB_LITE_EDEF
+`define AHB_LITE_EDEF
 
 
 
 // Name:         NUM_AHB_MASTERS
-// Default:      2 ([ <functionof> AHB_LITE ])
+// Default:      1 ([ <functionof> AHB_LITE ])
 // Values:       1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 // Enabled:      AHB_LITE == 0
 // 
@@ -83,10 +83,10 @@
 // master or the only existing master. The dummy master is the master  
 // who owns the bus when no one wants it. 
 // There can be up to 15 masters connected to the DW_ahb.
-`define NUM_AHB_MASTERS 3
+`define NUM_AHB_MASTERS 1
 
 
-`define LOG2_NUM_INT_MASTERS 2
+`define LOG2_NUM_INT_MASTERS 1
 
 
 // Name:         HADDR_WIDTH
@@ -186,7 +186,7 @@
 
 
 // Name:         PAUSE
-// Default:      true ([ <functionof> AHB_LITE ])
+// Default:      false ([ <functionof> AHB_LITE ])
 // Values:       false (0), true (1)
 // Enabled:      AHB_LITE==0
 // 
@@ -214,7 +214,7 @@
 
 
 // Name:         AHB_HAS_ARBIF
-// Default:      true ([ <functionof> AHB_LITE ])
+// Default:      false ([ <functionof> AHB_LITE ])
 // Values:       false (0), true (1)
 // Enabled:      AHB_LITE==0
 // 
@@ -300,11 +300,11 @@
 // of the addressing modes there can be 15 assigned 
 // slaves. If there is only one addressing mode, then 
 // this is the number of slaves in the system.
-`define NUM_IAHB_SLAVES 2
+`define NUM_IAHB_SLAVES 4
 
 
 // Name:         NUM_NAHB_SLAVES
-// Default:      2 (NUM_IAHB_SLAVES)
+// Default:      4 (NUM_IAHB_SLAVES)
 // Values:       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 // Enabled:      REMAP == 1 && [<functionof> AHB_HAS_XDCDR]
 // 
@@ -313,7 +313,7 @@
 // visibility. Slaves can be visible in both Normal and 
 // Boot modes. This parameter option is active only if 
 // you enable the Memory Remap Feature.
-`define NUM_NAHB_SLAVES 2
+`define NUM_NAHB_SLAVES 4
 
 
 // Name:         NUM_BAHB_SLAVES
@@ -396,7 +396,7 @@
 
 
 // Name:         DFLT_MSTR_NUM
-// Default:      0x0 ([ <functionof> AHB_LITE ])
+// Default:      0x1 ([ <functionof> AHB_LITE ])
 // Values:       0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 
 //               0xd, 0xe, 0xf
 // Enabled:      AHB_LITE == 0
@@ -408,7 +408,7 @@
 // Master. The value must be less than or equal to the 
 // value of NUM_AHB_MASTERS. If weighted token arbitration 
 // is enabled, then this value is hardcoded to 0.
-`define DFLT_MSTR_NUM 4'h0
+`define DFLT_MSTR_NUM 4'h1
 
 
 // Name:         HC_DFLT_MSTR
