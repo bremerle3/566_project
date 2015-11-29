@@ -102,10 +102,10 @@ module i_ahb_DW_ahb (
   // physical parameters
 
   // memory map parameters
-  parameter INT_R1_N_SA_1 = 32'h10000000;
-  parameter INT_R1_N_EA_1 = 32'h10000fff;
-  parameter INT_R1_N_SA_2 = 32'h10001000;
-  parameter INT_R1_N_EA_2 = 32'h10002fff;
+  parameter INT_R1_N_SA_1 = 32'h20000000;
+  parameter INT_R1_N_EA_1 = 32'h20000fff;
+  parameter INT_R1_N_SA_2 = 32'h20001000;
+  parameter INT_R1_N_EA_2 = 32'h20002fff;
 
   // derived parameters
   parameter ADDRBUS_WIDTH = 64;
