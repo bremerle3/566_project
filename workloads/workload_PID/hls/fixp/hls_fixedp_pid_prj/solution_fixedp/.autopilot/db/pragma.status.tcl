@@ -1,6 +1,0 @@
-lappend pragmaStatus0 {pragma "ALLOCATION" source "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/./C/xapp_pid.cpp" location "PID_Controller" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
-lappend pragmaStatus1 {pragma "ARRAY_PARTITION" source "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/./C/xapp_pid.cpp" location "PID_Controller" found 1 funcFound 1 applied 1 ambiguous 0 reason "null" variable "coeff"}
-lappend pragmaStatus2 {pragma "ARRAY_PARTITION" source "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/./C/xapp_pid.cpp" location "PID_Controller" found 1 funcFound 1 applied 1 ambiguous 0 reason "null" variable "din"}
-lappend pragmaStatus3 {pragma "ARRAY_PARTITION" source "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/./C/xapp_pid.cpp" location "PID_Controller" found 1 funcFound 1 applied 1 ambiguous 0 reason "null" variable "dout"}
-lappend pragmaStatus4 {pragma "INTERFACE" source "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/./C/xapp_pid.cpp" location "PID_Controller" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
-lappend pragmaStatus5 {pragma "INTERFACE" source "/home/warehouse/lbremer/ese566/workload_PID/hls/fixp/./C/xapp_pid.cpp" location "PID_Controller" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
