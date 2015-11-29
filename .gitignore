@@ -15,6 +15,7 @@ simv*
 WORK/
 dc_shell_output/
 hls_pwm/
+hls_fixedp_pid_prj/
 csrc/
 synth_sim_datfiles/
 
