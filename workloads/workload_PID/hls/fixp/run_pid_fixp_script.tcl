@@ -18,4 +18,5 @@ source "./directives2_fixedp.tcl"
 csynth_design
 cosim_design
 
-export_design -evaluate vhdl -format sysgen 
+export_design -evaluate verilog -format sysgen 
+exit
