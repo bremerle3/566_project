@@ -1,9 +1,9 @@
-DESIGN_NAME = xapp_pid
+DESIGN_NAME = PID_Controller
 ROOTDIR = $(realpath .)
-IMPL =  $(ROOTDIR)/hls_fixp_pid/solution_fixp_pid/impl
+IMPL =  $(ROOTDIR)/hls_fixedp_pid_prj/solution_fixedp/impl
 SIM_TBS = $(IMPL)/verilog/sim_tbs
 HLS_DIR = pid_synth
-SIM_SRCS = gen_pid_tb.v gen_pid.v
+SIM_SRCS = PID_Controller_tb.v PID_Controller.v
 SIM_PATHS = $(addprefix $(ROOTDIR)/$(HLS_DIR)/, $(SIM_SRCS))
 SIM_DATA = synth_sim_datfiles
 CXX = /project/linuxlab/xilinx/xilinx/Vivado_HLS/Vivado_HLS/lnx64/tools/gcc/bin/g++
@@ -22,7 +22,7 @@ csim:
 	$(CXX) -g xapp_pid.cpp xapp_pid.h test_xapp_pid.cpp -o pid_tb.o -I$(LD_FLAGS)
 #Run high level synthesis, copy output and tb material to HLS_DIR
 hls:
-	vivado_hls -f run_pwm.tcl
+	vivado_hls -f run_pid_fixp_script.tcl
 	rm -rf $(HLS_DIR)/$(SIM_DATA)
 	mkdir $(HLS_DIR)/$(SIM_DATA)
 	cp $(IMPL)/verilog/$(DESIGN_NAME).v $(ROOTDIR)/$(HLS_DIR)
@@ -35,7 +35,7 @@ vcs:
 	cd $(HLS_DIR) && vcs $(SIM_PATHS)
 
 dc_shell:
-	dc_shell-t -f compiledc_pwm.tcl
+	dc_shell-t -f compiledc_pid.tcl
 	rm -rf dc_shell_output/
 	mkdir dc_shell_output
 	mv *.repC ./dc_shell_output

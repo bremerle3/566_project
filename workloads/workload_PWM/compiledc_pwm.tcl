@@ -7,9 +7,9 @@ set_host_options -max_cores 16
 
 set lib_path ". /group/guyeon/cktcad/kits/arm/arm/tsmc/cln40g"
 
-set proj_path "/home/warehouse/lbremer/566_project/workloads/workload_PWM/"
+set proj_path [pwd]
 
-append verilog_path ${proj_path} "hls_pwm/solution_pwm/impl/verilog/"
+append verilog_path ${proj_path} "/hls_pwm/solution_pwm/impl/verilog/"
 
 append design_verilog ${verilog_path} "gen_pwm.v"
 
