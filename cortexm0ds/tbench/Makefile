@@ -45,8 +45,10 @@ copyright:
 
 CPROGRAM	= helloworld
 
-ARMCCFLAGS	= --cpu=cortex-m0 -c
+ARMCCFLAGS	= -mthumb -mcpu=cortex-m0 -c
 ARMLDFLAGS	= --cpu=cortex-m0 --ro-base=0x0 --info=totals --map
+
+ARMCC = arm-none-eabi-gcc
 
 # Extract RAM binary image from ELF file
 ram.bin:	$(CPROGRAM).elf
@@ -58,7 +60,7 @@ ram.bin:	$(CPROGRAM).elf
 
 # Compile C program to object file
 %.o:	%.c
-	armcc $(ARMCCFLAGS) -o $@ $<
+	$(ARMCC) $(ARMCCFLAGS) -o $@ $<
 
 #-------------------------------------------------------------------------------
 # Example targets to build example testbench and run example program
@@ -90,3 +92,16 @@ questasim:	$(VERILOGSRC)
 # Synopsys VCS
 vcs:	$(VERILOGSRC)
 	vcs -R $(VERILOGCOMPILE)
+
+
+
+test:
+	arm-none-eabi-gcc -c -mthumb -mcpu=cortex-m0 -g test.c -o test.o
+
+# Extract RAM binary image from ELF file
+test.bin:	$(CPROGRAM).elf
+	fromelf --bin --output $@ $<
+
+# Link object file with library to produce ELF
+%.elf:	%.o
+	armlink $(ARMLDFLAGS) --first='$<(vectors)' -o $@ $<
