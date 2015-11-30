@@ -34,7 +34,7 @@ module cortexM0RAM (
 		if (ex_i_ahb_AHB_Slave_RAM_hsel == 1'b1) begin
 			RAM_addr <= ex_i_ahb_AHB_Slave_RAM_haddr;
 			RAM_hwrite <= ex_i_ahb_AHB_Slave_RAM_hwrite;
-			if (RAM_hwirte) begin
+			if (RAM_hwrite) begin
 				RAM[RAM_addr] <= ex_i_ahb_AHB_Slave_RAM_hwdata;
 			end
 			else begin
