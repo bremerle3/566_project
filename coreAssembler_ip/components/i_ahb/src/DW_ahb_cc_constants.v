@@ -1437,7 +1437,7 @@
 // This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_SA_3 32'h30000
+`define R1_N_SA_3 32'h12000
 
 
 // Name:         R1_N_EA_3
@@ -1449,7 +1449,7 @@
 // Slave 3. This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_EA_3 32'h30fff
+`define R1_N_EA_3 32'h12fff
 
 
 // Name:         R2_N_SA_3
@@ -1622,7 +1622,7 @@
 // This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_SA_4 32'h40000
+`define R1_N_SA_4 32'h13000
 
 
 // Name:         R1_N_EA_4
@@ -1634,7 +1634,7 @@
 // Slave 4. This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_EA_4 32'h40fff
+`define R1_N_EA_4 32'h13fff
 
 
 // Name:         R2_N_SA_4
