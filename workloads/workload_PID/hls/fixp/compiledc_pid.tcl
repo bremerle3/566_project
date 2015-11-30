@@ -9,9 +9,9 @@ set lib_path ". /group/guyeon/cktcad/kits/arm/arm/tsmc/cln40g"
 
 set proj_path [pwd]
 
-append verilog_path ${proj_path} "/hls_pwm/solution_pwm/impl/verilog/"
+append verilog_path ${proj_path} "/pid_synth/"
 
-append design_verilog ${verilog_path} "gen_pwm.v"
+append design_verilog ${verilog_path} "PID_Controller.v"
 
 # allows files to be read in without specifying the directory path
 set search_path ". /project/linuxlab/synopsys/syncore/libraries /project/linuxlab/synopsys/syncore/minpower/syn /project/linuxlab/synopsys/syncore/dw/syn_ver /project/linuxlab/synopsys/syncore/dw/sin_ver /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs"
@@ -42,7 +42,7 @@ define_design_lib WORK -path ./WORK
 set my_verilog_files [list $design_verilog]
 
 # Set the top module of your design
-set my_toplevel "gen_pwm"
+set my_toplevel "PID_Controller"
 
 # This command does the same work of analyze+elaborate
 # read_verilog $my_verilog_files   
