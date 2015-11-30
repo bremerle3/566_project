@@ -92,6 +92,11 @@ initial
 always @(sim_clock)
   #(clk_period/2) sim_clock <= ~sim_clock;
 
+initial begin
+    $dumpfile("cortexm0ds_tb.vcd");
+    $dumpvars(0,cortexm0ds_tb);
+end
+
 // Release the active-low power-on reset signal after the given delay
 initial begin
   #0 power_on_reset_n = 1'b0;
