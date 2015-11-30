@@ -33,7 +33,7 @@
 #include <time.h>
 #include "rt_misc.h"
 
-    #define REG_FOO 0x33000  //base addr for PWM
+    #define REG_FOO 0x12000  //base addr for PWM
 
 //------------------------------------------------------------------------------
 // The following code implements all the functions required for semihosting
