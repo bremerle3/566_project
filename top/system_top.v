@@ -49,6 +49,22 @@ module system_top (
     wire PWM_hwdata_top;
     wire PWM_hwrite_top;
     wire out_pwm_top;
+    // PID ACCELERATOR INTERFACE
+    wire PID_hrdata_top;
+    wire PID_hready_resp_top;
+    wire PID_hresp_top;
+    wire PID_haddr_top;
+    wire PID_hburst_top;
+    wire PID_hmastlock_top;
+    wire PID_hprot_top;
+    wire PID_hready_top;
+    wire PID_hsel_top;
+    wire PID_hsize_top;
+    wire PID_htrans_top;
+    wire PID_hwdata_top;
+    wire PID_hwrite_top;
+    wire dout_0_pid_top;
+    wire dout_1_pid_top;
     //RAM INTERFACE
     wire RAM_hrdata_top;
     wire RAM_hready_resp_top;
@@ -87,48 +103,50 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         .ex_i_ahb_AHB_MASTER_CORTEXM0_hready(HREADY_top),
                         .ex_i_ahb_AHB_MASTER_CORTEXM0_hresp(HRESP_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_PID
-                        ex_i_ahb_AHB_Slave_PID_hrdata,
-                        ex_i_ahb_AHB_Slave_PID_hready_resp,
-                        ex_i_ahb_AHB_Slave_PID_hresp,
-                        ex_i_ahb_AHB_Slave_PID_haddr,
-                        ex_i_ahb_AHB_Slave_PID_hburst,
-                        ex_i_ahb_AHB_Slave_PID_hmastlock,
-                        ex_i_ahb_AHB_Slave_PID_hprot,
-                        ex_i_ahb_AHB_Slave_PID_hready,
-                        ex_i_ahb_AHB_Slave_PID_hsel,
-                        ex_i_ahb_AHB_Slave_PID_hsize,
-                        ex_i_ahb_AHB_Slave_PID_htrans,
-                        ex_i_ahb_AHB_Slave_PID_hwdata,
-                        ex_i_ahb_AHB_Slave_PID_hwrite,
+                        .ex_i_ahb_AHB_Slave_PID_hrdata(PID_hrdata_top),
+                        .ex_i_ahb_AHB_Slave_PID_hready_resp(PID_hready_resp_top),
+                        .ex_i_ahb_AHB_Slave_PID_hresp(PID_hresp_top),
+                        .ex_i_ahb_AHB_Slave_PID_haddr(PID_haddr_top),
+                        .ex_i_ahb_AHB_Slave_PID_hburst(PID_hburst_top),
+                        .ex_i_ahb_AHB_Slave_PID_hmastlock(PID_hmastlock_top),
+                        .ex_i_ahb_AHB_Slave_PID_hprot(PID_hprot_top),
+                        .ex_i_ahb_AHB_Slave_PID_hready(PID_hready_top),
+                        .ex_i_ahb_AHB_Slave_PID_hsel(PID_hsel_top),
+                        .ex_i_ahb_AHB_Slave_PID_hsize(PID_hsize_top),
+                        .ex_i_ahb_AHB_Slave_PID_htrans(PID_htrans_top),
+                        .ex_i_ahb_AHB_Slave_PID_hwdata(PID_hwdata_top),
+                        .ex_i_ahb_AHB_Slave_PID_hwrite(PID_hwrite_top),
+			.dout_0_pid(dout_0_pid_top),
+			.dout_1_pid(dout_1_pid_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_PWM
-                        ex_i_ahb_AHB_Slave_PWM_hrdata(PWM_hrdata_top),
-                        ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top)
-                        ex_i_ahb_AHB_Slave_PWM_hresp(PWM_hresp_top),
-                        ex_i_ahb_AHB_Slave_PWM_haddr(PWM_haddr_top),
-                        ex_i_ahb_AHB_Slave_PWM_hburst(PWM_hburst_top),
-                        ex_i_ahb_AHB_Slave_PWM_hmastlock(PWM_hmastlock_top),
-                        ex_i_ahb_AHB_Slave_PWM_hprot(PWM_hprot_top),
-                        ex_i_ahb_AHB_Slave_PWM_hready(PWM_hready_top),
-                        ex_i_ahb_AHB_Slave_PWM_hsel(PWM_hsel_top),
-                        ex_i_ahb_AHB_Slave_PWM_hsize(PWM_hsize_top),
-                        ex_i_ahb_AHB_Slave_PWM_htrans(PWM_htrans_top),
-                        ex_i_ahb_AHB_Slave_PWM_hwdata(PWM_hwdata_top),
-                        ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
-                        out_pwm(out_pwm_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hrdata(PWM_hrdata_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top)
+                        .ex_i_ahb_AHB_Slave_PWM_hresp(PWM_hresp_top),
+                        .ex_i_ahb_AHB_Slave_PWM_haddr(PWM_haddr_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hburst(PWM_hburst_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hmastlock(PWM_hmastlock_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hprot(PWM_hprot_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hready(PWM_hready_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hsel(PWM_hsel_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hsize(PWM_hsize_top),
+                        .ex_i_ahb_AHB_Slave_PWM_htrans(PWM_htrans_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hwdata(PWM_hwdata_top),
+                        .ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
+                        .out_pwm(out_pwm_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_RAM
-                        ex_i_ahb_AHB_Slave_RAM_hrdata(RAM_hrdata_top),
-                        ex_i_ahb_AHB_Slave_RAM_hready_resp(RAM_hready_resp_top),
-                        ex_i_ahb_AHB_Slave_RAM_hresp(RAM_hresp_top),
-                        ex_i_ahb_AHB_Slave_RAM_haddr(RAM_haddr_top),
-                        ex_i_ahb_AHB_Slave_RAM_hburst(RAM_hburst_top),
-                        ex_i_ahb_AHB_Slave_RAM_hmastlock(RAM_hmastlock_top),
-                        ex_i_ahb_AHB_Slave_RAM_hprot(RAM_hprot_top),
-                        ex_i_ahb_AHB_Slave_RAM_hready(RAM_hready_top),
-                        ex_i_ahb_AHB_Slave_RAM_hsel(RAM_hsel_top),
-                        ex_i_ahb_AHB_Slave_RAM_hsize(RAM_hsize_top),
-                        ex_i_ahb_AHB_Slave_RAM_htrans(RAM_htrans_top),
-                        ex_i_ahb_AHB_Slave_RAM_hwdata(RAM_hwdata_top),
-                        ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hrdata(RAM_hrdata_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hready_resp(RAM_hready_resp_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hresp(RAM_hresp_top),
+                        .ex_i_ahb_AHB_Slave_RAM_haddr(RAM_haddr_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hburst(RAM_hburst_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hmastlock(RAM_hmastlock_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hprot(RAM_hprot_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hready(RAM_hready_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hsel(RAM_hsel_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hsize(RAM_hsize_top),
+                        .ex_i_ahb_AHB_Slave_RAM_htrans(RAM_htrans_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hwdata(RAM_hwdata_top),
+                        .ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top),
                         // Ports for Manually exported pins
                         i_apb_pclk_en,
                         i_i2c_ic_clk,
@@ -231,6 +249,29 @@ pwm2ahb_wrapper pwm2ahb_wrapper_inst (
     .ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
     // PWM out
     .out_pwm(out_pwm_top)
+);
+
+pid2ahb_wrapper pid2ahb_wrapper_inst (
+    // Clock and reset
+    .HCLK(HCLK_top),
+    .HRESETn(HRESETn_top),
+    // AHB Interface
+    .ex_i_ahb_AHB_Slave_PID_hrdata(PID_hrdata_top),
+    .ex_i_ahb_AHB_Slave_PID_hready_resp(PID_hready_resp_top),
+    .ex_i_ahb_AHB_Slave_PID_hresp(PID_hresp_top),
+    .ex_i_ahb_AHB_Slave_PID_haddr(PID_haddr_top),
+    .ex_i_ahb_AHB_Slave_PID_hburst(PID_hburst_top),
+    .ex_i_ahb_AHB_Slave_PID_hmastlock(PID_hmastlock_top),
+    .ex_i_ahb_AHB_Slave_PID_hprot(PID_hprot_top),
+    .ex_i_ahb_AHB_Slave_PID_hready(PID_hready_top),
+    .ex_i_ahb_AHB_Slave_PID_hsel(PID_hsel_top),
+    .ex_i_ahb_AHB_Slave_PID_hsize(PID_hsize_top),
+    .ex_i_ahb_AHB_Slave_PID_htrans(PID_htrans_top),
+    .ex_i_ahb_AHB_Slave_PID_hwdata(PID_hwdata_top),
+    .ex_i_ahb_AHB_Slave_PID_hwrite(PID_hwrite_top),
+    // PID out
+    .dout_0_pid(dout_0_pid_top),
+    .dout_1_pid(dout_1_pid_top)
 );
 
 ram2ahb_wrapper ram2ahb_wrapper_inst (
