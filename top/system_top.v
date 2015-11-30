@@ -49,7 +49,20 @@ module system_top (
     wire PWM_hwdata_top;
     wire PWM_hwrite_top;
     wire out_pwm_top;
-
+    //RAM INTERFACE
+    wire RAM_hrdata_top;
+    wire RAM_hready_resp_top;
+    wire RAM_hresp_top;
+    wire RAM_haddr_top;
+    wire RAM_hburst_top;
+    wire RAM_hmastlock_top;
+    wire RAM_hprot_top;
+    wire RAM_hready_top;
+    wire RAM_hsel_top;
+    wire RAM_hsize_top;
+    wire RAM_htrans_top;
+    wire RAM_hwdata_top;
+    wire RAM_hwrite_top;
 //------------------------------------------------------------------------------
 // Instantiate coreAssembler-generated AMBA IP
 //------------------------------------------------------------------------------
@@ -103,19 +116,19 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
                         out_pwm(out_pwm_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_RAM
-                        ex_i_ahb_AHB_Slave_RAM_hrdata,
-                        ex_i_ahb_AHB_Slave_RAM_hready_resp,
-                        ex_i_ahb_AHB_Slave_RAM_hresp,
-                        ex_i_ahb_AHB_Slave_RAM_haddr,
-                        ex_i_ahb_AHB_Slave_RAM_hburst,
-                        ex_i_ahb_AHB_Slave_RAM_hmastlock,
-                        ex_i_ahb_AHB_Slave_RAM_hprot,
-                        ex_i_ahb_AHB_Slave_RAM_hready,
-                        ex_i_ahb_AHB_Slave_RAM_hsel,
-                        ex_i_ahb_AHB_Slave_RAM_hsize,
-                        ex_i_ahb_AHB_Slave_RAM_htrans,
-                        ex_i_ahb_AHB_Slave_RAM_hwdata,
-                        ex_i_ahb_AHB_Slave_RAM_hwrite,
+                        ex_i_ahb_AHB_Slave_RAM_hrdata(RAM_hrdata_top),
+                        ex_i_ahb_AHB_Slave_RAM_hready_resp(RAM_hready_resp_top),
+                        ex_i_ahb_AHB_Slave_RAM_hresp(RAM_hresp_top),
+                        ex_i_ahb_AHB_Slave_RAM_haddr(RAM_haddr_top),
+                        ex_i_ahb_AHB_Slave_RAM_hburst(RAM_hburst_top),
+                        ex_i_ahb_AHB_Slave_RAM_hmastlock(RAM_hmastlock_top),
+                        ex_i_ahb_AHB_Slave_RAM_hprot(RAM_hprot_top),
+                        ex_i_ahb_AHB_Slave_RAM_hready(RAM_hready_top),
+                        ex_i_ahb_AHB_Slave_RAM_hsel(RAM_hsel_top),
+                        ex_i_ahb_AHB_Slave_RAM_hsize(RAM_hsize_top),
+                        ex_i_ahb_AHB_Slave_RAM_htrans(RAM_htrans_top),
+                        ex_i_ahb_AHB_Slave_RAM_hwdata(RAM_hwdata_top),
+                        ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top),
                         // Ports for Manually exported pins
                         i_apb_pclk_en,
                         i_i2c_ic_clk,
@@ -218,4 +231,25 @@ pwm2ahb_wrapper pwm2ahb_wrapper_inst (
     .ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
     // PWM out
     .out_pwm(out_pwm_top)
+);
+
+ram2ahb_wrapper ram2ahb_wrapper_inst (
+    //Clock and reset
+    .HCLK(HCLK_top),
+    .HRESETn(HRESETn_top),
+    //AHB Interface
+    .ex_i_ahb_AHB_Slave_RAM_hrdata(RAM_hrdata_top),
+    .ex_i_ahb_AHB_Slave_RAM_hready_resp(RAM_hready_resp_top),
+    .ex_i_ahb_AHB_Slave_RAM_hresp(RAM_hresp_top),
+    .ex_i_ahb_AHB_Slave_RAM_haddr(RAM_haddr_top),
+    .ex_i_ahb_AHB_Slave_RAM_hburst(RAM_hburst_top),
+    .ex_i_ahb_AHB_Slave_RAM_hmastlock(RAM_hmastlock_top),
+    .ex_i_ahb_AHB_Slave_RAM_hprot(RAM_hprot_top),
+    .ex_i_ahb_AHB_Slave_RAM_hready(RAM_hready_top),
+    .ex_i_ahb_AHB_Slave_RAM_hsel(RAM_hsel_top),
+    .ex_i_ahb_AHB_Slave_RAM_hsize(RAM_hsize_top),
+    .ex_i_ahb_AHB_Slave_RAM_htrans(RAM_htrans_top),
+    .ex_i_ahb_AHB_Slave_RAM_hwdata(RAM_hwdata_top),
+    .ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top),
+    // RAM OUT ???
 );
