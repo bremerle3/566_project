@@ -24,7 +24,7 @@
 // Cortex-M0 DesignStart testbench example
 //------------------------------------------------------------------------------
 
-module system_top_tb ();
+module no_ahb_tb ();
 
 //------------------------------------------------------------------------------
 // Define parameters for clock period and power-on reset delay
@@ -119,16 +119,35 @@ assign IRQ     = {16{1'b0}};   // Do not generate any interrupts
 assign RXEV    = 1'b0;         // Do not generate any external events
 
 //------------------------------------------------------------------------------
-// Instantiate system_top
+// Instantiate Cortex-M0 DesignStart processor macro cell
 //------------------------------------------------------------------------------
 
-system_top system_top_inst (
-	//system top interface
+CORTEXM0DS u_cortexm0ds (
+  .HCLK        (HCLK),
+  .HRESETn     (HRESETn),
+  .HADDR       (HADDR[31:0]),
+  .HBURST      (HBURST[2:0]),
+  .HMASTLOCK   (HMASTLOCK),
+  .HPROT       (HPROT[3:0]),
+  .HSIZE       (HSIZE[2:0]),
+  .HTRANS      (HTRANS[1:0]),
+  .HWDATA      (HWDATA[31:0]),
+  .HWRITE      (HWRITE),
+  .HRDATA      (HRDATA[31:0]),
+  .HREADY      (HREADY),
+  .HRESP       (HRESP),
+  .NMI         (NMI),
+  .IRQ         (IRQ[15:0]),
+  .TXEV        (TXEV),
+  .RXEV        (RXEV),
+  .LOCKUP      (LOCKUP),
+  .SYSRESETREQ (SYSRESETREQ),
+  .SLEEPING    (SLEEPING)
 );
 
 initial begin
-    $dumpfile("system_top_tb.vcd");
-    $dumpvars(0,system_top_tb);
+    $dumpfile("no_ahb_tb.vcd");
+    $dumpvars(0,no_ahb_tb);
 end
 
 //------------------------------------------------------------------------------
@@ -242,4 +261,4 @@ always @(posedge HCLK)
     $display("%t: Warning, address %x selects neither RAM or console",
       $time, haddr_last);
 
-endmodule //system_top_tb 
+endmodule //no_ahb_tb 
