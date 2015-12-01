@@ -65,7 +65,6 @@ module system_top (
     wire PID_hwrite_top;
     wire dout_0_pid_top;
     wire dout_1_pid_top;
-    #define REG_FOO 0x10000140
     //RAM INTERFACE
     wire RAM_hrdata_top;
     wire RAM_hready_resp_top;
@@ -121,7 +120,7 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
 			            .dout_1_pid(dout_1_pid_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_PWM
                         .ex_i_ahb_AHB_Slave_PWM_hrdata(PWM_hrdata_top),
-                        .ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top)
+                        .ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top),
                         .ex_i_ahb_AHB_Slave_PWM_hresp(PWM_hresp_top),
                         .ex_i_ahb_AHB_Slave_PWM_haddr(PWM_haddr_top),
                         .ex_i_ahb_AHB_Slave_PWM_hburst(PWM_hburst_top),
@@ -292,5 +291,5 @@ ram2ahb_wrapper ram2ahb_wrapper_inst (
     .ex_i_ahb_AHB_Slave_RAM_hsize(RAM_hsize_top),
     .ex_i_ahb_AHB_Slave_RAM_htrans(RAM_htrans_top),
     .ex_i_ahb_AHB_Slave_RAM_hwdata(RAM_hwdata_top),
-    .ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top),
+    .ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top)
 );

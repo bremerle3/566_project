@@ -7,20 +7,20 @@
 
 module cortexM0RAM (
    //input and output
-   output  reg [31:0]  ex_i_ahb_AHB_Slave_RAM_hrdata;
-   output  wire        ex_i_ahb_AHB_Slave_RAM_hready_resp;
-   output  wire [1:0]   ex_i_ahb_AHB_Slave_RAM_hresp;
+   output  reg [31:0]  ex_i_ahb_AHB_Slave_RAM_hrdata,
+   output  wire        ex_i_ahb_AHB_Slave_RAM_hready_resp,
+   output  wire [1:0]  ex_i_ahb_AHB_Slave_RAM_hresp,
 
-   input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_haddr;
-   input wire [2:0]   ex_i_ahb_AHB_Slave_RAM_hburst;
-   input wire        ex_i_ahb_AHB_Slave_RAM_hmastlock;
-   input wire [3:0]   ex_i_ahb_AHB_Slave_RAM_hprot;
-   input wire        ex_i_ahb_AHB_Slave_RAM_hready;
-   input wire        ex_i_ahb_AHB_Slave_RAM_hsel;
-   input wire [2:0]   ex_i_ahb_AHB_Slave_RAM_hsize;
-   input wire [1:0]   ex_i_ahb_AHB_Slave_RAM_htrans;
-   input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_hwdata;
-   input wire         ex_i_ahb_AHB_Slave_RAM_hwrite;
+   input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_haddr,
+   input wire [2:0]   ex_i_ahb_AHB_Slave_RAM_hburst,
+   input wire         ex_i_ahb_AHB_Slave_RAM_hmastlock,
+   input wire [3:0]   ex_i_ahb_AHB_Slave_RAM_hprot,
+   input wire         ex_i_ahb_AHB_Slave_RAM_hready,
+   input wire         ex_i_ahb_AHB_Slave_RAM_hsel,
+   input wire [2:0]   ex_i_ahb_AHB_Slave_RAM_hsize,
+   input wire [1:0]   ex_i_ahb_AHB_Slave_RAM_htrans,
+   input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_hwdata,
+   input wire         ex_i_ahb_AHB_Slave_RAM_hwrite
 );
    reg [31:0] RAM[0:8'hFFFFFFFF];
    reg [31:0] RAM_addr;
@@ -46,5 +46,3 @@ module cortexM0RAM (
 		end
 	end
    end
-	
-endmodule
