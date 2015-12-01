@@ -12,6 +12,13 @@
 // Testing: TODO
 // 
 //------------------------------------------------------------------------------
+`include "../coreAssembler_ip/src/interconnect_ip.v"
+`include "../workloads/workload_PWM/pwm_synth/pwm2ahb_wrapper.v"
+`include "../workloads/workload_PWM/pwm_synth/gen_pwm.v"
+`include "../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v"
+`include "../workloads/workload_PID/hls/fixp/pid_synth/PID_Controller.v"
+`include "./cortexM0RAM.v"
+
 
 module system_top (
   // CLOCK AND RESETS ------------------
@@ -274,7 +281,7 @@ pid2ahb_wrapper pid2ahb_wrapper_inst (
     .dout_1_pid(dout_1_pid_top)
 );
 
-ram2ahb_wrapper ram2ahb_wrapper_inst (
+CORTEXRAM ram2ahb_wrapper_inst (
     //Clock and reset
     .HCLK(HCLK_top),
     .HRESETn(HRESETn_top),
@@ -293,3 +300,5 @@ ram2ahb_wrapper ram2ahb_wrapper_inst (
     .ex_i_ahb_AHB_Slave_RAM_hwdata(RAM_hwdata_top),
     .ex_i_ahb_AHB_Slave_RAM_hwrite(RAM_hwrite_top)
 );
+
+endmodule

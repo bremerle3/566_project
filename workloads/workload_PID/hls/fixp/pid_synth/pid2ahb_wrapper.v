@@ -8,6 +8,7 @@
 // Testing: TODO
 // 
 //------------------------------------------------------------------------------
+//`include "../workloads/workload_PID/hls/fixp/pid_synth/PID_Controller.v"
 
 module pid2ahb_wrapper (
     // Clock and reset

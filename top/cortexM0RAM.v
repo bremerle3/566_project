@@ -6,6 +6,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module cortexM0RAM (
+    // Clock and reset
+    HCLK,
+    HRESETn,
    //input and output
    ex_i_ahb_AHB_Slave_RAM_hrdata,
    ex_i_ahb_AHB_Slave_RAM_hready_resp,
@@ -22,6 +25,8 @@ module cortexM0RAM (
    ex_i_ahb_AHB_Slave_RAM_hwrite
 );
    // Inputs and outputs
+   input           HCLK;
+   input           HRESETn;
    output  reg [31:0]  ex_i_ahb_AHB_Slave_RAM_hrdata;
    output  wire        ex_i_ahb_AHB_Slave_RAM_hready_resp;
    output  wire [1:0]  ex_i_ahb_AHB_Slave_RAM_hresp;
@@ -37,7 +42,7 @@ module cortexM0RAM (
    input wire         ex_i_ahb_AHB_Slave_RAM_hwrite;
 
    // Internal signals
-   reg [31:0] RAM[0:8'hFFFFFFFF];
+   reg [31:0] RAM[0:32'hFFFFFFFF];
    reg [31:0] RAM_addr;
    reg RAM_hwrite;
    always @ (negedge HCLK) begin

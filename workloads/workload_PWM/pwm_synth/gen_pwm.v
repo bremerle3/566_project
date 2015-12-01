@@ -5,7 +5,7 @@
 // 
 // ===========================================================
 
-`timescale 1 ns / 1 ps 
+//`timescale 1 ns / 1 ps 
 
 (* CORE_GENERATION_INFO="gen_pwm,hls_ip_2014_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010clg400-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.518000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=33,HLS_SYN_LUT=145}" *)
 

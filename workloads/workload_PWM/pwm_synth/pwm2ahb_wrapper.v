@@ -8,6 +8,7 @@
 // Testing: TODO
 // 
 //------------------------------------------------------------------------------
+//`include "../workloads/workload_PWM/pwm_synth/gen_pwm.v"
 
 module pwm2ahb_wrapper (
     // Clock and reset
