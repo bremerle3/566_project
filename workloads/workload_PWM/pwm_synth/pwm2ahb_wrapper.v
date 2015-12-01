@@ -97,7 +97,7 @@ always @ (posedge HCLK) begin : register_access
     if (HRESETn == 1'b1) begin
         freq_reg <= 32'b0;
         duty_reg <= 32'b0;
-        out <= 8'b0;
+        out_pwm <= 8'b0;
     end 
     else begin // Address decode
         if ((ex_i_ahb_AHB_Slave_PWM_hwrite == 1'b1)) begin // Write
@@ -116,3 +116,4 @@ always @ (posedge HCLK) begin : assign_inputs
     freq_in <= freq_reg;
     duty_in <= duty_reg;
 end
+endmodule
