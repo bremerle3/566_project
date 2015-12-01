@@ -12,12 +12,12 @@
 // Testing: TODO
 // 
 //------------------------------------------------------------------------------
-`include "../coreAssembler_ip/src/interconnect_ip.v"
-`include "../workloads/workload_PWM/pwm_synth/pwm2ahb_wrapper.v"
+//`include "../coreAssembler_ip/src/interconnect_ip.v"
+//`include "../workloads/workload_PWM/pwm_synth/pwm2ahb_wrapper.v"
 `include "../workloads/workload_PWM/pwm_synth/gen_pwm.v"
-`include "../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v"
+//`include "../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v"
 `include "../workloads/workload_PID/hls/fixp/pid_synth/PID_Controller.v"
-`include "./cortexM0RAM.v"
+//`include "./cortexM0RAM.v"
 
 
 module system_top (
@@ -123,8 +123,6 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         .ex_i_ahb_AHB_Slave_PID_htrans(PID_htrans_top),
                         .ex_i_ahb_AHB_Slave_PID_hwdata(PID_hwdata_top),
                         .ex_i_ahb_AHB_Slave_PID_hwrite(PID_hwrite_top),
-			            .dout_0_pid(dout_0_pid_top),
-			            .dout_1_pid(dout_1_pid_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_PWM
                         .ex_i_ahb_AHB_Slave_PWM_hrdata(PWM_hrdata_top),
                         .ex_i_ahb_AHB_Slave_PWM_hready_resp(PWM_hready_resp_top),
@@ -139,7 +137,6 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         .ex_i_ahb_AHB_Slave_PWM_htrans(PWM_htrans_top),
                         .ex_i_ahb_AHB_Slave_PWM_hwdata(PWM_hwdata_top),
                         .ex_i_ahb_AHB_Slave_PWM_hwrite(PWM_hwrite_top),
-                        .out_pwm(out_pwm_top),
                         // Ports for Interface ex_i_ahb_AHB_Slave_RAM
                         .ex_i_ahb_AHB_Slave_RAM_hrdata(RAM_hrdata_top),
                         .ex_i_ahb_AHB_Slave_RAM_hready_resp(RAM_hready_resp_top),
@@ -281,7 +278,7 @@ pid2ahb_wrapper pid2ahb_wrapper_inst (
     .dout_1_pid(dout_1_pid_top)
 );
 
-CORTEXRAM ram2ahb_wrapper_inst (
+cortexM0RAM ram2ahb_wrapper_inst (
     //Clock and reset
     .HCLK(HCLK_top),
     .HRESETn(HRESETn_top),

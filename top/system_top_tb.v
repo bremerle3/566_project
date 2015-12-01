@@ -25,7 +25,7 @@
 // Cortex-M0 DesignStart testbench example
 //------------------------------------------------------------------------------
 
-`timescale 1 ns / 1 ps 
+//`timescale 1 ns / 1 ps 
 
 module system_top_tb ();
 

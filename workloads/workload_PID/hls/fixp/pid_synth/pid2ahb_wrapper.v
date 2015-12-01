@@ -101,7 +101,7 @@ assign ap_ce_top = 1'b1;
 //------------------------------------------------------------------------------
 // Instantiate PID Accelerator
 //------------------------------------------------------------------------------
-gen_pwm gen_pwm_inst(
+PID_Controller PID_Controller_inst(
     .ap_clk(HCLK),
     .ap_rst(HRESETn),
     .ap_start(ap_start_top),
