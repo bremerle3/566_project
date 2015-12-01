@@ -181,3 +181,4 @@ always @ (posedge HCLK) begin : assign_inputs
     din0_in <= din0_reg;
     din1_in <= din1_reg;
 end
+endmodule

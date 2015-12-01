@@ -61,3 +61,4 @@ module cortexM0RAM (
 		end
 	end
    end
+endmodule
