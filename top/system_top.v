@@ -22,8 +22,8 @@
 
 module system_top (
   // CLOCK AND RESETS ------------------
-  input  wire        HCLK_top,               // Clock
-  input  wire        HRESETn_top         // Asynchronous reset
+  input          HCLK_top,               // Clock
+  input          HRESETn_top         // Asynchronous reset
 );
 
 //------------------------------------------------------------------------------

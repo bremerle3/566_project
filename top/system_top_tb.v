@@ -128,7 +128,8 @@ assign RXEV    = 1'b0;         // Do not generate any external events
 //------------------------------------------------------------------------------
 
 system_top system_top_inst (
-	//system top interface
+	.HCLK_top(sim_clock),//system top interface
+	.HRESETn_top(power_on_reset_n)
 );
 
 initial begin
