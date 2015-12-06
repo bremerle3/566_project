@@ -11,7 +11,7 @@ INTERCONNECTIP = $(PROJECT_TOP)/coreAssembler_ip/src/interconnect_ip.v
 VERILOGCOMPILE	= +v2k +libext+.v -y $(CM0DSPATH) $(TBENCHSRC)
 VERILOGCOMPILETOP = +v2k +incdir+$(COREASSEM) +libext+.v \
 		    -y $(CM0DSPATH) \
-		    -y COREASSEM \
+		    -y $(COREASSEM) \
 		    ./system_top_tb.v \
 		    ./system_top.v \
 		    $(PWMWRAPPER) \
