@@ -1,0 +1,16 @@
+
+VLOGAN	= vlogan
+
+all :		_VCSgd_3v4mWd_1.db \
+	_VCSgd_BawRMd_1.db \
+
+
+
+_VCSgd_3v4mWd_1.db :	pwm2ahb_wrapper.v 
+		${VLOGAN} pwm2ahb_wrapper.v
+
+
+_VCSgd_BawRMd_1.db :	gen_pwm.v 
+		${VLOGAN} gen_pwm.v
+
+

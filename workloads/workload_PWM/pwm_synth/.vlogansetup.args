@@ -1,0 +1,6 @@
+1
+776529017
+pwm2ahb_wrapper.v 
+pwm2ahb_wrapper.v
+   /project/linuxlab/synopsys/vcs_mx/linux/bin/vcs1 -Mcc=gcc -Mcplusplus=g++ -Masflags=--32 -Mcfl=' -pipe -m32 -O -I/project/linuxlab/synopsys/vcs_mx/include ' -Mldflags="-m32 -m32 -Wl,-E,-rpath /project/linuxlab/synopsys/vcs_mx/linux/lib -m32 " -Mout=simv -Mamsrun="" -Mvcsaceobjs="" -Mobjects=" " -Msaverestoreobj= -Mcrt0="" -Mcrtn="" -Mcsrc="" -Msyslibs="-lncurses -L/usr/X11R6/lib -ldl /project/linuxlab/synopsys/vcs_mx/linux/lib/ctype-stubs_32.a -ldl "
+-Xvlogan=0x1    +mixedhdl2    

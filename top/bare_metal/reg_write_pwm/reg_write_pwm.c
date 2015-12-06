@@ -33,7 +33,8 @@
 #include <time.h>
 #include "rt_misc.h"
 
-    #define REG_FOO 0x12000  //base addr for PWM
+    #define REG_FREQ 0x12000  // Address of PWM Freq register
+    #define REG_PWM 0x12004  // Address of PWM Duty register
 
 //------------------------------------------------------------------------------
 // The following code implements all the functions required for semihosting
@@ -130,9 +131,12 @@ int main(void) {
   printf("with the ARM Cortex-M0 DesignStart processor\n");
   */
 
-    uint32_t *reg = (uint32_t *)(REG_FOO);
-    *reg += 3;
-    printf("0x%x\n is the new value", *reg);    
+    uint32_t *reg_freq = (uint32_t *)(REG_FREQ);
+    uint32_t *reg_duty = (uint32_t *)(REG_DUTY);
+    *reg_freq += 10; //Set frequency
+    *reg_duty += 20; //Set duty cycle = %20
+    printf("0x%x\n is the new value of reg_freq", *reg_freq);    
+    printf("0x%x\n is the new value of reg_duty", *reg_duty);    
 
 
   return 0;
