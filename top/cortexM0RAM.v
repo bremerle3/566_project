@@ -24,6 +24,8 @@ module cortexM0RAM (
    ex_i_ahb_AHB_Slave_RAM_hwdata,
    ex_i_ahb_AHB_Slave_RAM_hwrite
 );
+
+    localparam ram_log2   = 18;             // Power of two of RAM words
    // Inputs and outputs
    input           HCLK;
    input           HRESETn;
@@ -42,7 +44,7 @@ module cortexM0RAM (
    input wire         ex_i_ahb_AHB_Slave_RAM_hwrite;
 
    // Internal signals
-   reg [31:0] RAM[0:32'hFFFFFFFF];
+   reg [31:0] RAM[0:(2**ram_log2)-1];
    reg [31:0] RAM_addr;
    reg RAM_hwrite;
    always @ (negedge HCLK) begin
