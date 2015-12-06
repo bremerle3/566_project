@@ -1,0 +1,3 @@
+--Design Settings for Compiling Libraries
+WORK > vtvt_tsmc180
+vtvt_tsmc180 :  ./VTVT_TSMC180

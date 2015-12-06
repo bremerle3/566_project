@@ -1,0 +1,347 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= +v2k +incdir+../coreAssembler_ip/ +libext+.v -y ..//cortexm0ds/verilog -y COREASSEM
+
+all :		_VCSgd_wQR61d_1.db \
+	_VCSgd_A3Mzlb_1.db \
+	_VCSgd_urLGOe_1.db \
+	_VCSgd_waJaP_1.db \
+	_VCSgd_izE6le_1.db \
+	_VCSgd_vpHb6_1.db \
+	_VCSgd_SiLuf_1.db \
+	_VCSgd_DENYid_1.db \
+	_VCSgd_qJ7avb_1.db \
+	_VCSgd_J3AL2c_1.db \
+	_VCSgd_yBSOec_1.db \
+	_VCSgd_mXSJHd_1.db \
+	_VCSgd_ollm0_1.db \
+	_VCSgd_wD1uzc_1.db \
+	_VCSgd_IixGwe_1.db \
+	_VCSgd_VVjJwd_1.db \
+	_VCSgd_71l7Zc_1.db \
+	_VCSgd_Fcizuc_1.db \
+	_VCSgd_lWJnP_1.db \
+	_VCSgd_ptu8be_1.db \
+	_VCSgd_r69Ah_1.db \
+	_VCSgd_aNiyDc_1.db \
+	_VCSgd_TPau9d_1.db \
+	_VCSgd_G8Er7d_1.db \
+	_VCSgd_NyxlAb_1.db \
+	_VCSgd_dBB0W_1.db \
+	_VCSgd_Rl6Zfc_1.db \
+	_VCSgd_f4vo0c_1.db \
+	_VCSgd_1QCRI_1.db \
+	_VCSgd_ogueKd_1.db \
+	_VCSgd_uRoq6c_1.db \
+	_VCSgd_McNkJd_1.db \
+	_VCSgd_BXa42c_1.db \
+	_VCSgd_XpaCub_1.db \
+	_VCSgd_IfJJ4c_1.db \
+	_VCSgd_TsGOhb_1.db \
+	_VCSgd_iX1Vxd_1.db \
+	_VCSgd_JEVsrc_1.db \
+	_VCSgd_HkpdW_1.db \
+	_VCSgd_jSKFDd_1.db \
+	_VCSgd_Mrr0Q_1.db \
+	_VCSgd_v7JdR_1.db \
+	_VCSgd_slVR3b_1.db \
+	_VCSgd_vaVx7b_1.db \
+	_VCSgd_AkRADe_1.db \
+	_VCSgd_IfPxPe_1.db \
+	_VCSgd_13r5Dc_1.db \
+	_VCSgd_i2bVWc_1.db \
+	_VCSgd_ElT8N_1.db \
+	_VCSgd_fzXFyd_1.db \
+	_VCSgd_WxVzqe_1.db \
+	_VCSgd_PuO7jb_1.db \
+	_VCSgd_57PHTd_1.db \
+	_VCSgd_lKHQ2b_1.db \
+	_VCSgd_8Tf6Nb_1.db \
+	_VCSgd_pJe5Xb_1.db \
+	_VCSgd_ry1Ic_1.db \
+	_VCSgd_4fbNV_1.db \
+	_VCSgd_xXF2Qc_1.db \
+	_VCSgd_LqG1rd_1.db \
+	_VCSgd_BawRMd_1.db \
+	_VCSgd_qsiyfc_1.db \
+	_VCSgd_p7rwx_1.db \
+	_VCSgd_3v4mWd_1.db \
+	_VCSgd_1nsak_1.db \
+	_VCSgd_eROCrd_1.db \
+	_VCSgd_A71hFb_1.db \
+	_VCSgd_Tl2lFb_1.db \
+
+
+
+_VCSgd_wQR61d_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_bcm57.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_bcm57.v
+
+
+_VCSgd_A3Mzlb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_bcm06.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_bcm06.v
+
+
+_VCSgd_urLGOe_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_bcm21.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_bcm21.v
+
+
+_VCSgd_waJaP_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_rxsr.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_rxsr.v
+
+
+_VCSgd_izE6le_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_txsr.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_txsr.v
+
+
+_VCSgd_vpHb6_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_biu.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_biu.v
+
+
+_VCSgd_SiLuf_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_regfile.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_regfile.v
+
+
+_VCSgd_DENYid_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_sclkgen.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_sclkgen.v
+
+
+_VCSgd_qJ7avb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_fifo.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_fifo.v
+
+
+_VCSgd_J3AL2c_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_shift.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_shift.v
+
+
+_VCSgd_yBSOec_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_mstfsm.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_mstfsm.v
+
+
+_VCSgd_mXSJHd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_slvfsm.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_slvfsm.v
+
+
+_VCSgd_ollm0_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_dma.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_dma.v
+
+
+_VCSgd_wD1uzc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_intctl.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi_intctl.v
+
+
+_VCSgd_IixGwe_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ssi/src/DW_apb_ssi.v
+
+
+_VCSgd_VVjJwd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm57.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm57.v
+
+
+_VCSgd_71l7Zc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm21.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm21.v
+
+
+_VCSgd_Fcizuc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm41.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm41.v
+
+
+_VCSgd_lWJnP_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm06.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_bcm06.v
+
+
+_VCSgd_ptu8be_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_biu.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_biu.v
+
+
+_VCSgd_r69Ah_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_regfile.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_regfile.v
+
+
+_VCSgd_aNiyDc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_fifo.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_fifo.v
+
+
+_VCSgd_TPau9d_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_intctl.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_intctl.v
+
+
+_VCSgd_G8Er7d_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_rx_filter.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_rx_filter.v
+
+
+_VCSgd_NyxlAb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_clk_gen.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_clk_gen.v
+
+
+_VCSgd_dBB0W_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_mstfsm.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_mstfsm.v
+
+
+_VCSgd_Rl6Zfc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_sync.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_sync.v
+
+
+_VCSgd_f4vo0c_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_slvfsm.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_slvfsm.v
+
+
+_VCSgd_1QCRI_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_tx_shift.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_tx_shift.v
+
+
+_VCSgd_ogueKd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_rx_shift.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_rx_shift.v
+
+
+_VCSgd_uRoq6c_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_toggle.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_toggle.v
+
+
+_VCSgd_McNkJd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_dma.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c_dma.v
+
+
+_VCSgd_BXa42c_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_i2c/src/DW_apb_i2c.v
+
+
+_VCSgd_XpaCub_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_dcdr.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_dcdr.v
+
+
+_VCSgd_IfJJ4c_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_slcr.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_slcr.v
+
+
+_VCSgd_TsGOhb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_ahbsif.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_ahbsif.v
+
+
+_VCSgd_iX1Vxd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_prdmux.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_prdmux.v
+
+
+_VCSgd_JEVsrc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_psel.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_psel.v
+
+
+_VCSgd_HkpdW_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_deslcr.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_deslcr.v
+
+
+_VCSgd_jSKFDd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_mux.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_mux.v
+
+
+_VCSgd_Mrr0Q_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_rdretime.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_rdretime.v
+
+
+_VCSgd_v7JdR_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb.v
+
+
+_VCSgd_slVR3b_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_bcm02.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_bcm02.v
+
+
+_VCSgd_vaVx7b_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_bcm01.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_bcm01.v
+
+
+_VCSgd_AkRADe_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_bcm53.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_bcm53.v
+
+
+_VCSgd_IfPxPe_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arbif.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arbif.v
+
+
+_VCSgd_13r5Dc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_dcdr.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_dcdr.v
+
+
+_VCSgd_i2bVWc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_dfltslv.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_dfltslv.v
+
+
+_VCSgd_ElT8N_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_ebt.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_ebt.v
+
+
+_VCSgd_fzXFyd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_gctrl.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_gctrl.v
+
+
+_VCSgd_WxVzqe_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_mask.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_mask.v
+
+
+_VCSgd_PuO7jb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_mux.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_mux.v
+
+
+_VCSgd_57PHTd_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_cntc.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_cntc.v
+
+
+_VCSgd_lKHQ2b_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_gating.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_gating.v
+
+
+_VCSgd_8Tf6Nb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_wtps.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_wtps.v
+
+
+_VCSgd_pJe5Xb_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arb.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arb.v
+
+
+_VCSgd_ry1Ic_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arblite.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb_arblite.v
+
+
+_VCSgd_4fbNV_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/src/DW_ahb.v
+
+
+_VCSgd_xXF2Qc_1.db :	/home/warehouse/lbremer/566_project/coreAssembler_ip/src/interconnect_ip.v 
+		${VLOGAN}  ${VLOGAN_OPT} /home/warehouse/lbremer/566_project/coreAssembler_ip/src/interconnect_ip.v
+
+
+_VCSgd_LqG1rd_1.db :	./system_top_tb.v 
+		${VLOGAN}  ${VLOGAN_OPT} ./system_top_tb.v
+
+
+_VCSgd_BawRMd_1.db :	../workloads/workload_PWM/pwm_synth/gen_pwm.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../workloads/workload_PWM/pwm_synth/gen_pwm.v
+
+
+_VCSgd_qsiyfc_1.db :	../workloads/workload_PID/hls/fixp/pid_synth/PID_Controller.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../workloads/workload_PID/hls/fixp/pid_synth/PID_Controller.v
+
+
+_VCSgd_p7rwx_1.db :	./system_top.v 
+		${VLOGAN}  ${VLOGAN_OPT} ./system_top.v
+
+
+_VCSgd_3v4mWd_1.db :	../workloads/workload_PWM/pwm_synth/pwm2ahb_wrapper.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../workloads/workload_PWM/pwm_synth/pwm2ahb_wrapper.v
+
+
+_VCSgd_1nsak_1.db :	./cortexM0RAM.v 
+		${VLOGAN}  ${VLOGAN_OPT} ./cortexM0RAM.v
+
+
+_VCSgd_eROCrd_1.db :	../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v
+
+
+_VCSgd_A71hFb_1.db :	..//cortexm0ds/verilog/CORTEXM0DS.v 
+		${VLOGAN}  ${VLOGAN_OPT} ..//cortexm0ds/verilog/CORTEXM0DS.v
+
+
+_VCSgd_Tl2lFb_1.db :	..//cortexm0ds/verilog/cortexm0ds_logic.v 
+		${VLOGAN}  ${VLOGAN_OPT} ..//cortexm0ds/verilog/cortexm0ds_logic.v
+
+
