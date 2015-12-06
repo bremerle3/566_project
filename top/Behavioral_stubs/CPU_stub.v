@@ -13,7 +13,7 @@
 //------------------------------------------------------------------------------
 
 module CPU_stub (
-	//Inputs and Ouputs
+	//SSI Interface
 input			i_ssi_sclk_out,
 input                	i_ssi_ss_0_n,
 input                   i_ssi_ssi_mst_intr_n,
@@ -29,30 +29,44 @@ input                   i_ssi_txd,
 output    reg      	i_ssi_rxd,
 output          	i_ssi_ss_in_n,
 output          	i_ssi_ssi_clk,
-output         		i_ssi_ssi_rst_n
+output         		i_ssi_ssi_rst_n,
+
+	//System top interface
+input		HCLK,
+input		HRESETn
 );
 
 //------------------------------------------------------------------------------
 // Internal Signals/Registers
 //------------------------------------------------------------------------------
-reg temp = 8'b11001110;
-reg orig_temp = 8'b11001110;
-reg count1 = 4'b0000;
+reg [7:0] temp;
+reg [7:0] orig_temp = 8'b11001110;
+reg [3:0] count1;
 
-
+//Assign wires
+assign         i_ssi_ssi_clk = HCLK;
+assign    	i_ssi_ssi_rst_n = HRESETn;
 //------------------------------------------------------------------------------
 // Behavior processes
 //------------------------------------------------------------------------------
 always @(posedge i_ssi_sclk_out) begin
 	//send fake temps
-	if( i_ssi_ss_0_n && count1 < 4'b1000)begin
-		i_ssi_rxd <= temp[0];
-		temp[15] <= i_ssi_txd;
-	end
-	count1 <= count1+4'b0001;
-	if (count1 == 4'b1000)begin
+	if (HRESETn == 1'b0)begin
 		temp <= orig_temp;
 		count1 <= 4'b0000;
+	end
+	else if (i_ssi_ss_0_n)begin 
+		if(count1 < 4'b1000)begin
+			i_ssi_rxd <= temp[0];
+			temp[7] <= i_ssi_txd;
+			count1 <= count1+4'b0001;
+		end
+
+		else if (count1 == 4'b1000)begin
+			temp <= orig_temp;
+			count1 <= 4'b0000;
+		end
+
 	end
 end 
 /*

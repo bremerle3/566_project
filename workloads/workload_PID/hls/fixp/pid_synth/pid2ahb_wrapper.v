@@ -49,8 +49,8 @@ input   [2:0]   ex_i_ahb_AHB_Slave_PID_hsize;
 input   [1:0]   ex_i_ahb_AHB_Slave_PID_htrans;
 input   [31:0]  ex_i_ahb_AHB_Slave_PID_hwdata;
 input           ex_i_ahb_AHB_Slave_PID_hwrite;
-output reg[7:0] dout_0_pid;
-output reg[7:0] dout_1_pid;
+output reg[24:0] dout_0_pid;
+output reg[24:0] dout_1_pid;
 
 // Register map
 parameter [15:0] INITN_ADDR= 16'h0000;
@@ -99,8 +99,8 @@ end
 wire ap_done_top;
 wire ap_idle_top;
 wire ap_ready_top;
-wire dout_0_pid_wire;
-wire dout_1_pid_wire;
+wire [24:0] dout_0_pid_wire;
+wire [24:0] dout_1_pid_wire;
 reg ap_ce_top;
 always @(posedge HCLK) begin
 	ap_ce_top <= 1'b1;

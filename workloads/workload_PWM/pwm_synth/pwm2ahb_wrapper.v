@@ -77,7 +77,7 @@ wire ap_done_top;
 wire ap_idle_top;
 wire ap_ready_top;
 wire out_r_ap_vld_top;
-wire out_r_top;
+wire [7:0] out_r_top;
 reg ap_ce_top;
 always @ (posedge HCLK) begin  
     addr_offset <= 1'b1;

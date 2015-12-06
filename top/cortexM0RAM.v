@@ -25,13 +25,14 @@ module cortexM0RAM (
    ex_i_ahb_AHB_Slave_RAM_hwrite
 );
 
+
     localparam ram_log2   = 18;             // Power of two of RAM words
    // Inputs and outputs
    input           HCLK;
    input           HRESETn;
    output  reg [31:0]  ex_i_ahb_AHB_Slave_RAM_hrdata;
    output  wire        ex_i_ahb_AHB_Slave_RAM_hready_resp;
-   output  wire [1:0]  ex_i_ahb_AHB_Slave_RAM_hresp;
+   output  wire [1:0] ex_i_ahb_AHB_Slave_RAM_hresp;
    input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_haddr;
    input wire [2:0]   ex_i_ahb_AHB_Slave_RAM_hburst;
    input wire         ex_i_ahb_AHB_Slave_RAM_hmastlock;
@@ -43,6 +44,8 @@ module cortexM0RAM (
    input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_hwdata;
    input wire         ex_i_ahb_AHB_Slave_RAM_hwrite;
 
+   //Assign wires
+assign ex_i_ahb_AHB_Slave_RAM_hresp = 2'b0;
    // Internal signals
    reg [31:0] RAM[0:(2**ram_log2)-1];
    reg [31:0] RAM_addr;

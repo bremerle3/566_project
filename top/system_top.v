@@ -40,38 +40,42 @@ module system_top (
     wire        HWRITE_top;            // AHB write control
     wire [31:0] HRDATA_top;            // AHB read-data
     wire        HREADY_top;            // AHB stall signal
-    wire        HRESP_top;             // AHB error response
+    wire [1:0]  HRESP_top;             // AHB error response
+    wire 	NMI_top;	       // Non-maskable interrupt
+    wire [15:0] IRQ_top;	       // Interrupt inputs
+    wire 	RXEV_top;	       // External events
+
     // PWM ACCELERATOR INTERFACE
-    wire PWM_hrdata_top;
+    wire [31:0] PWM_hrdata_top;
     wire PWM_hready_resp_top;
-    wire PWM_hresp_top;
-    wire PWM_haddr_top;
-    wire PWM_hburst_top;
+    wire [1:0] PWM_hresp_top;
+    wire [31:0] PWM_haddr_top;
+    wire [2:0] PWM_hburst_top;
     wire PWM_hmastlock_top;
-    wire PWM_hprot_top;
+    wire [3:0] PWM_hprot_top;
     wire PWM_hready_top;
     wire PWM_hsel_top;
-    wire PWM_hsize_top;
-    wire PWM_htrans_top;
-    wire PWM_hwdata_top;
+    wire [2:0] PWM_hsize_top;
+    wire [1:0] PWM_htrans_top;
+    wire [31:0] PWM_hwdata_top;
     wire PWM_hwrite_top;
-    wire out_pwm_top;
+    wire [7:0] out_pwm_top;
     // PID ACCELERATOR INTERFACE
-    wire PID_hrdata_top;
+    wire [31:0] PID_hrdata_top;
     wire PID_hready_resp_top;
-    wire PID_hresp_top;
-    wire PID_haddr_top;
-    wire PID_hburst_top;
+    wire [1:0] PID_hresp_top;
+    wire [31:0] PID_haddr_top;
+    wire [2:0] PID_hburst_top;
     wire PID_hmastlock_top;
-    wire PID_hprot_top;
+    wire [3:0] PID_hprot_top;
     wire PID_hready_top;
     wire PID_hsel_top;
-    wire PID_hsize_top;
-    wire PID_htrans_top;
-    wire PID_hwdata_top;
+    wire [2:0] PID_hsize_top;
+    wire [1:0] PID_htrans_top;
+    wire [31:0] PID_hwdata_top;
     wire PID_hwrite_top;
-    wire dout_0_pid_top;
-    wire dout_1_pid_top;
+    wire [24:0] dout_0_pid_top;
+    wire [24:0] dout_1_pid_top;
 
     //SPI INTERFACE
    wire          i_ssi_rxd_top;
@@ -90,20 +94,24 @@ module system_top (
    wire         i_ssi_ssi_txo_intr_n_top;
    wire         i_ssi_txd_top;
     //RAM INTERFACE
-    wire RAM_hrdata_top;
+    wire [31:0] RAM_hrdata_top;
     wire RAM_hready_resp_top;
-    wire RAM_hresp_top;
-    wire RAM_haddr_top;
-    wire RAM_hburst_top;
+    wire [1:0] RAM_hresp_top;
+    wire [31:0] RAM_haddr_top;
+    wire [2:0] RAM_hburst_top;
     wire RAM_hmastlock_top;
-    wire RAM_hprot_top;
+    wire [3:0] RAM_hprot_top;
     wire RAM_hready_top;
     wire RAM_hsel_top;
-    wire RAM_hsize_top;
-    wire RAM_htrans_top;
-    wire RAM_hwdata_top;
+    wire [2:0] RAM_hsize_top;
+    wire [1:0] RAM_htrans_top;
+    wire [31:0] RAM_hwdata_top;
     wire RAM_hwrite_top;
-
+    
+//Assign wires
+assign NMI_top = 1'b0;
+assign IRQ_top = {16{1'b0}};
+assign RXEV_top = 1'b0;
 //------------------------------------------------------------------------------
 // Instantiate coreAssembler-generated AMBA IP
 //------------------------------------------------------------------------------
@@ -227,7 +235,7 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
 //------------------------------------------------------------------------------
 CORTEXM0DS CORTEXM0DS_INST(
   // CLOCK AND RESETS ------------------
-  .HCLK     (HLCK_top),             // Clock input
+  .HCLK     (HCLK_top),             // Clock input
   .HRESETn      (HRESETn_top),           // Asynchronous reset input
   // AHB-LITE MASTER PORT .--------------
   .HADDR    (HADDR_top),             // AHB transaction address outpu(out_top)t
@@ -240,7 +248,7 @@ CORTEXM0DS CORTEXM0DS_INST(
   .HWRITE   (HWRITE_top),            // AHB write control output
   .HRDATA   (HRDATA_top),            // AHB read-data input
   .HREADY   (HREADY_top),            // AHB stall signal input
-  .HRESP    (HRESP_top),             // AHB error response input
+  .HRESP    (HRESP_top[0]),             // AHB error response input
   // MISCELLANEOUS ---------------------
   .NMI  (NMI_top),                   // Non-maskable interrupt input 
   .IRQ  (IRQ_top),                   // Interrupt request inputs 
@@ -298,7 +306,7 @@ pid2ahb_wrapper pid2ahb_wrapper_inst (
 );
 
 CPU_stub CPU_stub_inst(
-	//Inputs and Ouputs
+	//APB interface
         .i_ssi_rxd(i_ssi_rxd_top),
         .i_ssi_ss_in_n(i_ssi_ss_in_n_top),
         .i_ssi_ssi_clk(i_ssi_ssi_clk_top),
@@ -313,7 +321,10 @@ CPU_stub CPU_stub_inst(
         .i_ssi_ssi_sleep(i_ssi_ssi_sleep_top),
         .i_ssi_ssi_txe_intr_n(i_ssi_ssi_txe_intr_n_top),
         .i_ssi_ssi_txo_intr_n(i_ssi_ssi_intr_n_top),
-        .i_ssi_txd(i_ssi_txd_top)
+        .i_ssi_txd(i_ssi_txd_top),
+	//System top interface
+	.HCLK(HCLK_top),
+	.HRESETn(HRESETn_top)
 );
 
 cortexM0RAM ram2ahb_wrapper_inst (
