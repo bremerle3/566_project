@@ -72,6 +72,23 @@ module system_top (
     wire PID_hwrite_top;
     wire dout_0_pid_top;
     wire dout_1_pid_top;
+
+    //SPI INTERFACE
+   wire          i_ssi_rxd_top;
+   wire          i_ssi_ss_in_n_top;
+   wire          i_ssi_ssi_clk_top;
+   wire          i_ssi_ssi_rst_n_top;
+   wire         i_ssi_sclk_out_top;
+   wire         i_ssi_ss_0_n_top;
+   wire         i_ssi_ssi_mst_intr_n_top;
+   wire         i_ssi_ssi_oe_n_top;
+   wire         i_ssi_ssi_rxf_intr_n_top;
+   wire         i_ssi_ssi_rxo_intr_n_top;
+   wire         i_ssi_ssi_rxu_intr_n_top;
+   wire         i_ssi_ssi_sleep_top;
+   wire         i_ssi_ssi_txe_intr_n_top;
+   wire         i_ssi_ssi_txo_intr_n_top;
+   wire         i_ssi_txd_top;
     //RAM INTERFACE
     wire RAM_hrdata_top;
     wire RAM_hready_resp_top;
@@ -86,6 +103,7 @@ module system_top (
     wire RAM_htrans_top;
     wire RAM_hwdata_top;
     wire RAM_hwrite_top;
+
 //------------------------------------------------------------------------------
 // Instantiate coreAssembler-generated AMBA IP
 //------------------------------------------------------------------------------
@@ -157,10 +175,21 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         .i_i2c_ic_clk_in_a(),
                         .i_i2c_ic_data_in_a(),
                         .i_i2c_ic_rst_n(),
-                        .i_ssi_rxd(),
-                        .i_ssi_ss_in_n(),
-                        .i_ssi_ssi_clk(),
-                        .i_ssi_ssi_rst_n(),
+                        .i_ssi_rxd(i_ssi_rxd_top),
+                        .i_ssi_ss_in_n(i_ssi_ss_in_n_top),
+                        .i_ssi_ssi_clk(i_ssi_ssi_clk_top),
+                        .i_ssi_ssi_rst_n(i_ssi_ssi_rst_n_top),
+                        .i_ssi_sclk_out(i_ssi_sclk_out_top),
+                        .i_ssi_ss_0_n(i_ssi_ss_0_n_top),
+                        .i_ssi_ssi_mst_intr_n(i_ssi_ssi_mst_intr_n_top),
+                        .i_ssi_ssi_oe_n(i_ssi_ssi_oe_n_top),
+                        .i_ssi_ssi_rxf_intr_n(i_ssi_ssi_rxf_intr_n_top),
+                        .i_ssi_ssi_rxo_intr_n(i_ssi_ssi_rxo_intr_n_top),
+                        .i_ssi_ssi_rxu_intr_n(i_ssi_ssi_rxu_intr_n_top),
+                        .i_ssi_ssi_sleep(i_ssi_ssi_sleep_top),
+                        .i_ssi_ssi_txe_intr_n(i_ssi_ssi_txe_intr_n_top),
+                        .i_ssi_ssi_txo_intr_n(i_ssi_ssi_intr_n_top),
+                        .i_ssi_txd(i_ssi_txd_top),
                         .i_ahb_hmaster_data(),
                         .i_i2c_debug_addr(),
                         .i_i2c_debug_addr_10bit(),
@@ -189,18 +218,8 @@ interconnect_ip interconnect_ip_inst (       // Ports for Interface HCLK
                         .i_i2c_ic_stop_det_intr(),
                         .i_i2c_ic_tx_abrt_intr(),
                         .i_i2c_ic_tx_empty_intr(),
-                        .i_i2c_ic_tx_over_intr(),
-                        .i_ssi_sclk_out(),
-                        .i_ssi_ss_0_n(),
-                        .i_ssi_ssi_mst_intr_n(),
-                        .i_ssi_ssi_oe_n(),
-                        .i_ssi_ssi_rxf_intr_n(),
-                        .i_ssi_ssi_rxo_intr_n(),
-                        .i_ssi_ssi_rxu_intr_n(),
-                        .i_ssi_ssi_sleep(),
-                        .i_ssi_ssi_txe_intr_n(),
-                        .i_ssi_ssi_txo_intr_n(),
-                        .i_ssi_txd()
+                        .i_i2c_ic_tx_over_intr()
+
                         );
 
 //------------------------------------------------------------------------------
@@ -276,6 +295,25 @@ pid2ahb_wrapper pid2ahb_wrapper_inst (
     // PID out
     .dout_0_pid(dout_0_pid_top),
     .dout_1_pid(dout_1_pid_top)
+);
+
+CPU_stub CPU_stub_inst(
+	//Inputs and Ouputs
+        .i_ssi_rxd(i_ssi_rxd_top),
+        .i_ssi_ss_in_n(i_ssi_ss_in_n_top),
+        .i_ssi_ssi_clk(i_ssi_ssi_clk_top),
+        .i_ssi_ssi_rst_n(i_ssi_ssi_rst_n_top),
+        .i_ssi_sclk_out(i_ssi_sclk_out_top),
+        .i_ssi_ss_0_n(i_ssi_ss_0_n_top),
+        .i_ssi_ssi_mst_intr_n(i_ssi_ssi_mst_intr_n_top),
+        .i_ssi_ssi_oe_n(i_ssi_ssi_oe_n_top),
+        .i_ssi_ssi_rxf_intr_n(i_ssi_ssi_rxf_intr_n_top),
+        .i_ssi_ssi_rxo_intr_n(i_ssi_ssi_rxo_intr_n_top),
+        .i_ssi_ssi_rxu_intr_n(i_ssi_ssi_rxu_intr_n_top),
+        .i_ssi_ssi_sleep(i_ssi_ssi_sleep_top),
+        .i_ssi_ssi_txe_intr_n(i_ssi_ssi_txe_intr_n_top),
+        .i_ssi_ssi_txo_intr_n(i_ssi_ssi_intr_n_top),
+        .i_ssi_txd(i_ssi_txd_top)
 );
 
 cortexM0RAM ram2ahb_wrapper_inst (

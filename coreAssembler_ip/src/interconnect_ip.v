@@ -191,6 +191,17 @@ module interconnect_ip (// Ports for Interface HCLK
    input          i_ssi_ss_in_n;
    input          i_ssi_ssi_clk;
    input          i_ssi_ssi_rst_n;
+   output         i_ssi_sclk_out;
+   output         i_ssi_ss_0_n;
+   output         i_ssi_ssi_mst_intr_n;
+   output         i_ssi_ssi_oe_n;
+   output         i_ssi_ssi_rxf_intr_n;
+   output         i_ssi_ssi_rxo_intr_n;
+   output         i_ssi_ssi_rxu_intr_n;
+   output         i_ssi_ssi_sleep;
+   output         i_ssi_ssi_txe_intr_n;
+   output         i_ssi_ssi_txo_intr_n;
+   output         i_ssi_txd;
    output [3:0]   i_ahb_hmaster_data;
    output         i_i2c_debug_addr;
    output         i_i2c_debug_addr_10bit;
@@ -220,17 +231,7 @@ module interconnect_ip (// Ports for Interface HCLK
    output         i_i2c_ic_tx_abrt_intr;
    output         i_i2c_ic_tx_empty_intr;
    output         i_i2c_ic_tx_over_intr;
-   output         i_ssi_sclk_out;
-   output         i_ssi_ss_0_n;
-   output         i_ssi_ssi_mst_intr_n;
-   output         i_ssi_ssi_oe_n;
-   output         i_ssi_ssi_rxf_intr_n;
-   output         i_ssi_ssi_rxo_intr_n;
-   output         i_ssi_ssi_rxu_intr_n;
-   output         i_ssi_ssi_sleep;
-   output         i_ssi_ssi_txe_intr_n;
-   output         i_ssi_ssi_txo_intr_n;
-   output         i_ssi_txd;
+
 
    wire [31:0]  i_ahb_haddr;
    wire [2:0]   i_ahb_hburst;

@@ -35,8 +35,9 @@ output         		i_ssi_ssi_rst_n
 //------------------------------------------------------------------------------
 // Internal Signals/Registers
 //------------------------------------------------------------------------------
-reg temp = 16'b1111111111001110;
-reg count1 = 5'b00000;
+reg temp = 8'b11001110;
+reg orig_temp = 8'b11001110;
+reg count1 = 4'b0000;
 
 
 //------------------------------------------------------------------------------
@@ -44,11 +45,15 @@ reg count1 = 5'b00000;
 //------------------------------------------------------------------------------
 always @(posedge i_ssi_sclk_out) begin
 	//send fake temps
-	if( i_ssi_ss_0_n && count1 < 5'b10000)
+	if( i_ssi_ss_0_n && count1 < 4'b1000)begin
 		i_ssi_rxd <= temp(0);
 		temp(15) <= i_ssi_txd;
 	end
-	count1 <= count1+5'b00001;
+	count1 <= count1+4'b0001;
+	if (count1 == 4'b1000)begin
+		temp <= orig_temp;
+		count1 <= 4b'0000;
+	end
 end 
 /*
 always @(posedge i_ssi_sclk_out) begin
