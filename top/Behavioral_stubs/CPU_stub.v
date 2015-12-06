@@ -26,7 +26,7 @@ input                   i_ssi_ssi_txe_intr_n,
 input                   i_ssi_ssi_txo_intr_n,
 input                   i_ssi_txd,
 
-output          	i_ssi_rxd,
+output    reg      	i_ssi_rxd,
 output          	i_ssi_ss_in_n,
 output          	i_ssi_ssi_clk,
 output         		i_ssi_ssi_rst_n
@@ -46,13 +46,13 @@ reg count1 = 4'b0000;
 always @(posedge i_ssi_sclk_out) begin
 	//send fake temps
 	if( i_ssi_ss_0_n && count1 < 4'b1000)begin
-		i_ssi_rxd <= temp(0);
-		temp(15) <= i_ssi_txd;
+		i_ssi_rxd <= temp[0];
+		temp[15] <= i_ssi_txd;
 	end
 	count1 <= count1+4'b0001;
 	if (count1 == 4'b1000)begin
 		temp <= orig_temp;
-		count1 <= 4b'0000;
+		count1 <= 4'b0000;
 	end
 end 
 /*

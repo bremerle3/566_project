@@ -16,7 +16,8 @@ VERILOGCOMPILETOP = +v2k +incdir+$(COREASSEM) +libext+.v \
 		    ./system_top.v \
 		    $(PWMWRAPPER) \
 		    ./cortexM0RAM.v \
-		    $(PIDWRAPPER) 
+		    $(PIDWRAPPER) \
+		    ./Behavioral_stubs/CPU_stub.v 
 #VERILOGCOMPILETOP = +v2k +libext+.v -y $(CM0DSPATH)  ./system_top_tb.v ./system_top.v $(PWMWRAPPER) ./cortexM0RAM.v $(PIDWRAPPER) $(INTERCONNECTIP) $(CM0DSPATH)/CORTEXM0DS.v
 ARMCC_OBJS       = $(TBENCHPATH)/bare_metal
 
