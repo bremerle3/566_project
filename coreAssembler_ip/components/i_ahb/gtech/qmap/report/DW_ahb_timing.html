@@ -1,0 +1,90 @@
+<HTML>
+  <HEAD> <title>DW_ahb_timing.html</title>  </HEAD>
+    <BODY text="#000000" bgcolor="#FFFFFF">
+    <A NAME="TOP"></A>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+  <div align=right><A HREF="index.html">Report Summary Page</A></div>
+  <H1><CENTER>./qmap/report/DW_ahb_timing.html</CENTER></H1>
+<PRE>
+ 
+****************************************
+<A NAME="i_ahb_DW_ahb_154"></A>Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+Design : i_ahb_DW_ahb
+Version: J-2014.09-SP5
+Date   : Tue Dec  1 06:00:50 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: gtech
+Wire Load Model Mode: top
+
+<A NAME="i_ahb_DW_ahb_354"></A>  Startpoint: haddr_m1[16]
+              (input port)
+  Endpoint: hsel_s1 (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  haddr_m1[16] (in)                                       0.00       0.00 f
+  haddr_m1[16] (net)                            1         0.00       0.00 f
+  U_mux/bus_haddr[48] (i_ahb_DW_ahb_mux)                  0.00       0.00 f
+  U_mux/bus_haddr[48] (net)                               0.00       0.00 f
+  U_mux/U_a/a[48] (i_ahb_DW_ahb_bcm02_64_4_32_0)          0.00       0.00 f
+  U_mux/U_a/a[48] (net)                                   0.00       0.00 f
+  U_mux/U_a/U26/Z (GTECH_AO22)                            0.00       0.00 f
+  U_mux/U_a/mux[16] (net)                       2         0.00       0.00 f
+  U_mux/U_a/mux[16] (i_ahb_DW_ahb_bcm02_64_4_32_0)        0.00       0.00 f
+  U_mux/haddr[16] (net)                                   0.00       0.00 f
+  U_mux/haddr[16] (i_ahb_DW_ahb_mux)                      0.00       0.00 f
+  haddr[16] (net)                                         0.00       0.00 f
+  U_dcdr/haddr[16] (i_ahb_DW_ahb_dcdr_32_00000000_0000ffff_00010000_00011fff)     0.00     0.00 f
+  U_dcdr/haddr[16] (net)                                  0.00       0.00 f
+  U_dcdr/U12/Z (GTECH_NOR2)                               0.00       0.00 r
+  U_dcdr/hsel[1] (net)                          3         0.00       0.00 r
+  U_dcdr/hsel[1] (i_ahb_DW_ahb_dcdr_32_00000000_0000ffff_00010000_00011fff)     0.00     0.00 r
+  hsel_s1 (net)                                           0.00       0.00 r
+  hsel_s1 (out)                                           0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+Information: Updating design information... (UID-85)
+ 
+****************************************
+<DIV ALIGN=right><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A></DIV><A NAME="i_ahb_DW_ahb_2560"></A>Report : timing
+        -path only
+        -delay max
+        -group QtoD
+        -max_paths 25
+Design : i_ahb_DW_ahb
+Version: J-2014.09-SP5
+Date   : Tue Dec  1 06:00:50 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: gtech
+Wire Load Model Mode: top
+No paths.
+
+1
+<DIV ALIGN=right><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A></DIV>
+</PRE>
+<div align=right><A HREF="index.html">Report Summary Page</A></div>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+</BODY>
+</HTML>

@@ -1,0 +1,904 @@
+<HTML>
+  <HEAD> <title>Synopsys - coreConsultant DC Report Summary</title>  </HEAD>
+  <BODY text="#000000" bgcolor="#FFFFFF">
+  <A NAME=TOP></A>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+<H1><CENTER>DC Report Summary</CENTER></H1>
+<TABLE BORDER=0 WIDTH="100%">
+  <TR VALIGN=top><TD>
+    <H2><A NAME="Compile Summary">Compile Summary</A></H2>
+
+    <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+      <TR> <TD> Top Design: </TD> <TD> interconnect_ip </TD> </TR>
+      <TR> <TD> Technology: </TD> <TD><A HREF="interconnect_ip_setup.html">target_library
+</A></TD> </TR>
+      <TR> <TD> CPU Time: </TD> <TD> 00:01:24 </TD> </TR>
+      <TR> <TD> DC Version: </TD> <TD> J-2014.09-SP5 </TD> </TR>
+    </TABLE></TD></TR></TABLE>
+  </TD>
+  <TD></TD>  <TD></TD>
+  <TD>
+  <TABLE BORDER=1>
+    <TR><TD>
+      <A HREF="#Timing Summary">Timing Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Area Summary">Area Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Constraint Report Summary">Constraint Report Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Top Level Port Timing Summary">Top Level Port Timing Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Design Checks Summary">Design Checks Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Verify Budgets Summary">Verify Budgets Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Report Index">Report Index</A>
+    </TD></TR>
+  </TABLE>
+  </TD></TR></TABLE>
+      <H2><A NAME="Timing Summary">Timing Summary</A></H2>
+
+      <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD> <b>Clock Name</b> </TD>
+              <TD ALIGN=right> <b>Timing Path</b> </TD>
+              <TD ALIGN=right> <b>Critical Path Slack (ps)</b> </TD>
+              <TD ALIGN=right> <b>Total Negative Slack (ps)</b> </TD>
+              <TD ALIGN=right> <b>Target Frequency</b> </TD>
+              <TD ALIGN=right> <b>Operating Frequency</b> </TD>
+        </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>PCLK_pclk</TD>
+               <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_1167">Register to Register</A> </TD>
+               <TD ALIGN=right> 14.92 </TD>
+               <TD ALIGN=right> 0.00 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.667 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 167.082 MHz </TD>
+         </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>HCLK_hclk</TD>
+               <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_716">Register to Register</A> </TD>
+               <TD ALIGN=right> 257.27 </TD>
+               <TD ALIGN=right> 0.00 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.667 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 174.133 MHz </TD>
+         </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>i_ssi_ssi_clk</TD>
+               <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_2971">Register to Register</A> </TD>
+               <TD ALIGN=right> -140.71 </TD>
+               <TD ALIGN=right> -3424.57 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 25 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 24.9124 MHz </TD>
+         </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>i_i2c_ic_clk</TD>
+               <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_2516">Register to Register</A> </TD>
+               <TD ALIGN=right> 0.13 </TD>
+               <TD ALIGN=right> 0.00 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.667 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.67 MHz </TD>
+         </TR>
+      <TR>  <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_265">FEEDTHROUGH</A> </TD>
+            <TD ALIGN=right> 1560.63 </TD>
+            <TD ALIGN=right> 0.00 </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+      </TR>
+      <TR>  <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_2062">REGOUT</A> </TD>
+            <TD ALIGN=right> 375.49 </TD>
+            <TD ALIGN=right> 0.00 </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+      </TR>
+      <TR>  <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ALIGN=right> <A HREF="interconnect_ip_qor.html#interconnect_ip_1614">REGIN</A> </TD>
+            <TD ALIGN=right> 43.89 </TD>
+            <TD ALIGN=right> 0.00 </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+      </TR>
+</TABLE></TD></TR></TABLE><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+    <H2><A NAME="Area Summary">Area Summary</A></H2>
+
+    <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0 CELLPADDING=1 CELLSPACING=1>
+    <TR> 
+      <TD> <A HREF="interconnect_ip_area.html">Total Area:</A> </TD> 
+      <TD ALIGN=right> 770053.633881 libArea </TD> 
+      <TD>  [Note: 1 nd2 = 36.7416 libArea] </TD>
+    </TR>
+    <TR> 
+      <TD> <A HREF="interconnect_ip_reference.html">Cell Area:</A> </TD> 
+      <TD ALIGN=right> 770053.633881 libArea </TD> 
+      <TD> </TD>
+    </TR>
+    </TABLE></TD></TR></TABLE>
+    <A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<H2><A NAME="Constraint Report Summary">Constraint Report Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+<TR><TD>There is 1 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_4974">   max_leakage_power
+</A> constraint.</TD></TR>
+<TR><TD>There are 52 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_254">   max_delay/setup ('i_ssi_ssi_clk' group)
+</A> constraints.</TD></TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<H2><A NAME="Top Level Port Timing Summary">Top Level Port Timing Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD>
+<H3>Input Ports</H3>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Manually exported pins
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_54263">i_ssi_ssi_rst_n</A> </TD>
+              <TD> (none) </TD>
+              <TD ALIGN=right> 2732.15 </TD>
+              <TD ALIGN=right> 16000.00 </TD>
+              <TD ALIGN=right> 0.00 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_44511">i_apb_pclk_en</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 2040.00 </TD>
+              <TD ALIGN=right> 3960.00 </TD>
+              <TD ALIGN=right> 43.89 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_46432">i_i2c_ic_clk_in_a</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 3600.00 </TD>
+              <TD ALIGN=right> 2400.00 </TD>
+              <TD ALIGN=right> 3367.05 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_48430">i_i2c_ic_data_in_a</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 3600.00 </TD>
+              <TD ALIGN=right> 2400.00 </TD>
+              <TD ALIGN=right> 3367.05 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_52322">i_ssi_ss_in_n</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 4000.00 </TD>
+              <TD ALIGN=right> 36000.00 </TD>
+              <TD ALIGN=right> 3807.71 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_50457">i_ssi_rxd</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 6000.00 </TD>
+              <TD ALIGN=right> 34000.00 </TD>
+              <TD ALIGN=right> 4827.72 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave_RAM
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_39188">ex_i_ahb_AHB_Slave_RAM_hready_resp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1219.40 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 1780.60 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_42645">ex_i_ahb_AHB_Slave_RAM_hresp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 533.58 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2466.42 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_37342">ex_i_ahb_AHB_Slave_RAM_hrdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 532.92 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2467.08 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave_PWM
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_33830">ex_i_ahb_AHB_Slave_PWM_hready_resp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1230.42 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 1769.58 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_30143">ex_i_ahb_AHB_Slave_PWM_hrdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 545.15 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2454.85 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_31986">ex_i_ahb_AHB_Slave_PWM_hresp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 542.76 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2457.24 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave_PID
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_24790">ex_i_ahb_AHB_Slave_PID_hready_resp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1102.81 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 1897.19 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_22944">ex_i_ahb_AHB_Slave_PID_hrdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 537.94 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2462.06 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_28247">ex_i_ahb_AHB_Slave_PID_hresp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 536.88 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2463.12 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_MASTER_CORTEXM0
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_1643">ex_i_ahb_AHB_MASTER_CORTEXM0_haddr</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1439.37 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 1560.63 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_19447">ex_i_ahb_AHB_MASTER_CORTEXM0_hwrite</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 281.35 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2718.65 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_12536">ex_i_ahb_AHB_MASTER_CORTEXM0_htrans</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 275.36 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2724.64 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_15996">ex_i_ahb_AHB_MASTER_CORTEXM0_hwdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 274.92 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2725.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_10700">ex_i_ahb_AHB_MASTER_CORTEXM0_hsize</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_8865">ex_i_ahb_AHB_MASTER_CORTEXM0_hprot</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_5103">ex_i_ahb_AHB_MASTER_CORTEXM0_hburst</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_6936">ex_i_ahb_AHB_MASTER_CORTEXM0_hlock</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 4800.00 </TD>
+              <TD ALIGN=right> 1200.00 </TD>
+              <TD ALIGN=right> 4473.75 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface PRESETn
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_468">PRESETn_presetn</A> </TD>
+              <TD> (none) </TD>
+              <TD ALIGN=right> 21857.94 </TD>
+              <TD ALIGN=right> 2400.00 </TD>
+              <TD ALIGN=right> 0.00 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<TABLE BORDER=0><TR><TD></TD><TD>
+<H3>Output Ports</H3>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Manually exported pins
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_156818">i_ssi_ssi_sleep</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -5400.00 </TD>
+              <TD ALIGN=right> 375.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_160483">i_ssi_ssi_txo_intr_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 464.75 </TD>
+              <TD ALIGN=right> -4800.00 </TD>
+              <TD ALIGN=right> 735.25 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_147625">i_ssi_ssi_mst_intr_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 387.62 </TD>
+              <TD ALIGN=right> -4800.00 </TD>
+              <TD ALIGN=right> 812.38 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_153139">i_ssi_ssi_rxo_intr_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 374.57 </TD>
+              <TD ALIGN=right> -4800.00 </TD>
+              <TD ALIGN=right> 825.43 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_154977">i_ssi_ssi_rxu_intr_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 372.03 </TD>
+              <TD ALIGN=right> -4800.00 </TD>
+              <TD ALIGN=right> 827.97 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_151301">i_ssi_ssi_rxf_intr_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 344.41 </TD>
+              <TD ALIGN=right> -4800.00 </TD>
+              <TD ALIGN=right> 855.59 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_158645">i_ssi_ssi_txe_intr_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 344.41 </TD>
+              <TD ALIGN=right> -4800.00 </TD>
+              <TD ALIGN=right> 855.59 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_194194">i_i2c_ic_en</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 252.97 </TD>
+              <TD ALIGN=right> -3600.00 </TD>
+              <TD ALIGN=right> 2147.03 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_145778">i_ssi_ss_0_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 297.38 </TD>
+              <TD ALIGN=right> -36000.00 </TD>
+              <TD ALIGN=right> 3702.62 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_149461">i_ssi_ssi_oe_n</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 297.38 </TD>
+              <TD ALIGN=right> -36000.00 </TD>
+              <TD ALIGN=right> 3702.62 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_142132">i_ssi_txd</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 257.91 </TD>
+              <TD ALIGN=right> -36000.00 </TD>
+              <TD ALIGN=right> 3742.09 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_143948">i_ssi_sclk_out</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 249.83 </TD>
+              <TD ALIGN=right> -36000.00 </TD>
+              <TD ALIGN=right> 3750.17 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_184929">i_i2c_debug_wr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 324.66 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3875.34 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_192354">i_i2c_ic_data_oe</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 264.57 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3935.43 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_188640">i_i2c_ic_clk_oe</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 252.62 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3947.38 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_138435">i_i2c_ic_rx_over_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_171914">i_i2c_debug_master_act</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_183055">i_i2c_debug_slv_cstate</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_162333">i_i2c_debug_s_gen</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_132861">i_i2c_ic_rx_done_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_125438">i_i2c_ic_stop_det_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_129149">i_i2c_ic_tx_over_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_164513">i_i2c_debug_addr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_181191">i_i2c_debug_slave_act</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_166364">i_i2c_debug_addr_10bit</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_179340">i_i2c_ic_rd_req_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_190491">i_i2c_ic_current_src_en</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_134717">i_i2c_ic_start_det_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_131004">i_i2c_ic_tx_empty_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_177493">i_i2c_debug_rd</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_196034">i_i2c_ic_gen_call_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_173781">i_i2c_debug_mst_cstate</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_127295">i_i2c_ic_tx_abrt_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_168222">i_i2c_debug_data</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_186787">i_i2c_ic_activity_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_140289">i_i2c_ic_rx_full_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_136578">i_i2c_ic_rx_under_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_170065">i_i2c_debug_hs</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_175649">i_i2c_debug_p_gen</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 224.51 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3975.49 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave_RAM
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_112845">ex_i_ahb_AHB_Slave_RAM_hready</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1230.42 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 1769.58 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_116207">ex_i_ahb_AHB_Slave_RAM_hsel</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1076.98 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 1923.02 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_105496">ex_i_ahb_AHB_Slave_RAM_haddr</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 297.92 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2702.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_123553">ex_i_ahb_AHB_Slave_RAM_hwrite</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 281.35 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2718.65 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_119880">ex_i_ahb_AHB_Slave_RAM_htrans</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 275.36 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2724.64 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_121718">ex_i_ahb_AHB_Slave_RAM_hwdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 274.92 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2725.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_111013">ex_i_ahb_AHB_Slave_RAM_hprot</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_107333">ex_i_ahb_AHB_Slave_RAM_hburst</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_118044">ex_i_ahb_AHB_Slave_RAM_hsize</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_109161">ex_i_ahb_AHB_Slave_RAM_hmastlock</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 311.73 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3888.27 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave_PWM
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_96252">ex_i_ahb_AHB_Slave_PWM_hsel</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1439.37 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 1560.63 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_87383">ex_i_ahb_AHB_Slave_PWM_hready</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 746.04 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2253.96 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_103606">ex_i_ahb_AHB_Slave_PWM_haddr</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 297.92 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2702.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_94418">ex_i_ahb_AHB_Slave_PWM_hwrite</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 281.35 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2718.65 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_90745">ex_i_ahb_AHB_Slave_PWM_htrans</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 275.36 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2724.64 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_92583">ex_i_ahb_AHB_Slave_PWM_hwdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 274.92 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2725.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_98089">ex_i_ahb_AHB_Slave_PWM_hprot</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_85551">ex_i_ahb_AHB_Slave_PWM_hsize</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_101769">ex_i_ahb_AHB_Slave_PWM_hburst</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_99916">ex_i_ahb_AHB_Slave_PWM_hmastlock</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 311.73 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3888.27 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave_PID
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_76319">ex_i_ahb_AHB_Slave_PID_hsel</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1352.29 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 1647.71 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_72957">ex_i_ahb_AHB_Slave_PID_hready</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 746.04 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2253.96 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_65608">ex_i_ahb_AHB_Slave_PID_haddr</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 297.92 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2702.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_83665">ex_i_ahb_AHB_Slave_PID_hwrite</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 281.35 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2718.65 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_79992">ex_i_ahb_AHB_Slave_PID_htrans</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 275.36 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2724.64 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_81830">ex_i_ahb_AHB_Slave_PID_hwdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 274.92 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2725.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_71125">ex_i_ahb_AHB_Slave_PID_hprot</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_78156">ex_i_ahb_AHB_Slave_PID_hsize</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_67445">ex_i_ahb_AHB_Slave_PID_hburst</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 258.14 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2741.86 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_69273">ex_i_ahb_AHB_Slave_PID_hmastlock</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 311.73 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 3888.27 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_MASTER_CORTEXM0
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ps)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ps)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_55433">ex_i_ahb_AHB_MASTER_CORTEXM0_hready</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1230.42 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 1769.58 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_62173">ex_i_ahb_AHB_MASTER_CORTEXM0_hrdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 545.15 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2454.85 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html#interconnect_ip_58800">ex_i_ahb_AHB_MASTER_CORTEXM0_hresp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 542.76 </TD>
+              <TD ALIGN=right> -1800.00 </TD>
+              <TD ALIGN=right> 2457.24 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<TABLE BORDER=0><TR><TD></TD><TD>
+</TABLE>
+<H2><A NAME="Design Checks Summary">Design Checks Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+<TR><TD> There are <A HREF="interconnect_ip_checkdes.html#interconnect_ip_76">no</A> check_design errors. </TD></TR>
+<TR><TD> There are <A HREF="interconnect_ip_checkdes.html#interconnect_ip_76">no</A> check_design warnings. </TD></TR>
+<TR><TD> There are <A HREF="interconnect_ip_latches.html#interconnect_ip_77">no</A> latches. </TD></TR>
+<TR><TD> There are <A HREF="interconnect_ip_throughpath.html#interconnect_ip_54">182</A> through paths. </TD></TR>
+<TR><TD> There are <A HREF="interconnect_ip_loops.html#interconnect_ip_89">no</A> timing loops. </TD></TR>
+<TR><TD> There are <A HREF="interconnect_ip_ioreg.html#interconnect_ip_292">166</A> unregistered inputs. </TD></TR>
+<TR><TD> There are <A HREF="interconnect_ip_ioreg.html#interconnect_ip_292">53</A> unregistered outputs. </TD></TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<H2><A NAME="Verify Budgets Summary">Verify Budgets Summary</A></H2>
+<UL>Verify Budgets Reports not generated.</UL><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+      <H2><A NAME="Report Index">Report Index</A></H2>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1>
+	<TR>  <TD> <b>Report File</b> </TD>
+              <TD> <b>Report Type</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_area.html">interconnect_ip_area.html</A> </TD>
+              <TD> area </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_checkdes.html">interconnect_ip_checkdes.html</A> </TD>
+              <TD> check_design </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_latches.html">interconnect_ip_latches.html</A> </TD>
+              <TD> check_latches </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_loops.html">interconnect_ip_loops.html</A> </TD>
+              <TD> check_loops </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_notest.html">interconnect_ip_notest.html</A> </TD>
+              <TD> check_test </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_throughpath.html">interconnect_ip_throughpath.html</A> </TD>
+              <TD> check_through_paths </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_ioreg.html">interconnect_ip_ioreg.html</A> </TD>
+              <TD> check_unregistered_io </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_clock.html">interconnect_ip_clock.html</A> </TD>
+              <TD> clocks </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_constraints.html">interconnect_ip_constraints.html</A> </TD>
+              <TD> constraint </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_hierarchy.html">interconnect_ip_hierarchy.html</A> </TD>
+              <TD> hierarchy </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_path_group.html">interconnect_ip_path_group.html</A> </TD>
+              <TD> path_group </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_power_domains.html">interconnect_ip_power_domains.html</A> </TD>
+              <TD> power_domain </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_qor.html">interconnect_ip_qor.html</A> </TD>
+              <TD> qor </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_reference.html">interconnect_ip_reference.html</A> </TD>
+              <TD> reference </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_register_count.html">interconnect_ip_register_count.html</A> </TD>
+              <TD> register count </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_resources.html">interconnect_ip_resources.html</A> </TD>
+              <TD> resources </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_setup.html">interconnect_ip_setup.html</A> </TD>
+              <TD> setup </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_short_endpoint.html">interconnect_ip_short_endpoint.html</A> </TD>
+              <TD> timing </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_timing.html">interconnect_ip_timing.html</A> </TD>
+              <TD> timing </TD>
+        </TR>
+	<TR>  <TD> <A HREF="interconnect_ip_long_endpoint.html">interconnect_ip_long_endpoint.html</A> </TD>
+              <TD> timing </TD>
+        </TR>
+
+</TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+</BODY></HTML>

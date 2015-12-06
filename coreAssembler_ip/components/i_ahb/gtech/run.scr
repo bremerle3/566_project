@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# Force in the correct directory
+root=`cd \`dirname $0\`/../../../;pwd`
+cd $root/components/i_ahb/gtech
+
+# Set up guard file handling
+guard=.command_in_progress_GenerateGtechModel
+shutDown () {
+  /bin/rm -f $guard
+  /project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "GenerateGtechModel" -w "$root" -d "i_ahb_DW_ahb" -b "$begin" -e "`date`" -s "Killed" -r "$root/components/i_ahb/gtech/gtech.log" -m "$root/components/i_ahb/gtech"  | /bin/mail -s "Command for Activity GenerateGtechModel Killed" lbremer
+  sleep 1
+  kill -9 0
+  exit
+}
+trap shutDown TERM INT
+
+# Check for guard file and create if needed
+if [ -f $guard ]
+then
+  echo "##################################################################"
+  echo "Unable to run the command for activity 'GenerateGtechModel'"
+  echo "This program has detected the presence of the following guard file:"
+  echo 
+  echo "  `pwd`/.command_in_progress_GenerateGtechModel"
+  echo 
+  echo "Usually this indicates that the command is already in progress."
+  echo "When the command has completed the guard file is automatically"
+  echo "removed. If you believe the command is no longer running"
+  echo "(due to system crash, etc.) then remove the guard file and"
+  echo "try running the command again."
+  echo "##################################################################"
+  exit 1
+else
+  /bin/touch $guard
+fi
+
+# Capture starting time for execution
+begin=`date`
+
+# Excute user supplied commands
+# Generate GTECH simulation model
+gtech_netlist="gtech/db/i_ahb_DW_ahb.v"
+/bin/touch /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/gtech.log
+if [ -f "/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/run.log" ]
+then
+  /bin/rm -f "/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/run.log"
+fi
+/bin/ln -s /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/gtech.log /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/run.log
+/project/linuxlab/synopsys/syncore/bin/dc_shell-t -no_home_init  -f quickMap.tcl < /dev/null > run.log 2>&1
+gtech_errors=`/project/linuxlab/synopsys/coreTools/linux/dware/bin/snpsperl -e '$error = 0; while (<>) { ++$error if (/^Error:/ || /^\*\*Error:/ || /^Fatal:/); }; print "$error\n"' gtech.log`
+
+if [ -f /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/final/db/i_ahb_DW_ahb.v ]
+then
+  /bin/cat /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/scratch/netlist_temp.v /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/final/db/i_ahb_DW_ahb.v > /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/final/db/x.v
+  /bin/mv /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/final/db/x.v /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/final/db/i_ahb_DW_ahb.v
+  /bin/rm -fr /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/gtech/final/db/x.v
+  /bin/rm -fr /home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_ahb/scratch/netlist_temp.v
+fi
+
+
+# Send email notification to users that command has completed
+/project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "GenerateGtechModel" -w "$root" -d "i_ahb_DW_ahb" -b "$begin" -e "`date`" -s "Completed" -r "$root/components/i_ahb/gtech/gtech.log" -m "$root/components/i_ahb/gtech" | /bin/mail -s "Command for Activity GenerateGtechModel Completed" lbremer
+
+# Remove guard file before exiting
+/bin/rm $guard
+
+# End of generated script file

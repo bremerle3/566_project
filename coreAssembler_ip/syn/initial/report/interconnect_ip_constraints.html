@@ -1,0 +1,117 @@
+<HTML>
+  <HEAD> <title>interconnect_ip_constraints.html</title>  </HEAD>
+    <BODY text="#000000" bgcolor="#FFFFFF">
+    <A NAME="TOP"></A>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+  <div align=right><A HREF="index.html">Report Summary Page</A></div>
+  <H1><CENTER>./initial/report/interconnect_ip_constraints.html</CENTER></H1>
+<H2><A NAME="Constraint Report Summary">Constraint Report Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+<TR><TD>There is 1 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_4974">   max_leakage_power
+</A> constraint.</TD></TR>
+<TR><TD>There are 52 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_254">   max_delay/setup ('i_ssi_ssi_clk' group)
+</A> constraints.</TD></TR>
+</TABLE></TD></TR></TABLE>
+<PRE>
+ 
+****************************************
+<A NAME="interconnect_ip_111"></A>Report : constraint
+        -all_violators
+Design : interconnect_ip
+Version: J-2014.09-SP5
+Date   : Tue Dec  1 10:48:06 2015
+****************************************
+
+</PRE><PRE>
+
+</PRE><PRE>
+<A NAME="interconnect_ip_254"></A>   max_delay/setup ('i_ssi_ssi_clk' group)
+
+</PRE><PRE>
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   i_ssi_U_shift_U_tx_shifter_txd_reg/ip  1814.54  1955.24 f  -140.71 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_/ip  1817.31  1957.79 f  -140.47 (VIOLATED)
+   i_ssi_U_sclkgen_sclk_out_reg/ip  1818.81  1958.44 f     -139.63  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_/ip  1818.63  1956.93 f  -138.30 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_/ip  1818.45  1956.58 f  -138.13 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_/ip  1818.55  1954.53 f  -135.99 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_/ip  1818.68  1954.43 f  -135.75 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_2_/ip  1819.05  1943.77 f   -124.72  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_1_/ip  1819.07  1943.55 f   -124.48  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_/ip  1818.55  1939.60 f  -121.06 (VIOLATED)
+   i_ssi_U_mstfsm_fsm_multi_mst_reg/ip  1820.65  1937.58 r  -116.93 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_/ip  1818.64  1934.98 f  -116.34 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_/ip  1818.55  1932.32 f  -113.77 (VIOLATED)
+   i_ssi_U_mstfsm_frame_cnt_reg_16_/ip  1574.63  1684.65 f  -110.02 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_/ip  1818.64  1926.61 f  -107.97 (VIOLATED)
+   i_ssi_U_sclkgen_sclk_re_ir_reg/ip  1801.49  1906.56 f   -105.07  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_3_/ip  1812.09  1915.99 r   -103.90  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_14_/ip  1811.74  1915.56 r  -103.83  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_9_/ip  1812.19  1915.99 r   -103.80  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_12_/ip  1812.01  1915.56 r  -103.55  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_6_/ip  1812.09  1915.56 r   -103.47  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_9_/ip  1819.13  1905.34 f   -86.21 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_8_/ip  1818.07  1900.77 f    -82.70  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_11_/ip  1818.08  1900.77 f   -82.69  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_5_/ip  1818.08  1900.77 f    -82.69  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_13_/ip  1818.33  1900.77 f   -82.44  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_10_/ip  1818.63  1898.56 f   -79.92 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_7_/ip  1820.84  1897.71 f    -76.87  (VIOLATED)
+   i_ssi_U_shift_ss_n_reg_0_/ip  1812.18    1872.59 r       -60.40  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_12_/ip  1818.44  1873.94 f   -55.50 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_4_/ip  1818.44  1867.50 f   -49.07 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_8_/ip  1818.20  1866.05 f   -47.85 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_2_/ip  1818.44  1841.06 f   -22.62 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_10_/ip  1820.48  1837.28 r   -16.80  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_4_/ip  1820.49  1837.14 r    -16.65  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_0_/ip  1817.55  1825.08 f     -7.53  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_14_/ip  1818.55  1821.54 f    -2.99 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_15_/ip  1818.55  1821.54 f    -2.98 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_0_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_1_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_2_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_3_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_4_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_5_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_6_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_7_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_8_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_9_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_10_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_11_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_12_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_13_/ip  1818.62  1821.54 f    -2.91 (VIOLATED)
+
+</PRE><PRE>
+
+</PRE><PRE>
+<A NAME="interconnect_ip_4974"></A>   max_leakage_power
+
+</PRE><PRE>
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   interconnect_ip              0.00           0.00           0.00  (VIOLATED: increase significant digits)
+
+</PRE><PRE>
+
+</PRE><PRE>
+<A NAME="interconnect_ip_5275"></A>1
+<DIV ALIGN=right><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A></DIV>
+</PRE>
+<div align=right><A HREF="index.html">Report Summary Page</A></div>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+</BODY>
+</HTML>
