@@ -65,38 +65,46 @@ parameter [15:0] DIN1_ADDR= 16'h0020;
 
 // Wrapper registers
 reg InitN_reg;
-reg coeff0_reg [24:0];
-reg coeff1_reg [24:0];
-reg coeff2_reg [24:0];
-reg coeff3_reg [24:0];
-reg coeff4_reg [24:0];
-reg coeff5_reg [24:0];
-reg din0_reg [24:0];
-reg din1_reg [24:0];
+reg [24:0] coeff0_reg;
+reg [24:0] coeff1_reg;
+reg [24:0] coeff2_reg;
+reg [24:0] coeff3_reg;
+reg [24:0] coeff4_reg;
+reg [24:0] coeff5_reg;
+reg [24:0] din0_reg;
+reg [24:0] din1_reg;
 
 // PID inputs
 reg InitN_in;
-reg coeff0_in [24:0];
-reg coeff1_in [24:0];
-reg coeff2_in [24:0];
-reg coeff3_in [24:0];
-reg coeff4_in [24:0];
-reg coeff5_in [24:0];
-reg din0_in [24:0];
-reg din1_in [24:0];
+reg [24:0] coeff0_in;
+reg [24:0] coeff1_in;
+reg [24:0] coeff2_in;
+reg [24:0] coeff3_in;
+reg [24:0] coeff4_in;
+reg [24:0] coeff5_in;
+reg [24:0] din0_in;
+reg [24:0] din1_in;
 
 // Pick off register offset
-reg addr_offset [15:0];
-assign addr_offset = ex_i_ahb_AHB_Slave_PID_haddr[15:0];
+reg [15:0] addr_offset;
+always @(posedge HCLK) begin
+	addr_offset <= ex_i_ahb_AHB_Slave_PID_haddr[15:0];
+end
 
 // PID_Controller ap interface signals
 reg ap_start_top;
-assign ap_start_top = !HRESETn;
-reg ap_done_top;
-reg ap_idle_top;
-reg ap_ready_top;
+always @(posedge HCLK) begin
+	ap_start_top <= !HRESETn;
+end
+wire ap_done_top;
+wire ap_idle_top;
+wire ap_ready_top;
+wire dout_0_pid_wire;
+wire dout_1_pid_wire;
 reg ap_ce_top;
-assign ap_ce_top = 1'b1;
+always @(posedge HCLK) begin
+	ap_ce_top <= 1'b1;
+end
 
 //------------------------------------------------------------------------------
 // Instantiate PID Accelerator
@@ -117,8 +125,8 @@ PID_Controller PID_Controller_inst(
     .coeff_5_V(coeff5_reg),
     .din_0_V(din0_reg),
     .din_1_V(din1_reg),
-    .dout_0_V(dout_0_pid),
-    .dout_1_V(dout_1_pid),
+    .dout_0_V(dout_0_pid_wire),
+    .dout_1_V(dout_1_pid_wire),
     .ap_ce(ap_ce_top)
 );
 
@@ -166,6 +174,8 @@ always @ (posedge HCLK) begin : register_access
             else if ((addr_offset == DIN1_ADDR)) begin
                 din1_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
             end 
+	dout_0_pid <= dout_0_pid_wire;
+	dout_1_pid <= dout_1_pid_wire;
         end
     end
 end
