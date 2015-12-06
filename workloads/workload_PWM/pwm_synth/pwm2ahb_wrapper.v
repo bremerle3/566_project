@@ -55,26 +55,33 @@ parameter [15:0] FREQ_ADDR= 16'h0000;
 parameter [15:0] DUTY_ADDR= 16'h0004;
 
 // Wrapper registers
-reg freq_reg [31:0];
-reg duty_reg [31:0];
+reg [31:0] freq_reg;
+reg [31:0] duty_reg;
 
 // PWM inputs
-reg freq_in [31:0];
-reg duty_in [31:0]; 
+reg [31:0] freq_in;
+reg [31:0] duty_in; 
 
 // Pick off register offset
-reg addr_offset [15:0];
-assign addr_offset = ex_i_ahb_AHB_Slave_PWM_haddr[15:0];
+reg [15:0] addr_offset;
+always @ (posedge HCLK) begin  
+    addr_offset <= ex_i_ahb_AHB_Slave_PWM_haddr[15:0];
+end
 
 // gen_pwm ap interface signals
 reg ap_start_top;
-assign ap_start_top = !HRESETn;
-reg ap_done_top;
-reg ap_idle_top;
-reg ap_ready_top;
-reg out_r_ap_vld_top;
+always @ (posedge HCLK) begin  
+    ap_start_top <= !HRESETn;
+end
+wire ap_done_top;
+wire ap_idle_top;
+wire ap_ready_top;
+wire out_r_ap_vld_top;
+wire out_r_top;
 reg ap_ce_top;
-assign ap_ce_top = 1'b1;
+always @ (posedge HCLK) begin  
+    addr_offset <= 1'b1;
+end
 
 //------------------------------------------------------------------------------
 // Instantiate PWM Accelerator
@@ -88,7 +95,7 @@ gen_pwm gen_pwm_inst(
     .ap_ready(ap_ready_top),
     .duty(duty_reg),
     .freq(freq_reg),
-    .out_r(out_pwm),
+    .out_r(out_r_top),
     .out_r_ap_vld(out_r_ap_vld_top),
     .ap_ce(ap_ce_top)
 );
@@ -109,6 +116,8 @@ always @ (posedge HCLK) begin : register_access
                 duty_reg <= ex_i_ahb_AHB_Slave_PWM_hwdata;
             end 
         end
+        // Drive output
+        out_pwm <= out_r_top;
     end
 end
 
