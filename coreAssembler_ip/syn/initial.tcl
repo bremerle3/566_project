@@ -241,7 +241,7 @@ saif_map -type ptpx -write_map ${RESULTS_DIR}/${DESIGN_NAME}.mapped.SAIF.namemap
 # Script         : report_gen.tcl
 # Design         : interconnect_ip
 #
-# Generated On   : December 01, 2015
+# Generated On   : December 07, 2015
 # coreTools Version: J-2015.03-SP1
 #
 # DC Version     : J-2014.09-SP5

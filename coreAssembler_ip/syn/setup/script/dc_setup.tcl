@@ -14,7 +14,7 @@ set DESIGN_NAME interconnect_ip
 set ::bus_naming_style {%s[%d]}
 set ::bus_dimension_separator_style {][}
 set ::template_naming_style %s_%p
-set ::template_parameter_style %s%d
+set ::template_parameter_style %d
 set ::template_separator_style _
 set ::hdl_naming_threshold 20
 set ::hdlin_field_naming_style {}

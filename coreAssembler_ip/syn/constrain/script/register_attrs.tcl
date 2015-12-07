@@ -513,7 +513,7 @@ set_attribute -quiet -type boolean [find port {i_i2c_ic_tx_over_intr}] rtIsRegis
 set_attribute -quiet -type boolean [find port {i_ssi_sclk_out}] rtIsRegisteredOutput true
 set_attribute -quiet -type boolean [find port {i_ssi_ss_0_n}] rtIsRegisteredOutput false
 set_attribute -quiet -type boolean [find port {i_ssi_ssi_mst_intr_n}] rtIsRegisteredOutput false
-set_attribute -quiet -type boolean [find port {i_ssi_ssi_oe_n}] rtIsRegisteredOutput false
+set_attribute -quiet -type boolean [find port {i_ssi_ssi_oe_n}] rtIsRegisteredOutput true
 set_attribute -quiet -type boolean [find port {i_ssi_ssi_rxf_intr_n}] rtIsRegisteredOutput false
 set_attribute -quiet -type boolean [find port {i_ssi_ssi_rxo_intr_n}] rtIsRegisteredOutput false
 set_attribute -quiet -type boolean [find port {i_ssi_ssi_rxu_intr_n}] rtIsRegisteredOutput false

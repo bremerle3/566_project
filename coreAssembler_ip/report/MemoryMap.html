@@ -11,11 +11,11 @@
 <H1><CENTER>Memory Map Specification Report</CENTER></H1>
 <PRE>
 <b>Index By Master</b>
-<a HREF="#MemoryMaps/ex_i_ahb_AHB_Master">/ex_i_ahb_AHB_Master</a>
+<a HREF="#MemoryMaps/ex_i_ahb_AHB_MASTER_CORTEXM0">/ex_i_ahb_AHB_MASTER_CORTEXM0</a>
 
 
 <b>Memory Map Diagrams</b>
-<a HREF="/home/warehouse/lbremer/566_project/coreAssembler_ip/report/ex_i_ahb_AHB_Master_memMap_diagram.html">/ex_i_ahb_AHB_Master</a>
+<a HREF="/home/warehouse/lbremer/566_project/coreAssembler_ip/report/ex_i_ahb_AHB_MASTER_CORTEXM0_memMap_diagram.html">/ex_i_ahb_AHB_MASTER_CORTEXM0</a>
 
 
 
@@ -28,8 +28,8 @@
 <b>Index By Mode</b>
 <a HREF="#CombinedDefault">Default</a>
 <a HREF="#CombinedBoot">Boot</a>
-<p><a NAME="MemoryMaps/ex_i_ahb_AHB_Master"></a></p>
-<b>Memory map for /ex_i_ahb_AHB_Master</b>
+<p><a NAME="MemoryMaps/ex_i_ahb_AHB_MASTER_CORTEXM0"></a></p>
+<b>Memory map for /ex_i_ahb_AHB_MASTER_CORTEXM0</b>
 <table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
 <tr>
 <td><b>Interface</b></td>
@@ -38,9 +38,27 @@
 <td><b>Base address (Boot) </b></td>
 </tr>
 <tr>
+<td><b>ex_i_ahb_AHB_Slave_RAM </b></td>
+<td><b>0x10000 </b></td>
+<td><b>0x0 </b></td>
+<td><b>&nbsp; </b></td>
+</tr>
+<tr>
 <td><b>i_apb/AHB_Slave </b></td>
+<td><b>0x2000 </b></td>
+<td><b>0x10000 </b></td>
+<td><b>&nbsp; </b></td>
+</tr>
+<tr>
+<td><b>ex_i_ahb_AHB_Slave_PWM </b></td>
 <td><b>0x1000 </b></td>
-<td><b>0x10000000 </b></td>
+<td><b>0x12000 </b></td>
+<td><b>&nbsp; </b></td>
+</tr>
+<tr>
+<td><b>ex_i_ahb_AHB_Slave_PID </b></td>
+<td><b>0x1000 </b></td>
+<td><b>0x13000 </b></td>
 <td><b>&nbsp; </b></td>
 </tr>
 </table>
@@ -54,9 +72,27 @@
 <td><b>Base address (Boot) </b></td>
 </tr>
 <tr>
+<td><b>/ex_i_ahb_AHB_Slave_RAM</b></td>
+<td><b>0x10000</b></td>
+<td><b>0x0</b></td>
+<td><b>&nbsp;</b></td>
+</tr>
+<tr>
 <td><b>/i_apb/AHB_Slave</b></td>
+<td><b>0x2000</b></td>
+<td><b>0x10000</b></td>
+<td><b>&nbsp;</b></td>
+</tr>
+<tr>
+<td><b>/ex_i_ahb_AHB_Slave_PWM</b></td>
 <td><b>0x1000</b></td>
-<td><b>0x10000000</b></td>
+<td><b>0x12000</b></td>
+<td><b>&nbsp;</b></td>
+</tr>
+<tr>
+<td><b>/ex_i_ahb_AHB_Slave_PID</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x13000</b></td>
 <td><b>&nbsp;</b></td>
 </tr>
 </table>
@@ -71,7 +107,12 @@
 <tr>
 <td><b>/i_i2c/APB_Slave</b></td>
 <td><b>0x1000</b></td>
-<td><b>0x10000000</b></td>
+<td><b>0x10000</b></td>
+</tr>
+<tr>
+<td><b>/i_ssi/APB_Slave</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x11000</b></td>
 </tr>
 </table>
 <p><a NAME="CombinedDefault"></a></p>
@@ -83,14 +124,34 @@
 <td><b>Base address</b></td>
 </tr>
 <tr>
+<td><b>/ex_i_ahb_AHB_Slave_RAM</b></td>
+<td><b>0x10000</b></td>
+<td><b>0x0</b></td>
+</tr>
+<tr>
 <td><b>/i_apb/AHB_Slave</b></td>
-<td><b>0x1000</b></td>
-<td><b>0x10000000</b></td>
+<td><b>0x2000</b></td>
+<td><b>0x10000</b></td>
 </tr>
 <tr>
 <td><b>/i_i2c/APB_Slave</b></td>
 <td><b>0x1000</b></td>
-<td><b>0x10000000</b></td>
+<td><b>0x10000</b></td>
+</tr>
+<tr>
+<td><b>/i_ssi/APB_Slave</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x11000</b></td>
+</tr>
+<tr>
+<td><b>/ex_i_ahb_AHB_Slave_PWM</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x12000</b></td>
+</tr>
+<tr>
+<td><b>/ex_i_ahb_AHB_Slave_PID</b></td>
+<td><b>0x1000</b></td>
+<td><b>0x13000</b></td>
 </tr>
 </table>
 <p><a NAME="CombinedBoot"></a></p>

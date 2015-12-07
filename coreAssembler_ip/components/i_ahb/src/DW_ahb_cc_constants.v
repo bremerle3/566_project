@@ -797,7 +797,7 @@
 // Slave 1. This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_EA_1 32'hffff
+`define R1_N_EA_1 32'h1ffff
 
 
 // Name:         R2_N_SA_1
@@ -1251,7 +1251,7 @@
 // This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_SA_2 32'h10000
+`define R1_N_SA_2 32'h20000
 
 
 // Name:         R1_N_EA_2
@@ -1263,7 +1263,7 @@
 // Slave 2. This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_EA_2 32'h11fff
+`define R1_N_EA_2 32'h21fff
 
 
 // Name:         R2_N_SA_2
@@ -1437,7 +1437,7 @@
 // This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_SA_3 32'h12000
+`define R1_N_SA_3 32'h22000
 
 
 // Name:         R1_N_EA_3
@@ -1449,7 +1449,7 @@
 // Slave 3. This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_EA_3 32'h12fff
+`define R1_N_EA_3 32'h22fff
 
 
 // Name:         R2_N_SA_3
@@ -1622,7 +1622,7 @@
 // This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_SA_4 32'h13000
+`define R1_N_SA_4 32'h23000
 
 
 // Name:         R1_N_EA_4
@@ -1634,7 +1634,7 @@
 // Slave 4. This parameter option is available only if the 
 // "Slave Visibility Mode" is set to "Normal" or "Normal & Boot" 
 // and if you have an internal decoder (AHB_HAS_XDCDR = 0).
-`define R1_N_EA_4 32'h13fff
+`define R1_N_EA_4 32'h23fff
 
 
 // Name:         R2_N_SA_4

@@ -20,13 +20,13 @@
         -max_paths 1
 Design : interconnect_ip
 Version: J-2014.09-SP5
-Date   : Tue Dec  1 10:48:05 2015
+Date   : Mon Dec  7 01:11:14 2015
 ****************************************
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
 
-<A NAME="interconnect_ip_390"></A>  Startpoint: ex_i_ahb_AHB_MASTER_CORTEXM0_haddr[24]
+<A NAME="interconnect_ip_390"></A>  Startpoint: ex_i_ahb_AHB_MASTER_CORTEXM0_haddr[18]
               (input port clocked by HCLK_hclk)
   Endpoint: ex_i_ahb_AHB_Slave_PWM_hsel
             (output port clocked by HCLK_hclk)
@@ -38,22 +38,24 @@ Wire Load Model Mode: top
   clock HCLK_hclk (rise edge)                             0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   input external delay                                 1200.00    1200.00 f
-  ex_i_ahb_AHB_MASTER_CORTEXM0_haddr[24] (in)           262.84    1462.84 f
-  ex_i_ahb_AHB_MASTER_CORTEXM0_haddr[24] (net)     6      0.00    1462.84 f
-  U8044/op (nor4_1)                                     303.94    1766.78 r
-  n6824 (net)                                   1         0.00    1766.78 r
-  U5967/op (and3_1)                                     207.01    1973.79 r
-  n6825 (net)                                   1         0.00    1973.79 r
-  U8048/op (nand2_1)                                     87.53    2061.32 f
-  n11158 (net)                                  2         0.00    2061.32 f
-  U5628/op (nor2_1)                                     224.23    2285.55 r
-  n11162 (net)                                  4         0.00    2285.55 r
-  U10904/op (inv_1)                                      71.01    2356.56 f
-  n11160 (net)                                  2         0.00    2356.56 f
-  U10905/op (nor3_1)                                    282.80    2639.37 r
-  ex_i_ahb_AHB_Slave_PWM_hsel (net)             2         0.00    2639.37 r
-  ex_i_ahb_AHB_Slave_PWM_hsel (out)                       0.00    2639.37 r
-  data arrival time                                               2639.37
+  ex_i_ahb_AHB_MASTER_CORTEXM0_haddr[18] (in)           261.60    1461.60 f
+  ex_i_ahb_AHB_MASTER_CORTEXM0_haddr[18] (net)     6      0.00    1461.60 f
+  U5997/op (nor4_1)                                     303.76    1765.36 r
+  n5979 (net)                                   1         0.00    1765.36 r
+  U6823/op (nand3_1)                                    146.29    1911.65 f
+  n5982 (net)                                   1         0.00    1911.65 f
+  U6824/op (nor3_1)                                     205.17    2116.82 r
+  n6320 (net)                                   2         0.00    2116.82 r
+  U6825/op (nand2_1)                                     98.19    2215.01 f
+  n5983 (net)                                   1         0.00    2215.01 f
+  U5631/op (nor4_1)                                     424.24    2639.25 r
+  n10766 (net)                                  4         0.00    2639.25 r
+  U12195/op (nand2_1)                                   128.54    2767.79 f
+  n10767 (net)                                  1         0.00    2767.79 f
+  U12196/op (nor2_1)                                    198.42    2966.21 r
+  ex_i_ahb_AHB_Slave_PWM_hsel (net)             2         0.00    2966.21 r
+  ex_i_ahb_AHB_Slave_PWM_hsel (out)                       0.00    2966.21 r
+  data arrival time                                               2966.21
 
   clock HCLK_hclk (rise edge)                          6000.00    6000.00
   clock network delay (ideal)                             0.00    6000.00
@@ -61,14 +63,14 @@ Wire Load Model Mode: top
   data required time                                              4200.00
   --------------------------------------------------------------------------
   data required time                                              4200.00
-  data arrival time                                              -2639.37
+  data arrival time                                              -2966.21
   --------------------------------------------------------------------------
-  slack (MET)                                                     1560.63
+  slack (MET)                                                     1233.79
 
 
-<A NAME="interconnect_ip_2876"></A>  Startpoint: i_ahb_U_mux_hsel_prev_reg_4_
+<A NAME="interconnect_ip_3028"></A>  Startpoint: i_ahb_U_mux_hsel_prev_reg_4_
               (rising edge-triggered flip-flop clocked by HCLK_hclk)
-  Endpoint: i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_
+  Endpoint: i_apb_U_DW_apb_ahbsif_paddr_reg_5_
             (rising edge-triggered flip-flop clocked by HCLK_hclk)
   Path Group: HCLK_hclk
   Path Type: max
@@ -77,61 +79,63 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock HCLK_hclk (rise edge)                             0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  i_ahb_U_mux_hsel_prev_reg_4_/ck (drp_4)                 0.00       0.00 r
-  i_ahb_U_mux_hsel_prev_reg_4_/q (drp_4)                440.83     440.83 f
-  i_ahb_U_mux_hsel_prev[4] (net)               40         0.00     440.83 f
-  U5614/op (nor3_1)                                    1523.84    1964.67 r
-  n6676 (net)                                  32         0.00    1964.67 r
-  U7838/op (nand2_1)                                    381.40    2346.07 f
-  n6681 (net)                                   1         0.00    2346.07 f
-  U5782/op (nand4_2)                                    136.38    2482.44 r
-  n11348 (net)                                  3         0.00    2482.44 r
-  U5633/op (or2_1)                                      447.49    2929.93 r
-  ex_i_ahb_AHB_Slave_PID_hready (net)           4         0.00    2929.93 r
-  U5775/op (inv_2)                                       57.56    2987.49 f
-  n9662 (net)                                   2         0.00    2987.49 f
-  U5634/op (inv_1)                                      472.52    3460.01 r
-  ex_i_ahb_AHB_MASTER_CORTEXM0_hready (net)     7         0.00    3460.01 r
-  U8050/op (and3_1)                                     311.79    3771.80 r
-  n6828 (net)                                   1         0.00    3771.80 r
-  U5894/op (nand2_2)                                    136.51    3908.31 f
-  n7413 (net)                                   7         0.00    3908.31 f
-  U8085/op (nor2_1)                                     115.61    4023.92 r
-  n6842 (net)                                   1         0.00    4023.92 r
-  U8086/op (nand2_1)                                     73.38    4097.30 f
-  n6846 (net)                                   1         0.00    4097.30 f
-  U8088/op (nand2_1)                                     53.36    4150.66 r
-  n6847 (net)                                   1         0.00    4150.66 r
-  U5627/op (nor2_1)                                     130.95    4281.61 f
-  n10084 (net)                                  2         0.00    4281.61 f
-  U5877/op (nand2_2)                                     84.10    4365.71 r
-  i_apb_U_DW_apb_ahbsif_nextstate[0] (net)      4         0.00    4365.71 r
-  U5613/op (nand2_1)                                    176.89    4542.60 f
-  n10095 (net)                                  6         0.00    4542.60 f
-  U5626/op (nor2_1)                                     400.23    4942.83 r
-  n11121 (net)                                  5         0.00    4942.83 r
-  U5559/op (buf_2)                                      407.53    5350.36 r
-  n11107 (net)                                 20         0.00    5350.36 r
-  U10951/op (mux2_1)                                    210.09    5560.45 f
-  n4815 (net)                                   1         0.00    5560.45 f
-  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/ip (drp_1)     0.00  5560.45 f
-  data arrival time                                               5560.45
+  i_ahb_U_mux_hsel_prev_reg_4_/ck (drp_1)                 0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_4_/q (drp_1)                704.39     704.39 f
+  i_ahb_U_mux_hsel_prev[4] (net)               40         0.00     704.39 f
+  U5872/op (nor3_2)                                    1020.92    1725.31 r
+  n6267 (net)                                  32         0.00    1725.31 r
+  U6830/op (nand2_1)                                    218.76    1944.07 f
+  n5988 (net)                                   1         0.00    1944.07 f
+  U6833/op (and4_1)                                     212.04    2156.11 f
+  n6491 (net)                                   2         0.00    2156.11 f
+  U5634/op (nand2_1)                                    690.65    2846.75 r
+  ex_i_ahb_AHB_Slave_RAM_hready (net)           6         0.00    2846.75 r
+  U5630/op (nand3_1)                                    330.59    3177.35 f
+  n10966 (net)                                  2         0.00    3177.35 f
+  U5616/op (nor2_1)                                     436.94    3614.29 r
+  n6003 (net)                                  10         0.00    3614.29 r
+  U6839/op (nand2_1)                                    129.71    3744.00 f
+  n5995 (net)                                   1         0.00    3744.00 f
+  U6846/op (not_ab_or_c_or_d)                           148.42    3892.42 r
+  n5997 (net)                                   1         0.00    3892.42 r
+  U6850/op (ab_or_c_or_d)                               151.56    4043.98 r
+  i_apb_U_DW_apb_ahbsif_nextstate[2] (net)      4         0.00    4043.98 r
+  U6861/op (nand2_1)                                    122.85    4166.83 f
+  n9070 (net)                                   3         0.00    4166.83 f
+  U6862/op (nor2_1)                                     160.02    4326.84 r
+  n6021 (net)                                   3         0.00    4326.84 r
+  U6896/op (inv_1)                                       99.38    4426.23 f
+  n10994 (net)                                  4         0.00    4426.23 f
+  U6903/op (not_ab_or_c_or_d)                           488.43    4914.65 r
+  n6424 (net)                                   9         0.00    4914.65 r
+  U6904/op (buf_2)                                      243.53    5158.18 r
+  n6519 (net)                                  18         0.00    5158.18 r
+  U6905/op (nand2_1)                                    100.14    5258.33 f
+  n6029 (net)                                   1         0.00    5258.33 f
+  U6906/op (nand3_1)                                     70.21    5328.54 r
+  n6032 (net)                                   1         0.00    5328.54 r
+  U6907/op (inv_1)                                       38.26    5366.79 f
+  n6033 (net)                                   1         0.00    5366.79 f
+  U6908/op (nand2_1)                                     42.02    5408.82 r
+  n4735 (net)                                   1         0.00    5408.82 r
+  i_apb_U_DW_apb_ahbsif_paddr_reg_5_/ip (drp_1)           0.00    5408.82 r
+  data arrival time                                               5408.82
 
   clock HCLK_hclk (rise edge)                          6000.00    6000.00
   clock network delay (ideal)                             0.00    6000.00
-  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/ck (drp_1)     0.00  6000.00 r
-  library setup time                                   -182.28    5817.72
-  data required time                                              5817.72
+  i_apb_U_DW_apb_ahbsif_paddr_reg_5_/ck (drp_1)           0.00    6000.00 r
+  library setup time                                   -181.92    5818.08
+  data required time                                              5818.08
   --------------------------------------------------------------------------
-  data required time                                              5817.72
-  data arrival time                                              -5560.45
+  data required time                                              5818.08
+  data arrival time                                              -5408.82
   --------------------------------------------------------------------------
-  slack (MET)                                                      257.27
+  slack (MET)                                                      409.26
 
 
-<A NAME="interconnect_ip_7167"></A>  Startpoint: i_ssi_U_shift_tx_pop_tgl_reg
+<A NAME="interconnect_ip_7460"></A>  Startpoint: i_ssi_U_shift_tx_pop_tgl_reg
               (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Endpoint: i_ssi_U_dff_tx_mem_reg_3__0_
+  Endpoint: i_ssi_U_dff_tx_mem_reg_7__5_
             (rising edge-triggered flip-flop clocked by PCLK_pclk)
   Path Group: PCLK_pclk
   Path Type: max
@@ -143,42 +147,42 @@ Wire Load Model Mode: top
   i_ssi_U_shift_tx_pop_tgl_reg/ck (drp_1)                 0.00   40000.00 r
   i_ssi_U_shift_tx_pop_tgl_reg/q (drp_1)                248.07   40248.07 f
   i_ssi_tx_pop (net)                            3         0.00   40248.07 f
-  U5632/op (xor2_1)                                     255.79   40503.86 r
-  i_ssi_tx_pop_sync (net)                       6         0.00   40503.86 r
-  U6427/op (nand2_1)                                    104.27   40608.12 f
-  n10216 (net)                                  1         0.00   40608.12 f
-  U6426/op (nand2_1)                                     61.88   40670.00 r
-  n6309 (net)                                   1         0.00   40670.00 r
-  U5604/op (nand2_1)                                    149.27   40819.28 f
-  n10199 (net)                                  3         0.00   40819.28 f
-  U7410/op (nor2_2)                                     183.70   41002.98 r
-  n10228 (net)                                  4         0.00   41002.98 r
-  U6449/op (nand2_1)                                    221.64   41224.62 f
-  n10203 (net)                                  4         0.00   41224.62 f
-  U5731/op (or2_1)                                      215.60   41440.22 f
-  n6337 (net)                                   1         0.00   41440.22 f
-  U6286/op (inv_4)                                      167.63   41607.86 r
-  n10354 (net)                                 21         0.00   41607.86 r
-  U11550/op (mux2_1)                                    193.79   41801.64 f
-  n4512 (net)                                   1         0.00   41801.64 f
-  i_ssi_U_dff_tx_mem_reg_3__0_/ip (drp_1)                 0.00   41801.64 f
-  data arrival time                                              41801.64
+  U6909/op (xor2_1)                                     256.69   40504.75 r
+  i_ssi_tx_pop_sync (net)                       5         0.00   40504.75 r
+  U5738/op (nand2_2)                                    187.27   40692.03 f
+  n9858 (net)                                   6         0.00   40692.03 f
+  U11046/op (nand2_1)                                    96.53   40788.56 r
+  n10424 (net)                                  2         0.00   40788.56 r
+  U11047/op (nand2_1)                                   144.25   40932.81 f
+  n9850 (net)                                   4         0.00   40932.81 f
+  U11051/op (inv_1)                                      86.54   41019.36 r
+  n9847 (net)                                   2         0.00   41019.36 r
+  U11057/op (nand2_1)                                   137.00   41156.35 f
+  n9877 (net)                                   4         0.00   41156.35 f
+  U11058/op (or2_1)                                     156.34   41312.70 f
+  n9987 (net)                                   1         0.00   41312.70 f
+  U5572/op (inv_2)                                      293.08   41605.77 r
+  n5275 (net)                                  17         0.00   41605.77 r
+  U11317/op (mux2_1)                                    205.51   41811.29 f
+  n4583 (net)                                   1         0.00   41811.29 f
+  i_ssi_U_dff_tx_mem_reg_7__5_/ip (drp_1)                 0.00   41811.29 f
+  data arrival time                                              41811.29
 
   clock PCLK_pclk (rise edge)                         42000.00   42000.00
   clock network delay (ideal)                             0.00   42000.00
-  i_ssi_U_dff_tx_mem_reg_3__0_/ck (drp_1)                 0.00   42000.00 r
-  library setup time                                   -183.44   41816.56
-  data required time                                             41816.56
+  i_ssi_U_dff_tx_mem_reg_7__5_/ck (drp_1)                 0.00   42000.00 r
+  library setup time                                   -183.32   41816.68
+  data required time                                             41816.68
   --------------------------------------------------------------------------
-  data required time                                             41816.56
-  data arrival time                                              -41801.64
+  data required time                                             41816.68
+  data arrival time                                              -41811.29
   --------------------------------------------------------------------------
-  slack (MET)                                                       14.92
+  slack (MET)                                                        5.39
 
 
-<A NAME="interconnect_ip_10215"></A>  Startpoint: i_apb_pclk_en
+<A NAME="interconnect_ip_10508"></A>  Startpoint: i_apb_pclk_en
               (input port clocked by HCLK_hclk)
-  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_12_
+  Endpoint: i_apb_U_DW_apb_ahbsif_pwdata_int_reg_5_
             (rising edge-triggered flip-flop clocked by HCLK_hclk)
   Path Group: REGIN
   Path Type: max
@@ -188,48 +192,50 @@ Wire Load Model Mode: top
   clock HCLK_hclk (rise edge)                             0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   input external delay                                 3960.00    3960.00 r
-  i_apb_pclk_en (in)                                    128.29    4088.29 r
-  i_apb_pclk_en (net)                          12         0.00    4088.29 r
-  U8081/op (nand2_1)                                    116.81    4205.11 f
-  n6856 (net)                                   2         0.00    4205.11 f
-  U8082/op (nor2_1)                                      97.48    4302.58 r
-  n6839 (net)                                   1         0.00    4302.58 r
-  U8083/op (nor2_1)                                      75.75    4378.33 f
-  n6848 (net)                                   1         0.00    4378.33 f
-  U5627/op (nor2_1)                                     146.66    4525.00 r
-  n10084 (net)                                  2         0.00    4525.00 r
-  U5877/op (nand2_2)                                    126.81    4651.81 f
-  i_apb_U_DW_apb_ahbsif_nextstate[0] (net)      4         0.00    4651.81 f
-  U5602/op (nor2_1)                                     191.45    4843.26 r
-  n7406 (net)                                   4         0.00    4843.26 r
-  U8407/op (nand2_1)                                     90.56    4933.82 f
-  n7174 (net)                                   1         0.00    4933.82 f
-  U8408/op (nand2_1)                                     58.58    4992.41 r
-  n7175 (net)                                   1         0.00    4992.41 r
-  U8409/op (and2_1)                                     150.17    5142.58 r
-  n7177 (net)                                   2         0.00    5142.58 r
-  U5562/op (nor2_2)                                     428.21    5570.79 f
-  n7201 (net)                                  26         0.00    5570.79 f
-  U10857/op (nand2_1)                                    85.70    5656.49 r
-  n9615 (net)                                   1         0.00    5656.49 r
-  U10860/op (nand3_1)                                   114.98    5771.47 f
-  n4746 (net)                                   1         0.00    5771.47 f
-  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_12_/ip (drp_1)     0.00   5771.47 f
-  data arrival time                                               5771.47
+  i_apb_pclk_en (in)                                     30.56    3990.56 r
+  i_apb_pclk_en (net)                           3         0.00    3990.56 r
+  U6820/op (buf_1)                                      140.53    4131.10 r
+  n9071 (net)                                   4         0.00    4131.10 r
+  U6868/op (mux2_1)                                     134.07    4265.17 r
+  n6009 (net)                                   1         0.00    4265.17 r
+  U6875/op (not_ab_or_c_or_d)                           135.95    4401.12 f
+  n6010 (net)                                   1         0.00    4401.12 f
+  U6876/op (not_ab_or_c_or_d)                           132.81    4533.93 r
+  n6013 (net)                                   1         0.00    4533.93 r
+  U6880/op (nand2_1)                                    170.46    4704.39 f
+  i_apb_U_DW_apb_ahbsif_nextstate[0] (net)      5         0.00    4704.39 f
+  U6881/op (inv_1)                                       60.76    4765.16 r
+  n6014 (net)                                   1         0.00    4765.16 r
+  U6883/op (nand3_1)                                    108.03    4873.19 f
+  n6015 (net)                                   1         0.00    4873.19 f
+  U6884/op (inv_1)                                       81.81    4954.99 r
+  n11007 (net)                                  3         0.00    4954.99 r
+  U6885/op (nand2_1)                                    115.21    5070.20 f
+  n9111 (net)                                   3         0.00    5070.20 f
+  U10168/op (nor2_1)                                     98.16    5168.36 r
+  n9238 (net)                                   1         0.00    5168.36 r
+  U5615/op (buf_1)                                      404.47    5572.83 r
+  n5292 (net)                                  24         0.00    5572.83 r
+  U10311/op (nand2_1)                                   132.01    5704.84 f
+  n9218 (net)                                   1         0.00    5704.84 f
+  U10313/op (nand3_1)                                    73.77    5778.61 r
+  n4791 (net)                                   1         0.00    5778.61 r
+  i_apb_U_DW_apb_ahbsif_pwdata_int_reg_5_/ip (drp_1)      0.00    5778.61 r
+  data arrival time                                               5778.61
 
   clock HCLK_hclk (rise edge)                          6000.00    6000.00
   clock network delay (ideal)                             0.00    6000.00
-  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_12_/ck (drp_1)     0.00   6000.00 r
-  library setup time                                   -184.63    5815.37
-  data required time                                              5815.37
+  i_apb_U_DW_apb_ahbsif_pwdata_int_reg_5_/ck (drp_1)      0.00    6000.00 r
+  library setup time                                   -184.31    5815.69
+  data required time                                              5815.69
   --------------------------------------------------------------------------
-  data required time                                              5815.37
-  data arrival time                                              -5771.47
+  data required time                                              5815.69
+  data arrival time                                              -5778.61
   --------------------------------------------------------------------------
-  slack (MET)                                                       43.89
+  slack (MET)                                                       37.08
 
 
-<A NAME="interconnect_ip_13721"></A>  Startpoint: i_ssi_U_regfile_ssi_sleep_ir_reg
+<A NAME="interconnect_ip_14164"></A>  Startpoint: i_ssi_U_regfile_ssi_sleep_ir_reg
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
   Endpoint: i_ssi_ssi_sleep
             (output port clocked by PCLK_pclk)
@@ -257,9 +263,9 @@ Wire Load Model Mode: top
   slack (MET)                                                      375.49
 
 
-<A NAME="interconnect_ip_15311"></A>  Startpoint: i_i2c_U_DW_apb_i2c_rx_filter_ic_hs_r_reg
+<A NAME="interconnect_ip_15767"></A>  Startpoint: i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_
               (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
-  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_5_
+  Endpoint: i_i2c_U_DW_apb_i2c_toggle_tx_abrt_tog_reg
             (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
   Path Group: i_i2c_ic_clk
   Path Type: max
@@ -268,99 +274,73 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_i2c_ic_clk (rise edge)                          0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  i_i2c_U_DW_apb_i2c_rx_filter_ic_hs_r_reg/ck (drp_4)     0.00       0.00 r
-  i_i2c_U_DW_apb_i2c_rx_filter_ic_hs_r_reg/q (drp_4)    373.38     373.38 f
-  i_i2c_U_DW_apb_i2c_rx_filter_ic_hs_r (net)    14        0.00     373.38 f
-  U6305/op (mux2_2)                                     242.31     615.70 r
-  n9106 (net)                                   5         0.00     615.70 r
-  U6599/op (and2_1)                                     123.97     739.67 r
-  n9110 (net)                                   1         0.00     739.67 r
-  U10452/op (not_ab_or_c_or_d)                           87.72     827.39 f
-  n9112 (net)                                   1         0.00     827.39 f
-  U10453/op (ab_or_c_or_d)                              178.40    1005.78 f
-  n9118 (net)                                   1         0.00    1005.78 f
-  U10456/op (nand2_1)                                    48.21    1053.99 r
-  n9122 (net)                                   1         0.00    1053.99 r
-  U5905/op (nand2_1)                                     64.25    1118.24 f
-  n9128 (net)                                   1         0.00    1118.24 f
-  U5899/op (nand2_1)                                     87.49    1205.73 r
-  n9134 (net)                                   1         0.00    1205.73 r
-  U10466/co (fulladder)                                 232.85    1438.58 r
-  n9135 (net)                                   1         0.00    1438.58 r
-  U10467/op (nor2_1)                                     87.96    1526.54 f
-  n9145 (net)                                   1         0.00    1526.54 f
-  U10474/op (ab_or_c_or_d)                              186.68    1713.22 f
-  n9147 (net)                                   1         0.00    1713.22 f
-  U10475/op (nand2_2)                                    73.67    1786.89 r
-  n9148 (net)                                   1         0.00    1786.89 r
-  U10476/op (nand2_4)                                   111.83    1898.72 f
-  n9186 (net)                                  11         0.00    1898.72 f
-  U10492/op (or2_1)                                     172.96    2071.67 f
-  n9160 (net)                                   2         0.00    2071.67 f
-  U6327/op (xnor2_1)                                    159.12    2230.79 f
-  n9163 (net)                                   2         0.00    2230.79 f
-  U5583/op (nor2_1)                                     148.34    2379.13 r
-  n9172 (net)                                   3         0.00    2379.13 r
-  U6307/op (or2_1)                                      102.06    2481.19 r
-  n9166 (net)                                   1         0.00    2481.19 r
-  U6583/op (nand2_2)                                     81.58    2562.77 f
-  n9228 (net)                                   3         0.00    2562.77 f
-  U6612/op (nand2_1)                                     58.18    2620.95 r
-  n5587 (net)                                   1         0.00    2620.95 r
-  U5646/op (and2_1)                                     112.46    2733.41 r
-  n5257 (net)                                   1         0.00    2733.41 r
-  U5648/op (nand2_1)                                     95.79    2829.20 f
-  n9212 (net)                                   2         0.00    2829.20 f
-  U5597/op (nand2_1)                                    110.76    2939.96 r
-  n5567 (net)                                   4         0.00    2939.96 r
-  U5593/op (inv_1)                                       89.99    3029.95 f
-  n9282 (net)                                   4         0.00    3029.95 f
-  U5595/op (or2_1)                                      173.32    3203.27 f
-  n5579 (net)                                   2         0.00    3203.27 f
-  U6287/op (xnor2_2)                                    186.07    3389.35 r
-  n5516 (net)                                   3         0.00    3389.35 r
-  U10694/op (nand2_1)                                    66.83    3456.18 f
-  n9408 (net)                                   1         0.00    3456.18 f
-  U10695/op (nand2_1)                                    51.19    3507.37 r
-  n9410 (net)                                   1         0.00    3507.37 r
-  U6615/op (or2_1)                                       98.15    3605.52 r
-  n9414 (net)                                   2         0.00    3605.52 r
-  U10696/op (and2_1)                                    113.48    3718.99 r
-  n9412 (net)                                   1         0.00    3718.99 r
-  U10697/op (nand2_1)                                    64.17    3783.16 f
-  n9421 (net)                                   1         0.00    3783.16 f
-  U10700/op (nand2_1)                                    45.42    3828.58 r
-  n9422 (net)                                   1         0.00    3828.58 r
-  U5817/op (nand2_1)                                     84.31    3912.88 f
-  n9442 (net)                                   2         0.00    3912.88 f
-  U6309/op (nor2_1)                                     226.50    4139.39 r
-  n9444 (net)                                   4         0.00    4139.39 r
-  U5813/op (nand2_2)                                    133.25    4272.64 f
-  n9447 (net)                                   3         0.00    4272.64 f
-  U6240/op (nor2_1)                                     180.25    4452.89 r
-  n9449 (net)                                   3         0.00    4452.89 r
-  U10723/op (xor2_1)                                    122.28    4575.17 f
-  n9451 (net)                                   1         0.00    4575.17 f
-  U6241/op (nor2_1)                                    1194.63    5769.80 r
-  n4945 (net)                                   1         0.00    5769.80 r
-  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_5_/ip (drp_2)     0.00  5769.80 r
-  data arrival time                                               5769.80
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/ck (drp_2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/q (drp_2)   316.27   316.27 f
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt[6] (net)     9     0.00   316.27 f
+  U6372/op (xor2_1)                                     125.82     442.08 r
+  n5484 (net)                                   1         0.00     442.08 r
+  U6378/op (nand4_1)                                    149.73     591.81 f
+  n5485 (net)                                   1         0.00     591.81 f
+  U6379/op (inv_1)                                       51.74     643.55 r
+  n5486 (net)                                   1         0.00     643.55 r
+  U6380/op (nand3_1)                                    107.18     750.73 f
+  n5489 (net)                                   1         0.00     750.73 f
+  U6381/op (nand2_1)                                     69.79     820.52 r
+  n5491 (net)                                   2         0.00     820.52 r
+  U6113/op (nand2_1)                                     93.68     914.20 f
+  n5336 (net)                                   1         0.00     914.20 f
+  U6114/op (nand2_2)                                     67.45     981.65 r
+  n5647 (net)                                   2         0.00     981.65 r
+  U6383/op (nand2_2)                                     85.67    1067.33 f
+  n5494 (net)                                   2         0.00    1067.33 f
+  U5665/op (and2_4)                                     151.13    1218.46 f
+  n5334 (net)                                   4         0.00    1218.46 f
+  U5664/op (inv_4)                                       63.59    1282.05 r
+  n8680 (net)                                   8         0.00    1282.05 r
+  U5656/op (and2_2)                                     143.69    1425.74 r
+  n6957 (net)                                   4         0.00    1425.74 r
+  U5652/op (nand2_2)                                     74.72    1500.46 f
+  n6801 (net)                                   1         0.00    1500.46 f
+  U5655/op (nand2_2)                                     84.38    1584.85 r
+  n6806 (net)                                   2         0.00    1584.85 r
+  U5654/op (inv_4)                                       48.50    1633.35 f
+  n6844 (net)                                   2         0.00    1633.35 f
+  U5657/op (nand2_4)                                     60.43    1693.78 r
+  n6941 (net)                                   3         0.00    1693.78 r
+  U5663/op (nor2_4)                                      73.56    1767.34 f
+  n10666 (net)                                  3         0.00    1767.34 f
+  U9599/op (or2_1)                                      134.46    1901.80 f
+  n8485 (net)                                   1         0.00    1901.80 f
+  U9600/op (nand2_1)                                     65.48    1967.29 r
+  n8495 (net)                                   1         0.00    1967.29 r
+  U5658/op (nand4_2)                                    156.59    2123.88 f
+  n9838 (net)                                   2         0.00    2123.88 f
+  U11041/op (or2_1)                                     162.18    2286.06 f
+  i_i2c_U_DW_apb_i2c_toggle_tx_abrt (net)       2         0.00    2286.06 f
+  U12350/op (inv_1)                                      42.52    2328.58 r
+  n10910 (net)                                  1         0.00    2328.58 r
+  U12351/op (nor2_1)                                     87.57    2416.15 f
+  n10911 (net)                                  1         0.00    2416.15 f
+  U5775/op (xor2_1)                                     106.55    2522.70 f
+  n5208 (net)                                   1         0.00    2522.70 f
+  i_i2c_U_DW_apb_i2c_toggle_tx_abrt_tog_reg/ip (drp_1)     0.00   2522.70 f
+  data arrival time                                               2522.70
 
   clock i_i2c_ic_clk (rise edge)                       6000.00    6000.00
   clock network delay (ideal)                             0.00    6000.00
-  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_5_/ck (drp_2)     0.00  6000.00 r
-  library setup time                                   -230.07    5769.93
-  data required time                                              5769.93
+  i_i2c_U_DW_apb_i2c_toggle_tx_abrt_tog_reg/ck (drp_1)     0.00   6000.00 r
+  library setup time                                  -3503.09    2496.91
+  data required time                                              2496.91
   --------------------------------------------------------------------------
-  data required time                                              5769.93
-  data arrival time                                              -5769.80
+  data required time                                              2496.91
+  data arrival time                                              -2522.70
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.13
+  slack (VIOLATED)                                                 -25.79
 
 
-<A NAME="interconnect_ip_22520"></A>  Startpoint: i_ssi_U_regfile_baud2_reg
+<A NAME="interconnect_ip_21008"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_2_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_txd_reg
+  Endpoint: i_ssi_U_mstfsm_frame_cnt_reg_16_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
   Path Group: i_ssi_ssi_clk
   Path Type: max
@@ -369,502 +349,67 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock PCLK_pclk (rise edge)                         78000.00   78000.00
   clock network delay (ideal)                             0.00   78000.00
-  i_ssi_U_regfile_baud2_reg/ck (drp_1)                    0.00   78000.00 r
-  i_ssi_U_regfile_baud2_reg/q (drp_1)                   244.20   78244.20 f
-  i_ssi_baud2 (net)                             3         0.00   78244.20 f
-  U6004/op (inv_1)                                       52.40   78296.59 r
-  n5316 (net)                                   1         0.00   78296.59 r
-  U5946/op (nand2_1)                                     86.00   78382.59 f
-  n9854 (net)                                   2         0.00   78382.59 f
-  U6263/op (inv_1)                                       62.02   78444.61 r
-  n5499 (net)                                   2         0.00   78444.61 r
-  U6052/op (inv_1)                                       49.41   78494.02 f
-  n5500 (net)                                   2         0.00   78494.02 f
-  U6111/op (or2_1)                                      139.12   78633.13 f
-  n5388 (net)                                   2         0.00   78633.13 f
-  U6048/op (nand3_1)                                     57.40   78690.53 r
-  n5764 (net)                                   1         0.00   78690.53 r
-  U6347/op (nand2_1)                                     94.56   78785.09 f
-  n5765 (net)                                   2         0.00   78785.09 f
-  U6207/op (nand2_1)                                     74.04   78859.13 r
-  n5446 (net)                                   1         0.00   78859.13 r
-  U5667/op (inv_2)                                       50.30   78909.43 f
-  n5450 (net)                                   3         0.00   78909.43 f
-  U6136/op (nand2_1)                                     61.28   78970.71 r
-  n5402 (net)                                   2         0.00   78970.71 r
-  U5996/op (nand2_1)                                    139.37   79110.08 f
-  n5313 (net)                                   1         0.00   79110.08 f
-  U6003/op (nand2_4)                                    100.84   79210.91 r
-  n10550 (net)                                  7         0.00   79210.91 r
-  U6087/op (inv_1)                                       57.30   79268.21 f
-  n5367 (net)                                   1         0.00   79268.21 f
-  U6133/op (nand2_2)                                     80.85   79349.06 r
-  n5401 (net)                                   2         0.00   79349.06 r
-  U6134/op (inv_4)                                       51.70   79400.76 f
-  n10689 (net)                                  4         0.00   79400.76 f
-  U12034/op (nand2_1)                                    51.73   79452.49 r
-  n10669 (net)                                  1         0.00   79452.49 r
-  U12036/op (nand4_1)                                   142.31   79594.80 f
-  n10674 (net)                                  1         0.00   79594.80 f
-  U6172/op (nand2_1)                                     57.03   79651.84 r
-  n10675 (net)                                  1         0.00   79651.84 r
-  U12037/op (nand2_1)                                    63.18   79715.02 f
-  n10693 (net)                                  1         0.00   79715.02 f
-  U12044/op (not_ab_or_c_or_d)                          118.93   79833.95 r
-  n10696 (net)                                  1         0.00   79833.95 r
-  U12045/op (nand3_1)                                   121.30   79955.24 f
-  n4388 (net)                                   1         0.00   79955.24 f
-  i_ssi_U_shift_U_tx_shifter_txd_reg/ip (drp_2)           0.00   79955.24 f
-  data arrival time                                              79955.24
+  i_ssi_U_regfile_ctrlr0_ir_reg_2_/ck (drsp_2)            0.00   78000.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_2_/q (drsp_2)           283.73   78283.73 f
+  i_ssi_dfs[2] (net)                            6         0.00   78283.73 f
+  U5895/op (xor2_1)                                     141.04   78424.77 r
+  n9494 (net)                                   1         0.00   78424.77 r
+  U5889/op (mux2_1)                                     122.27   78547.03 r
+  n5368 (net)                                   1         0.00   78547.03 r
+  U6164/op (inv_1)                                       33.21   78580.24 f
+  n5369 (net)                                   1         0.00   78580.24 f
+  U6165/op (not_ab_or_c_or_d)                           113.13   78693.38 r
+  n5381 (net)                                   1         0.00   78693.38 r
+  U6175/op (nand2_1)                                    104.72   78798.09 f
+  n9374 (net)                                   2         0.00   78798.09 f
+  U10508/op (nor2_1)                                    199.55   78997.65 r
+  n9380 (net)                                   4         0.00   78997.65 r
+  U10514/op (nand2_1)                                   161.73   79159.38 f
+  n9385 (net)                                   3         0.00   79159.38 f
+  U10521/op (nor2_1)                                    221.12   79380.50 r
+  n9392 (net)                                   4         0.00   79380.50 r
+  U10527/op (nand2_1)                                   166.99   79547.49 f
+  n9397 (net)                                   3         0.00   79547.49 f
+  U10540/op (nor2_1)                                    270.07   79817.56 r
+  n9404 (net)                                   4         0.00   79817.56 r
+  U5883/op (nand2_1)                                    151.05   79968.62 f
+  n9409 (net)                                   2         0.00   79968.62 f
+  U10557/op (xnor2_1)                                   156.11   80124.73 r
+  n9410 (net)                                   1         0.00   80124.73 r
+  U5900/op (and2_1)                                     108.38   80233.11 r
+  n4204 (net)                                   1         0.00   80233.11 r
+  i_ssi_U_mstfsm_frame_cnt_reg_16_/ip (drp_2)             0.00   80233.11 r
+  data arrival time                                              80233.11
 
   clock i_ssi_ssi_clk (rise edge)                     80000.00   80000.00
   clock network delay (ideal)                             0.00   80000.00
-  i_ssi_U_shift_U_tx_shifter_txd_reg/ck (drp_2)           0.00   80000.00 r
-  library setup time                                   -185.46   79814.54
-  data required time                                             79814.54
+  i_ssi_U_mstfsm_frame_cnt_reg_16_/ck (drp_2)             0.00   80000.00 r
+  library setup time                                   -180.09   79819.91
+  data required time                                             79819.91
   --------------------------------------------------------------------------
-  data required time                                             79814.54
-  data arrival time                                              -79955.24
+  data required time                                             79819.91
+  data arrival time                                              -80233.11
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                -140.70
+  slack (VIOLATED)                                                -413.20
 
 
 Information: Updating design information... (UID-85)
  
 ****************************************
-<DIV ALIGN=right><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A></DIV><A NAME="interconnect_ip_27591"></A>Report : timing
+<DIV ALIGN=right><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A></DIV><A NAME="interconnect_ip_24861"></A>Report : timing
         -path only
         -delay max
         -group QtoD
         -max_paths 25
 Design : interconnect_ip
 Version: J-2014.09-SP5
-Date   : Tue Dec  1 10:48:05 2015
+Date   : Mon Dec  7 01:11:14 2015
 ****************************************
 
 Operating Conditions: nom_pvt   Library: vtvt_tsmc180
 Wire Load Model Mode: top
 
-<A NAME="interconnect_ip_27811"></A>  Startpoint: i_ssi_U_regfile_baud2_reg
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_txd_reg
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baud2_reg/ck (drp_1)                    0.00       0.00 r
-  i_ssi_U_regfile_baud2_reg/q (drp_1)                   244.20     244.20 f
-  U6004/op (inv_1)                                       52.40     296.60 r
-  U5946/op (nand2_1)                                     86.00     382.60 f
-  U6263/op (inv_1)                                       62.02     444.61 r
-  U6052/op (inv_1)                                       49.40     494.01 f
-  U6111/op (or2_1)                                      139.12     633.13 f
-  U6048/op (nand3_1)                                     57.40     690.53 r
-  U6347/op (nand2_1)                                     94.56     785.09 f
-  U6207/op (nand2_1)                                     74.04     859.13 r
-  U5667/op (inv_2)                                       50.30     909.43 f
-  U6136/op (nand2_1)                                     61.29     970.71 r
-  U5996/op (nand2_1)                                    139.36    1110.08 f
-  U6003/op (nand2_4)                                    100.84    1210.92 r
-  U6087/op (inv_1)                                       57.29    1268.21 f
-  U6133/op (nand2_2)                                     80.86    1349.07 r
-  U6134/op (inv_4)                                       51.70    1400.76 f
-  U12034/op (nand2_1)                                    51.73    1452.49 r
-  U12036/op (nand4_1)                                   142.31    1594.81 f
-  U6172/op (nand2_1)                                     57.03    1651.83 r
-  U12037/op (nand2_1)                                    63.18    1715.01 f
-  U12044/op (not_ab_or_c_or_d)                          118.93    1833.95 r
-  U12045/op (nand3_1)                                   121.29    1955.24 f
-  i_ssi_U_shift_U_tx_shifter_txd_reg/ip (drp_2)           0.00    1955.24 f
-  data arrival time                                               1955.24
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_30209"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_0_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr0_ir_reg_0_/ck (drsp_1)            0.00       0.00 r
-  i_ssi_U_regfile_ctrlr0_ir_reg_0_/q (drsp_1)           228.89     228.89 f
-  U6049/op (xnor2_2)                                    179.15     408.04 r
-  U5788/op (nand2_1)                                     85.81     493.85 f
-  U5928/op (nor2_2)                                      90.35     584.20 r
-  U6414/op (nand2_1)                                     70.34     654.54 f
-  U6347/op (nand2_1)                                     64.75     719.29 r
-  U6208/op (nand2_1)                                     92.17     811.46 f
-  U6028/op (inv_2)                                       68.92     880.37 r
-  U6093/op (nand2_1)                                     89.47     969.85 f
-  U6148/op (inv_2)                                       68.41    1038.25 r
-  U5987/op (nand2_4)                                     98.94    1137.20 f
-  U6075/op (nand2_4)                                     84.32    1221.51 r
-  U5669/op (or2_2)                                      119.85    1341.36 r
-  U6061/op (inv_2)                                       47.33    1388.69 f
-  U11957/op (nand2_1)                                    51.73    1440.42 r
-  U11958/op (nand4_1)                                   142.87    1583.29 f
-  U11959/op (nand2_1)                                    59.30    1642.59 r
-  U11960/op (nand3_1)                                   104.74    1747.33 f
-  U11961/op (not_ab_or_c_or_d)                          128.97    1876.30 r
-  U11962/op (nor2_1)                                     81.49    1957.79 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_/ip (drp_2)     0.00  1957.79 f
-  data arrival time                                               1957.79
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_32468"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_sclk_out_reg
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6123/op (nand2_1)                                     91.15     832.84 f
-  U6721/op (nor2_1)                                     156.32     989.17 r
-  U6761/op (nand3_1)                                    133.02    1122.18 f
-  U6763/op (nand2_1)                                     72.26    1194.45 r
-  U6053/op (nand2_1)                                     88.66    1283.11 f
-  U6054/op (inv_1)                                       68.41    1351.52 r
-  U5637/op (and2_2)                                     156.64    1508.16 r
-  U6163/op (nand2_4)                                    103.63    1611.79 f
-  U5664/op (nand2_4)                                     51.44    1663.23 r
-  U5663/op (nand2_2)                                     70.36    1733.59 f
-  U12432/op (nand2_1)                                    50.41    1784.01 r
-  U12433/op (nand2_1)                                    67.00    1851.01 f
-  U12434/op (nand2_1)                                    46.35    1897.36 r
-  U12455/op (nand2_1)                                    61.08    1958.44 f
-  i_ssi_U_sclkgen_sclk_out_reg/ip (drp_2)                 0.00    1958.44 f
-  data arrival time                                               1958.44
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_34705"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U5969/op (nand2_1)                                     77.81    1127.52 r
-  U5970/op (and2_1)                                     118.05    1245.57 r
-  U6166/op (nand2_1)                                     84.91    1330.48 f
-  U6203/op (inv_1)                                       85.04    1415.52 r
-  U6201/op (nand2_2)                                     92.02    1507.54 f
-  U11910/op (nand2_1)                                    85.57    1593.11 r
-  U6190/op (nand2_2)                                     91.40    1684.51 f
-  U6254/op (nor2_2)                                      93.66    1778.17 r
-  U11911/op (mux2_1)                                    178.76    1956.93 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_/ip (drp_2)     0.00  1956.93 f
-  data arrival time                                               1956.93
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_36810"></A>  Startpoint: i_ssi_U_regfile_baud2_reg
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baud2_reg/ck (drp_1)                    0.00       0.00 r
-  i_ssi_U_regfile_baud2_reg/q (drp_1)                   244.20     244.20 f
-  U6004/op (inv_1)                                       52.40     296.60 r
-  U5946/op (nand2_1)                                     86.00     382.60 f
-  U6263/op (inv_1)                                       62.02     444.61 r
-  U6052/op (inv_1)                                       49.40     494.01 f
-  U6111/op (or2_1)                                      139.12     633.13 f
-  U6048/op (nand3_1)                                     57.40     690.53 r
-  U6347/op (nand2_1)                                     94.56     785.09 f
-  U6207/op (nand2_1)                                     74.04     859.13 r
-  U5667/op (inv_2)                                       50.30     909.43 f
-  U6136/op (nand2_1)                                     61.29     970.71 r
-  U6001/op (nand2_1)                                    135.51    1106.23 f
-  U6128/op (nand2_2)                                    120.96    1227.19 r
-  U6097/op (nand2_2)                                    137.48    1364.66 f
-  U6246/op (nor2_2)                                     120.71    1485.37 r
-  U6284/op (nor2_2)                                     113.10    1598.47 f
-  U11938/op (nor2_1)                                     88.24    1686.70 r
-  U6084/op (or2_1)                                       95.01    1781.71 r
-  U6083/op (mux2_1)                                     174.87    1956.58 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_/ip (drp_2)     0.00  1956.58 f
-  data arrival time                                               1956.58
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_38995"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U5969/op (nand2_1)                                     77.81    1127.52 r
-  U5970/op (and2_1)                                     118.05    1245.57 r
-  U6166/op (nand2_1)                                     84.91    1330.48 f
-  U6252/op (inv_1)                                       63.69    1394.17 r
-  U6188/op (nand2_2)                                     84.41    1478.58 f
-  U6194/op (inv_2)                                       72.36    1550.93 r
-  U5981/op (nand2_4)                                     91.62    1642.56 f
-  U11885/op (nor2_1)                                    126.21    1768.77 r
-  U11886/op (mux2_1)                                    185.77    1954.53 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_/ip (drp_1)     0.00  1954.53 f
-  data arrival time                                               1954.53
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_41102"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U5969/op (nand2_1)                                     77.81    1127.52 r
-  U5970/op (and2_1)                                     118.05    1245.57 r
-  U6166/op (nand2_1)                                     84.91    1330.48 f
-  U6252/op (inv_1)                                       63.69    1394.17 r
-  U6188/op (nand2_2)                                     84.41    1478.58 f
-  U6194/op (inv_2)                                       72.36    1550.93 r
-  U5981/op (nand2_4)                                     91.62    1642.56 f
-  U11870/op (nor2_1)                                    126.21    1768.77 r
-  U11871/op (mux2_1)                                    185.67    1954.43 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_/ip (drp_2)     0.00  1954.43 f
-  data arrival time                                               1954.43
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_43208"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_2_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    162.61    1223.23 r
-  U5913/op (nand2_1)                                     62.28    1285.51 f
-  U5738/op (nor2_1)                                     121.22    1406.73 r
-  U6251/op (nand2_2)                                     94.77    1501.50 f
-  U6253/op (nor2_2)                                      91.65    1593.15 r
-  U6187/op (nor2_1)                                     108.94    1702.08 f
-  U8679/op (nand2_1)                                     59.84    1761.92 r
-  U5874/op (inv_1)                                       63.16    1825.08 f
-  U11054/op (nand2_1)                                    53.89    1878.97 r
-  U11058/op (nand2_1)                                    64.80    1943.77 f
-  i_ssi_U_sclkgen_ssi_cnt_reg_2_/ip (drp_4)               0.00    1943.77 f
-  data arrival time                                               1943.77
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_45066"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_1_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    162.61    1223.23 r
-  U5913/op (nand2_1)                                     62.28    1285.51 f
-  U5738/op (nor2_1)                                     121.22    1406.73 r
-  U6251/op (nand2_2)                                     94.77    1501.50 f
-  U6253/op (nor2_2)                                      91.65    1593.15 r
-  U6187/op (nor2_1)                                     108.94    1702.08 f
-  U8679/op (nand2_1)                                     59.84    1761.92 r
-  U5874/op (inv_1)                                       63.16    1825.08 f
-  U11051/op (nand2_1)                                    53.89    1878.97 r
-  U11053/op (nand2_1)                                    64.58    1943.55 f
-  i_ssi_U_sclkgen_ssi_cnt_reg_1_/ip (drp_4)               0.00    1943.55 f
-  data arrival time                                               1943.55
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_46925"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U6009/op (nand2_1)                                     94.09    1143.79 r
-  U6030/op (and2_1)                                     122.54    1266.33 r
-  U6165/op (nand2_1)                                    103.36    1369.70 f
-  U11854/op (nor2_1)                                     96.41    1466.11 r
-  U11855/op (nand2_1)                                    92.35    1558.46 f
-  U6249/op (nand2_2)                                     79.38    1637.84 r
-  U6250/op (inv_4)                                       54.15    1691.99 f
-  U6189/op (nor2_4)                                      71.96    1763.95 r
-  U11856/op (mux2_1)                                    175.65    1939.60 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_/ip (drp_1)     0.00  1939.60 f
-  data arrival time                                               1939.60
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_49032"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_mstfsm_fsm_multi_mst_reg
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6123/op (nand2_1)                                     91.15     832.84 f
-  U6721/op (nor2_1)                                     156.32     989.17 r
-  U6827/op (nand2_1)                                    110.31    1099.48 f
-  U6828/op (inv_1)                                       52.23    1151.71 r
-  U6830/op (nand2_1)                                     63.46    1215.17 f
-  U6832/op (not_ab_or_c_or_d)                           136.73    1351.90 r
-  U6833/op (ab_or_c_or_d)                               126.48    1478.38 r
-  U8604/op (nand2_1)                                     97.28    1575.66 f
-  U6122/op (and2_1)                                     123.66    1699.32 f
-  U8607/op (nand2_1)                                     59.65    1758.97 r
-  U8608/op (xnor2_1)                                    140.00    1898.97 f
-  U8609/op (inv_1)                                       38.61    1937.58 r
-  i_ssi_U_mstfsm_fsm_multi_mst_reg/ip (drp_2)             0.00    1937.58 r
-  data arrival time                                               1937.58
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_51121"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U6009/op (nand2_1)                                     94.09    1143.79 r
-  U6030/op (and2_1)                                     122.54    1266.33 r
-  U6165/op (nand2_1)                                    103.36    1369.70 f
-  U11854/op (nor2_1)                                     96.41    1466.11 r
-  U11855/op (nand2_1)                                    92.35    1558.46 f
-  U6249/op (nand2_2)                                     79.38    1637.84 r
-  U6250/op (inv_4)                                       54.15    1691.99 f
-  U11878/op (nand2_1)                                    64.43    1756.42 r
-  U11879/op (mux2_1)                                    178.56    1934.98 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_/ip (drp_1)     0.00  1934.98 f
-  data arrival time                                               1934.98
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_53228"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U5969/op (nand2_1)                                     77.81    1127.52 r
-  U5970/op (and2_1)                                     118.05    1245.57 r
-  U6166/op (nand2_1)                                     84.91    1330.48 f
-  U6203/op (inv_1)                                       85.04    1415.52 r
-  U6201/op (nand2_2)                                     92.02    1507.54 f
-  U11910/op (nand2_1)                                    85.57    1593.11 r
-  U6190/op (nand2_2)                                     91.40    1684.51 f
-  U11930/op (nand2_1)                                    69.25    1753.76 r
-  U11931/op (mux2_1)                                    178.56    1932.32 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_/ip (drp_1)     0.00  1932.32 f
-  data arrival time                                               1932.32
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_55340"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_9_
+<A NAME="interconnect_ip_25088"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_2_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
   Endpoint: i_ssi_U_mstfsm_frame_cnt_reg_16_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
@@ -873,222 +418,53 @@ Wire Load Model Mode: top
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr0_ir_reg_9_/ck (drp_1)             0.00       0.00 r
-  i_ssi_U_regfile_ctrlr0_ir_reg_9_/q (drp_1)            227.46     227.46 f
-  U6035/op (inv_1)                                      132.02     359.48 r
-  U5801/op (inv_2)                                       99.39     458.86 f
-  U6673/op (nand3_1)                                     76.80     535.67 r
-  U6674/op (nand2_1)                                     69.41     605.08 f
-  U6675/op (not_ab_or_c_or_d)                           120.55     725.63 r
-  U6103/op (nand2_1)                                    104.47     830.11 f
-  U5903/op (inv_1)                                       87.08     917.19 r
-  U5897/op (nand2_2)                                     88.79    1005.98 f
-  U5736/op (nor2_2)                                     156.22    1162.20 r
-  U6193/op (nand2_4)                                    129.81    1292.01 f
-  U6055/op (nor2_4)                                     127.27    1419.28 r
-  U6056/op (nand3_4)                                    113.92    1533.21 f
-  U6508/op (xnor2_1)                                    151.44    1684.65 f
-  i_ssi_U_mstfsm_frame_cnt_reg_16_/ip (dtrsp_2)           0.00    1684.65 f
-  data arrival time                                               1684.65
+  i_ssi_U_regfile_ctrlr0_ir_reg_2_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_2_/q (drsp_2)           283.72     283.72 f
+  U5895/op (xor2_1)                                     141.04     424.77 r
+  U5889/op (mux2_1)                                     122.26     547.03 r
+  U6164/op (inv_1)                                       33.22     580.24 f
+  U6165/op (not_ab_or_c_or_d)                           113.13     693.37 r
+  U6175/op (nand2_1)                                    104.72     798.09 f
+  U10508/op (nor2_1)                                    199.55     997.65 r
+  U10514/op (nand2_1)                                   161.73    1159.38 f
+  U10521/op (nor2_1)                                    221.12    1380.50 r
+  U10527/op (nand2_1)                                   166.99    1547.49 f
+  U10540/op (nor2_1)                                    270.07    1817.56 r
+  U5883/op (nand2_1)                                    151.05    1968.62 f
+  U10557/op (xnor2_1)                                   156.11    2124.73 r
+  U5900/op (and2_1)                                     108.38    2233.11 r
+  i_ssi_U_mstfsm_frame_cnt_reg_16_/ip (drp_2)             0.00    2233.11 r
+  data arrival time                                               2233.11
   --------------------------------------------------------------------------
 
-<A NAME="interconnect_ip_57121"></A>  Startpoint: i_ssi_U_regfile_baud2_reg
+<A NAME="interconnect_ip_26872"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_
+  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_15_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
   Path Group: QtoD
   Path Type: max
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  i_ssi_U_regfile_baud2_reg/ck (drp_1)                    0.00       0.00 r
-  i_ssi_U_regfile_baud2_reg/q (drp_1)                   244.20     244.20 f
-  U6004/op (inv_1)                                       52.40     296.60 r
-  U5946/op (nand2_1)                                     86.00     382.60 f
-  U6263/op (inv_1)                                       62.02     444.61 r
-  U6052/op (inv_1)                                       49.40     494.01 f
-  U6111/op (or2_1)                                      139.12     633.13 f
-  U6048/op (nand3_1)                                     57.40     690.53 r
-  U6347/op (nand2_1)                                     94.56     785.09 f
-  U6207/op (nand2_1)                                     74.04     859.13 r
-  U5667/op (inv_2)                                       50.30     909.43 f
-  U6136/op (nand2_1)                                     61.29     970.71 r
-  U6001/op (nand2_1)                                    135.51    1106.23 f
-  U6128/op (nand2_2)                                    120.96    1227.19 r
-  U6097/op (nand2_2)                                    137.48    1364.66 f
-  U6246/op (nor2_2)                                     120.71    1485.37 r
-  U6284/op (nor2_2)                                     113.10    1598.47 f
-  U11922/op (nand2_1)                                    57.43    1655.89 r
-  U11923/op (nand2_1)                                    89.12    1745.01 f
-  U11924/op (mux2_1)                                    181.60    1926.61 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_/ip (drp_1)     0.00  1926.61 f
-  data arrival time                                               1926.61
+  i_ssi_U_regfile_baudr_reg_1_/ck (drp_4)                 0.00       0.00 r
+  i_ssi_U_regfile_baudr_reg_1_/q (drp_4)                333.89     333.89 f
+  U6240/op (nor2_4)                                      96.69     430.58 r
+  U5902/op (nand2_2)                                     88.17     518.75 f
+  U6241/op (nor2_1)                                     289.56     808.31 r
+  U6251/op (nand2_1)                                    128.45     936.76 f
+  U6252/op (xnor2_1)                                    180.50    1117.26 f
+  U6253/op (inv_1)                                       55.27    1172.53 r
+  U6254/op (xnor2_1)                                    138.45    1310.98 f
+  U6007/op (nor2_1)                                      82.70    1393.69 r
+  U6294/op (nand2_1)                                     87.86    1481.55 f
+  U6313/op (nor2_2)                                     122.84    1604.38 r
+  U10412/op (or2_1)                                      93.33    1697.72 r
+  U10413/op (nor2_1)                                     67.79    1765.51 f
+  i_ssi_U_sclkgen_ssi_cnt_reg_15_/ip (drp_1)              0.00    1765.51 f
+  data arrival time                                               1765.51
   --------------------------------------------------------------------------
 
-<A NAME="interconnect_ip_59305"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_2_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_sclk_re_ir_reg
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_2_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_2_/q (drp_2)                304.62     304.62 f
-  U5795/op (nor2_1)                                     110.56     415.17 r
-  U7604/op (nand2_1)                                     95.34     510.52 f
-  U7605/op (nor2_1)                                     139.81     650.33 r
-  U7607/op (nand2_1)                                    161.07     811.40 f
-  U7608/op (xor2_1)                                     139.02     950.42 r
-  U7609/op (xor2_1)                                     118.65    1069.07 f
-  U7618/op (nand4_1)                                    517.33    1586.40 r
-  U7619/op (nor4_1)                                     320.16    1906.56 f
-  i_ssi_U_sclkgen_sclk_re_ir_reg/ip (drp_2)               0.00    1906.56 f
-  data arrival time                                               1906.56
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_60707"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_3_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    167.63    1228.25 f
-  U5913/op (nand2_1)                                     50.60    1278.85 r
-  U5738/op (nor2_1)                                     109.13    1387.97 f
-  U6251/op (nand2_2)                                     57.82    1445.80 r
-  U6253/op (nor2_2)                                      72.78    1518.57 f
-  U8664/op (or2_1)                                      136.73    1655.31 f
-  U5882/op (inv_2)                                       73.08    1728.39 r
-  U6258/op (inv_1)                                       67.89    1796.29 f
-  U11061/op (not_ab_or_c_or_d)                          119.70    1915.99 r
-  i_ssi_U_sclkgen_ssi_cnt_reg_3_/ip (drp_2)               0.00    1915.99 r
-  data arrival time                                               1915.99
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_62489"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_14_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    167.63    1228.25 f
-  U5913/op (nand2_1)                                     50.60    1278.85 r
-  U5738/op (nor2_1)                                     109.13    1387.97 f
-  U6251/op (nand2_2)                                     57.82    1445.80 r
-  U6253/op (nor2_2)                                      72.78    1518.57 f
-  U8664/op (or2_1)                                      136.73    1655.31 f
-  U5882/op (inv_2)                                       73.08    1728.39 r
-  U11063/op (inv_1)                                      67.31    1795.70 f
-  U11083/op (not_ab_or_c_or_d)                          119.86    1915.56 r
-  i_ssi_U_sclkgen_ssi_cnt_reg_14_/ip (drp_1)              0.00    1915.56 r
-  data arrival time                                               1915.56
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_64272"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_9_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    167.63    1228.25 f
-  U5913/op (nand2_1)                                     50.60    1278.85 r
-  U5738/op (nor2_1)                                     109.13    1387.97 f
-  U6251/op (nand2_2)                                     57.82    1445.80 r
-  U6253/op (nor2_2)                                      72.78    1518.57 f
-  U8664/op (or2_1)                                      136.73    1655.31 f
-  U5882/op (inv_2)                                       73.08    1728.39 r
-  U11060/op (inv_1)                                      67.89    1796.29 f
-  U11074/op (not_ab_or_c_or_d)                          119.70    1915.99 r
-  i_ssi_U_sclkgen_ssi_cnt_reg_9_/ip (drp_2)               0.00    1915.99 r
-  data arrival time                                               1915.99
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_66054"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_12_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    167.63    1228.25 f
-  U5913/op (nand2_1)                                     50.60    1278.85 r
-  U5738/op (nor2_1)                                     109.13    1387.97 f
-  U6251/op (nand2_2)                                     57.82    1445.80 r
-  U6253/op (nor2_2)                                      72.78    1518.57 f
-  U8664/op (or2_1)                                      136.73    1655.31 f
-  U5882/op (inv_2)                                       73.08    1728.39 r
-  U11063/op (inv_1)                                      67.31    1795.70 f
-  U11079/op (not_ab_or_c_or_d)                          119.86    1915.56 r
-  i_ssi_U_sclkgen_ssi_cnt_reg_12_/ip (drp_1)              0.00    1915.56 r
-  data arrival time                                               1915.56
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_67837"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
-              (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_6_
-            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
-  Path Group: QtoD
-  Path Type: max
-
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    167.63    1228.25 f
-  U5913/op (nand2_1)                                     50.60    1278.85 r
-  U5738/op (nor2_1)                                     109.13    1387.97 f
-  U6251/op (nand2_2)                                     57.82    1445.80 r
-  U6253/op (nor2_2)                                      72.78    1518.57 f
-  U8664/op (or2_1)                                      136.73    1655.31 f
-  U5882/op (inv_2)                                       73.08    1728.39 r
-  U11063/op (inv_1)                                      67.31    1795.70 f
-  U11068/op (not_ab_or_c_or_d)                          119.86    1915.56 r
-  i_ssi_U_sclkgen_ssi_cnt_reg_6_/ip (drp_1)               0.00    1915.56 r
-  data arrival time                                               1915.56
-  --------------------------------------------------------------------------
-
-<A NAME="interconnect_ip_69620"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_5_
+<A NAME="interconnect_ip_28583"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
   Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_9_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
@@ -1097,60 +473,583 @@ Wire Load Model Mode: top
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  i_ssi_U_regfile_ctrlr1_reg_5_/ck (drp_1)                0.00       0.00 r
-  i_ssi_U_regfile_ctrlr1_reg_5_/q (drp_1)               239.59     239.59 f
-  U6708/op (xor2_1)                                     134.61     374.20 r
-  U6709/op (xnor2_1)                                    152.20     526.40 f
-  U6710/op (inv_1)                                       41.57     567.98 r
-  U6711/op (nand2_1)                                     82.10     650.08 f
-  U6124/op (nor2_2)                                      91.62     741.70 r
-  U6720/op (nand2_1)                                     90.49     832.19 f
-  U5973/op (nor2_2)                                      98.69     930.87 r
-  U5968/op (nand3_2)                                    118.84    1049.71 f
-  U5969/op (nand2_1)                                     77.81    1127.52 r
-  U5970/op (and2_1)                                     118.05    1245.57 r
-  U6166/op (nand2_1)                                     84.91    1330.48 f
-  U6252/op (inv_1)                                       63.69    1394.17 r
-  U6188/op (nand2_2)                                     84.41    1478.58 f
-  U6194/op (inv_2)                                       72.36    1550.93 r
-  U5981/op (nand2_4)                                     91.62    1642.56 f
-  U5666/op (nand2_1)                                     77.42    1719.97 r
-  U5979/op (nand2_1)                                     69.27    1789.24 f
-  U5978/op (nand2_1)                                     52.14    1841.38 r
-  U5976/op (nand2_1)                                     63.96    1905.34 f
-  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_9_/ip (drp_2)     0.00  1905.34 f
-  data arrival time                                               1905.34
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U11280/op (nor2_2)                                     96.68    1795.77 f
+  U11446/op (or2_1)                                     157.08    1952.85 f
+  U11448/op (nand2_1)                                    74.36    2027.22 r
+  U11449/op (mux2_1)                                    179.15    2206.37 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_9_/ip (drp_1)     0.00  2206.37 f
+  data arrival time                                               2206.37
   --------------------------------------------------------------------------
 
-<A NAME="interconnect_ip_71878"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+<A NAME="interconnect_ip_30465"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_8_
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
   Path Group: QtoD
   Path Type: max
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    162.61    1223.23 r
-  U5913/op (nand2_1)                                     62.28    1285.51 f
-  U5738/op (nor2_1)                                     121.22    1406.73 r
-  U6251/op (nand2_2)                                     94.77    1501.50 f
-  U6253/op (nor2_2)                                      91.65    1593.15 r
-  U8664/op (or2_1)                                       93.57    1686.72 r
-  U5882/op (inv_2)                                       63.94    1750.66 f
-  U11060/op (inv_1)                                      76.83    1827.49 r
-  U11070/op (nor2_1)                                     73.28    1900.77 f
-  i_ssi_U_sclkgen_ssi_cnt_reg_8_/ip (drp_1)               0.00    1900.77 f
-  data arrival time                                               1900.77
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U11152/op (mux2_2)                                    263.49    1256.90 f
+  U11154/op (nand2_1)                                    97.78    1354.68 r
+  U5831/op (inv_1)                                      116.59    1471.27 f
+  U5886/op (and3_2)                                     176.14    1647.41 f
+  U11280/op (nor2_2)                                    105.43    1752.84 r
+  U11282/op (nand2_2)                                   129.52    1882.36 f
+  U11283/op (nor2_1)                                    134.63    2016.98 r
+  U11284/op (mux2_1)                                    186.82    2203.80 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_/ip (drp_1)     0.00  2203.80 f
+  data arrival time                                               2203.80
   --------------------------------------------------------------------------
 
-<A NAME="interconnect_ip_73660"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+<A NAME="interconnect_ip_32347"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U11152/op (mux2_2)                                    263.49    1256.90 f
+  U11154/op (nand2_1)                                    97.78    1354.68 r
+  U5831/op (inv_1)                                      116.59    1471.27 f
+  U5886/op (and3_2)                                     176.14    1647.41 f
+  U5903/op (or2_2)                                      157.34    1804.74 f
+  U5904/op (inv_4)                                       63.65    1868.40 r
+  U11419/op (nand2_2)                                    97.44    1965.84 f
+  U11500/op (nand2_2)                                    60.95    2026.79 r
+  U11501/op (mux2_1)                                    175.73    2202.52 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_/ip (drp_1)     0.00  2202.52 f
+  data arrival time                                               2202.52
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_34307"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_3_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_mstfsm_frame_cnt_reg_10_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_3_/ck (drp_2)             0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_3_/q (drp_2)            304.43     304.43 f
+  U5891/op (or2_1)                                      165.84     470.27 f
+  U5741/op (inv_1)                                       92.96     563.24 r
+  U6166/op (nand2_1)                                     73.28     636.51 f
+  U6168/op (nand2_1)                                     61.14     697.65 r
+  U6171/op (nand2_1)                                     65.71     763.36 f
+  U6172/op (nand2_1)                                     50.95     814.31 r
+  U6174/op (nand2_1)                                     65.69     880.00 f
+  U6175/op (nand2_1)                                     62.14     942.14 r
+  U10508/op (nor2_1)                                    182.30    1124.45 f
+  U10514/op (nand2_1)                                   107.16    1231.61 r
+  U10521/op (nor2_1)                                    185.73    1417.33 f
+  U10523/op (xor2_1)                                    117.21    1534.54 r
+  U10524/op (nor2_1)                                    571.56    2106.10 f
+  i_ssi_U_mstfsm_frame_cnt_reg_10_/ip (drp_1)             0.00    2106.10 f
+  data arrival time                                               2106.10
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_36095"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U5903/op (or2_2)                                      111.02    1810.11 r
+  U5904/op (inv_4)                                       54.46    1864.57 f
+  U11336/op (nand2_1)                                    53.07    1917.64 r
+  U11337/op (nand2_1)                                    88.06    2005.71 f
+  U11338/op (mux2_1)                                    181.99    2187.70 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_/ip (drp_1)     0.00  2187.70 f
+  data arrival time                                               2187.70
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_38053"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U5903/op (or2_2)                                      111.02    1810.11 r
+  U5904/op (inv_4)                                       54.46    1864.57 f
+  U11391/op (nand2_1)                                    51.60    1916.17 r
+  U11392/op (nand2_1)                                    87.65    2003.82 f
+  U11393/op (mux2_1)                                    182.58    2186.39 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_/ip (drp_1)     0.00  2186.39 f
+  data arrival time                                               2186.39
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_40011"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U11152/op (mux2_2)                                    263.49    1256.90 f
+  U11158/op (inv_2)                                      74.97    1331.87 r
+  U11160/op (nand2_1)                                   137.59    1469.46 f
+  U5580/op (inv_4)                                      102.75    1572.21 r
+  U11161/op (nand2_1)                                   103.20    1675.41 f
+  U11162/op (nand2_1)                                    53.04    1728.44 r
+  U11163/op (not_ab_or_c_or_d)                           90.20    1818.65 f
+  U11164/op (nor2_1)                                    125.14    1943.79 r
+  U11187/op (nor4_2)                                    156.11    2099.90 f
+  U11188/op (nor2_1)                                     85.03    2184.92 r
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_/ip (drp_1)     0.00  2184.92 r
+  data arrival time                                               2184.92
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_42045"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U5903/op (or2_2)                                      111.02    1810.11 r
+  U5904/op (inv_4)                                       54.46    1864.57 f
+  U11363/op (nand2_1)                                    51.60    1916.17 r
+  U11364/op (nand2_1)                                    87.65    2003.82 f
+  U11365/op (mux2_1)                                    182.44    2186.26 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_/ip (drp_2)     0.00  2186.26 f
+  data arrival time                                               2186.26
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_44003"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_txd_reg
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5649/op (mux2_4)                                     318.60    1312.02 f
+  U5836/op (inv_1)                                      111.97    1423.99 r
+  U5885/op (and2_4)                                     182.04    1606.03 r
+  U5829/op (inv_1)                                       71.61    1677.64 f
+  U11657/op (nand3_1)                                    69.75    1747.40 r
+  U11658/op (nand4_1)                                   143.42    1890.82 f
+  U11659/op (nand2_1)                                    63.63    1954.45 r
+  U11660/op (nand2_1)                                    66.11    2020.56 f
+  U11690/op (nor2_1)                                     90.42    2110.97 r
+  U11691/op (nand2_1)                                    66.95    2177.92 f
+  i_ssi_U_shift_U_tx_shifter_txd_reg/ip (drp_1)           0.00    2177.92 f
+  data arrival time                                               2177.92
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_46021"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U5903/op (or2_2)                                      111.02    1810.11 r
+  U5904/op (inv_4)                                       54.46    1864.57 f
+  U11555/op (nor2_1)                                    119.11    1983.68 r
+  U11556/op (mux2_1)                                    185.57    2169.25 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_/ip (drp_1)     0.00  2169.25 f
+  data arrival time                                               2169.25
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_47905"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U5903/op (or2_2)                                      111.02    1810.11 r
+  U5904/op (inv_4)                                       54.46    1864.57 f
+  U11582/op (nor2_1)                                    119.11    1983.68 r
+  U11583/op (mux2_1)                                    185.57    2169.25 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_/ip (drp_1)     0.00  2169.25 f
+  data arrival time                                               2169.25
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_49785"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_4_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_baudr_reg_1_/ck (drp_4)                 0.00       0.00 r
+  i_ssi_U_regfile_baudr_reg_1_/q (drp_4)                333.89     333.89 f
+  U6240/op (nor2_4)                                      96.69     430.58 r
+  U5902/op (nand2_2)                                     88.17     518.75 f
+  U6241/op (nor2_1)                                     289.56     808.31 r
+  U6251/op (nand2_1)                                    128.45     936.76 f
+  U6252/op (xnor2_1)                                    180.50    1117.26 f
+  U6253/op (inv_1)                                       55.27    1172.53 r
+  U6254/op (xnor2_1)                                    138.45    1310.98 f
+  U6007/op (nor2_1)                                      82.70    1393.69 r
+  U6294/op (nand2_1)                                     87.86    1481.55 f
+  U6313/op (nor2_2)                                     122.84    1604.38 r
+  U6314/op (or2_1)                                      266.76    1871.14 r
+  U10383/op (nor2_1)                                    100.61    1971.76 f
+  i_ssi_U_sclkgen_ssi_cnt_reg_4_/ip (drp_1)               0.00    1971.76 f
+  data arrival time                                               1971.76
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_51491"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_7_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_baudr_reg_1_/ck (drp_4)                 0.00       0.00 r
+  i_ssi_U_regfile_baudr_reg_1_/q (drp_4)                333.89     333.89 f
+  U6240/op (nor2_4)                                      96.69     430.58 r
+  U5902/op (nand2_2)                                     88.17     518.75 f
+  U6241/op (nor2_1)                                     289.56     808.31 r
+  U6251/op (nand2_1)                                    128.45     936.76 f
+  U6252/op (xnor2_1)                                    180.50    1117.26 f
+  U6253/op (inv_1)                                       55.27    1172.53 r
+  U6254/op (xnor2_1)                                    138.45    1310.98 f
+  U6007/op (nor2_1)                                      82.70    1393.69 r
+  U6294/op (nand2_1)                                     87.86    1481.55 f
+  U6313/op (nor2_2)                                     122.84    1604.38 r
+  U6314/op (or2_1)                                      266.76    1871.14 r
+  U10391/op (nor2_1)                                    100.61    1971.76 f
+  i_ssi_U_sclkgen_ssi_cnt_reg_7_/ip (drp_1)               0.00    1971.76 f
+  data arrival time                                               1971.76
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_53198"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_0_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_sclkgen_sclk_out_reg
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr1_reg_0_/ck (drp_1)                0.00       0.00 r
+  i_ssi_U_regfile_ctrlr1_reg_0_/q (drp_1)               267.88     267.88 f
+  U10230/op (xor2_1)                                    153.45     421.33 r
+  U10231/op (xnor2_1)                                   151.59     572.91 f
+  U10232/op (inv_1)                                      41.79     614.70 r
+  U10237/op (and2_1)                                    108.14     722.85 r
+  U10245/op (nand2_1)                                    62.14     784.99 f
+  U10246/op (inv_1)                                      41.88     826.87 r
+  U10247/op (nand2_1)                                    82.62     909.48 f
+  U10256/op (nor3_1)                                    190.93    1100.41 r
+  U10257/op (or2_1)                                     129.71    1230.12 r
+  U10695/op (inv_1)                                      37.89    1268.02 f
+  U10696/op (nand2_1)                                    78.40    1346.42 r
+  U10697/op (nand4_1)                                   147.35    1493.77 f
+  U10698/op (inv_1)                                      52.58    1546.35 r
+  U10699/op (nand2_1)                                   131.85    1678.20 f
+  U10760/op (nand2_1)                                    95.42    1773.61 r
+  U12063/op (not_ab_or_c_or_d)                          190.98    1964.60 f
+  U12064/op (mux2_1)                                    188.34    2152.93 f
+  i_ssi_U_sclkgen_sclk_out_reg/ip (drp_1)                 0.00    2152.93 f
+  data arrival time                                               2152.93
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_55282"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_10_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_baudr_reg_1_/ck (drp_4)                 0.00       0.00 r
+  i_ssi_U_regfile_baudr_reg_1_/q (drp_4)                333.89     333.89 f
+  U6240/op (nor2_4)                                      96.69     430.58 r
+  U5902/op (nand2_2)                                     88.17     518.75 f
+  U6241/op (nor2_1)                                     289.56     808.31 r
+  U6251/op (nand2_1)                                    128.45     936.76 f
+  U6252/op (xnor2_1)                                    180.50    1117.26 f
+  U6253/op (inv_1)                                       55.27    1172.53 r
+  U6254/op (xnor2_1)                                    138.45    1310.98 f
+  U6007/op (nor2_1)                                      82.70    1393.69 r
+  U6294/op (nand2_1)                                     87.86    1481.55 f
+  U6313/op (nor2_2)                                     122.84    1604.38 r
+  U6314/op (or2_1)                                      266.76    1871.14 r
+  U10399/op (nor2_1)                                    100.61    1971.76 f
+  i_ssi_U_sclkgen_ssi_cnt_reg_10_/ip (drp_1)              0.00    1971.76 f
+  data arrival time                                               1971.76
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_56993"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_8_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U11152/op (mux2_2)                                    263.49    1256.90 f
+  U11154/op (nand2_1)                                    97.78    1354.68 r
+  U5831/op (inv_1)                                      116.59    1471.27 f
+  U5886/op (and3_2)                                     176.14    1647.41 f
+  U5903/op (or2_2)                                      157.34    1804.74 f
+  U5904/op (inv_4)                                       63.65    1868.40 r
+  U11419/op (nand2_2)                                    97.44    1965.84 f
+  U11420/op (mux2_1)                                    182.59    2148.43 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_8_/ip (drp_1)     0.00  2148.43 f
+  data arrival time                                               2148.43
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_58872"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_0_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_mstfsm_fsm_multi_mst_reg
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr1_reg_0_/ck (drp_1)                0.00       0.00 r
+  i_ssi_U_regfile_ctrlr1_reg_0_/q (drp_1)               267.88     267.88 f
+  U10230/op (xor2_1)                                    153.45     421.33 r
+  U10231/op (xnor2_1)                                   151.59     572.91 f
+  U10232/op (inv_1)                                      41.79     614.70 r
+  U10237/op (and2_1)                                    108.14     722.85 r
+  U10245/op (nand2_1)                                    62.14     784.99 f
+  U10246/op (inv_1)                                      41.88     826.87 r
+  U10247/op (nand2_1)                                    82.62     909.48 f
+  U10256/op (nor3_1)                                    190.93    1100.41 r
+  U10257/op (or2_1)                                     129.71    1230.12 r
+  U10695/op (inv_1)                                      37.89    1268.02 f
+  U10696/op (nand2_1)                                    78.40    1346.42 r
+  U10697/op (nand4_1)                                   147.35    1493.77 f
+  U10698/op (inv_1)                                      52.58    1546.35 r
+  U10699/op (nand2_1)                                   131.85    1678.20 f
+  U10775/op (or2_1)                                     171.77    1849.97 f
+  U10776/op (inv_1)                                      62.60    1912.57 r
+  U10778/op (nand2_1)                                    65.84    1978.41 f
+  U10780/op (nand2_1)                                    52.15    2030.55 r
+  U10784/op (not_ab_or_c_or_d)                          100.23    2130.78 f
+  i_ssi_U_mstfsm_fsm_multi_mst_reg/ip (drp_1)             0.00    2130.78 f
+  data arrival time                                               2130.78
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_61116"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_10_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_1_/q (drsp_2)           288.88     288.88 f
+  U10665/op (xor2_2)                                    137.67     426.55 f
+  U10765/op (nor3_2)                                    133.30     559.85 r
+  U10767/op (nand3_1)                                   116.37     676.22 f
+  U10770/op (nand2_1)                                    76.81     753.03 r
+  U10771/op (nand2_2)                                   100.78     853.81 f
+  U10773/op (nor2_4)                                    139.60     993.41 r
+  U5648/op (mux2_2)                                     235.70    1229.11 r
+  U11154/op (nand2_1)                                   122.20    1351.32 f
+  U5831/op (inv_1)                                      136.31    1487.63 r
+  U5886/op (and3_2)                                     211.46    1699.09 r
+  U11280/op (nor2_2)                                     96.68    1795.77 f
+  U11446/op (or2_1)                                     157.08    1952.85 f
+  U11474/op (mux2_1)                                    180.20    2133.06 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_10_/ip (drp_1)     0.00  2133.06 f
+  data arrival time                                               2133.06
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_62924"></A>  Startpoint: i_ssi_U_regfile_ctrlr0_ir_reg_2_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_mstfsm_frame_cnt_reg_15_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr0_ir_reg_2_/ck (drsp_2)            0.00       0.00 r
+  i_ssi_U_regfile_ctrlr0_ir_reg_2_/q (drsp_2)           283.72     283.72 f
+  U5895/op (xor2_1)                                     141.04     424.77 r
+  U5889/op (mux2_1)                                     122.26     547.03 r
+  U6164/op (inv_1)                                       33.22     580.24 f
+  U6165/op (not_ab_or_c_or_d)                           113.13     693.37 r
+  U6175/op (nand2_1)                                    104.72     798.09 f
+  U10508/op (nor2_1)                                    199.55     997.65 r
+  U10514/op (nand2_1)                                   161.73    1159.38 f
+  U10521/op (nor2_1)                                    221.12    1380.50 r
+  U10527/op (nand2_1)                                   166.99    1547.49 f
+  U10540/op (nor2_1)                                    270.07    1817.56 r
+  U5883/op (nand2_1)                                    151.05    1968.62 f
+  U10546/op (inv_1)                                      56.33    2024.95 r
+  U10547/op (not_ab_or_c_or_d)                           86.83    2111.78 f
+  i_ssi_U_mstfsm_frame_cnt_reg_15_/ip (drp_1)             0.00    2111.78 f
+  data arrival time                                               2111.78
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_64708"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_13_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_baudr_reg_1_/ck (drp_4)                 0.00       0.00 r
+  i_ssi_U_regfile_baudr_reg_1_/q (drp_4)                333.89     333.89 f
+  U6240/op (nor2_4)                                      96.69     430.58 r
+  U5902/op (nand2_2)                                     88.17     518.75 f
+  U6241/op (nor2_1)                                     289.56     808.31 r
+  U6251/op (nand2_1)                                    128.45     936.76 f
+  U6252/op (xnor2_1)                                    180.50    1117.26 f
+  U6253/op (inv_1)                                       55.27    1172.53 r
+  U6254/op (xnor2_1)                                    138.45    1310.98 f
+  U6007/op (nor2_1)                                      82.70    1393.69 r
+  U6294/op (nand2_1)                                     87.86    1481.55 f
+  U6313/op (nor2_2)                                     122.84    1604.38 r
+  U6314/op (or2_1)                                      266.76    1871.14 r
+  U10406/op (nor2_1)                                    100.61    1971.76 f
+  i_ssi_U_sclkgen_ssi_cnt_reg_13_/ip (drp_1)              0.00    1971.76 f
+  data arrival time                                               1971.76
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_66415"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
   Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_11_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
@@ -1159,51 +1058,93 @@ Wire Load Model Mode: top
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    162.61    1223.23 r
-  U5913/op (nand2_1)                                     62.28    1285.51 f
-  U5738/op (nor2_1)                                     121.22    1406.73 r
-  U6251/op (nand2_2)                                     94.77    1501.50 f
-  U6253/op (nor2_2)                                      91.65    1593.15 r
-  U8664/op (or2_1)                                       93.57    1686.72 r
-  U5882/op (inv_2)                                       63.94    1750.66 f
-  U6258/op (inv_1)                                       76.83    1827.49 r
-  U11076/op (nor2_1)                                     73.28    1900.77 f
-  i_ssi_U_sclkgen_ssi_cnt_reg_11_/ip (drp_1)              0.00    1900.77 f
-  data arrival time                                               1900.77
+  i_ssi_U_regfile_baudr_reg_1_/ck (drp_4)                 0.00       0.00 r
+  i_ssi_U_regfile_baudr_reg_1_/q (drp_4)                333.89     333.89 f
+  U6240/op (nor2_4)                                      96.69     430.58 r
+  U5902/op (nand2_2)                                     88.17     518.75 f
+  U6241/op (nor2_1)                                     289.56     808.31 r
+  U6251/op (nand2_1)                                    128.45     936.76 f
+  U6252/op (xnor2_1)                                    180.50    1117.26 f
+  U6253/op (inv_1)                                       55.27    1172.53 r
+  U6254/op (xnor2_1)                                    137.28    1309.81 r
+  U6007/op (nor2_1)                                      70.35    1380.16 f
+  U6294/op (nand2_1)                                     63.70    1443.86 r
+  U6313/op (nor2_2)                                     108.46    1552.32 f
+  U6314/op (or2_1)                                      285.74    1838.06 f
+  U6315/op (or2_1)                                      166.14    2004.20 f
+  U6051/op (inv_1)                                       73.67    2077.87 r
+  i_ssi_U_sclkgen_ssi_cnt_reg_11_/ip (drp_1)              0.00    2077.87 r
+  data arrival time                                               2077.87
   --------------------------------------------------------------------------
 
-<A NAME="interconnect_ip_75443"></A>  Startpoint: i_ssi_U_regfile_baudr_reg_1_
+<A NAME="interconnect_ip_68199"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_0_
               (rising edge-triggered flip-flop clocked by PCLK_pclk)
-  Endpoint: i_ssi_U_sclkgen_ssi_cnt_reg_5_
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_2_
             (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
   Path Group: QtoD
   Path Type: max
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  i_ssi_U_regfile_baudr_reg_1_/ck (drp_2)                 0.00       0.00 r
-  i_ssi_U_regfile_baudr_reg_1_/q (drp_2)                316.51     316.51 f
-  U6063/op (nor2_2)                                     147.57     464.08 r
-  U5949/op (nand2_1)                                    102.98     567.05 f
-  U7557/op (nor2_1)                                     292.53     859.59 r
-  U7562/op (nand2_1)                                    201.03    1060.62 f
-  U8644/op (xnor2_1)                                    162.61    1223.23 r
-  U5913/op (nand2_1)                                     62.28    1285.51 f
-  U5738/op (nor2_1)                                     121.22    1406.73 r
-  U6251/op (nand2_2)                                     94.77    1501.50 f
-  U6253/op (nor2_2)                                      91.65    1593.15 r
-  U8664/op (or2_1)                                       93.57    1686.72 r
-  U5882/op (inv_2)                                       63.94    1750.66 f
-  U11060/op (inv_1)                                      76.83    1827.49 r
-  U11064/op (nor2_1)                                     73.28    1900.77 f
-  i_ssi_U_sclkgen_ssi_cnt_reg_5_/ip (drp_1)               0.00    1900.77 f
-  data arrival time                                               1900.77
+  i_ssi_U_regfile_ctrlr1_reg_0_/ck (drp_1)                0.00       0.00 r
+  i_ssi_U_regfile_ctrlr1_reg_0_/q (drp_1)               267.88     267.88 f
+  U10230/op (xor2_1)                                    153.45     421.33 r
+  U10231/op (xnor2_1)                                   151.59     572.91 f
+  U10232/op (inv_1)                                      41.79     614.70 r
+  U10237/op (and2_1)                                    108.14     722.85 r
+  U10245/op (nand2_1)                                    62.14     784.99 f
+  U10246/op (inv_1)                                      41.88     826.87 r
+  U10247/op (nand2_1)                                    82.62     909.48 f
+  U10460/op (inv_1)                                      62.46     971.94 r
+  U10464/op (nand2_1)                                    66.24    1038.18 f
+  U10465/op (inv_1)                                      42.18    1080.36 r
+  U10466/op (nor2_1)                                     69.48    1149.84 f
+  U10468/op (nand2_1)                                    67.62    1217.45 r
+  U10470/op (nand2_1)                                    90.11    1307.57 f
+  U6140/op (nand2_2)                                    125.57    1433.14 r
+  U5699/op (buf_2)                                      223.41    1656.54 r
+  U11239/op (or2_1)                                     105.23    1761.77 r
+  U11241/op (nand4_1)                                   135.82    1897.59 f
+  U11248/op (nor2_1)                                    100.52    1998.11 r
+  U11251/op (nor2_1)                                     78.06    2076.17 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_2_/ip (drp_1)     0.00  2076.17 f
+  data arrival time                                               2076.17
+  --------------------------------------------------------------------------
+
+<A NAME="interconnect_ip_70458"></A>  Startpoint: i_ssi_U_regfile_ctrlr1_reg_0_
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_
+            (rising edge-triggered flip-flop clocked by i_ssi_ssi_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_ssi_U_regfile_ctrlr1_reg_0_/ck (drp_1)                0.00       0.00 r
+  i_ssi_U_regfile_ctrlr1_reg_0_/q (drp_1)               267.88     267.88 f
+  U10230/op (xor2_1)                                    153.45     421.33 r
+  U10231/op (xnor2_1)                                   151.59     572.91 f
+  U10232/op (inv_1)                                      41.79     614.70 r
+  U10237/op (and2_1)                                    108.14     722.85 r
+  U10245/op (nand2_1)                                    62.14     784.99 f
+  U10246/op (inv_1)                                      41.88     826.87 r
+  U10247/op (nand2_1)                                    82.62     909.48 f
+  U10460/op (inv_1)                                      62.46     971.94 r
+  U10464/op (nand2_1)                                    66.24    1038.18 f
+  U10465/op (inv_1)                                      42.18    1080.36 r
+  U10466/op (nor2_1)                                     69.48    1149.84 f
+  U10468/op (nand2_1)                                    67.62    1217.45 r
+  U11139/op (nand2_1)                                   112.79    1330.24 f
+  U11244/op (inv_1)                                      50.14    1380.38 r
+  U11245/op (nand2_1)                                    63.51    1443.89 f
+  U5818/op (inv_1)                                       97.53    1541.42 r
+  U11246/op (nand2_1)                                   143.57    1684.99 f
+  U11522/op (inv_1)                                      73.58    1758.57 r
+  U11608/op (nand2_1)                                    68.60    1827.17 f
+  U11609/op (nand2_1)                                    69.09    1896.26 r
+  U11610/op (mux2_1)                                    178.76    2075.02 f
+  i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_/ip (drp_1)     0.00  2075.02 f
+  data arrival time                                               2075.02
   --------------------------------------------------------------------------
 
 1

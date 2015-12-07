@@ -49,11 +49,11 @@
 // APB Slave Start and End Addresses
 //
 
-`define i_apb_START_PADDR_0 32'h10000
-`define i_apb_END_PADDR_0 32'h10fff
+`define i_apb_START_PADDR_0 32'h20000
+`define i_apb_END_PADDR_0 32'h20fff
 
-`define i_apb_START_PADDR_1 32'h11000
-`define i_apb_END_PADDR_1 32'h11fff
+`define i_apb_START_PADDR_1 32'h21000
+`define i_apb_END_PADDR_1 32'h21fff
 
 `define i_apb_START_PADDR_2 32'hc00
 `define i_apb_END_PADDR_2 32'hfff
