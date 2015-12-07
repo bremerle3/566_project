@@ -85,7 +85,7 @@ assign HRESETn = rst_sync[1];  // Assign AHB clock from synchronizer
 
 system_top system_top_inst (
 	.HCLK_top(sim_clock),//system top interface
-	.HRESETn_top(power_on_reset_n),
+	.HRESETn_top(HRESETn),
 	.SYSRESETREQ_top_out(SYSRESETREQ),
 	.LOCKUP_top_out(LOCKUP),
 	.TXEV_top_out(TXEV)
@@ -96,7 +96,7 @@ initial begin
     $dumpvars(0,system_top_tb);
 end
 
-initial #3000 $finish;
+initial #30000 $finish;
 
 //------------------------------------------------------------------------------
 // Simulation commentary

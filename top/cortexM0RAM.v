@@ -31,7 +31,7 @@ module cortexM0RAM (
    // Inputs and outputs
    input           HCLK;
    input           HRESETn;
-   output  reg [31:0]  ex_i_ahb_AHB_Slave_RAM_hrdata;
+   output  wire [31:0]  ex_i_ahb_AHB_Slave_RAM_hrdata;
    output  wire        ex_i_ahb_AHB_Slave_RAM_hready_resp;
    output  wire [1:0] ex_i_ahb_AHB_Slave_RAM_hresp;
    input wire [31:0]  ex_i_ahb_AHB_Slave_RAM_haddr;
@@ -65,14 +65,15 @@ reg [ 2:0] hsize_last;
 
    //Assign wires
 assign ex_i_ahb_AHB_Slave_RAM_hresp = 2'b0; 
-assign  HRDATA = ex_i_ahb_AHB_Slave_RAM_hrdata; 
+assign  ex_i_ahb_AHB_Slave_RAM_hrdata = HRDATA;
 assign  HTRANS = ex_i_ahb_AHB_Slave_RAM_htrans; 
 assign  HSIZE = ex_i_ahb_AHB_Slave_RAM_hsize; 
 assign  HWRITE = ex_i_ahb_AHB_Slave_RAM_hwrite; 
 assign  HREADY = ex_i_ahb_AHB_Slave_RAM_hready; 
 assign  HWDATA = ex_i_ahb_AHB_Slave_RAM_hwdata; 
+//assign  ex_i_ahb_AHB_Slave_RAM_hrdata = HRDATA; 
 assign  HADDR = ex_i_ahb_AHB_Slave_RAM_haddr; 
-
+assign ex_i_ahb_AHB_Slave_RAM_hready_resp = 1'b1;
    // Behavioral processes
 // Initialize memory content from "ram.bin"
 integer fd, i;
@@ -143,11 +144,13 @@ always @(posedge HCLK)
   end
 
 
-always @(posedge HCLK)
-  if (HRESETn & HREADY & htrans_last[1] & ~(hsel_ram | hsel_tty))
-    $display("%t: Warning, address %x selects neither RAM or console",
-      $time, haddr_last);
-
+  always @(posedge HCLK) begin
+      if (HRESETn & HREADY & htrans_last[1] & ~(hsel_ram | hsel_tty)) begin
+        $display("%t: Warning, address %x selects neither RAM or console",
+        $time, haddr_last);
+      end
+  end
+/*
    always @ (negedge HCLK) begin
 	if (ex_i_ahb_AHB_Slave_RAM_hready) begin
 		RAM_hwrite <= 0;
@@ -169,7 +172,7 @@ always @(posedge HCLK)
 		end
 	end
    end
-
+*/
 // Record transaction information from last accepted address phase
 always @(posedge HCLK)
   if (HREADY) begin

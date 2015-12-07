@@ -83,7 +83,6 @@ module system_top (
     wire PID_hwrite_top;
     wire [24:0] dout_0_pid_top;
     wire [24:0] dout_1_pid_top;
-
     //SPI INTERFACE
    wire          i_ssi_rxd_top;
    wire          i_ssi_ss_in_n_top;

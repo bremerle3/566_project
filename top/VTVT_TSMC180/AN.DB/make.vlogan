@@ -1,6 +1,6 @@
 
 VLOGAN	= vlogan
-VLOGAN_OPT	= +v2k +incdir+../coreAssembler_ip/ +libext+.v -y ..//cortexm0ds/verilog -y COREASSEM
+VLOGAN_OPT	= +v2k +incdir+../coreAssembler_ip/ +libext+.v -y ..//cortexm0ds/verilog -y ../coreAssembler_ip/
 
 all :		_VCSgd_wQR61d_1.db \
 	_VCSgd_A3Mzlb_1.db \
@@ -68,6 +68,7 @@ all :		_VCSgd_wQR61d_1.db \
 	_VCSgd_3v4mWd_1.db \
 	_VCSgd_1nsak_1.db \
 	_VCSgd_eROCrd_1.db \
+	_VCSgd_MLK7ud_1.db \
 	_VCSgd_A71hFb_1.db \
 	_VCSgd_Tl2lFb_1.db \
 
@@ -335,6 +336,10 @@ _VCSgd_1nsak_1.db :	./cortexM0RAM.v
 
 _VCSgd_eROCrd_1.db :	../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v 
 		${VLOGAN}  ${VLOGAN_OPT} ../workloads/workload_PID/hls/fixp/pid_synth/pid2ahb_wrapper.v
+
+
+_VCSgd_MLK7ud_1.db :	./Behavioral_stubs/CPU_stub.v 
+		${VLOGAN}  ${VLOGAN_OPT} ./Behavioral_stubs/CPU_stub.v
 
 
 _VCSgd_A71hFb_1.db :	..//cortexm0ds/verilog/CORTEXM0DS.v 

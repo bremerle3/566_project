@@ -31,7 +31,7 @@ top:
 	#vlogan $(VERILOGCOMPILETOP) $(I2CPATH)/*.v
 	#vlogan -work vtvt_tsmc180 $(VERILOGCOMPILETOP)
 	vlogan -f $(COREASSEM)export/interconnect_ip_sim.lst  $(VERILOGCOMPILETOP)
-	vcs system_top_tb -o simv 
+	vcs -R system_top_tb -o simv 
 	#vcs $(VERILOGCOMPILETOP)
 
 inst:
