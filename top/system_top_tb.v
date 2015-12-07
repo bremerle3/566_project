@@ -37,55 +37,16 @@ module system_top_tb ();
 
 localparam clk_period = 100;            // Simulation cycles per clock period
 localparam por_delay  = 1001;           // Simulation cycles of power-on-reset
-localparam ram_log2   = 18;             // Power of two of RAM words
-localparam addr_tty   = 32'h40000000;   // Address of output console
 
 //------------------------------------------------------------------------------
 // Define registers for clock, reset and memory
 //------------------------------------------------------------------------------
-
 reg sim_clock;                          // System clock
 reg power_on_reset_n;                   // Power-on reset signal
-reg [31:0] ram [0:(2**ram_log2)-1];     // Storage for AHB memory model
 
-//------------------------------------------------------------------------------
-// Cortex-M0 DesignStart signal list
-//------------------------------------------------------------------------------
-
-// See the AMBA(r)3 AHB-Lite Protocol Specification v1.0 (ARM IHI 0033),
-// and the Cortex(tm)-M0 Technical Reference Manual (ARM DDI 0432), for
-// further details on the following signals:
-
-wire        HCLK;               // AHB-Lite interface and CPU master clock
-wire        HRESETn;            // AHB-Lite active-low reset signal
-
-wire [31:0] HADDR;              // AHB-Lite byte address
-wire [ 2:0] HBURST;             // AHB-Lite burst type (not used by testbench)
-wire        HMASTLOCK;          // AHB-Lite locked transaction (always zero)
-wire [ 3:0] HPROT;              // AHB-Lite protection (not used by testbench)
-wire [ 2:0] HSIZE;              // AHB-Lite size (# of bits: 0=8, 1=16, 2=32)
-wire [ 1:0] HTRANS;             // AHB-Lite perform transaction
-wire [31:0] HWDATA;             // AHB-Lite write-data
-wire        HWRITE;             // AHB-Lite transaction is write not read
-wire [31:0] HRDATA;             // AHB-Lite read-data
-wire        HREADY;             // AHB-Lite bus ready signal
-wire        HRESP;              // AHB-Lite bus error (not used by testbench)
-
-// See the ARMv6-M Architecture Reference Manual (ARM DDI 0419), and the
-// Cortex(tm)-M0 Technical Reference Manual (ARM DDI 0432), for further
-// details on the following signals:
-
-wire        NMI;                // Non-maskable interrupt input (not used by tb)
-wire [15:0] IRQ;                // Interrupt inputs (not used by testbench)
-
-wire        TXEV;               // Event output (CPU executed SEV instruction)
-wire        RXEV;               // Event input (not used by testbench)
-
-wire        LOCKUP;             // CPU stopped due to multiple software errors
 wire        SYSRESETREQ;        // CPU request for system to be reset
-
-wire        SLEEPING;           // CPU is sleeping (not used by testbench)
-
+wire        LOCKUP;        
+wire        TXEV;        
 //------------------------------------------------------------------------------
 // Generate system clock, power-on reset and synchronized AHB reset signals
 //------------------------------------------------------------------------------
@@ -117,11 +78,6 @@ always @(posedge sim_clock or negedge power_on_reset_n)
 
 assign HCLK    = sim_clock;    // Assign AHB clock from simulation clock
 assign HRESETn = rst_sync[1];  // Assign AHB clock from synchronizer
-assign HREADY  = 1'b1;         // All devices are zero-wait-state
-assign HRESP   = 1'b0;         // No device in this system generates errors
-assign NMI     = 1'b0;         // Do not generate any non-maskable interrupts
-assign IRQ     = {16{1'b0}};   // Do not generate any interrupts
-assign RXEV    = 1'b0;         // Do not generate any external events
 
 //------------------------------------------------------------------------------
 // Instantiate system_top
@@ -129,7 +85,10 @@ assign RXEV    = 1'b0;         // Do not generate any external events
 
 system_top system_top_inst (
 	.HCLK_top(sim_clock),//system top interface
-	.HRESETn_top(power_on_reset_n)
+	.HRESETn_top(power_on_reset_n),
+	.SYSRESETREQ_top_out(SYSRESETREQ),
+	.LOCKUP_top_out(LOCKUP),
+	.TXEV_top_out(TXEV)
 );
 
 initial begin
@@ -137,92 +96,7 @@ initial begin
     $dumpvars(0,system_top_tb);
 end
 
-//------------------------------------------------------------------------------
-// Simulation model of an AHB memory
-//------------------------------------------------------------------------------
-
-// Initialize memory content from "ram.bin"
-integer fd, i;
-reg [31:0] data;
-
-initial begin
-  $display("%t: ----------------------------------------------", $time);
-  $display("%t: ARM(r) Cortex(tm)-M0 DesignStart(tm) Testbench", $time);
-  $display("%t: (c) Copyright 2010 ARM Limited", $time);
-  $display("%t: All Rights Reserved", $time);
-  $display("%t: ----------------------------------------------\n", $time);
-  $display("%t: Loading initial memory content...", $time);
-  fd = $fopen("ram.bin","rb");
-  for (i = 0; (i < (2**ram_log2)) && ($fread(data,fd) != -1); i = i + 1)
-    ram[i] = {data[7:0],data[15:8],data[23:16],data[31:24]};
-  $display("%t: ...complete\n", $time);
-end
-
-// Record transaction information from last accepted address phase
-reg [ 1:0] htrans_last;
-reg        hwrite_last;
-reg [31:0] haddr_last;
-reg [ 2:0] hsize_last;
-
-always @(posedge HCLK)
-  if (HREADY) begin
-    htrans_last <= HTRANS;
-    hwrite_last <= HWRITE;
-    haddr_last  <= HADDR;
-    hsize_last  <= HSIZE;
-  end
-
-// Select RAM only if between address zero and top of RAM
-wire hsel_ram = ~|haddr_last[31:ram_log2];
-
-assign HRDATA[31:0] = hsel_ram ? ram[haddr_last[ram_log2+1:2]] : 32'd0;
-
-reg [31:0] ram_tmp;
-
-always @(posedge HCLK)
-  if(HREADY & hwrite_last & hsel_ram & htrans_last[1]) begin
-
-    // Extract RAM entry into temporary buffer
-    ram_tmp = ram[haddr_last[ram_log2+1:2]];
-
-    // Insert appropriate bytes from AHB-Lite transaction
-    case({hsize_last[1:0], haddr_last[1:0]})
-      // Byte writes are valid to any address
-      4'b00_00 : ram_tmp[ 7: 0] = HWDATA[ 7: 0];
-      4'b00_01 : ram_tmp[15: 8] = HWDATA[15: 8];
-      4'b00_10 : ram_tmp[23:16] = HWDATA[23:16];
-      4'b00_11 : ram_tmp[31:24] = HWDATA[31:24];
-      // Halfword writes are only valid to even addresses
-      4'b01_00 : ram_tmp[15: 0] = HWDATA[15: 0];
-      4'b01_10 : ram_tmp[31:16] = HWDATA[31:16];
-      // Word writes are only valid to word aligned addresses
-      4'b10_00 : ram_tmp[31: 0] = HWDATA[31: 0];
-      default  : begin
-        $display("%t: Illegal AHB transaction, stopping simulation\n", $time);
-        $finish(2);
-      end
-    endcase
-
-    // Commit write to RAM model
-    ram[haddr_last[ram_log2+1:2]] <= ram_tmp;
-
-  end
-
-//------------------------------------------------------------------------------
-// Simulation model of a simple AHB output console
-//------------------------------------------------------------------------------
-
-wire hsel_tty = (haddr_last == addr_tty);
-
-always @(posedge HCLK)
-  if(HRESETn & HREADY & hwrite_last & hsel_tty & htrans_last[1]) begin
-    if(HWDATA[7:0] != 8'hD)
-      $write("%c", HWDATA[7:0]);
-    else begin
-      $display("%t: Simulation stop requested by CPU\n", $time);
-      $finish(2);
-    end
-  end
+initial #3000 $finish;
 
 //------------------------------------------------------------------------------
 // Simulation commentary
@@ -242,10 +116,5 @@ always @(posedge HCLK)
   if (HRESETn & TXEV) begin
     $display("%t: CPU executed SEV instruction and asserted TXEV\n", $time);
   end
-
-always @(posedge HCLK)
-  if (HRESETn & HREADY & htrans_last[1] & ~(hsel_ram | hsel_tty))
-    $display("%t: Warning, address %x selects neither RAM or console",
-      $time, haddr_last);
 
 endmodule //system_top_tb 

@@ -23,7 +23,11 @@
 module system_top (
   // CLOCK AND RESETS ------------------
   input          HCLK_top,               // Clock
-  input          HRESETn_top         // Asynchronous reset
+  input          HRESETn_top,         // Asynchronous reset
+  output          SYSRESETREQ_top_out,         // Asynchronous reset
+  output          LOCKUP_top_out,         // Asynchronous reset
+  output          TXEV_top_out         // Asynchronous reset
+
 );
 
 //------------------------------------------------------------------------------
@@ -41,10 +45,13 @@ module system_top (
     wire [31:0] HRDATA_top;            // AHB read-data
     wire        HREADY_top;            // AHB stall signal
     wire [1:0]  HRESP_top;             // AHB error response
-    wire 	NMI_top;	       // Non-maskable interrupt
+    wire 	    NMI_top;	       // Non-maskable interrupt
     wire [15:0] IRQ_top;	       // Interrupt inputs
-    wire 	RXEV_top;	       // External events
-
+    wire 	    RXEV_top;	       // External events input
+    wire 	    TXEV_top;	       // External events output
+    wire 	    SLEEPING_top;	      // Core and NVIC sleeping output 
+    wire 	    LOCKUP_top;	      // Core and NVIC sleeping output 
+    wire 	    SYSRESETREQ_top;	      // Core and NVIC sleeping output 
     // PWM ACCELERATOR INTERFACE
     wire [31:0] PWM_hrdata_top;
     wire PWM_hready_resp_top;
@@ -112,6 +119,9 @@ module system_top (
 assign NMI_top = 1'b0;
 assign IRQ_top = {16{1'b0}};
 assign RXEV_top = 1'b0;
+assign SYSRESETREQ_top_out = SYSRESETREQ_top;
+assign TXEV_top_out = TXEV_top;
+assign LOCKUP_top_out = LOCKUP_top;
 //------------------------------------------------------------------------------
 // Instantiate coreAssembler-generated AMBA IP
 //------------------------------------------------------------------------------
