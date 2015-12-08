@@ -12,11 +12,9 @@
   <H1><CENTER>./initial/report/interconnect_ip_constraints.html</CENTER></H1>
 <H2><A NAME="Constraint Report Summary">Constraint Report Summary</A></H2>
 <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
-<TR><TD>There is 1 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_5409">   max_leakage_power
+<TR><TD>There is 1 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_3514">   max_leakage_power
 </A> constraint.</TD></TR>
-<TR><TD>There are 52 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_766">   max_delay/setup ('i_ssi_ssi_clk' group)
-</A> constraints.</TD></TR>
-<TR><TD>There are 3 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_253">   max_delay/setup ('i_i2c_ic_clk' group)
+<TR><TD>There are 36 failing <A HREF="interconnect_ip_constraints.html#interconnect_ip_254">   max_delay/setup ('i_ssi_ssi_clk' group)
 </A> constraints.</TD></TR>
 </TABLE></TD></TR></TABLE>
 <PRE>
@@ -26,88 +24,59 @@
         -all_violators
 Design : interconnect_ip
 Version: J-2014.09-SP5
-Date   : Mon Dec  7 01:11:15 2015
+Date   : Mon Dec  7 17:37:55 2015
 ****************************************
 
 </PRE><PRE>
 
 </PRE><PRE>
-<A NAME="interconnect_ip_253"></A>   max_delay/setup ('i_i2c_ic_clk' group)
+<A NAME="interconnect_ip_254"></A>   max_delay/setup ('i_ssi_ssi_clk' group)
 
 </PRE><PRE>
                              Required        Actual
    Endpoint                 Path Delay     Path Delay        Slack
    -----------------------------------------------------------------
-   i_i2c_U_DW_apb_i2c_toggle_tx_abrt_tog_reg/ip  2496.91  2522.70 f   -25.79 (VIOLATED)
-   i_i2c_U_DW_apb_i2c_clk_gen_scl_s_setup_cntr_reg_15_/ip  5812.81  5827.89 r   -15.08 (VIOLATED)
-   i_i2c_U_DW_apb_i2c_clk_gen_min_hld_cntr_reg_3_/ip  5534.24  5543.46 f    -9.22 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_10_/ip  1818.64  1926.38 f  -107.74 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_txd_reg/ip  1816.24  1923.95 f  -107.70 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_/ip  1817.69  1918.99 r  -101.30 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_13_/ip  1814.27  1905.67 f   -91.41  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_11_/ip  1814.26  1903.77 f   -89.51  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_12_/ip  1815.91  1903.77 f   -87.86  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_10_/ip  1815.91  1903.77 f   -87.86  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_14_/ip  1815.97  1903.77 f   -87.80  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_7_/ip  1814.26  1898.44 f    -84.18  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_9_/ip  1814.47  1898.44 f    -83.96  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_2_/ip  1814.65  1898.44 f    -83.78  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_/ip  1819.29  1902.99 r   -83.69 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_8_/ip  1815.19  1898.44 f    -83.25  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_4_/ip  1815.94  1898.44 f    -82.50  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_5_/ip  1814.23  1896.03 f    -81.80  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_1_/ip  1818.26  1899.02 f    -80.76  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_3_/ip  1815.89  1896.03 f    -80.14  (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_6_/ip  1815.96  1896.03 f    -80.07  (VIOLATED)
+   i_ssi_U_mstfsm_fsm_multi_mst_reg/ip  1816.42  1896.36 f   -79.93 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_/ip  1816.07  1889.72 f   -73.65 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_/ip  1819.25  1883.33 r   -64.08 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_15_/ip  1816.32  1879.71 f   -63.39  (VIOLATED)
+   i_ssi_U_sclkgen_sclk_out_reg/ip  1739.54  1797.17 f      -57.63  (VIOLATED)
+   i_ssi_U_shift_ss_n_reg_0_/ip  1820.67    1878.25 f       -57.58  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_9_/ip  1819.25  1875.62 r   -56.36 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_12_/ip  1818.63  1872.94 f   -54.30 (VIOLATED)
+   i_ssi_U_sclkgen_sclk_re_ir_reg/ip  1812.12  1865.45 r    -53.33  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_/ip  1818.87  1871.02 f   -52.14 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_/ip  1818.93  1866.11 f   -47.18 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_/ip  1818.85  1864.72 f   -45.87 (VIOLATED)
+   i_ssi_U_sclkgen_ssi_cnt_reg_0_/ip  1820.62  1864.64 f    -44.02  (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_4_/ip  1818.48  1845.23 f   -26.75 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_/ip  1818.62  1838.01 f   -19.39 (VIOLATED)
+   i_ssi_U_mstfsm_frame_cnt_reg_15_/ip  1810.43  1825.55 r   -15.11 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_/ip  1819.00  1829.36 f   -10.36 (VIOLATED)
+   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_8_/ip  1818.48  1821.98 f    -3.50 (VIOLATED)
 
 </PRE><PRE>
 
 </PRE><PRE>
-<A NAME="interconnect_ip_766"></A>   max_delay/setup ('i_ssi_ssi_clk' group)
-
-</PRE><PRE>
-                             Required        Actual
-   Endpoint                 Path Delay     Path Delay        Slack
-   -----------------------------------------------------------------
-   i_ssi_U_mstfsm_frame_cnt_reg_16_/ip  1819.91  2233.11 r  -413.20 (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_15_/ip  1372.00  1765.51 f  -393.51  (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_9_/ip  1818.35  2206.37 f  -388.02 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_3_/ip  1818.55  2203.80 f  -385.26 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_11_/ip  1818.55  2202.52 f  -383.98 (VIOLATED)
-   i_ssi_U_mstfsm_frame_cnt_reg_10_/ip  1728.09  2106.10 f  -378.01 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_5_/ip  1818.63  2187.70 f  -369.06 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_7_/ip  1818.55  2186.39 f  -367.85 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_0_/ip  1817.34  2184.92 r  -367.58 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_6_/ip  1818.68  2186.26 f  -367.58 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_txd_reg/ip  1818.59  2177.92 f  -359.33 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_13_/ip  1818.35  2169.25 f  -350.91 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_14_/ip  1818.35  2169.25 f  -350.91 (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_4_/ip  1632.74  1971.76 f   -339.02  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_7_/ip  1635.95  1971.76 f   -335.80  (VIOLATED)
-   i_ssi_U_sclkgen_sclk_out_reg/ip  1818.81  2152.93 f     -334.13  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_10_/ip  1637.97  1971.76 f  -333.78  (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_8_/ip  1818.35  2148.43 f  -330.08 (VIOLATED)
-   i_ssi_U_mstfsm_fsm_multi_mst_reg/ip  1815.03  2130.78 f  -315.75 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_10_/ip  1818.63  2133.06 f  -314.42 (VIOLATED)
-   i_ssi_U_mstfsm_frame_cnt_reg_15_/ip  1811.70  2111.78 f  -300.09 (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_13_/ip  1694.66  1971.76 f  -277.10  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_11_/ip  1816.09  2077.87 r  -261.78  (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_2_/ip  1818.75  2076.17 f  -257.42 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_15_/ip  1818.55  2075.02 f  -256.47 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_4_/ip  1818.35  2069.28 f  -250.93 (VIOLATED)
-   i_ssi_U_mstfsm_frame_cnt_reg_14_/ip  1811.93  2024.99 r  -213.06 (VIOLATED)
-   i_ssi_U_shift_ss_n_reg_0_/ip  1816.00    2009.84 f      -193.84  (VIOLATED)
-   i_ssi_U_mstfsm_fsm_busy_reg/ip  1817.08  2003.98 r      -186.90  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_6_/ip  1811.98  1998.26 r   -186.28  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_9_/ip  1811.98  1998.26 r   -186.28  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_12_/ip  1812.09  1998.26 r  -186.17  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_14_/ip  1812.09  1998.26 r  -186.17  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_3_/ip  1812.09  1998.26 r   -186.17  (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_12_/ip  1817.22  1988.27 r  -171.05 (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_1_/ip  1816.46  1971.76 f   -155.30  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_5_/ip  1816.46  1971.76 f   -155.30  (VIOLATED)
-   i_ssi_U_sclkgen_ssi_cnt_reg_8_/ip  1816.48  1971.48 f   -155.00  (VIOLATED)
-   i_ssi_U_sclkgen_sclk_re_ir_reg/ip  1808.79  1956.55 r   -147.77  (VIOLATED)
-   i_ssi_U_mstfsm_frame_cnt_reg_13_/ip  1813.39  1940.20 f  -126.81 (VIOLATED)
-   i_ssi_U_mstfsm_ssi_oe_n_reg/ip  1738.51  1855.33 f      -116.82  (VIOLATED)
-   i_ssi_U_mstfsm_fsm_sleep_reg/ip  1814.20  1911.14 f      -96.94  (VIOLATED)
-   i_ssi_U_mstfsm_frame_cnt_reg_6_/ip  1728.09  1813.62 f   -85.54  (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_shift_reg_reg_1_/ip  1816.73  1895.50 r   -78.76 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_3_/ip  1818.62  1853.07 f   -34.44 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_4_/ip  1818.63  1853.07 f   -34.43 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_6_/ip  1818.63  1853.07 f   -34.43 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_10_/ip  1818.63  1853.07 f   -34.43 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_11_/ip  1818.63  1853.07 f   -34.43 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_13_/ip  1818.63  1853.07 f   -34.43 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_1_/ip  1818.73  1853.07 f   -34.34 (VIOLATED)
-   i_ssi_U_shift_U_tx_shifter_tx_buffer_reg_2_/ip  1818.73  1853.07 f   -34.34 (VIOLATED)
-
-</PRE><PRE>
-
-</PRE><PRE>
-<A NAME="interconnect_ip_5409"></A>   max_leakage_power
+<A NAME="interconnect_ip_3514"></A>   max_leakage_power
 
 </PRE><PRE>
                              Required        Actual
@@ -118,7 +87,7 @@ Date   : Mon Dec  7 01:11:15 2015
 </PRE><PRE>
 
 </PRE><PRE>
-<A NAME="interconnect_ip_5710"></A>1
+<A NAME="interconnect_ip_3815"></A>1
 <DIV ALIGN=right><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A></DIV>
 </PRE>
 <div align=right><A HREF="index.html">Report Summary Page</A></div>

@@ -1,4 +1,4 @@
-set ::sHtml::reports(MemoryAddressMaps) [list {Memory Address Maps} {AHB and APB Memory Address Maps} /home/warehouse/lbremer/566_project/coreAssembler_ip/report/address_map.html]
-set ::sHtml::reports(SubsystemSourceCode) [list {Subsystem Source Code} {Documents the source files of the subsystem.} ./SubsystemSourceCode.html]
+set ::sHtml::reports(MemoryAddressMaps) [list {Memory Address Maps} {AHB and APB Memory Address Maps} /home/warehouse/l.kirchner/566_project/coreAssembler_ip/report/address_map.html]
 set ::sHtml::reports(MemoryMap) [list {Memory Map} {This report documents the address ranges assigned to each slave in the 
 subsystem.} ./MemoryMap.html]
+set ::sHtml::reports(SubsystemSourceCode) [list {Subsystem Source Code} {Documents the source files of the subsystem.} ./SubsystemSourceCode.html]

@@ -46,6 +46,7 @@ reg [3:0] count1;
 //Assign wires
 assign         i_ssi_ssi_clk = HCLK;
 assign    	i_ssi_ssi_rst_n = HRESETn;
+assign    	i_ssi_ss_in_n = 1'b0; 
 //------------------------------------------------------------------------------
 // Behavior processes
 //------------------------------------------------------------------------------

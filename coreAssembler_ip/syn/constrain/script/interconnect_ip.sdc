@@ -4,7 +4,7 @@ set sdc_version 1.9
 # ****************************************************
 # coreConsultant generated intent command file for design: interconnect_ip
 # Generator version: 2.0
-# Generated at: 01:09:34 on 12/07/15
+# Generated at: 17:36:07 on 12/07/15
 # ****************************************************
 # Clock waveform definitions and synthesis directives.
 create_clock [get_ports {HCLK_hclk}] -name HCLK_hclk -period 6000 -waveform {0 3000} 

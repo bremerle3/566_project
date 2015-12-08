@@ -1,17 +1,17 @@
 // component: /i_apb
 // library: work
 // files:
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_amba_constants.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_cc_constants.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_constants.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_dcdr.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_slcr.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_ahbsif.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_prdmux.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_psel.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_deslcr.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_mux.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_rdretime.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb.v
-/home/warehouse/lbremer/566_project/coreAssembler_ip/components/i_apb/src/DW_apb-undef.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_amba_constants.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_cc_constants.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_constants.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_dcdr.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_slcr.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_ahbsif.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_prdmux.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_psel.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_deslcr.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_mux.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb_rdretime.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb.v
+/home/warehouse/l.kirchner/566_project/coreAssembler_ip/components/i_apb/src/DW_apb-undef.v
 
