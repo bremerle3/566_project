@@ -8,7 +8,7 @@ cd $root/syn
 guard=.command_in_progress_Synthesize
 shutDown () {
   /bin/rm -f $guard
-  /project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "Synthesize" -w "$root" -d "interconnect_ip" -b "$begin" -e "`date`" -s "Killed" -r "$root/report/synthesis.html" -m "$root/syn/.initialMailFile"  | /bin/mail -s "Command for Activity Synthesize Killed" lbremer
+  /project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "Synthesize" -w "$root" -d "interconnect_ip" -b "$begin" -e "`date`" -s "Killed" -r "$root/report/synthesis.html" -m "$root/syn/.initialMailFile"  | /bin/mail -s "Command for Activity Synthesize Killed" l.kirchner
   sleep 1
   kill -9 0
   exit
@@ -54,7 +54,7 @@ sleep 5
 
 
 # Send email notification to users that command has completed
-/project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "Synthesize" -w "$root" -d "interconnect_ip" -b "$begin" -e "`date`" -s "Completed" -r "$root/report/synthesis.html" -m "$root/syn/.initialMailFile" | /bin/mail -s "Command for Activity Synthesize Completed" lbremer
+/project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "Synthesize" -w "$root" -d "interconnect_ip" -b "$begin" -e "`date`" -s "Completed" -r "$root/report/synthesis.html" -m "$root/syn/.initialMailFile" | /bin/mail -s "Command for Activity Synthesize Completed" l.kirchner
 
 # Remove guard file before exiting
 /bin/rm $guard

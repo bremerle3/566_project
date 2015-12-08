@@ -1,0 +1,11 @@
+
+VLOGAN	= vlogan
+
+all :		_VCSgd_xXF2Qc_1.db \
+
+
+
+_VCSgd_xXF2Qc_1.db :	interconnect_ip.v 
+		${VLOGAN} interconnect_ip.v
+
+

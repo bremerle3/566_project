@@ -1,16 +1,18 @@
                              Export directory index
 
    +------------------------------------------------------------------------+
-   |          File           |                 Description                  |
-   |-------------------------+----------------------------------------------|
-   | interconnect_ip.lst     | List of source files in proper analysis      |
-   |                         | order for entire subsystem.                  |
-   |-------------------------+----------------------------------------------|
-   | interconnect_ip_sim.lst | No description available                     |
-   |-------------------------+----------------------------------------------|
-   | interconnect_ip.ddc     | DDC format for top design                    |
-   |-------------------------+----------------------------------------------|
-   | interconnect_ip.v       | Netlist of top design                        |
-   |-------------------------+----------------------------------------------|
-   | interconnect_ip.sdc     | SDC file for netlist                         |
+   |           File           |                 Description                 |
+   |--------------------------+---------------------------------------------|
+   | interconnect_ip.lst      | List of source files in proper analysis     |
+   |                          | order for entire subsystem.                 |
+   |--------------------------+---------------------------------------------|
+   | interconnect_ip_sim.lst  | No description available                    |
+   |--------------------------+---------------------------------------------|
+   | interconnect_ip.ddc      | DDC format for top design                   |
+   |--------------------------+---------------------------------------------|
+   | interconnect_ip.sdc      | SDC file for netlist                        |
+   |--------------------------+---------------------------------------------|
+   | interconnect_ip.v        | Netlist of top design                       |
+   |--------------------------+---------------------------------------------|
+   | interconnect_ip_sim.lst~ | No description available                    |
    +------------------------------------------------------------------------+

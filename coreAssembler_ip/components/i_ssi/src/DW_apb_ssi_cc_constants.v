@@ -244,7 +244,7 @@
 // Controls the default state of the clock polarity. 
 // Defines the level of the serial clock when in-active (not toggling). 
 // Only used when the frame format is Motorola SPI.
-`define SSI_DFLT_SCPOL 1'h0
+`define SSI_DFLT_SCPOL 1'h1
 
 
 // Name:         SSI_DFLT_SCPH
@@ -257,7 +257,7 @@
 // The serial clock phase selects the relationship of the serial clock with the 
 // serial data. When 0, data is captured on the first edge of the serial clock. 
 // When 1, data is captured on the second edge of the serial clock.
-`define SSI_DFLT_SCPH 1'h0
+`define SSI_DFLT_SCPH 1'h1
 
 
 //Internal Define for 32 bit mode
@@ -270,15 +270,15 @@
 
 //Reset Value of CTRLR0 Registers in 32 bit mode.
 
-`define SSI_CTRLR0_RST_21 21'h70000
+`define SSI_CTRLR0_RST_21 21'h700c0
 
 //Reset Value of CTRLR0 Registers in 16 bit mode.
 
-`define SSI_CTRLR0_RST_16 16'h7
+`define SSI_CTRLR0_RST_16 16'hc7
 
 //CTRLR0 reset value.
 
-`define SSI_CTRLR0_RST 21'h7
+`define SSI_CTRLR0_RST 21'hc7
 
 //Width of irpdata
 
@@ -310,7 +310,7 @@
 
 //Default Value of SCLK OUT.
 
-`define SSI_DFLT_SCLK_OUT 1'h0
+`define SSI_DFLT_SCLK_OUT 1'h1
 
 //Default Value of SSI_DFLT_SS_N
 
@@ -350,11 +350,11 @@
 // consecutive data frames, with the serial clock (sclk) being held to its default 
 // value while ss_*_n is high; if this parameter is set to 0 the ss_*_n will 
 // stay low and sclk will run continuously for the duration of the transfer
-`define SSI_SCPH0_SSTOGGLE 1
+`define SSI_SCPH0_SSTOGGLE 0
 
 //Creates a define for enabling low power interface
 
-`define SSI_SCPH0_SSTOGGLE_IS_ONE
+// `define SSI_SCPH0_SSTOGGLE_IS_ONE
 
 //Include SVA assertions
 

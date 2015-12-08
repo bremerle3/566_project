@@ -197,7 +197,7 @@ exec /project/linuxlab/synopsys/coreTools/linux/dware/bin/gen_synth_index.pl -r 
 # Write Out Final Design and Reports
 #######################################################################
 
-change_names -hierarchy -rules verilog -log_changes /home/warehouse/lbremer/566_project/coreAssembler_ip/syn/db/change_names.log
+change_names -hierarchy -rules verilog -log_changes /home/warehouse/l.kirchner/566_project/coreAssembler_ip/syn/db/change_names.log
 
  
 
