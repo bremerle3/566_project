@@ -1,0 +1,259 @@
+[12/07 18:57:53     0s] Checking out Encounter license ...
+[12/07 18:57:53     0s] 	edsxl		CHECKED OUT:	"Encounter_Digital_Impl_Sys_XL"
+[12/07 18:57:53     0s] Encounter_Digital_Impl_Sys_XL 14.2 license checkout succeeded.
+[12/07 18:57:53     0s] You can run 2 CPU jobs with the base license that is currently checked out.
+[12/07 18:57:53     0s] If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+[12/07 18:58:01     5s] *******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2014.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+[12/07 18:58:01     5s] @(#)CDS: Encounter v14.23-s044_1 (64bit) 03/20/2015 11:30 (Linux 2.6.18-194.el5)
+[12/07 18:58:01     5s] @(#)CDS: NanoRoute v14.23-s028 NR150319-1745/14_23-UB (database version 2.30, 255.6.1) {superthreading v1.25}
+[12/07 18:58:01     5s] @(#)CDS: CeltIC v14.23-s013_1 (64bit) 03/09/2015 04:15:07 (Linux 2.6.18-194.el5)
+[12/07 18:58:01     5s] @(#)CDS: AAE 14.23-s010 (64bit) 03/20/2015 (Linux 2.6.18-194.el5)
+[12/07 18:58:01     5s] @(#)CDS: CTE 14.23-s014_1 (64bit) Mar  9 2015 03:15:25 (Linux 2.6.18-194.el5)
+[12/07 18:58:01     5s] @(#)CDS: CPE v14.23-s032
+[12/07 18:58:01     5s] @(#)CDS: IQRC/TQRC 14.1.6-s260 (64bit) Mon Mar  2 11:26:49 PST 2015 (Linux 2.6.18-194.el5)
+[12/07 18:58:01     5s] @(#)CDS: OA 22.50-p011 Tue Nov 11 03:24:55 2014
+[12/07 18:58:01     5s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[12/07 18:58:01     5s] @(#)CDS: RCDB 11.5
+[12/07 18:58:01     5s] --- Starting "Encounter v14.23-s044_1" on Mon Dec  7 18:58:01 2015 (mem=89.2M) ---
+[12/07 18:58:01     5s] --- Running on linuxlab007.seas.wustl.edu (x86_64 w/Linux 3.10.0-229.1.2.el7.x86_64) ---
+[12/07 18:58:01     5s] This version was compiled on Fri Mar 20 11:30:09 PDT 2015.
+[12/07 18:58:01     5s] Set DBUPerIGU to 1000.
+[12/07 18:58:01     5s] Set net toggle Scale Factor to 1.00
+[12/07 18:58:01     5s] Set Shrink Factor to 1.00000
+[12/07 18:58:01     5s] 
+[12/07 18:58:01     5s] **INFO:  MMMC transition support version v31-84 
+[12/07 18:58:01     5s] 
+[12/07 18:58:01     5s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[12/07 18:58:01     5s] <CMD> suppressMessage ENCEXT-2799
+[12/07 18:58:02     5s] <CMD> win
+[12/07 18:59:53    30s] <CMD> set init_lef_file /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/vtvt_tsmc180_lef/vtvt_tsmc180.lef
+[12/07 18:59:53    30s] <CMD> set init_verilog system_top.syn.v
+[12/07 18:59:53    30s] <CMD> set init_mmmc_file Default.view
+[12/07 18:59:53    30s] <CMD> init_design
+[12/07 18:59:53    30s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:11    33s] <CMD> init_design
+[12/07 19:00:11    33s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:11    33s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:12    33s] <CMD> init_design
+[12/07 19:00:12    33s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:12    33s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:12    33s] <CMD> init_design
+[12/07 19:00:12    33s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:12    33s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:13    33s] <CMD> init_design
+[12/07 19:00:13    33s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:13    33s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:13    33s] <CMD> init_design
+[12/07 19:00:13    33s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:13    33s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:13    33s] <CMD> init_design
+[12/07 19:00:13    33s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:13    33s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:24    37s] <CMD> create_library_set -name vtvt_tsmc180 -timing {/project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs/vtvt_tsmc180.lib}
+[12/07 19:00:24    37s] <CMD> create_constraint_mode -name CORTEXM0DS -sdc_files {CORTEXM0DS.sdc}
+[12/07 19:00:24    37s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:26    38s] **ERROR: 
+[12/07 19:00:51    42s] <CMD> init_design
+[12/07 19:00:51    42s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:51    42s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:52    42s] <CMD> init_design
+[12/07 19:00:52    42s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:52    42s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:52    42s] <CMD> init_design
+[12/07 19:00:52    42s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:52    42s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:52    42s] <CMD> init_design
+[12/07 19:00:52    42s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:52    42s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:56    43s] <CMD> init_design
+[12/07 19:00:56    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:56    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:57    43s] <CMD> init_design
+[12/07 19:00:57    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:57    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:57    43s] <CMD> init_design
+[12/07 19:00:57    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:57    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:57    43s] <CMD> init_design
+[12/07 19:00:57    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:57    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:58    43s] <CMD> init_design
+[12/07 19:00:58    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:58    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:58    43s] <CMD> init_design
+[12/07 19:00:58    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:58    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:58    43s] <CMD> init_design
+[12/07 19:00:58    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:58    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:58    43s] <CMD> init_design
+[12/07 19:00:58    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:58    43s] **ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+[12/07 19:00:58    43s] <CMD> init_design
+[12/07 19:00:58    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:59    43s] <CMD> init_design
+[12/07 19:00:59    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:59    43s] <CMD> init_design
+[12/07 19:00:59    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:00:59    43s] <CMD> init_design
+[12/07 19:00:59    43s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:01:14    50s] **ERROR: invalid command name "module"
+[12/07 19:03:23    66s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:23    66s] <CMD> init_design
+[12/07 19:03:23    66s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:23    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:23    67s] <CMD> init_design
+[12/07 19:03:23    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:24    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:24    67s] <CMD> init_design
+[12/07 19:03:24    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:24    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:24    67s] <CMD> init_design
+[12/07 19:03:24    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:24    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:24    67s] <CMD> init_design
+[12/07 19:03:24    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:24    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:24    67s] <CMD> init_design
+[12/07 19:03:24    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:24    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:24    67s] <CMD> init_design
+[12/07 19:03:24    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:25    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:25    67s] <CMD> init_design
+[12/07 19:03:25    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:03:25    67s] <CMD> set init_io_file system_top.fp
+[12/07 19:03:25    67s] <CMD> init_design
+[12/07 19:03:25    67s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:04:26    93s] <CMD> set init_mmmc_file {}
+[12/07 19:04:26    93s] <CMD> set init_io_file {}
+[12/07 19:04:26    93s] <CMD> init_design
+[12/07 19:04:26    93s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:04:26    93s] 
+[12/07 19:04:26    93s] Loading LEF file /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/vtvt_tsmc180_lef/vtvt_tsmc180.lef ...
+[12/07 19:04:26    93s] **WARN: (ENCLF-108):	There is no overlap layer defined in any LEF file
+[12/07 19:04:26    93s] so you are unable to create rectilinear partition in a hierarchical flow.
+[12/07 19:04:26    93s] Set DBUPerIGU to M2 pitch 810.
+[12/07 19:04:26    93s] 
+[12/07 19:04:26    93s] viaInitial starts at Mon Dec  7 19:04:26 2015
+viaInitial ends at Mon Dec  7 19:04:26 2015
+*** Begin netlist parsing (mem=319.2M) ***
+[12/07 19:04:26    93s] Reading netlist ...
+[12/07 19:04:26    93s] Backslashed names will retain backslash and a trailing blank character.
+[12/07 19:04:26    93s] Reading verilog netlist 'system_top.syn.v'
+[12/07 19:04:26    93s] **WARN: (ENCVL-346):	Module 'CPU_stub' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[12/07 19:04:26    93s] Type 'man ENCVL-346' for more detail.
+[12/07 19:04:26    93s] **WARN: (ENCVL-346):	Module 'cortexM0RAM' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[12/07 19:04:26    93s] Type 'man ENCVL-346' for more detail.
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_hrdata in module cortexM0RAM ... created as [31:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_hresp in module cortexM0RAM ... created as [1:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_haddr in module cortexM0RAM ... created as [31:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_hburst in module cortexM0RAM ... created as [2:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_hprot in module cortexM0RAM ... created as [3:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_hsize in module cortexM0RAM ... created as [2:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_htrans in module cortexM0RAM ... created as [1:0].
+[12/07 19:04:26    93s] Undeclared bus ex_i_ahb_AHB_Slave_RAM_hwdata in module cortexM0RAM ... created as [31:0].
+[12/07 19:04:26    93s] 
+[12/07 19:04:26    93s] *** Memory Usage v#3 (Current mem = 324.152M, initial mem = 89.168M) ***
+[12/07 19:04:26    93s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=324.2M) ***
+[12/07 19:04:26    93s] Top level cell is system_top.
+[12/07 19:04:26    93s] *** End library_loading (cpu=0.00min, mem=0.0M, fe_cpu=1.55min, fe_real=6.55min, fe_mem=324.2M) ***
+[12/07 19:04:26    93s] **WARN: (ENCDB-2504):	Cell 'cortexM0RAM' is instantiated in the Verilog netlist, but it is not defined in the library or design data.  Its pin directions may be derived incorrectly.  Provide the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[12/07 19:04:26    93s] **WARN: (ENCDB-2504):	Cell 'CPU_stub' is instantiated in the Verilog netlist, but it is not defined in the library or design data.  Its pin directions may be derived incorrectly.  Provide the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hready_resp' of cell 'cortexM0RAM' as output for net 'RAM_hready_resp_top' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hresp[0]' of cell 'cortexM0RAM' as output for net '\RAM_hresp_top[0] ' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'CPU_stub' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'i_ssi_ssi_clk' of cell 'CPU_stub' as output for net 'i_ssi_ssi_clk_top' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'CPU_stub' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'i_ssi_ssi_rst_n' of cell 'CPU_stub' as output for net 'i_ssi_ssi_rst_n_top' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[31]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[31]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[30]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[30]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[29]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[29]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[28]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[28]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[27]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[27]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[26]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[26]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[25]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[25]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[24]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[24]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[23]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[23]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[22]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[22]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[21]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[21]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[20]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[20]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[19]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[19]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[18]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[18]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[17]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[17]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[16]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[16]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[15]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[15]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[14]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[14]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[13]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[13]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[12]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[12]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[11]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[11]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[10]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[10]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[9]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[9]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[8]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[8]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[7]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[7]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[6]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[6]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[5]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[5]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[4]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[4]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[3]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[3]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[2]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[2]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[1]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[1]' in module 'system_top'.
+[12/07 19:04:26    93s] Cell 'cortexM0RAM' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'ex_i_ahb_AHB_Slave_RAM_hrdata[0]' of cell 'cortexM0RAM' as output for net 'RAM_hrdata_top[0]' in module 'system_top'.
+[12/07 19:04:26    93s] Found empty module (cortexM0RAM).
+[12/07 19:04:26    93s] Found empty module (CPU_stub).
+[12/07 19:04:26    93s] Starting recursive module instantiation check.
+[12/07 19:04:26    93s] No recursion found.
+[12/07 19:04:26    93s] Term dir updated for 0 vinsts of 2 cells.
+[12/07 19:04:26    93s] Building hierarchical netlist for Cell system_top ...
+[12/07 19:04:26    93s] *** Netlist is unique.
+[12/07 19:04:26    93s] ** info: there are 88 modules.
+[12/07 19:04:26    93s] ** info: there are 8643 stdCell insts.
+[12/07 19:04:26    93s] 
+[12/07 19:04:26    93s] *** Memory Usage v#3 (Current mem = 331.902M, initial mem = 89.168M) ***
+[12/07 19:04:26    93s] Generated pitch 1.215 in metal6 is different from 1.62 defined in technology file in preferred direction.
+[12/07 19:04:26    93s] Set Default Net Delay as 1000 ps.
+[12/07 19:04:26    93s] Set Default Net Load as 0.5 pF. 
+[12/07 19:04:26    93s] Set Input Pin Transition Delay as 0.1 ps.
+[12/07 19:04:26    93s] **WARN: (ENCSYT-7328):	The design has been initialized in physical-only mode because the init_mmmc_file global variable was not defined. Timing analysis will not be possible within this session. You can only use commands that do not depend on timing data. If you need to use timing, you need to restart with an init_mmmc_file to define the timing setup, or you can save this design and use restore_design -mmmc_file <viewDef.tcl> to add the timing setup information.
+[12/07 19:04:26    93s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/07 19:04:31    93s] <CMD> zoomOut
+[12/07 19:04:32    94s] <CMD> zoomOut
+[12/07 19:04:32    94s] <CMD> zoomOut
+[12/07 19:04:33    94s] <CMD> zoomOut
+[12/07 19:04:33    94s] <CMD> zoomOut
+[12/07 19:04:34    94s] <CMD> zoomOut
+[12/07 19:04:34    94s] <CMD> zoomOut
+[12/07 19:04:35    94s] <CMD> zoomOut
+[12/07 19:04:35    94s] <CMD> zoomOut
+[12/07 19:04:37    94s] <CMD> zoomIn
+[12/07 19:04:38    94s] <CMD> zoomOut
+[12/07 19:04:39    94s] <CMD> zoomIn
+[12/07 19:04:42    95s] 
+[12/07 19:04:42    95s] *** Memory Usage v#3 (Current mem = 427.113M, initial mem = 89.168M) ***
+[12/07 19:04:42    95s] 
+[12/07 19:04:42    95s] *** Summary of all messages that are not suppressed in this session:
+[12/07 19:04:42    95s] Severity  ID               Count  Summary                                  
+[12/07 19:04:42    95s] WARNING   ENCLF-108            1  There is no overlap layer defined in any...
+[12/07 19:04:42    95s] WARNING   ENCSYT-7328          1  The design has been initialized in physi...
+[12/07 19:04:42    95s] WARNING   ENCVL-346            2  Module '%s' is instantiated in the netli...
+[12/07 19:04:42    95s] WARNING   ENCDB-2504           2  Cell '%s' is instantiated in the Verilog...
+[12/07 19:04:42    95s] *** Message Summary: 6 warning(s), 0 error(s)
+[12/07 19:04:42    95s] 
+[12/07 19:04:42    95s] --- Ending "Encounter" (totcpu=0:01:35, real=0:06:49, mem=427.1M) ---

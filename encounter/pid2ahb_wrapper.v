@@ -52,16 +52,26 @@ input           ex_i_ahb_AHB_Slave_PID_hwrite;
 output reg[24:0] dout_0_pid;
 output reg[24:0] dout_1_pid;
 
+// Asssign output values
+wire [31:0] hrdata_wire;
+wire [1:0] hresp_wire;
+wire  hready_resp_wire;
+assign hrdata_wire = 32'b0;
+assign hresp_wire = 2'b0;
+assign hready_resp_wire = 1'b1;
+assign ex_i_ahb_AHB_Slave_PID_hrdata = hrdata_wire;
+assign ex_i_ahb_AHB_Slave_PID_hresp = hresp_wire;
+assign ex_i_ahb_AHB_Slave_PID_hready_resp = hready_resp_wire;
 // Register map
-parameter [15:0] INITN_ADDR= 16'h0000;
-parameter [15:0] COEFF0_ADDR= 16'h0004;
-parameter [15:0] COEFF1_ADDR= 16'h0008;
-parameter [15:0] COEFF2_ADDR= 16'h000c;
-parameter [15:0] COEFF3_ADDR= 16'h0010;
-parameter [15:0] COEFF4_ADDR= 16'h0014;
-parameter [15:0] COEFF5_ADDR= 16'h0018;
-parameter [15:0] DIN0_ADDR= 16'h001c;
-parameter [15:0] DIN1_ADDR= 16'h0020;
+parameter [11:0] INITN_ADDR= 12'h000;
+parameter [11:0] COEFF0_ADDR= 12'h004;
+parameter [11:0] COEFF1_ADDR= 12'h008;
+parameter [11:0] COEFF2_ADDR= 12'h00c;
+parameter [11:0] COEFF3_ADDR= 12'h010;
+parameter [11:0] COEFF4_ADDR= 12'h014;
+parameter [11:0] COEFF5_ADDR= 12'h018;
+parameter [11:0] DIN0_ADDR= 12'h01c;
+parameter [11:0] DIN1_ADDR= 12'h020;
 
 // Wrapper registers
 reg InitN_reg;
@@ -86,9 +96,17 @@ reg [24:0] din0_in;
 reg [24:0] din1_in;
 
 // Pick off register offset
-reg [15:0] addr_offset;
+reg [11:0] addr_offset;
 always @(posedge HCLK) begin
-	addr_offset <= ex_i_ahb_AHB_Slave_PID_haddr[15:0];
+	addr_offset <= ex_i_ahb_AHB_Slave_PID_haddr[11:0];
+end
+
+// Delay AHB signals
+reg hsel_d;
+reg hwrite_d;
+always @ (posedge HCLK ) begin
+    hsel_d <= ex_i_ahb_AHB_Slave_PID_hsel;
+    hwrite_d <= ex_i_ahb_AHB_Slave_PID_hwrite;
 end
 
 // PID_Controller ap interface signals
@@ -132,7 +150,7 @@ PID_Controller PID_Controller_inst(
 
 // Access wrapper registers
 always @ (posedge HCLK) begin : register_access 
-    if (HRESETn == 1'b1) begin
+    if (HRESETn == 1'b0) begin
         InitN_reg <= 1'b0;
         coeff0_reg <= 25'b0;
         coeff1_reg <= 25'b0;
@@ -140,43 +158,46 @@ always @ (posedge HCLK) begin : register_access
         coeff3_reg <= 25'b0;
         coeff4_reg <= 25'b0;
         coeff5_reg <= 25'b0;
-	din0_reg <= 25'b0;
-	din1_reg <= 25'b0;
+	    din0_reg <= 25'b0;
+	    din1_reg <= 25'b0;
         dout_0_pid <= 8'b0;
-	dout_1_pid <= 8'b0;
+	    dout_1_pid <= 8'b0;
     end 
     else begin // Address decode
-        if ((ex_i_ahb_AHB_Slave_PID_hwrite == 1'b1)) begin // Write
-            if ((addr_offset == INITN_ADDR)) begin
-                InitN_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == COEFF0_ADDR)) begin
-                coeff0_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+        if (hsel_d == 1'b1) begin
+            if ((hwrite_d == 1'b1)) begin // Write
+                if ((addr_offset == INITN_ADDR)) begin
+                    InitN_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == COEFF0_ADDR)) begin
+                    coeff0_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end
+                else if ((addr_offset == COEFF1_ADDR)) begin
+                    coeff1_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == COEFF2_ADDR)) begin
+                    coeff2_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == COEFF3_ADDR)) begin
+                    coeff3_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == COEFF4_ADDR)) begin
+                    coeff4_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == COEFF5_ADDR)) begin
+                    coeff5_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == DIN0_ADDR)) begin
+                    din0_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
+                else if ((addr_offset == DIN1_ADDR)) begin
+                    din1_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
+                end 
             end
-            else if ((addr_offset == COEFF1_ADDR)) begin
-                coeff1_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == COEFF2_ADDR)) begin
-                coeff2_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == COEFF3_ADDR)) begin
-                coeff3_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == COEFF4_ADDR)) begin
-                coeff4_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == COEFF5_ADDR)) begin
-                coeff5_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == DIN0_ADDR)) begin
-                din0_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-            else if ((addr_offset == DIN1_ADDR)) begin
-                din1_reg <= ex_i_ahb_AHB_Slave_PID_hwdata;
-            end 
-	dout_0_pid <= dout_0_pid_wire;
-	dout_1_pid <= dout_1_pid_wire;
         end
+        // Drive output
+	    dout_0_pid <= dout_0_pid_wire;
+	    dout_1_pid <= dout_1_pid_wire;
     end
 end
 

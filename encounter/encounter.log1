@@ -1,0 +1,176 @@
+Checking out Encounter license ...
+	edsxl		CHECKED OUT:	"Encounter_Digital_Impl_Sys_XL"
+Encounter_Digital_Impl_Sys_XL 14.2 license checkout succeeded.
+You can run 2 CPU jobs with the base license that is currently checked out.
+If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2014.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: Encounter v14.23-s044_1 (64bit) 03/20/2015 11:30 (Linux 2.6.18-194.el5)
+@(#)CDS: NanoRoute v14.23-s028 NR150319-1745/14_23-UB (database version 2.30, 255.6.1) {superthreading v1.25}
+@(#)CDS: CeltIC v14.23-s013_1 (64bit) 03/09/2015 04:15:07 (Linux 2.6.18-194.el5)
+@(#)CDS: AAE 14.23-s010 (64bit) 03/20/2015 (Linux 2.6.18-194.el5)
+@(#)CDS: CTE 14.23-s014_1 (64bit) Mar  9 2015 03:15:25 (Linux 2.6.18-194.el5)
+@(#)CDS: CPE v14.23-s032
+@(#)CDS: IQRC/TQRC 14.1.6-s260 (64bit) Mon Mar  2 11:26:49 PST 2015 (Linux 2.6.18-194.el5)
+@(#)CDS: OA 22.50-p011 Tue Nov 11 03:24:55 2014
+@(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+@(#)CDS: RCDB 11.5
+--- Starting "Encounter v14.23-s044_1" on Mon Dec  7 18:58:01 2015 (mem=89.2M) ---
+--- Running on linuxlab007.seas.wustl.edu (x86_64 w/Linux 3.10.0-229.1.2.el7.x86_64) ---
+This version was compiled on Fri Mar 20 11:30:09 PDT 2015.
+Set DBUPerIGU to 1000.
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set init_lef_file /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/vtvt_tsmc180_lef/vtvt_tsmc180.lef
+<CMD> set init_verilog system_top.syn.v
+<CMD> set init_mmmc_file Default.view
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> create_library_set -name vtvt_tsmc180 -timing {/project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs/vtvt_tsmc180.lib}
+<CMD> create_constraint_mode -name CORTEXM0DS -sdc_files {CORTEXM0DS.sdc}
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+**ERROR: 
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+**ERROR: (TCLCMD-989):	cannot open SDC file 'CORTEXM0DS.sdc' for mode 'CORTEXM0DS'
+<CMD> init_design
+<CMD> init_design
+<CMD> init_design
+<CMD> init_design
+**ERROR: invalid command name "module"
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_io_file system_top.fp
+<CMD> init_design
+<CMD> set init_mmmc_file {}
+<CMD> set init_io_file {}
+<CMD> init_design
+
+Loading LEF file /project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/vtvt_tsmc180_lef/vtvt_tsmc180.lef ...
+**WARN: (ENCLF-108):	There is no overlap layer defined in any LEF file
+so you are unable to create rectilinear partition in a hierarchical flow.
+Set DBUPerIGU to M2 pitch 810.
+
+viaInitial starts at Mon Dec  7 19:04:26 2015
+viaInitial ends at Mon Dec  7 19:04:26 2015
+*** Begin netlist parsing (mem=319.2M) ***
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'system_top.syn.v'
+**WARN: (ENCVL-346):	Module 'CPU_stub' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+Type 'man ENCVL-346' for more detail.
+**WARN: (ENCVL-346):	Module 'cortexM0RAM' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+Type 'man ENCVL-346' for more detail.
+
+*** Memory Usage v#3 (Current mem = 324.152M, initial mem = 89.168M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=324.2M) ***
+Top level cell is system_top.
+*** End library_loading (cpu=0.00min, mem=0.0M, fe_cpu=1.55min, fe_real=6.55min, fe_mem=324.2M) ***
+**WARN: (ENCDB-2504):	Cell 'cortexM0RAM' is instantiated in the Verilog netlist, but it is not defined in the library or design data.  Its pin directions may be derived incorrectly.  Provide the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+**WARN: (ENCDB-2504):	Cell 'CPU_stub' is instantiated in the Verilog netlist, but it is not defined in the library or design data.  Its pin directions may be derived incorrectly.  Provide the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+Found empty module (cortexM0RAM).
+Found empty module (CPU_stub).
+Starting recursive module instantiation check.
+No recursion found.
+Term dir updated for 0 vinsts of 2 cells.
+Building hierarchical netlist for Cell system_top ...
+*** Netlist is unique.
+** info: there are 88 modules.
+** info: there are 8643 stdCell insts.
+
+*** Memory Usage v#3 (Current mem = 331.902M, initial mem = 89.168M) ***
+Generated pitch 1.215 in metal6 is different from 1.62 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Input Pin Transition Delay as 0.1 ps.
+
+**WARN: (ENCSYT-7328):	The design has been initialized in physical-only mode because the init_mmmc_file global variable was not defined. Timing analysis will not be possible within this session. You can only use commands that do not depend on timing data. If you need to use timing, you need to restart with an init_mmmc_file to define the timing setup, or you can save this design and use restore_design -mmmc_file <viewDef.tcl> to add the timing setup information.
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomOut
+<CMD> zoomIn
+<CMD> zoomOut
+<CMD> zoomIn
+
+*** Memory Usage v#3 (Current mem = 427.113M, initial mem = 89.168M) ***
+*** Message Summary: 6 warning(s), 0 error(s)
+
+--- Ending "Encounter" (totcpu=0:01:35, real=0:06:49, mem=427.1M) ---

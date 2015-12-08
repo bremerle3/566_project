@@ -1,0 +1,7 @@
+# Version:1.0 MMMC View Definition File
+# Do Not Remove Above Line
+create_library_set -name vtvt_tsmc180 -timing {/project/linuxlab/cadence/vendors/VTVT/vtvt_tsmc180/Synopsys_Libraries/libs/vtvt_tsmc180.lib}
+create_constraint_mode -name CORTEXM0DS -sdc_files {CORTEXM0DS.sdc}
+create_delay_corner -name vtvt_tsmc180 -library_set {vtvt_tsmc180}
+create_analysis_view -name CORTEXM0DS -delay_corner vtvt_tsmc180 -constraint_mode {CORTEXM0DS}
+set_analysis_view -setup {CORTEXM0DS} -hold {CORTEXM0DS}

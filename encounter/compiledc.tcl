@@ -96,7 +96,7 @@ set CLK_SKEW [expr 0.025 * $CLK_PERIOD]
 set_fix_multiple_port_nets -all
 
 # setting the port of clock
-create_clock -period  $CLK_PERIOD HCLK
+create_clock -period  $CLK_PERIOD HCLK_top
 
 ## Design Rule Constraints
 
